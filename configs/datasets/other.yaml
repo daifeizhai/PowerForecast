@@ -1,0 +1,17 @@
+# Copy and edit this template for another dataset. Utilization is not kW.
+name: other
+timezone: UTC
+timezone_verified: false
+frequency: 15min
+target: load
+target_unit: source_units
+processed_path: data/processed/other.parquet
+sources:
+  power:
+    path: data/raw/other/power.csv
+    timestamp: timestamp
+    columns: {load: load}
+history_covariates: []
+cleaning:
+  ffill_limit: 4
+  bounds: {load: [0, null]}

@@ -1,0 +1,49 @@
+name: nlr
+# Raw files have naive timestamps. UTC is an explicit provisional assumption;
+# the source catalog does not state a timezone. Verify before publication.
+timezone: UTC
+timezone_verified: false
+frequency: 15min
+target: facility_power_kw
+target_unit: kW
+processed_path: data/processed/nlr.parquet
+sources:
+  power:
+    path: data/raw/nlr/power.parquet
+    fallback_paths: [NLR_Dataset/power.parquet]
+    timestamp: ts
+    minimum_timestamp: '2015-01-01'
+    columns:
+      it_power_kw: it_power_kw
+      cooling_kw: cooling_kw
+      hvac_kw: hvac_kw
+      plug_and_light_kw: plug_and_light_kw
+      pump_kw: pump_kw
+  weather:
+    path: data/raw/nlr/weather.parquet
+    fallback_paths: [NLR_Dataset/weather.parquet]
+    timestamp: ts
+    # Drop the sentinel 1970 row before resampling.
+    minimum_timestamp: '2015-01-01'
+    columns:
+      temperature_c: outdoor_air_temp
+      humidity_pct: outdoor_air_humidity
+    # The official catalog specifies degrees Fahrenheit for temperature.
+    scales: {temperature_c: 0.5555555555555556}
+    offsets: {temperature_c: -17.77777777777778}
+# An aggregate of the supplied components, not a directly measured total.
+derived_columns:
+  facility_power_kw:
+    sum: [it_power_kw, cooling_kw, hvac_kw, plug_and_light_kw, pump_kw]
+history_covariates: [it_power_kw, cooling_kw, hvac_kw, pump_kw, temperature_c, humidity_pct]
+cleaning:
+  ffill_limit: 4
+  bounds:
+    facility_power_kw: [0, null]
+    it_power_kw: [0, null]
+    cooling_kw: [0, null]
+    hvac_kw: [0, null]
+    plug_and_light_kw: [0, null]
+    pump_kw: [0, null]
+    temperature_c: [-60, 60]
+    humidity_pct: [0, 100]

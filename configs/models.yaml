@@ -1,0 +1,18 @@
+default_models: [naive, seasonal_naive, ridge]
+models:
+  naive: {}
+  seasonal_naive: {period: 96}
+  ridge: {alpha: 100.0, solver: auto}
+  extra_trees: {n_estimators: 100, max_depth: 12, n_jobs: 2}
+  sarima:
+    order: [1, 0, 1]
+    seasonal_order: [1, 0, 0, 96]
+    fit_points: 2048
+    maxiter: 50
+  # These direct multi-output wrappers fit one estimator per forecast lead.
+  lightgbm: {n_estimators: 100, num_leaves: 15, verbosity: -1, n_jobs: 2}
+  xgboost: {n_estimators: 100, max_depth: 4, n_jobs: 2, tree_method: hist}
+  lstm: {hidden_size: 32, epochs: 10, batch_size: 32, learning_rate: 0.001}
+  tcn: {hidden_size: 32, epochs: 10, batch_size: 32, learning_rate: 0.001}
+  dlinear: {epochs: 10, batch_size: 32, learning_rate: 0.001, kernel_size: 25}
+  proposed: {}

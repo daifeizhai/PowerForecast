@@ -1,0 +1,6 @@
+-r requirements.txt
+# Install these only when running the corresponding optional model.
+statsmodels>=0.14,<0.15
+lightgbm>=4,<5
+xgboost>=2,<4
+torch>=2.4,<3
