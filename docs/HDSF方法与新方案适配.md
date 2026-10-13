@@ -30,7 +30,9 @@ HDSF（Half-Day Simplex Fusion）将 15 分钟预测曲线按 48 点分段：24h
 
 [官方目录](https://data.nlr.gov/submissions/300)将 IT、制冷、HVAC、照明插座、泵字段标为 kW，室外温度为华氏度。目标是五项已测分项的区间均值之和，属于派生汇总标签；不等同于独立总表读数。未来真实天气、IT 和辅助负荷不进入输入。本轮 HDSF 与对照仅使用历史目标与已知日历。
 
-原文件位于 `data/raw/NLR_Dataset/`。处理保留完整时间轴，物理异常屏蔽在聚合之前，重复时间戳取均值，15 分钟区间均值后求分项总和；目标不填补。区间均值使用当时可用的有限分钟记录，五项区间均值都存在时标签有效。“目标完整日”表示 96 个有效聚合点，并非断言全天 1440 个原始分钟都完整；原始区间覆盖数另行审查。起止不完整日统一剔除，其余缺测导致相应窗口跳过。源时间戳无时区，官方目录和下载的 README 也未说明；UTC 是待核实的假设，这会影响真实当地日界线和星期特征，正式发布前需要核实。
+原文件位于 `data/raw/NLR_Dataset/`，当前使用 `esif.influx.buildingData.PUE.combined.parquet` 与 `esif.influx.buildingData.outside.combined.parquet`。2026-10-13 核对两文件 SHA-256 与旧 `power.parquet / weather.parquet` 的已存审计记录完全一致；更换文件名后重新预处理，输出 `data/processed/nlr_esif_combined.parquet`，与旧处理数据逐值一致。核验记录见 `results/analysis/nlr-esif-combined/source-replacement-audit.json`；这次路径对齐不构成独立新数据集的泛化检验。
+
+处理保留完整时间轴，物理异常屏蔽在聚合之前，重复时间戳取均值，15 分钟区间均值后求分项总和；目标不填补。区间均值使用当时可用的有限分钟记录，五项区间均值都存在时标签有效。“目标完整日”表示 96 个有效聚合点，并非断言全天 1440 个原始分钟都完整；原始区间覆盖数另行审查。起止不完整日统一剔除，其余缺测导致相应窗口跳过。源时间戳无时区，官方目录和下载的 README 也未说明；UTC 是待核实的假设，这会影响真实当地日界线和星期特征，正式发布前需要核实。
 
 ## 运行与证据
 

@@ -7,11 +7,14 @@ frequency: 15min
 target: facility_power_kw
 target_unit: kW
 primary_source: power
-processed_path: data/processed/nlr.parquet
+# Keep the previous prepared data available to historical experiment records.
+processed_path: data/processed/nlr_esif_combined.parquet
 sources:
   power:
-    path: data/raw/nlr/power.parquet
-    fallback_paths: [data/raw/NLR_Dataset/power.parquet, NLR_Dataset/power.parquet]
+    path: data/raw/NLR_Dataset/esif.influx.buildingData.PUE.combined.parquet
+    fallback_paths:
+      - data/raw/nlr/esif.influx.buildingData.PUE.combined.parquet
+      - NLR_Dataset/esif.influx.buildingData.PUE.combined.parquet
     timestamp: ts
     minimum_timestamp: '2015-01-01'
     columns:
@@ -21,8 +24,10 @@ sources:
       plug_and_light_kw: plug_and_light_kw
       pump_kw: pump_kw
   weather:
-    path: data/raw/nlr/weather.parquet
-    fallback_paths: [data/raw/NLR_Dataset/weather.parquet, NLR_Dataset/weather.parquet]
+    path: data/raw/NLR_Dataset/esif.influx.buildingData.outside.combined.parquet
+    fallback_paths:
+      - data/raw/nlr/esif.influx.buildingData.outside.combined.parquet
+      - NLR_Dataset/esif.influx.buildingData.outside.combined.parquet
     timestamp: ts
     # Drop the sentinel 1970 row before resampling.
     minimum_timestamp: '2015-01-01'

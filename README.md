@@ -34,8 +34,8 @@ NLR 官方地址：<https://data.nlr.gov/submissions/300>
 建议将下载后的文件放到以下目录：
 
 ```text
-data/raw/nlr/power.parquet
-data/raw/nlr/weather.parquet
+data/raw/NLR_Dataset/esif.influx.buildingData.PUE.combined.parquet
+data/raw/NLR_Dataset/esif.influx.buildingData.outside.combined.parquet
 ```
 
 原始数据原则上**只读、不可覆盖**；数据处理后的文件写到 `data/interim/` 或 `data/processed/`。原始数据、模型权重和大体积结果通常不提交 Git。
@@ -117,7 +117,7 @@ py -3.13 -m venv .venv
 # 直接重显最近完成的真实数据实验
 .\.venv\Scripts\python.exe scripts/run_experiment.py --results latest
 # 直接查看本轮 HDSF 已保存结果
-.\.venv\Scripts\python.exe scripts/run_hdsf.py --results results/runs/20261012T143252Z_18d8be
+.\.venv\Scripts\python.exe scripts/run_hdsf.py --results results/runs/20261013T120519Z_abc86d
 .\.venv\Scripts\python.exe scripts/analyze_nlr.py
 .\.venv\Scripts\python.exe scripts/report_hdsf.py results/runs/<运行目录> --output docs/HDSF-NLR复现结果.md
 
@@ -137,7 +137,7 @@ py -3.13 -m venv .venv
 
 **后续方法接入约定：** 所有新增方法（包括 HDSF）完成实现与验证后，都要加入相应实验的默认模型清单及这套统一输出表，作为常规对照一起展示；具体步骤见[新增方法接入流程](#9-新增方法接入流程)。
 
-`configs/datasets/nlr.yaml` 优先读取 `data/raw/nlr/`，也兼容 `data/raw/NLR_Dataset/` 与项目根目录的 `NLR_Dataset/`，无需复制原始数据。`other.yaml` 是其他 CSV / TSV / Parquet 数据集的字段映射模板，需要根据实际字段修改。
+`configs/datasets/nlr.yaml` 优先读取 `data/raw/NLR_Dataset/` 中的 `esif.influx.buildingData.PUE.combined.parquet` 和 `esif.influx.buildingData.outside.combined.parquet`，也兼容 `data/raw/nlr/` 与项目根目录的 `NLR_Dataset/` 下的同名文件，无需复制原始数据。当前预处理输出为 `data/processed/nlr_esif_combined.parquet`；旧 `nlr.parquet` 保留供历史实验核验。`other.yaml` 是其他 CSV / TSV / Parquet 数据集的字段映射模板，需要根据实际字段修改。
 
 ## 5. 数据口径与实验协议
 
@@ -178,7 +178,7 @@ HDSF 的方法来源、与旧协议的差异、环境与运行说明见 [HDSF方
 
 ## 7. 结果与验证
 
-已完成的实验见 [HDSF-NLR 复现结果](docs/HDSF-NLR复现结果.md)，方法及协议差异见 [HDSF 方法与新方案适配](docs/HDSF方法与新方案适配.md)。主实验使用 14 天目标历史与已知日历，按约 60/20/20 划分；时区暂按 UTC，保留待核实标记。
+2026-10-13 按当前 ESIF 原文件名完成重新预处理、普通默认实验和 HDSF 对照实验，见 [NLR 文件对齐与重跑](docs/NLR数据对齐与重跑.md)及 [HDSF-NLR 本轮重跑结果](docs/HDSF-NLR数据对齐重跑结果.md)。两份原始文件的 SHA-256 与旧审计记录一致，处理数据逐值一致；本轮属于同内容重跑，实验协议沿用原约束。旧 [HDSF-NLR 复现结果](docs/HDSF-NLR复现结果.md)继续保留，方法及协议差异见 [HDSF 方法与新方案适配](docs/HDSF方法与新方案适配.md)。下表为本轮 HDSF 对照预设：14 天目标历史与已知日历、约 60/20/20 划分；时区暂按 UTC，保留待核实标记。
 
 | HDSF 测试任务 | MAPE (%) | RMSE (kW) | WAPE (%) |
 | --- | --- | --- | --- |
@@ -198,7 +198,7 @@ HDSF 的方法来源、与旧协议的差异、环境与运行说明见 [HDSF方
 - 各模型的验证 / 测试预测 Parquet、逐起报 / 步长 / 预测天 / 日均指标 CSV、非重叠指标 JSON、首个测试曲线 PNG 和模型文件。基础模型保存为 `.joblib`，深度模型保存为 `.pt` 状态字典。
 - HDSF 的 `fusion.json`：成员池、分段权重、混合候选、验证折、训练边界、模型快照和校准耗时。报告入口重算预测指标、验证冻结文件，并输出状态代理分析、计算成本与限制说明。
 
-预处理同时生成 `data/processed/nlr.metadata.json`，记录单位、派生公式、时间假设、来源文件信息与缺失率。配置发生变化后应重新预处理；实验入口会检查配置是否与预处理记录匹配。
+预处理同时生成 `data/processed/nlr_esif_combined.metadata.json`，记录单位、派生公式、时间假设、来源文件信息与缺失率。配置发生变化后应重新预处理；实验入口会检查配置是否与预处理记录匹配。
 
 测试覆盖字段及单位转换、微秒时间戳对齐、缺失标签保护、因果填充、时间划分边界、未来观测隔离、指标零值口径、基线训练预测和模型保存。合成数据结果只用于流程验证，不能作为真实负荷预测的研究结论。
 
@@ -341,7 +341,7 @@ HDSF 除标准接口外，还有验证校准和最终本地成员重拟合阶段
 .\.venv\Scripts\python.exe scripts/run_experiment.py --demo --demo-days 60 --models seasonal_naive three_day_mean
 # 当前真实结果的输出检查
 .\.venv\Scripts\python.exe scripts/run_experiment.py --results latest
-.\.venv\Scripts\python.exe scripts/run_hdsf.py --results results/runs/20261012T143252Z_18d8be
+.\.venv\Scripts\python.exe scripts/run_hdsf.py --results results/runs/20261013T120519Z_abc86d
 # 公共数据、模型和因果性检查
 .\.venv\Scripts\python.exe -m pytest -q
 # 基座批量隔离检查（合成输入，仅作实现核验）
