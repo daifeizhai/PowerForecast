@@ -1,188 +1,270 @@
-"""One-command fixed-model rolling experiments for 24h and 7d tasks."""
-
+"""Adaptive complete-day experiments; all tasks freeze before test inference."""
 from __future__ import annotations
-
 import argparse
 from datetime import datetime, timezone
+from hashlib import sha256
 from importlib import metadata
+import json
+import platform
 import sys
 from pathlib import Path
+from time import perf_counter
 import uuid
 
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+import numpy as np
 import pandas as pd
-
 from src.data.cleaning import quality_report
 from src.data.features import make_features
 from src.data.loaders import read_table
-from src.data.splitting import build_windows, chronological_splits
+from src.data.splitting import build_windows, adaptive_day_splits, complete_days
 from src.data.synthetic import make_demo_data
-from src.evaluation.backtest import backtest, prediction_table
+from src.evaluation.backtest import backtest, prediction_table, score_predictions
+from src.evaluation.reporting import configure_console, print_results, print_saved_results
 from src.models import MODEL_NAMES, create_model
 from src.training.trainer import train_model
-from src.utils import config_digest, load_config, resolve_path, seed_everything, write_json
+from src.utils import PROJECT_ROOT, config_digest, load_config, resolve_path, seed_everything, write_json
 
 
-def ablation_covariates(covariates: list[str], ablation: str) -> list[str]:
-    if ablation == "target_only":
-        return []
-    if ablation == "no_weather":
-        return [name for name in covariates if name not in {"temperature_c", "humidity_pct"}]
-    if ablation == "no_auxiliary":
-        return [name for name in covariates if name not in {"cooling_kw", "hvac_kw", "pump_kw", "plug_and_light_kw"}]
-    return covariates
+def ablation_covariates(covariates, ablation):
+    excluded = {"target_only": set(covariates), "no_weather": {"temperature_c", "humidity_pct"},
+                "no_auxiliary": {"cooling_kw", "hvac_kw", "pump_kw", "plug_and_light_kw"}}
+    return [name for name in covariates if name not in excluded.get(ablation, set())]
 
 
-def run_experiment(args: argparse.Namespace) -> Path:
+def save_result(folder, task, name, split, batch, result, rows, seconds, unit, plots):
+    model_dir = folder/task/name
+    model_dir.mkdir(exist_ok=True, parents=True)
+    for evaluation, metrics in (("curve", result.metrics), ("daily_mean", result.daily_metrics)):
+        rows.append(dict(horizon=task, model=name, split=split, evaluation=evaluation,
+                         train_seconds=seconds, inference_seconds=result.inference_seconds, **metrics))
+    for label, table in (("per_lead", result.per_lead), ("per_origin", result.per_origin),
+                         ("daily_per_origin", result.daily_per_origin), ("per_day", result.per_day)):
+        table.to_csv(model_dir/f"{split}_{label}.csv", index=False)
+    table = prediction_table(batch, result.predictions)
+    table.to_parquet(model_dir/f"{split}_predictions.parquet", index=False)
+    write_json(model_dir/f"{split}_metrics.json", dict(curve=result.metrics, daily_mean=result.daily_metrics,
+        nonoverlap=result.nonoverlap_metrics, inference_seconds=result.inference_seconds))
+    if split == "test":
+        if plots:
+            from src.evaluation.visualization import plot_forecast
+            plot_forecast(table, model_dir/"forecast.png", f"{name}, {task}", unit)
+        fmt = lambda v: "undefined" if v is None else f"{v:.4f}"
+        print(f"{task} {name}: MAPE={fmt(result.metrics['MAPE'])}% RMSE={fmt(result.metrics['RMSE'])} {unit} "
+              f"WAPE={fmt(result.metrics['WAPE'])}% n={result.metrics['n']}", flush=True)
+
+
+def run_experiment(args):
     experiment = load_config(args.config)
     dataset = load_config(args.dataset_config or experiment["dataset_config"])
     model_config = load_config(args.model_config or experiment["model_config"])
-    names = args.models or model_config["default_models"]
-    tasks = args.horizons or list(experiment["horizons"])
+    names, tasks = args.models or model_config["default_models"], args.horizons or list(experiment["horizons"])
     seed = int(experiment.get("seed", 42))
     seed_everything(seed)
     if not names or len(names) != len(set(names)):
-        raise ValueError("Select at least one model, without duplicates.")
+        raise ValueError("Choose distinct models.")
     for name in names:
         if name == "proposed":
             raise NotImplementedError("Implement ProposedForecaster before running the proposed model.")
         create_model(name, model_config["models"].get(name, {}), seed)
-    if any(task not in experiment["horizons"] for task in tasks):
-        raise ValueError(f"Unknown horizon; configured tasks: {list(experiment['horizons'])}")
+    if len(tasks) != len(set(tasks)) or any(task not in experiment["horizons"] for task in tasks):
+        raise ValueError("Choose distinct configured horizons.")
     if experiment.get("frequency") != "15min" or dataset.get("frequency") != "15min":
-        raise ValueError("Both experiment and dataset frequency must be 15min.")
+        raise ValueError("Experiment and dataset frequencies must be 15min.")
     if args.demo:
         frame = make_demo_data(args.demo_days, seed)
-        data_label = "synthetic demo (not a research result)"
-        # The demo schema matches NLR; use its own known field names even when
-        # the user has a custom raw dataset configuration.
         target, unit, calendar_timezone = "facility_power_kw", "kW", "UTC"
-        covariates = [column for column in frame if column != target]
-        provenance = {"kind": "synthetic", "days": args.demo_days, "seed": seed}
+        covariates = [c for c in frame if c != target]
+        data_label = "synthetic demo (not a research result)"
+        provenance = dict(kind="synthetic", days=args.demo_days, seed=seed)
     else:
         path = resolve_path(args.prepared_data or dataset["processed_path"])
         if not path.is_file():
-            raise FileNotFoundError(f"Prepared data missing: {path}. Run scripts/prepare_data.py first, or use --demo.")
+            raise FileNotFoundError(f"Prepared data missing: {path}. Run scripts/prepare_data.py first.")
         frame = read_table(path)
         target, unit, calendar_timezone = dataset["target"], dataset.get("target_unit", "source_units"), dataset["timezone"]
-        covariates = dataset.get("history_covariates", [])
-        data_label = dataset["name"]
+        covariates, data_label = dataset.get("history_covariates", []), dataset["name"]
         stat = path.stat()
-        provenance = {"path": str(path), "bytes": stat.st_size, "mtime_ns": stat.st_mtime_ns}
+        provenance = dict(path=str(path), bytes=stat.st_size, mtime_ns=stat.st_mtime_ns, sha256=sha256(path.read_bytes()).hexdigest())
         sidecar = path.with_suffix(".metadata.json")
         if sidecar.is_file():
-            import json
             provenance["preparation"] = json.loads(sidecar.read_text(encoding="utf-8"))
             if provenance["preparation"]["config_digest"] != config_digest(dataset):
-                raise ValueError("Dataset configuration changed after preparation. Prepare again or use a matching configuration.")
+                raise ValueError("Dataset configuration changed after preparation. Prepare again.")
     if not isinstance(frame.index, pd.DatetimeIndex) or frame.index.tz is None:
-        raise ValueError("Prepared data must have a timezone-aware DatetimeIndex.")
+        raise ValueError("Prepared data needs a timezone-aware DatetimeIndex.")
     if not frame.index.equals(pd.date_range(frame.index.min(), frame.index.max(), freq="15min", name=frame.index.name)):
-        raise ValueError("Prepared data must be ordered on a complete 15-minute grid.")
+        raise ValueError("Prepared data needs an ordered complete 15-minute grid.")
     if args.start:
         frame = frame.loc[args.start:]
     if args.end:
         frame = frame.loc[:args.end]
     if frame.empty:
         raise ValueError("Requested date range is empty.")
-    covariates = ablation_covariates(covariates, args.ablation)
+    frame, day_info = complete_days(frame, calendar_timezone, target)
+    covariates = ablation_covariates(experiment.get("history_covariates", covariates), args.ablation)
     history, known = make_features(frame, target, covariates, calendar_timezone)
-    split = experiment["split"]
-    boundaries = chronological_splits(len(frame), split["train_fraction"], split["validation_fraction"])
-    root = resolve_path(experiment["results_dir"])
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    run_dir = root / f"{stamp}_{uuid.uuid4().hex[:6]}"
-    run_dir.mkdir(parents=True, exist_ok=False)
-    manifest = {
-        "status": "running", "data": data_label, "is_demo": args.demo,
-        "target": target, "target_unit": unit, "ablation": args.ablation,
-        "history_features": list(history), "future_known_features": list(known),
-        "experiment": experiment, "dataset": dataset, "model_config": model_config,
-        "requested_models": names, "requested_horizons": tasks,
-        "requested_start": args.start, "requested_end": args.end,
-        "data_provenance": provenance, "quality": quality_report(frame),
-        "splits": {name: {"start": str(frame.index[start]), "end": str(frame.index[end-1]), "rows": end-start} for name, (start, end) in boundaries.items()},
-        "versions": {package: metadata.version(package) for package in ["numpy", "pandas", "pyarrow", "scikit-learn", "matplotlib"]},
-        "metrics_definition": "WAPE/MAPE in percent; MAPE excludes |label| <= 1e-8. n counts forecast instances, including overlap across origins.",
-        "protocol": "Fit training only; select best by validation WAPE; freeze all models before test; update history only at rolling origins.",
-    }
-    write_json(run_dir / "manifest.json", manifest)
-    print(f"Data: {data_label} target={target} rows={len(frame)}", flush=True)
-    metric_rows, best_models = [], {}
+    boundaries = adaptive_day_splits(len(frame)//96, **experiment["split"])
+    context = int(experiment["context_length"])
+    threshold, criterion = float(experiment.get("mape_threshold", 1e-8)), experiment.get("selection_metric", "MAPE")
+    if criterion not in {"MAPE", "WAPE", "RMSE"}:
+        raise ValueError("Selection metric must be MAPE, WAPE or RMSE.")
+    if "hdsf" in names and float(model_config["models"]["hdsf"].get("mape_threshold", 1e-8)) != threshold:
+        raise ValueError("HDSF and experiment must use the same predeclared MAPE threshold.")
+    folder = resolve_path(experiment["results_dir"])/(datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")+"_"+uuid.uuid4().hex[:6])
+    folder.mkdir(parents=True, exist_ok=False)
+    manifest = dict(status="running", data=data_label, is_demo=args.demo, target=target, target_unit=unit,
+        ablation=args.ablation, history_features=list(history), future_known_features=list(known), experiment=experiment,
+        dataset=dataset, model_config=model_config, requested_models=names, requested_horizons=tasks,
+        requested_start=args.start, requested_end=args.end, data_provenance=provenance, quality=quality_report(frame),
+        complete_days=day_info, splits={name: dict(start=str(frame.index[start]), end=str(frame.index[end-1]),
+            rows=end-start, days=(end-start)//96) for name, (start, end) in boundaries.items()}, versions={},
+        hardware=dict(platform=platform.platform(), processor=platform.processor()),
+        metrics_definition=f"MAPE/WAPE in percent; MAPE excludes |label| <= {threshold}; RMSE in {unit}; "
+                           "pooled forecast instances plus per-origin statistics; daily aggregation before scoring.",
+        protocol=f"Train only; validation {criterion}; optional train+validation refit; all tasks freeze before test; history rolls.",
+        source_sha256={str(p.relative_to(PROJECT_ROOT)): sha256(p.read_bytes()).hexdigest()
+                       for directory in ("src", "scripts", "configs") for p in (PROJECT_ROOT/directory).rglob("*")
+                       if p.is_file() and p.suffix in {".py", ".yaml"}})
+    for package in ("numpy", "pandas", "pyarrow", "scikit-learn", "matplotlib", "torch", "lightgbm",
+                    "timesfm", "chronos-forecasting", "granite-tsfm", "tirex-2", "toto-2"):
+        try:
+            manifest["versions"][package] = metadata.version(package)
+        except metadata.PackageNotFoundError:
+            manifest["versions"][package] = None
+    write_json(folder/"manifest.json", manifest)
+    print(f"Data: {data_label} target={target} days={len(frame)//96} rows={len(frame)}", flush=True)
+    rows, best_models, prepared = [], {}, {}
+    save = lambda task, name, split, batch, result, seconds, plots=False: save_result(
+        folder, task, name, split, batch, result, rows, seconds, unit, plots)
+    clip = lambda p: np.maximum(p, experiment["clip_min"]) if experiment.get("clip_min") is not None else p
     try:
         for task in tasks:
             horizon = int(experiment["horizons"][task])
-            batches = {
-                name: build_windows(history, known, frame[target], bounds, int(experiment["context_length"]), horizon, int(experiment["train_stride"] if name == "train" else experiment["backtest_stride"]))
-                for name, bounds in boundaries.items()
-            }
-            task_dir = run_dir / task
+            batches = {name: build_windows(history, known, frame[target], bounds, context, horizon,
+                       int(experiment["train_stride"] if name == "train" else experiment["backtest_stride"]))
+                       for name, bounds in boundaries.items() if name != "test"}
+            task_dir = folder/task
             task_dir.mkdir()
-            window_info = {name: {"windows": len(batch), "skipped": batch.skipped_windows} for name, batch in batches.items()}
-            write_json(task_dir / "windows.json", window_info)
-            trained, validation_scores = {}, {}
-            # Complete all fitting/validation before looking at test scores.
+            window_info = {name: dict(windows=len(batch), skipped=batch.skipped_windows,
+                origins=[str(o) for o in batch.inputs.origins]) for name, batch in batches.items()}
+            write_json(task_dir/"windows.json", window_info)
+            trained, scores, timings = {}, {}, {}
             for name in names:
-                trained[name] = train_model(name, batches["train"], model_config["models"].get(name, {}), seed)
-                model_dir = task_dir / name
-                model_dir.mkdir()
-                if experiment.get("save_models", True):
-                    trained[name].model.save(model_dir / "model")
-                result = backtest(trained[name].model, batches["validation"], experiment.get("clip_min"), int(experiment.get("prediction_batch_size", 32)))
-                validation_scores[name] = result.metrics["WAPE"]
-                metric_rows.append({"horizon": task, "model": name, "split": "validation", "train_seconds": trained[name].seconds, **result.metrics})
-                result.per_lead.to_csv(model_dir / "validation_per_lead.csv", index=False)
-                prediction_table(batches["validation"], result.predictions).to_parquet(model_dir / "validation_predictions.parquet", index=False)
-            eligible = {name: score for name, score in validation_scores.items() if score is not None}
+                print(f"[{task}] Fit {name}; train={len(batches['train'])}, validation={len(batches['validation'])}", flush=True)
+                start = perf_counter()
+                training = train_model(name, batches["train"], model_config["models"].get(name, {}), seed)
+                trained[name], timings[name] = training.model, training.seconds
+                if name == "hdsf":
+                    calibration_started = perf_counter()
+                    trained[name].calibrate(batches["validation"])
+                    trained[name].configuration["calibration_seconds"] = perf_counter()-calibration_started
+                    for output_name, predictions in trained[name].outputs(trained[name].validation_members).items():
+                        result = score_predictions(batches["validation"], clip(predictions), threshold)
+                        save(task, output_name, "validation", batches["validation"], result,
+                             training.seconds if output_name == "hdsf" else 0.)
+                        if output_name == "hdsf":
+                            scores[name] = trained[name].configuration["cv_origin_mean"][criterion]
+                else:
+                    result = backtest(trained[name], batches["validation"], experiment.get("clip_min"),
+                                      int(experiment.get("prediction_batch_size", 32)), threshold)
+                    scores[name] = result.metrics["origin_"+criterion+"_mean"]
+                    save(task, name, "validation", batches["validation"], result, training.seconds)
+            eligible = {name: score for name, score in scores.items() if score is not None}
             best_models[task] = min(eligible, key=eligible.get) if eligible else None
-            write_json(task_dir / "selection.json", {"criterion": "validation WAPE", "scores": validation_scores, "selected_model": best_models[task], "frozen_before_test": True})
+            if experiment.get("refit_train_validation", False):
+                final = build_windows(history, known, frame[target], (0, boundaries["validation"][1]),
+                                      context, horizon, int(experiment["train_stride"]))
+                for name in names:
+                    start = perf_counter()
+                    if name == "hdsf":
+                        trained[name].refit(final)
+                    else:
+                        trained[name] = train_model(name, final, model_config["models"].get(name, {}), seed).model
+                    timings[name] += perf_counter()-start
             for name in names:
-                result = backtest(trained[name].model, batches["test"], experiment.get("clip_min"), int(experiment.get("prediction_batch_size", 32)))
-                metric_rows.append({"horizon": task, "model": name, "split": "test", "train_seconds": trained[name].seconds, **result.metrics})
-                model_dir = task_dir / name
-                result.per_lead.to_csv(model_dir / "test_per_lead.csv", index=False)
-                table = prediction_table(batches["test"], result.predictions)
-                table.to_parquet(model_dir / "test_predictions.parquet", index=False)
-                write_json(model_dir / "metrics.json", {"validation": next(row for row in metric_rows if row["horizon"] == task and row["model"] == name and row["split"] == "validation"), "test": result.metrics, "train_windows": trained[name].train_windows, "train_seconds": trained[name].seconds})
-                if experiment.get("save_plots", True):
-                    from src.evaluation.visualization import plot_forecast
-                    plot_forecast(table, model_dir / "forecast.png", f"{data_label}: {name}, {task}", unit)
-                wape = "undefined" if result.metrics["WAPE"] is None else f"{result.metrics['WAPE']:.4f}%"
-                print(f"{task} {name}: WAPE={wape} n={result.metrics['n']}", flush=True)
-        pd.DataFrame(metric_rows).to_csv(run_dir / "metrics.csv", index=False)
+                if name == "hdsf":
+                    write_json(task_dir/name/"fusion.json", trained[name].configuration)
+                    del trained[name].validation_members
+                if experiment.get("save_models", True):
+                    trained[name].save(task_dir/name/"model")
+            write_json(task_dir/"selection.json", dict(criterion=f"validation origin-mean {criterion}", scores=scores,
+                selected_model=best_models[task], frozen_before_test=True))
+            prepared[task] = (trained, timings, window_info)
+        write_json(folder/"frozen-before-test.json", dict(tasks=tasks, selected_models=best_models,
+            test_start=manifest["splits"]["test"]["start"], mape_threshold=threshold,
+            model_sha256={str(p.relative_to(folder)): sha256(p.read_bytes()).hexdigest() for p in folder.rglob("model.*")},
+            frozen_at_utc=datetime.now(timezone.utc).isoformat()))
+        for task in tasks:
+            trained, timings, window_info = prepared[task]
+            batch = build_windows(history, known, frame[target], boundaries["test"], context,
+                                  int(experiment["horizons"][task]), int(experiment["backtest_stride"]))
+            window_info["test"] = dict(windows=len(batch), skipped=batch.skipped_windows, origins=[str(o) for o in batch.inputs.origins])
+            write_json(folder/task/"windows.json", window_info)
+            for name in names:
+                if name == "hdsf":
+                    started = perf_counter()
+                    outputs = trained[name].outputs(trained[name].collect(batch.inputs))
+                    seconds = perf_counter()-started
+                    for output_name, predictions in outputs.items():
+                        result = score_predictions(batch, clip(predictions), threshold, frame.index[boundaries["test"][0]],
+                                                   seconds if output_name == "hdsf" else 0.)
+                        save(task, output_name, "test", batch, result, timings[name] if output_name == "hdsf" else 0.,
+                             experiment.get("save_plots", True))
+                else:
+                    result = backtest(trained[name], batch, experiment.get("clip_min"),
+                        int(experiment.get("prediction_batch_size", 32)), threshold, frame.index[boundaries["test"][0]])
+                    save(task, name, "test", batch, result, timings[name], experiment.get("save_plots", True))
+            pd.DataFrame(rows).to_csv(folder/"metrics.csv", index=False)
+        metrics = pd.DataFrame(rows)
+        for task in tasks:
+            baseline = "seasonal_naive" if task == "24h" else "three_day_mean"
+            for evaluation in ("curve", "daily_mean"):
+                ref = metrics[(metrics.horizon == task) & (metrics.model == baseline) &
+                              (metrics.split == "test") & (metrics.evaluation == evaluation)]
+                for metric in ("MAPE", "WAPE"):
+                    mask = (metrics.horizon == task) & (metrics.split == "test") & (metrics.evaluation == evaluation)
+                    if len(ref) and ref[metric].iloc[0] > 0:
+                        metrics.loc[mask, f"{metric}_reduction_pct"] = 100*(1-metrics.loc[mask, metric]/ref[metric].iloc[0])
+        metrics.to_csv(folder/"metrics.csv", index=False)
+        print_results(metrics, manifest={**manifest, "selected_models": best_models},
+            windows={task: prepared[task][2] for task in tasks},
+            fusions={task: prepared[task][0]["hdsf"].configuration for task in tasks if "hdsf" in prepared[task][0]})
         manifest.update(status="complete", selected_models=best_models)
-        write_json(run_dir / "manifest.json", manifest)
-        print(f"Finished attempt 1. Results: {run_dir}", flush=True)
+        write_json(folder/"manifest.json", manifest)
+        print(f"Finished attempt 1. Results: {folder}", flush=True)
     except Exception as exc:
         manifest.update(status="failed", error=f"{type(exc).__name__}: {exc}")
-        write_json(run_dir / "manifest.json", manifest)
-        if metric_rows:
-            pd.DataFrame(metric_rows).to_csv(run_dir / "metrics.csv", index=False)
+        write_json(folder/"manifest.json", manifest)
+        if rows:
+            pd.DataFrame(rows).to_csv(folder/"metrics.csv", index=False)
         raise
-    return run_dir
+    return folder
 
 
-def main(argv=None) -> int:
-    parser = argparse.ArgumentParser(description="Run reproducible 24h/7d rolling load forecasts.")
+def main(argv=None):
+    configure_console()
+    parser = argparse.ArgumentParser(description="Run adaptive 24h/7d rolling load forecasts.")
     parser.add_argument("--config", default="configs/experiment.yaml")
-    parser.add_argument("--dataset-config")
-    parser.add_argument("--model-config")
-    parser.add_argument("--prepared-data")
+    for option in ("dataset-config", "model-config", "prepared-data", "start", "end"):
+        parser.add_argument("--"+option)
     parser.add_argument("--models", nargs="+", choices=MODEL_NAMES)
     parser.add_argument("--horizons", nargs="+")
-    parser.add_argument("--start")
-    parser.add_argument("--end")
-    parser.add_argument("--demo", action="store_true", help="Use synthetic data to verify the pipeline.")
+    parser.add_argument("--demo", action="store_true", help="Synthetic pipeline verification only.")
     parser.add_argument("--demo-days", type=int, default=100)
     parser.add_argument("--ablation", choices=["full", "target_only", "no_weather", "no_auxiliary"], default="full")
     parser.add_argument("--list-models", action="store_true")
+    parser.add_argument("--results", metavar="RUN_DIR", help="Display a saved run, or latest completed real-data run; no training.")
     args = parser.parse_args(argv)
     if args.list_models:
         print("Models: " + ", ".join(MODEL_NAMES))
         return 0
     try:
+        if args.results:
+            print_saved_results(args.results, results_dir=load_config(args.config)["results_dir"])
+            return 0
         run_experiment(args)
     except (OSError, ValueError, KeyError, ImportError, NotImplementedError) as exc:
         parser.exit(1, f"Error: {exc}\n")

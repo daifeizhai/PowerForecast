@@ -40,6 +40,45 @@ def chronological_splits(length: int, train_fraction: float, validation_fraction
     return {"train": (0, train_end), "validation": (train_end, validation_end), "test": (validation_end, length)}
 
 
+def complete_days(frame: pd.DataFrame, timezone: str, target: str | None = None) -> tuple[pd.DataFrame, dict]:
+    """Trim grid/target coverage edges; keep all interior missing intervals."""
+    local = frame.index.tz_convert(timezone)
+    counts = pd.Series(1, index=local).resample("D").sum()
+    full = counts[counts == 96]
+    if full.empty:
+        raise ValueError("No complete 96-point days in the requested range.")
+    grid_start, grid_stop = full.index[0], full.index[-1] + pd.DateOffset(days=1)
+    grid_rows = int(((local >= grid_start) & (local < grid_stop)).sum())
+    if target is not None:
+        available = pd.Series(np.isfinite(frame[target].to_numpy()), index=local).resample("D").sum()
+        full = full.loc[available.reindex(full.index).to_numpy() == 96]
+        if full.empty:
+            raise ValueError("No complete 96-point target days; check component coverage and missing labels.")
+    start, stop = full.index[0], full.index[-1] + pd.DateOffset(days=1)
+    keep = (local >= start) & (local < stop)
+    result = frame.loc[keep]
+    if len(result) % 96 or not (counts.loc[start:full.index[-1]] == 96).all():
+        raise ValueError("Local days must have 96 intervals; verify timezone/DST before this protocol.")
+    return result, {"dropped_edge_rows": len(frame)-len(result), "grid_edge_rows_dropped": len(frame)-grid_rows,
+                    "target_edge_rows_dropped": grid_rows-len(result), "target_coverage_checked": target,
+                    "days": len(result)//96,
+                    "start": str(start), "end_exclusive": str(stop)}
+
+
+def adaptive_day_splits(days: int, train_fraction: float = .6, validation_fraction: float = .2,
+                        minimum_validation_days: int = 8, minimum_test_days: int = 9) -> dict[str, tuple[int, int]]:
+    """Day-aligned 60/20/20, reserving validation/test minima for short series."""
+    chronological_splits(days, train_fraction, validation_fraction)
+    train = int(days * train_fraction)
+    validation = max(minimum_validation_days, int(days * validation_fraction))
+    test = max(minimum_test_days, days - train - validation)
+    train = days - validation - test
+    if train < 14:
+        raise ValueError("Insufficient complete days: need >=14 train, >=8 validation and >=9 test days.")
+    return {"train": (0, train*96), "validation": (train*96, (train+validation)*96),
+            "test": ((train+validation)*96, days*96)}
+
+
 def build_windows(history: pd.DataFrame, known: pd.DataFrame, target: pd.Series, bounds: tuple[int, int], context: int, horizon: int, stride: int) -> WindowBatch:
     if min(context, horizon, stride) <= 0:
         raise ValueError("Context, horizon, and stride must be positive.")

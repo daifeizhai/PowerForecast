@@ -39,8 +39,16 @@ def prepare_dataset(config: dict, output: str | Path | None = None, start: str |
         frames.append(resample_frame(raw, config.get("frequency", "15min")))
         stat = sources[name].stat()
         source_info[name] = {"path": str(sources[name]), "bytes": stat.st_size, "mtime_ns": stat.st_mtime_ns}
-    # Use the overlap of source time ranges, retaining missing interior bins.
-    overlap_start, overlap_end = max(frame.index.min() for frame in frames), min(frame.index.max() for frame in frames)
+    # A target source preserves its complete timeline even when weather starts later.
+    # Secondary covariates remain missing outside their coverage; they never trim labels.
+    primary_source = config.get("primary_source")
+    if primary_source is not None:
+        if primary_source not in config["sources"]:
+            raise ValueError(f"Unknown primary source: {primary_source}")
+        primary = frames[list(config["sources"]).index(primary_source)]
+        overlap_start, overlap_end = primary.index.min(), primary.index.max()
+    else:
+        overlap_start, overlap_end = max(frame.index.min() for frame in frames), min(frame.index.max() for frame in frames)
     if overlap_start > overlap_end:
         raise ValueError("Configured sources have no overlapping time range.")
     frame = pd.concat(frames, axis=1).loc[overlap_start:overlap_end]
@@ -63,6 +71,7 @@ def prepare_dataset(config: dict, output: str | Path | None = None, start: str |
         "requested_start": start,
         "requested_end": end,
         "sources": source_info,
+        "alignment": {"primary_source": primary_source, "policy": "primary timeline" if primary_source else "source overlap"},
         "quality": quality_report(frame),
     }
     output.parent.mkdir(parents=True, exist_ok=True)

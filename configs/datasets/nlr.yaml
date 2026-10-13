@@ -6,11 +6,12 @@ timezone_verified: false
 frequency: 15min
 target: facility_power_kw
 target_unit: kW
+primary_source: power
 processed_path: data/processed/nlr.parquet
 sources:
   power:
     path: data/raw/nlr/power.parquet
-    fallback_paths: [NLR_Dataset/power.parquet]
+    fallback_paths: [data/raw/NLR_Dataset/power.parquet, NLR_Dataset/power.parquet]
     timestamp: ts
     minimum_timestamp: '2015-01-01'
     columns:
@@ -21,7 +22,7 @@ sources:
       pump_kw: pump_kw
   weather:
     path: data/raw/nlr/weather.parquet
-    fallback_paths: [NLR_Dataset/weather.parquet]
+    fallback_paths: [data/raw/NLR_Dataset/weather.parquet, NLR_Dataset/weather.parquet]
     timestamp: ts
     # Drop the sentinel 1970 row before resampling.
     minimum_timestamp: '2015-01-01'

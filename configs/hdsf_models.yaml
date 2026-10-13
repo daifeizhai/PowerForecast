@@ -1,0 +1,19 @@
+default_models: [seasonal_naive, three_day_mean, seasonal_ar, dlinear, hdsf]
+models:
+  seasonal_naive: {period: 96}
+  three_day_mean: {}
+  seasonal_ar: {}
+  dlinear: {epochs: 10, batch_size: 32, learning_rate: 0.001, kernel_size: 25}
+  hdsf:
+    # Read-only shared checkpoints; forecasts for NLR are newly generated below results/.
+    weights_cache: D:/AAA_Project/PowerData_Prediction/.model-cache
+    prediction_cache: results/cache/foundation
+    jobs: 4
+    batch_size: 32
+    context_days: 14
+    segment_points: 48
+    cv_mode: blocked
+    cv_folds: 5
+    loo_tolerance: 0.005
+    mape_threshold: 1.0e-8
+    local_rounds: 350

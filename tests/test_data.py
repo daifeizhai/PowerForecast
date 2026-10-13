@@ -138,3 +138,16 @@ def test_pipeline_refuses_to_write_into_raw_directory(tmp_path):
     config = toy_config(tmp_path)
     with pytest.raises(ValueError, match="raw source directory"):
         prepare_dataset(config, tmp_path / "raw" / "prepared.parquet")
+
+
+def test_primary_power_timeline_is_not_shortened_by_weather(tmp_path):
+    config = toy_config(tmp_path)
+    config["primary_source"] = "power"
+    weather_path = tmp_path / "raw" / "weather.csv"
+    pd.DataFrame({"ts": ["2024-01-01 00:30"], "temp": [20.]}).to_csv(weather_path, index=False)
+    config["sources"]["weather"] = {"path": str(weather_path), "timestamp": "ts", "columns": {"temperature": "temp"}}
+    frame, report = prepare_dataset(config)
+    assert len(frame) == 3
+    assert frame.index[0].minute == 0
+    assert frame.temperature.iloc[:2].isna().all()
+    assert report["alignment"]["policy"] == "primary timeline"

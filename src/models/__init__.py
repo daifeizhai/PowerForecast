@@ -4,11 +4,17 @@ from __future__ import annotations
 
 from src.models.base import BaseForecaster
 
-MODEL_NAMES = ("naive", "seasonal_naive", "ridge", "extra_trees", "sarima", "lightgbm", "xgboost", "lstm", "tcn", "dlinear", "proposed")
+MODEL_NAMES = ("naive", "seasonal_naive", "three_day_mean", "seasonal_ar", "ridge", "extra_trees", "sarima", "lightgbm", "xgboost", "lstm", "tcn", "dlinear", "hdsf", "proposed")
 
 
 def create_model(name: str, params: dict | None = None, seed: int = 42) -> BaseForecaster:
     params = dict(params or {})
+    if name == "hdsf":
+        from src.models.proposed.hdsf import HDSFForecaster
+        return HDSFForecaster(**params)
+    if name in {"three_day_mean", "seasonal_ar"}:
+        from src.models.statistical.baselines import ThreeDayMeanForecaster, SeasonalARForecaster
+        return ThreeDayMeanForecaster(**params) if name == "three_day_mean" else SeasonalARForecaster(**params)
     if name in {"naive", "seasonal_naive"}:
         from src.models.statistical.baselines import NaiveForecaster, SeasonalNaiveForecaster
         return NaiveForecaster(**params) if name == "naive" else SeasonalNaiveForecaster(**params)

@@ -1,0 +1,22 @@
+seed: 42
+dataset_config: configs/datasets/nlr.yaml
+model_config: configs/hdsf_models.yaml
+frequency: 15min
+context_length: 1344
+history_covariates: []
+horizons: {24h: 96, 7d: 672}
+split:
+  train_fraction: 0.60
+  validation_fraction: 0.20
+  minimum_validation_days: 8
+  minimum_test_days: 9
+train_stride: 96
+backtest_stride: 96
+prediction_batch_size: 32
+clip_min: 0.0
+mape_threshold: 1.0e-8
+selection_metric: MAPE
+refit_train_validation: true
+results_dir: results/runs
+save_models: true
+save_plots: true
