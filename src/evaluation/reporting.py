@@ -84,7 +84,7 @@ def print_results(metrics, *, manifest, windows=None, fusions=None):
         methods = test.loc[test.horizon == task, "model"].drop_duplicates().tolist()
         if not methods:
             continue
-        baseline = "seasonal_naive" if task == "24h" else "three_day_mean"
+        baseline = manifest.get("baseline_models", {}).get(task, "seasonal_naive" if task == "24h" else "three_day_mean")
         methods = ([baseline] if baseline in methods else [])+[name for name in methods if name != baseline]
         names = {**METHOD_NAMES, **manifest.get("method_names", {})}
         if task == "7d":
@@ -141,7 +141,7 @@ def print_results(metrics, *, manifest, windows=None, fusions=None):
         selected = manifest.get("selected_models", {}).get(task)
         if selected:
             print(f"验证阶段选择：{name(selected)}（测试前冻结）。")
-    print("\n指标按保存的预测实例汇总；日均先逐起报、逐目标日聚合再计分。")
+    print("\n"+manifest.get("metrics_aggregation_description", "指标按保存的预测实例汇总；日均先逐起报、逐目标日聚合再计分。"))
 
 
 def print_saved_results(run_dir, *, results_dir="results/runs"):

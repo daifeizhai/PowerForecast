@@ -1,0 +1,16 @@
+# Exact historical Google protocol; independent of the adaptive NLR presets.
+protocol: google_hdsf_d14_d22
+raw_data: data/raw/Google
+reference_project: D:/AAA_Project/PowerData_Prediction
+# Preserve the validated historical numerical environment without changing .venv.
+python_executable: D:/Python 3.13/python.exe
+supplemental_site_packages: .venv/Lib/site-packages
+weights_cache: D:/AAA_Project/PowerData_Prediction/.model-cache
+cache_dir: results/cache/google_hdsf_d14_d22
+results_dir: results/runs
+horizons: {24h: 96, 7d: 672}
+batch_size: 16
+jobs: 8
+device: cpu
+reuse_prediction_cache: true
+audit_nested: true

@@ -58,6 +58,9 @@ def save_result(folder, task, name, split, batch, result, rows, seconds, unit, p
 
 def run_experiment(args):
     experiment = load_config(args.config)
+    if experiment.get("protocol") == "google_hdsf_d14_d22":
+        from scripts.reproduce_google_hdsf import run_reproduction
+        return run_reproduction(args, experiment)
     dataset = load_config(args.dataset_config or experiment["dataset_config"])
     model_config = load_config(args.model_config or experiment["model_config"])
     names, tasks = args.models or model_config["default_models"], args.horizons or list(experiment["horizons"])
@@ -263,7 +266,8 @@ def main(argv=None):
         return 0
     try:
         if args.results:
-            print_saved_results(args.results, results_dir=load_config(args.config)["results_dir"])
+            experiment = load_config(args.config)
+            print_saved_results(args.results, results_dir=experiment["results_dir"])
             return 0
         run_experiment(args)
     except (OSError, ValueError, KeyError, ImportError, NotImplementedError) as exc:
