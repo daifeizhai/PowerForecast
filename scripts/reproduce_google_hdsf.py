@@ -75,7 +75,7 @@ def prepare_cache(config):
     return destination, copied
 
 
-def normalized_metrics(results, reporting_view, daily_metrics):
+def normalized_metrics(results, reporting_view, daily_metrics, reported_models=None):
     rows = []
     for task, result in results.items():
         reported = reporting_view(result)
@@ -84,6 +84,11 @@ def normalized_metrics(results, reporting_view, daily_metrics):
             daily = daily_metrics(result[stage+"_predictions"], list(curves))
             for evaluation, scores in [("curve", curves), ("daily_mean", daily)]:
                 for model, score in scores.items():
+                    extra_members = {"toto2_single", "timesfm30_uni", "local24", "local7"}
+                    if task == "24h":
+                        extra_members.add("timesfm30_long")
+                    if reported_models is not None and model not in reported_models and model not in extra_members:
+                        continue
                     rows.append(dict(horizon=task, model=model, split=split, evaluation=evaluation,
                         WAPE=score["wape_pct"], MAPE=score["mape_pct"], RMSE=score["rmse"], MAE=score["mae"],
                         n=score["points"], mape_n=score["mape_points"],
@@ -92,7 +97,7 @@ def normalized_metrics(results, reporting_view, daily_metrics):
                         wape_aggregation="series_mean"))
     metrics = pd.DataFrame(rows)
     for task in results:
-        baseline = "daily_naive" if task == "24h" else "mean3"
+        baseline = ("seasonal_naive" if task == "24h" else "three_day_mean") if reported_models else ("daily_naive" if task == "24h" else "mean3")
         for evaluation in ("curve", "daily_mean"):
             mask = (metrics.horizon == task) & (metrics.evaluation == evaluation) & (metrics.split == "test")
             reference = metrics.loc[mask & (metrics.model == baseline)].iloc[0]
@@ -154,6 +159,12 @@ def run_reproduction(args, config):
             "The historical D1 residual baseline uses the whole permitted training period mean; preserved for exact reproduction.",
             "Member histories and joint-domain inference retain the historical settings; they differ from NLR's single-target 14-day preset."],
         bridge_sha256=sha256(Path(__file__).read_bytes()).hexdigest(), started_at_utc=datetime.now(timezone.utc).isoformat())
+    comparisons = bool(config.get("comparison_models"))
+    if comparisons:
+        manifest.update(requested_models=[*config["comparison_models"], "hdsf"],
+            baseline_models={"24h": "seasonal_naive", "7d": "three_day_mean"},
+            comparison_context_days=config["comparison_context_days"],
+            comparison_protocol="7-day supervised contexts pooled across 57 domains; SARIMA fitted per domain; D14 development and D22 final label cutoffs; four trace-relative phase features; original HDSF and foundation member settings retained.")
     write_json(folder/"manifest.json", manifest)
     started = perf_counter()
     try:
@@ -170,6 +181,11 @@ def run_reproduction(args, config):
             cache_predictions=True, batch_size=int(config["batch_size"]), jobs=int(config["jobs"]),
             device="cpu", audit_nested=bool(config.get("audit_nested", False)))
         shutil.copytree(reference_folder, folder, dirs_exist_ok=True)
+        controls, control_records = {}, {}
+        if comparisons:
+            from scripts.google_comparison import collect_foundation_controls, fit_controls, predict_controls, score_controls
+            collect_foundation_controls(collector, development)
+            controls, control_records = fit_controls(data, tasks, development, config, folder)
         import joblib
         model_dir = folder/"models"
         model_dir.mkdir()
@@ -184,10 +200,21 @@ def run_reproduction(args, config):
         model_hashes = {p.name: sha256(p.read_bytes()).hexdigest() for p in model_dir.glob("*.joblib")}
         frozen.update(local_model_sha256=model_hashes, raw_source_sha256=source_hashes,
             frozen_at_utc=datetime.now(timezone.utc).isoformat())
+        comparison_hashes = {str(p.relative_to(folder)): sha256(p.read_bytes()).hexdigest()
+            for directory in (folder/task for task in tasks) for p in directory.rglob("model.*")}
+        frozen.update(comparison_model_sha256=comparison_hashes, comparison_training=control_records)
         write_json(frozen_path, frozen)
         frozen_hash = sha256(frozen_path.read_bytes()).hexdigest()
-        results = score(data, development, collector.collect(development=False), configurations, folder=folder)
-        metrics = normalized_metrics(results, reporting_view, daily_metrics)
+        future = collector.collect(development=False)
+        if comparisons:
+            collect_foundation_controls(collector, future)
+            predict_controls(data, future, controls, int(config["comparison_context_days"]))
+        results = score(data, development, future, configurations, folder=folder)
+        if comparisons:
+            score_controls(results)
+            joblib.dump(results, folder/"results.joblib")
+        metrics = normalized_metrics(results, reporting_view, daily_metrics,
+            reported_models=manifest["requested_models"] if comparisons else None)
         metrics.to_csv(folder/"metrics.csv", index=False)
         for task, result in results.items():
             task_dir = folder/task
@@ -201,6 +228,8 @@ def run_reproduction(args, config):
             raise ValueError("Raw Google source files changed during reproduction.")
         if {p.name: sha256(p.read_bytes()).hexdigest() for p in model_dir.glob("*.joblib")} != model_hashes:
             raise ValueError("Frozen local models changed during test inference.")
+        if any(sha256((folder/p).read_bytes()).hexdigest() != digest for p, digest in comparison_hashes.items()):
+            raise ValueError("Frozen comparison models changed during test inference.")
         manifest.update(status="complete", elapsed_seconds=perf_counter()-started,
             reference_run=str(reference_folder), frozen_sha256=frozen_hash,
             selected_models={}, prescribed_model="hdsf",

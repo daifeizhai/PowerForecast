@@ -112,3 +112,17 @@ class TorchForecaster(BaseForecaster):
             "target_mean": self.target_mean, "target_std": self.target_std,
         }, path)
         return path
+
+    @classmethod
+    def load(cls, path: str | Path) -> "TorchForecaster":
+        import torch
+        state = torch.load(path, map_location="cpu", weights_only=True)
+        model = cls(state["name"], seed=state["seed"], hidden_size=state["hidden_size"],
+                    kernel_size=state["kernel_size"])
+        model.shape = tuple(state["shape"])
+        model.network = model._build(*model.shape)
+        model.network.load_state_dict(state["state_dict"])
+        model.mean = np.asarray(state["mean"], dtype=np.float32)
+        model.std = np.asarray(state["std"], dtype=np.float32)
+        model.target_mean, model.target_std = state["target_mean"], state["target_std"]
+        return model

@@ -4,11 +4,19 @@ from __future__ import annotations
 
 from src.models.base import BaseForecaster
 
-MODEL_NAMES = ("naive", "seasonal_naive", "three_day_mean", "seasonal_ar", "ridge", "extra_trees", "sarima", "lightgbm", "xgboost", "lstm", "tcn", "dlinear", "hdsf", "proposed")
+FOUNDATION_NAMES = {"chronos2": "chronos2_long", "tirex2": "tirex2", "timesfm25": "timesfm25",
+                    "timesfm30": "timesfm30", "toto2": "toto2_joint", "patchtstfm": "patchtstfm_long"}
+COMPARISON_MODELS = ("naive", "seasonal_naive", "three_day_mean", "seasonal_ar", "sarima",
+                     "ridge", "extra_trees", "lightgbm", "xgboost", "lstm", "tcn", "dlinear",
+                     *FOUNDATION_NAMES)
+MODEL_NAMES = (*COMPARISON_MODELS, "hdsf", "proposed")
 
 
 def create_model(name: str, params: dict | None = None, seed: int = 42) -> BaseForecaster:
     params = dict(params or {})
+    if name in FOUNDATION_NAMES:
+        from src.models.foundation.forecaster import FoundationForecaster
+        return FoundationForecaster(FOUNDATION_NAMES[name], **params)
     if name == "hdsf":
         from src.models.proposed.hdsf import HDSFForecaster
         return HDSFForecaster(**params)

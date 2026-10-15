@@ -101,6 +101,8 @@ py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 # 完整默认实验包含 HDSF，还需基座依赖与离线权重
 .\.venv\Scripts\python.exe -m pip install -r requirements-hdsf.txt
+# 全模型默认清单还包含 SARIMA、XGBoost 等可选依赖
+.\.venv\Scripts\python.exe -m pip install -r requirements-optional.txt
 
 # 不依赖原始数据，检查两个预测任务的完整流程
 .\.venv\Scripts\python.exe scripts/run_experiment.py --demo --models naive seasonal_naive three_day_mean ridge
@@ -109,7 +111,7 @@ py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe scripts/inspect_data.py
 .\.venv\Scripts\python.exe scripts/prepare_data.py
 
-# 默认执行 naive、seasonal_naive、three_day_mean、ridge、HDSF，以及 24h、7d
+# 默认执行下文列出的 18 个对照模型和 HDSF，以及 24h、7d
 .\.venv\Scripts\python.exe scripts/run_experiment.py
 
 # HDSF：简单基线、季节 AR、DLinear、基座成员、本地成员和融合消融
@@ -139,6 +141,8 @@ Google PowerData 2019 使用独立的 **D14/D22 历史协议预设**，从 `data
 
 ```powershell
 .\.venv\Scripts\python.exe scripts/run_experiment.py --config configs/google_hdsf.yaml
+# 两数据集全模型对照：NLR 使用统一的目标历史与日历特征
+.\.venv\Scripts\python.exe scripts/run_experiment.py --config configs/all_models_nlr.yaml
 # 重显本轮完整对照表，无需训练
 .\.venv\Scripts\python.exe scripts/run_experiment.py --results results/runs/20261014T162657Z_google_8ef216
 ```
@@ -240,11 +244,17 @@ flowchart TD
 | 评价 | [metrics.py](src/evaluation/metrics.py)、[backtest.py](src/evaluation/backtest.py) | 统一误差定义、曲线和日均计分、逐起报/提前量分析与非重叠周检验 |
 | 展示与审计 | [reporting.py](src/evaluation/reporting.py)、[report_hdsf.py](scripts/report_hdsf.py) | 根据已有结果展示所有方法；报告从预测行复算指标、核对冻结模型，展示代码不参与选择权重 |
 
-当前普通预设默认运行 `naive / seasonal_naive / three_day_mean / ridge / hdsf`，直接运行 `scripts/run_experiment.py` 就会包含 HDSF、其基座成员和消融；HDSF 专用预设额外使用季节 AR、DLinear 等对照。两种预设共用输出模块。`--results latest` 展示最近一份已完成的真实数据实验记录；旧记录中未运行的方法不会因默认清单更新而自动出现，需要完成一轮新的默认实验。
+普通与 HDSF 模型预设默认覆盖 18 个对照：Naive、Seasonal Naive、前三天同刻均值、Seasonal AR、SARIMA、Ridge、ExtraTrees、LightGBM、XGBoost、LSTM、TCN、DLinear，以及 Chronos-2、TiRex-2、TimesFM 2.5、TimesFM 3.0、Toto 2.0、PatchTST-FM，另保留 HDSF 及其成员和消融。两种预设共用输出模块。`--results latest` 展示最近一份已完成的真实数据实验记录；旧记录中未运行的方法不会因默认清单更新而自动出现。
 
 基础预设从数据配置取得历史协变量；本轮 HDSF 预设显式设置 `history_covariates: []`，只使用目标历史和已知日历。跨预设比较前要核对并统一特征清单和有效起报点，不能仅凭数据集名称相同就当作同条件实验。
 
-运行模型时须选用包含该模型参数的配置。普通 `configs/models.yaml` 与专用 `configs/hdsf_models.yaml` 都已配置 HDSF，普通入口也支持 `--models hdsf`；两份预设的 HDSF 参数需保持一致。HDSF 的基座成员目前由融合流程展开评价，尚不是全部都可独立传给 `--models` 的注册方法。快速合成流程检查用显式 `--models` 选择轻量方法；完整默认清单包含基座推理，需要依赖和离线权重。
+运行模型时须选用包含该模型参数的配置。普通 `configs/models.yaml` 与专用 `configs/hdsf_models.yaml` 都已配置上述模型；两份预设的 HDSF 参数需保持一致。六类预训练模型可以独立用 `--models chronos2 tirex2 timesfm25 timesfm30 toto2 patchtstfm` 运行，HDSF 内部的长历史与联合/单变量成员标识继续保留。快速合成流程检查用显式 `--models` 选择轻量方法；完整默认清单需要可选依赖和离线权重。
+
+`configs/all_models_nlr.yaml` 是 NLR 全模型比较预设，使用 14 天目标历史与日历、现有完整日划分，所有方法共用有效起报点。Google 预设在原 HDSF 以外增加同一组 18 个对照；按用户确认，新增监督学习对照使用 7 天目标历史、相对日内/周相位和跨 57 域训练，SARIMA 分供电域拟合，开发/最终标签仍截止 D14/D22。原 HDSF 及基础成员的历史、分组和融合规则保持不变。两数据集的训练规模、特征与单位不同，分别报告，不能直接混排精度。
+
+完整清单、运行命令、逐模型输出和评分口径集中在[双数据集全模型核对](docs/双数据集全模型核对.md)。`scripts/audit_model_coverage.py --nlr <NLR运行目录> --google <Google运行目录>` 会检查 18 个模型的两个任务、开发/测试预测及曲线/日均指标；缺少实际产物时返回失败。
+
+2026-10-15 已完成两数据集全模型实跑：NLR `20261014T191440Z_3bac9d`、Google `20261014T191923Z_google_9a3ad6`。18 个模型的 24h/7d 开发及测试输出全部齐备，144/144 项覆盖与独立指标重算检查通过；42 项测试及保存模型恢复核验通过。报告保留完整指标、样本数、浮点容差与协议限制。
 
 正式入口为 `scripts/run_experiment.py` 和 `scripts/run_hdsf.py`，当前没有根目录 `run.py / run.bat` 启动器。增加其他入口时，应复用统一主流程，并有明确的使用需求。
 

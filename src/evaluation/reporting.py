@@ -17,11 +17,11 @@ METHOD_NAMES = {
     "three_day_mean": "前三天同刻均值", "seasonal_ar": "季节自回归",
     "ridge": "Ridge", "extra_trees": "ExtraTrees", "sarima": "SARIMA",
     "lightgbm": "LightGBM", "xgboost": "XGBoost", "lstm": "LSTM", "tcn": "TCN",
-    "dlinear": "DLinear", "chronos2_long": "Chronos-2", "tirex2": "TiRex-2",
+    "dlinear": "DLinear", "chronos2": "Chronos-2", "chronos2_long": "Chronos-2", "tirex2": "TiRex-2",
     "timesfm25": "TimesFM 2.5", "toto2_joint": "Toto 2.0（联合）",
     "toto2_single": "Toto 2.0（单变量）", "timesfm30": "TimesFM 3.0",
     "timesfm30_long": "TimesFM 3.0（长版标识）", "timesfm30_uni": "TimesFM 3.0（单变量）",
-    "patchtstfm_long": "PatchTST-FM", "local24": "本地24h（树/线性）",
+    "patchtstfm": "PatchTST-FM", "toto2": "Toto 2.0", "patchtstfm_long": "PatchTST-FM", "local24": "本地24h（树/线性）",
     "local7": "本地7d（水平/形状）", "hdsf": "HDSF（最终融合）",
     "hdsf_foundation_only": "HDSF（仅基座）", "hdsf_with_local": "HDSF（含本地）",
     "hdsf_equal_weights": "HDSF（等权平均）", "hdsf_global_weights": "HDSF（全视野权重）",
@@ -87,6 +87,13 @@ def print_results(metrics, *, manifest, windows=None, fusions=None):
         baseline = manifest.get("baseline_models", {}).get(task, "seasonal_naive" if task == "24h" else "three_day_mean")
         methods = ([baseline] if baseline in methods else [])+[name for name in methods if name != baseline]
         names = {**METHOD_NAMES, **manifest.get("method_names", {})}
+        for canonical, member in (("chronos2", "chronos2_long"), ("patchtstfm", "patchtstfm_long")):
+            if canonical in methods and member in methods:
+                names[member] = names[canonical]+"（HDSF成员）"
+        for method in methods:
+            if method.startswith("hdsf_member__"):
+                base = method.removeprefix("hdsf_member__")
+                names[method] = names.get(base, base)+"（HDSF成员）"
         if task == "7d":
             names["seasonal_naive"] = "前一天轮廓重复"
         name = lambda method: names.get(method, method)

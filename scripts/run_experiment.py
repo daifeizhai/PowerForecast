@@ -131,7 +131,7 @@ def run_experiment(args):
         source_sha256={str(p.relative_to(PROJECT_ROOT)): sha256(p.read_bytes()).hexdigest()
                        for directory in ("src", "scripts", "configs") for p in (PROJECT_ROOT/directory).rglob("*")
                        if p.is_file() and p.suffix in {".py", ".yaml"}})
-    for package in ("numpy", "pandas", "pyarrow", "scikit-learn", "matplotlib", "torch", "lightgbm",
+    for package in ("numpy", "pandas", "pyarrow", "scikit-learn", "matplotlib", "torch", "lightgbm", "xgboost", "statsmodels",
                     "timesfm", "chronos-forecasting", "granite-tsfm", "tirex-2", "toto-2"):
         try:
             manifest["versions"][package] = metadata.version(package)
@@ -166,7 +166,8 @@ def run_experiment(args):
                     trained[name].configuration["calibration_seconds"] = perf_counter()-calibration_started
                     for output_name, predictions in trained[name].outputs(trained[name].validation_members).items():
                         result = score_predictions(batches["validation"], clip(predictions), threshold)
-                        save(task, output_name, "validation", batches["validation"], result,
+                        displayed_name = "hdsf_member__"+output_name if output_name in names and output_name != "hdsf" else output_name
+                        save(task, displayed_name, "validation", batches["validation"], result,
                              training.seconds if output_name == "hdsf" else 0.)
                         if output_name == "hdsf":
                             scores[name] = trained[name].configuration["cv_origin_mean"][criterion]
@@ -175,12 +176,15 @@ def run_experiment(args):
                                       int(experiment.get("prediction_batch_size", 32)), threshold)
                     scores[name] = result.metrics["origin_"+criterion+"_mean"]
                     save(task, name, "validation", batches["validation"], result, training.seconds)
+                    if hasattr(trained[name], "release"):
+                        trained[name].release()
             eligible = {name: score for name, score in scores.items() if score is not None}
             best_models[task] = min(eligible, key=eligible.get) if eligible else None
             if experiment.get("refit_train_validation", False):
                 final = build_windows(history, known, frame[target], (0, boundaries["validation"][1]),
                                       context, horizon, int(experiment["train_stride"]))
                 for name in names:
+                    print(f"[{task}] Refit {name}; train+validation={len(final)}", flush=True)
                     start = perf_counter()
                     if name == "hdsf":
                         trained[name].refit(final)
@@ -214,12 +218,15 @@ def run_experiment(args):
                     for output_name, predictions in outputs.items():
                         result = score_predictions(batch, clip(predictions), threshold, frame.index[boundaries["test"][0]],
                                                    seconds if output_name == "hdsf" else 0.)
-                        save(task, output_name, "test", batch, result, timings[name] if output_name == "hdsf" else 0.,
+                        displayed_name = "hdsf_member__"+output_name if output_name in names and output_name != "hdsf" else output_name
+                        save(task, displayed_name, "test", batch, result, timings[name] if output_name == "hdsf" else 0.,
                              experiment.get("save_plots", True))
                 else:
                     result = backtest(trained[name], batch, experiment.get("clip_min"),
                         int(experiment.get("prediction_batch_size", 32)), threshold, frame.index[boundaries["test"][0]])
                     save(task, name, "test", batch, result, timings[name], experiment.get("save_plots", True))
+                    if hasattr(trained[name], "release"):
+                        trained[name].release()
             pd.DataFrame(rows).to_csv(folder/"metrics.csv", index=False)
         metrics = pd.DataFrame(rows)
         for task in tasks:

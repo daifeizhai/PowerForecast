@@ -1,11 +1,36 @@
-default_models: [seasonal_naive, three_day_mean, seasonal_ar, dlinear, hdsf]
+default_models: [naive, seasonal_naive, three_day_mean, seasonal_ar, sarima, ridge, extra_trees, lightgbm, xgboost, lstm, tcn, dlinear, chronos2, tirex2, timesfm25, timesfm30, toto2, patchtstfm, hdsf]
+foundation_defaults: &foundation_defaults
+  weights_cache: D:/AAA_Project/PowerData_Prediction/.model-cache
+  prediction_cache: results/cache/foundation
+  jobs: 4
+  batch_size: 32
+  context_days: 14
 models:
+  chronos2: *foundation_defaults
+  tirex2: *foundation_defaults
+  timesfm25: *foundation_defaults
+  timesfm30: *foundation_defaults
+  toto2: *foundation_defaults
+  patchtstfm: *foundation_defaults
+  naive: {}
   seasonal_naive: {period: 96}
   three_day_mean: {}
   seasonal_ar: {}
+  ridge: {alpha: 100.0, solver: auto, feature_mode: observed_history}
+  extra_trees: {n_estimators: 100, max_depth: 12, max_features: sqrt, n_jobs: 2, feature_mode: observed_history}
+  sarima:
+    order: [1, 0, 1]
+    seasonal_order: [1, 0, 0, 96]
+    fit_points: 2048
+    maxiter: 50
+  # These direct multi-output wrappers fit one estimator per forecast lead.
+  lightgbm: {n_estimators: 100, num_leaves: 15, verbosity: -1, n_jobs: 2, output_jobs: 4, feature_mode: observed_history}
+  xgboost: {n_estimators: 100, max_depth: 4, n_jobs: 2, tree_method: hist, output_jobs: 4, feature_mode: observed_history}
+  lstm: {hidden_size: 32, epochs: 10, batch_size: 32, learning_rate: 0.001}
+  tcn: {hidden_size: 32, epochs: 10, batch_size: 32, learning_rate: 0.001}
   dlinear: {epochs: 10, batch_size: 32, learning_rate: 0.001, kernel_size: 25}
+  # Keep the HDSF recipe consistent with configs/hdsf_models.yaml.
   hdsf:
-    # Read-only shared checkpoints; forecasts for NLR are newly generated below results/.
     weights_cache: D:/AAA_Project/PowerData_Prediction/.model-cache
     prediction_cache: results/cache/foundation
     jobs: 4
@@ -17,3 +42,4 @@ models:
     loo_tolerance: 0.005
     mape_threshold: 1.0e-8
     local_rounds: 350
+  proposed: {}
