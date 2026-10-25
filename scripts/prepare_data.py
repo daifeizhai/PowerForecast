@@ -13,7 +13,7 @@ from src.utils import load_config
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="Prepare aligned 15-minute data and a quality/provenance report.")
-    parser.add_argument("--config", default="configs/datasets/nlr.yaml")
+    parser.add_argument("--config", required=True, help="Explicit audited dataset configuration; SAPF Google uses its direct domain adapter.")
     parser.add_argument("--output")
     parser.add_argument("--start", help="Inclusive first date (UTC after adaptation).")
     parser.add_argument("--end", help="Inclusive last date (UTC after adaptation).")

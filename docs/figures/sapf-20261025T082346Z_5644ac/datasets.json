@@ -1,0 +1,256 @@
+{
+  "checked_at_utc": "2026-10-25T08:17:01.713083+00:00",
+  "registry": {
+    "sources": {
+      "google_power2019": {
+        "local_path": "data/raw/Google",
+        "status": "audited_and_used_for_mechanism_study",
+        "target_kind": "power_utilization",
+        "target_scope": "power_domain",
+        "target_unit": "utilization_fraction",
+        "label_origin": "measured",
+        "raw_frequency": "5min",
+        "use": "disjoint_source_validation_test_domains",
+        "source": "https://github.com/google/cluster-data/blob/master/PowerData2019.md"
+      },
+      "alibaba_gpu_v2020": {
+        "local_path": "data/raw/Alibaba-GPU-v2020",
+        "status": "headerless_schema_adapter_and_local_hash_audit",
+        "target_kind": "resource_activity",
+        "target_scope": "instance_or_machine",
+        "label_origin": "not_estimable",
+        "use": "future_unlabeled_resource_pattern_learning_only",
+        "causal_limit": "sensor statistics are instance-lifetime means/maxima; unavailable before instance completion",
+        "source": "https://github.com/alibaba/clusterdata/tree/master/cluster-trace-gpu-v2020"
+      },
+      "m100_exadata": {
+        "local_path": "data/raw/M100",
+        "status": "official_schema_verified_local_files_not_found",
+        "target_kind": "active_power",
+        "target_scope": "node",
+        "target_unit": "W",
+        "label_origin": "measured",
+        "raw_frequency": "20s",
+        "audited_metric": "ipmi/total_power",
+        "use": "future_supervised_node_power_source",
+        "source": "https://zenodo.org/records/7588815",
+        "schema": "https://gitlab.com/ecs-lab/exadata/-/blob/main/documentation/plugins/ipmi.md",
+        "adapter": "src/data/heterogeneous.py:adapt_m100_total_power",
+        "blockers": [
+          "local_subset_not_available",
+          "timestamp_timezone_not_yet_audited",
+          "continuous_window_coverage_not_yet_audited"
+        ]
+      },
+      "ucc2023": {
+        "local_path": "data/raw/UCC2023",
+        "status": "official_publication_verified_incompatible_native_15min_grid",
+        "target_kind": "active_power",
+        "target_scope": "node",
+        "target_unit": "W",
+        "label_origin": "measured",
+        "raw_frequency": "10min",
+        "use": "future_independent_native_or_30min_protocol",
+        "source": "https://zenodo.org/records/10069402",
+        "paper": "https://hpc.ec.tuwien.ac.at/files/UCC_23_data_center_analysis.pdf",
+        "blockers": [
+          "local_files_not_available",
+          "csv_field_mapping_not_yet_audited",
+          "native_10min_cannot_create_native_15min_labels"
+        ]
+      },
+      "nlr_eagle": {
+        "local_path": "data/raw/Eagle",
+        "status": "reserved_final_holdout_not_opened",
+        "usage_role": "final_holdout",
+        "allow_training": false,
+        "allow_validation": false,
+        "allow_strategy_design": false,
+        "allow_inference_history": true,
+        "target_scope": "requires_node_rack_or_facility_audit",
+        "use": "final_independent_evaluation_only"
+      },
+      "nlr_esif": {
+        "local_path": "data/raw/NLR_Dataset",
+        "status": "legacy_facility_component_reference",
+        "target_kind": "active_power",
+        "target_scope": "facility",
+        "target_unit": "kW",
+        "label_origin": "component_sum",
+        "timezone_verified": false,
+        "use": "physical_contract_and_legacy_reproduction_only",
+        "distinct_from": "nlr_eagle"
+      }
+    }
+  },
+  "alibaba": {
+    "dataset_id": "alibaba_gpu_v2020",
+    "tables": [
+      {
+        "table": "pai_group_tag_table",
+        "present": true,
+        "bytes": 115521549,
+        "columns": [
+          "inst_id",
+          "user",
+          "gpu_type_spec",
+          "group",
+          "workload"
+        ],
+        "sample_rows": 1000,
+        "trustworthy_power_target": false,
+        "sha256": "d23fcb56d88b2976fda4a62708d77b2a8c98635c4b443f100ed5553d4cd07fbe",
+        "expected_sha256": "d23fcb56d88b2976fda4a62708d77b2a8c98635c4b443f100ed5553d4cd07fbe",
+        "official_hash_matches": true,
+        "rows": 1055032
+      },
+      {
+        "table": "pai_instance_table",
+        "present": true,
+        "bytes": 1975177534,
+        "columns": [
+          "job_name",
+          "task_name",
+          "inst_name",
+          "worker_name",
+          "inst_id",
+          "status",
+          "start_time",
+          "end_time",
+          "machine"
+        ],
+        "sample_rows": 1000,
+        "trustworthy_power_target": false,
+        "sha256": "b179f7d7e0927a6663d719b728c92640447c5a0fc3c6e4edff31e7207ab9dd17",
+        "expected_sha256": "b179f7d7e0927a6663d719b728c92640447c5a0fc3c6e4edff31e7207ab9dd17",
+        "official_hash_matches": true,
+        "rows": 7522002
+      },
+      {
+        "table": "pai_job_table",
+        "present": true,
+        "bytes": 133288147,
+        "columns": [
+          "job_name",
+          "inst_id",
+          "user",
+          "status",
+          "start_time",
+          "end_time"
+        ],
+        "sample_rows": 1000,
+        "trustworthy_power_target": false,
+        "sha256": "379ecb3becaba347f44a53bf7eb53e54b185221b2a0338a3f828828d269ba96c",
+        "expected_sha256": "379ecb3becaba347f44a53bf7eb53e54b185221b2a0338a3f828828d269ba96c",
+        "official_hash_matches": true,
+        "rows": 1055501
+      },
+      {
+        "table": "pai_machine_metric",
+        "present": true,
+        "bytes": 437366971,
+        "columns": [
+          "worker_name",
+          "machine",
+          "start_time",
+          "end_time",
+          "machine_cpu_iowait",
+          "machine_cpu_kernel",
+          "machine_cpu_usr",
+          "machine_gpu",
+          "machine_load_1",
+          "machine_net_receive",
+          "machine_num_worker",
+          "machine_cpu"
+        ],
+        "sample_rows": 1000,
+        "trustworthy_power_target": false,
+        "sha256": "8b6592daab0373ef7fec730198b4df5891b1722c2ab4c7016249166e131402d3",
+        "expected_sha256": "8b6592daab0373ef7fec730198b4df5891b1722c2ab4c7016249166e131402d3",
+        "official_hash_matches": true,
+        "rows": 2009423
+      },
+      {
+        "table": "pai_machine_spec",
+        "present": true,
+        "bytes": 73311,
+        "columns": [
+          "machine",
+          "gpu_type",
+          "cap_cpu",
+          "cap_mem",
+          "cap_gpu"
+        ],
+        "sample_rows": 1000,
+        "trustworthy_power_target": false,
+        "sha256": "251e9e33649155a6a935fdc1dc0e90cd4698206936b60bd8fce60ff2ccd51439",
+        "expected_sha256": "251e9e33649155a6a935fdc1dc0e90cd4698206936b60bd8fce60ff2ccd51439",
+        "official_hash_matches": true,
+        "rows": 1897
+      },
+      {
+        "table": "pai_sensor_table",
+        "present": true,
+        "bytes": 1056899391,
+        "columns": [
+          "job_name",
+          "task_name",
+          "worker_name",
+          "inst_id",
+          "machine",
+          "gpu_name",
+          "cpu_usage",
+          "gpu_wrk_util",
+          "avg_mem",
+          "max_mem",
+          "avg_gpu_wrk_mem",
+          "max_gpu_wrk_mem",
+          "read",
+          "write",
+          "read_count",
+          "write_count"
+        ],
+        "sample_rows": 1000,
+        "trustworthy_power_target": false,
+        "sha256": "12dd9929b70f3efe18d1279d9873e3a519c64f431613b23b059ed8c46a376dd7",
+        "expected_sha256": "12dd9929b70f3efe18d1279d9873e3a519c64f431613b23b059ed8c46a376dd7",
+        "official_hash_matches": true,
+        "rows": 3033232
+      },
+      {
+        "table": "pai_task_table",
+        "present": true,
+        "bytes": 113398956,
+        "columns": [
+          "job_name",
+          "task_name",
+          "inst_num",
+          "status",
+          "start_time",
+          "end_time",
+          "plan_cpu",
+          "plan_mem",
+          "plan_gpu",
+          "gpu_type"
+        ],
+        "sample_rows": 1000,
+        "trustworthy_power_target": false,
+        "sha256": "6954802b457305f8a9e480ef97c40060baee59649fd3adc62c5a1e048aa058de",
+        "expected_sha256": "6954802b457305f8a9e480ef97c40060baee59649fd3adc62c5a1e048aa058de",
+        "official_hash_matches": true,
+        "rows": 1261050
+      }
+    ],
+    "use": "Unlabeled resource-pattern research only; lifecycle means and maxima require after-completion availability.",
+    "forbidden": "No fabricated kW supervision, no replication of lifetime means into 15min observations."
+  },
+  "local_availability": {
+    "google_power2019": true,
+    "alibaba_gpu_v2020": true,
+    "m100_exadata": false,
+    "ucc2023": false,
+    "nlr_eagle": false,
+    "nlr_esif": true
+  },
+  "eagle_policy": "Only checked directory existence; no Eagle observations or labels are opened."
+}

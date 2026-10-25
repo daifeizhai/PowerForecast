@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "checked_files": 20229,
+  "changes": [],
+  "checked_at_utc": "2026-10-25T08:37:00.757473+00:00",
+  "policy": "Existing files only; additions allowed. SHA256 when recorded, otherwise size/mtime. No protection claim beyond these checks."
+}

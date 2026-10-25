@@ -43,11 +43,12 @@ def score_predictions(batch, predictions, mape_threshold=1e-8, anchor=None, infe
     origin_rows = [{"origin": str(origin), **metrics(y, p)} for origin, y, p in
                    zip(batch.inputs.origins, batch.targets, predictions)]
     horizon = batch.targets.shape[1]
-    if horizon % 96:
+    period = batch.inputs.points_per_day
+    if horizon % period:
         daily_truth, daily_pred = batch.targets.mean(1, keepdims=True), predictions.mean(1, keepdims=True)
     else:
-        daily_truth = batch.targets.reshape(len(batch), -1, 96).mean(-1)
-        daily_pred = predictions.reshape(len(batch), -1, 96).mean(-1)
+        daily_truth = batch.targets.reshape(len(batch), -1, period).mean(-1)
+        daily_pred = predictions.reshape(len(batch), -1, period).mean(-1)
     daily_rows = [{"origin": str(origin), **metrics(y, p)} for origin, y, p in
                   zip(batch.inputs.origins, daily_truth, daily_pred)]
     summary = metrics(batch.targets, predictions)
@@ -56,13 +57,13 @@ def score_predictions(batch, predictions, mape_threshold=1e-8, anchor=None, infe
         summary.update({f"origin_{name}_{stat}": float(function(values)) if values else None
                         for stat, function in (("mean", np.mean), ("std", np.std), ("min", np.min), ("max", np.max))})
     lead_rows = [{"lead": i+1, **metrics(batch.targets[:, i], predictions[:, i])} for i in range(horizon)]
-    day_rows = [{"forecast_day": i+1, **metrics(batch.targets[:, i*96:(i+1)*96], predictions[:, i*96:(i+1)*96])}
-                for i in range(horizon//96)]
+    day_rows = [{"forecast_day": i+1, **metrics(batch.targets[:, i*period:(i+1)*period], predictions[:, i*period:(i+1)*period])}
+                for i in range(horizon//period)]
     nonoverlap = None
-    if horizon == 672:
+    if horizon in {period*3, period*7}:
         anchor = anchor if anchor is not None else batch.inputs.origins[0]
         elapsed_days = (batch.inputs.origins.as_unit("ns").asi8-pd.Timestamp(anchor).as_unit("ns").value)/(86400*1e9)
-        keep = np.asarray(elapsed_days % 7 == 0)
+        keep = np.asarray(elapsed_days % (horizon//period) == 0)
         if keep.any():
             nonoverlap = {"origins": [str(o) for o in batch.inputs.origins[keep]],
                           **metrics(batch.targets[keep], predictions[keep]),

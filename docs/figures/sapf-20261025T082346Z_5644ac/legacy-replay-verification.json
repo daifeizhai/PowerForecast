@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "task": "24h",
+      "model": "ridge",
+      "maximum_absolute_difference": 0.00048828125,
+      "passed": true
+    },
+    {
+      "task": "24h",
+      "model": "hdsf",
+      "kind": "deserialization_and_configuration",
+      "passed": true,
+      "module": "src.models.proposed.hdsf"
+    },
+    {
+      "task": "7d",
+      "model": "ridge",
+      "maximum_absolute_difference": 0.0,
+      "passed": true
+    },
+    {
+      "task": "7d",
+      "model": "hdsf",
+      "kind": "deserialization_and_configuration",
+      "passed": true,
+      "module": "src.models.proposed.hdsf"
+    }
+  ],
+  "source_root": "D:\\AAA_Project\\PowerForecast\\results\\cache\\legacy_source\\3c8f682240eea43064f3830f980b007100242a8e742b6b44e87aa8568a15a571",
+  "note": "Frozen code and original model bundles; only ESIF reference data read; no Eagle data opened and no foundation retraining."
+}

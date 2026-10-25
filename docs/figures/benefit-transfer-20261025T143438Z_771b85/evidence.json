@@ -1,0 +1,225 @@
+{
+  "run": "results\\runs\\20261025T143438Z_sapf_transfer_771b85",
+  "passed": true,
+  "real_suite_runs": 1,
+  "studies": [
+    "m100_gain",
+    "m100_to_ucc",
+    "ucc_to_m100"
+  ],
+  "freeze_utc": "2026-10-25T14:36:48.897853+00:00",
+  "completed_utc": "2026-10-25T15:01:17.916884+00:00",
+  "model_states_frozen": 118,
+  "metric_rows": 5040,
+  "independent_verification": {
+    "passed": true,
+    "metric_checks": 5040,
+    "mixture_checks": 880,
+    "risk_pair_checks": 20240,
+    "zero_transfer_origins_verified": 1883,
+    "maximum_mixture_difference_kw": 7.771561172376096e-16,
+    "computational_source_and_fit_configs_match_preregistration": true,
+    "all_gain_training_source_only": true,
+    "metric_records": "see independent-verification.json",
+    "mixture_records": "see independent-verification.json",
+    "risk_records": [
+      {
+        "study": "m100_gain",
+        "horizon": "24h",
+        "pairs": 960,
+        "passed": true
+      },
+      {
+        "study": "m100_gain",
+        "horizon": "3d",
+        "pairs": 800,
+        "passed": true
+      },
+      {
+        "study": "m100_to_ucc",
+        "horizon": "24h",
+        "pairs": 8640,
+        "passed": true
+      },
+      {
+        "study": "m100_to_ucc",
+        "horizon": "3d",
+        "pairs": 7200,
+        "passed": true
+      },
+      {
+        "study": "ucc_to_m100",
+        "horizon": "24h",
+        "pairs": 1440,
+        "passed": true
+      },
+      {
+        "study": "ucc_to_m100",
+        "horizon": "3d",
+        "pairs": 1200,
+        "passed": true
+      }
+    ],
+    "meta_records": [
+      {
+        "group": "m100",
+        "rows": 2352,
+        "source_domains": [
+          "m100_rack0_node11",
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "passed": true
+      },
+      {
+        "group": "ucc",
+        "rows": 5544,
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "passed": true
+      }
+    ],
+    "scope": "Saved models only, no refit or tuning; independent NumPy metrics and rank-sum AUROC, original source clocks, standalone expert mixture reconstruction."
+  },
+  "native_verification": {
+    "passed": true,
+    "domains": 132,
+    "aggregate_labels": 456192,
+    "native_rows": 1292544,
+    "maximum_absolute_kw_difference": 3.3306690738754696e-16,
+    "original_sha256": {
+      "M100/0.tar": "d46ec4db0c12037c298eb074d256374730fab92e6efedaa073348533d3ab3840",
+      "M100/1.tar": "1465e8c102e52cf8da5e39ff95829949afde719596af42680d5f610b7432ba8f",
+      "UCC/dataset1_combined.csv": "18592c5a1a9edf021cb16e5775cd12bfb1479d244c10e4d913bf18cefe7b0256",
+      "UCC/dataset2_combined.csv": "2b5709f16e6ae94d274d1f2b111ef67a38edcca8e1d22c6c02182308042a08bb"
+    },
+    "retired_m100_records_not_opened": true,
+    "scope": "Independent group sums/counts from assigned-domain raw power only; no forecast, fit, interpolation, or implicit timezone assignment."
+  },
+  "scientific_source_hashes_match_preregistration": true,
+  "raw_models_predictions_left_in_original_run": true,
+  "note": "Post-test descriptive tables and figures only; no fit, threshold update, policy selection, or Eagle access.",
+  "files_sha256": {
+    "all-domain-summary.csv": "fb769d2b713cb6bac6764cccaac7a1ca6bef202c7efe1a491ca7ba539d4a602d",
+    "all-metric-summary.csv": "422f005df2a4a9ca4f93b400f8c1f16cfe1805658649096fe2188583cf5619d7",
+    "all-metrics.csv": "ddcc9d881fed14667964c32b7bc831655c99a9a0c9193c79f14847ea4a91107f",
+    "all-risk-summary.csv": "2ae6e87c3ef77700eb3453a8fbcacd9212e84d6a7f3f143845478360e0baf608",
+    "audit.json": "717116d266b1bcac25749c67ba804547441d363ad8918bb52bd9f88084dfc9af",
+    "cohort-summary.csv": "541f61bbc8f1962707e7bbdf6a164298e43f0c72458aede089368af3800c99f9",
+    "delivery-verification.json": "dbc32cff288cbe3eff1104292e20123f39e5b63c177987db2662d58e4964dc7c",
+    "export_evidence.py": "350d20bdfce3682dde497908f99e1cd135d589348e29e0e97c09d6f1387ac3d4",
+    "feature-importances.csv": "9b3372aceeb7ec2e5969835919c5718cbba389d16d8cd5568d516985860704b5",
+    "frozen-before-test.json": "206d6e2a65df7bea6ea2864a1d95512662e91ed2655a273d0a7c29e9755f20a7",
+    "frozen-computational-source.tar.gz": "351fa6c38abe4cc60fa51956a01294ac75f9bef224d5813fb04dca641c9788a1",
+    "gain-calibration-diagnostics.csv": "201b1215b44e468f7bf034f78830810751c49958764b695b7d9c009019c72762",
+    "gain-training-summary.csv": "286861be9bfb06421d6ddec8c819c9332ed475fd8f587049a5f412a3c0bccbe2",
+    "independent-verification.json": "009bda1b13e46be449f9d22eeefc8dee1ee878d2fbac95ce4e2c69b860357a79",
+    "manifest.json": "5c77271c6579d029fbaa0e6ce591723c14e06f45ad2eb81a1592d6f8e316f923",
+    "mean-mape.png": "29eedb9b948734e859b2fe08056364c3f3119a7f79d631c93e5d5766f30ec376",
+    "native-verification.json": "1dd8e8da9e62473cde563e336e9c178b03965b87454d28b460ed9dd9b78f426d",
+    "predeclared-plan.json": "2afd006dda6390ccfad3689824c721f2b16503ae6a96dedf0d4efb62063f4116",
+    "preregistration.json": "6c7868d95f5d0f697a29f85ae88cdce961cb6621e3fcc2888f66ac16a781a088",
+    "protocol-at-preregistration.md": "ef2df70f1a2cdbbf81aa67bb2a56f6fd241409bd2ce87e4e0291a651d73e0a6d",
+    "pytest-final.log": "817ecbe24657b889589ded031e0c5a42f37d16baaa9621cbcdeabfa703e1c440",
+    "quality-eligibility.csv": "9ad99085dc8794321ea89b18490019b670bf96d3d0220bf320a2b09906acf677",
+    "README.md": "68b25fe1808e47b46a686f140172c247390e857cd4430817c83e6c294aaa74d4",
+    "real-run.log": "8f600e0457cd9b5d00d2d26640e0d40db3a775b9ab215b29e1804acbce80399b",
+    "results-latest.log": "88c97ab78e0c9d22bf246bdeecb51cb5b4b3e9d4ac0ee9e64e0c42d6126f2be3",
+    "risk-and-fallback.png": "b20d5e74c6f9f342f6896b9308092319cfe362b3ba8bd5bea05965ea9e98a685",
+    "source-validation-candidates.csv": "98de3c464674c6932daca379bdf16cec58774fecc22327f160387c08efe20111",
+    "verify_delivery.py": "7ba0cb7fffd3e6079682e891d231783eb7c3b70ccb361acdb7f23f6f6dfab21e",
+    "verify_independently.py": "970a64c5a624807d9ea49f1ffaa09ab80bcc3795a53fa391ef61aec4bc07647f",
+    "verify_native_power.py": "760f7a60ebb9b413333aa52cc75f5fa69ef82faaa7b768747b10714412c11e7a",
+    "worst-mape.png": "ef8a2c14fd4862e1477bb382ea71da3e56cc9235fbc896e5391a550f11512b82",
+    "studies/m100_gain/audit.json": "eed6b8d9b593f9a2d4fd30224ed4492a490ddb721fd93bb374eec294af37a343",
+    "studies/m100_gain/domain-summary.csv": "b66564dfcbe6bbbab2bd3804f96f2f0dcd5f6a7eb6bcd1ded173c8d6e6b106be",
+    "studies/m100_gain/frozen-before-test.json": "865316be3a3982c5e7c7e897492a4c2fa6c30466ffbaec615719b27032590e5b",
+    "studies/m100_gain/gain-diagnostics.csv": "7b1331830ac77c87b03502cb9329a36887d1e4b56c76d7c93e9bc1f94ffd0a54",
+    "studies/m100_gain/manifest.json": "7ef1e0d04f2f6ffbb1f70ade372b8de2e162260b5710e3f9c912c05bb676c31d",
+    "studies/m100_gain/metrics.csv": "09894c300b6b0e040ad97aba8bd439117ee447519e2cba6fdb2d8a22b7d393d9",
+    "studies/m100_gain/negative-transfer.csv": "a0c572854404c90e1cff9a3e5bead8bdcc6fb4bc3034645fb20bd1640ad64d09",
+    "studies/m100_gain/predeclared-plan.json": "82ff97399bd098549063d33657eb63f51bef02b2a068c3514963b9b6655e7784",
+    "studies/m100_gain/risk-summary.csv": "d865a8c0216e1da9ab643060424dd843c7b6b97e733dda67ca00c186abf23f7e",
+    "studies/m100_gain/saved-model-audit.json": "2bc75274ece8f95a117cea3c87c80f65562e03b1c10d8f3d02a1f75e84f59cdf",
+    "studies/m100_gain/test-start.json": "b096036a2be02246daed8a6e2ccfef6f5c42caecf6922409ed6cacea1b75ea41",
+    "studies/m100_to_ucc/audit.json": "cd1e4750c8fc51340652261ef835057d5dff092ca9615eb2ad1b0061bddde7e1",
+    "studies/m100_to_ucc/domain-summary.csv": "5fe90f0e2bb3c052cb0b1ba5028a4d906fe7b701538953ed5edc142e90c1a109",
+    "studies/m100_to_ucc/frozen-before-test.json": "b022c020b9b6983858f7b411e1c37173c1e1022f8488e5d05f286c8b9abbcd85",
+    "studies/m100_to_ucc/gain-diagnostics.csv": "473637e2b7b717290fc9cc581021368856386bb22205c96df44280cebb471486",
+    "studies/m100_to_ucc/manifest.json": "f2a2fcc94cb691b85a51018d26ef1583e53a908542f2c7cd063da348171329f3",
+    "studies/m100_to_ucc/metrics.csv": "68c5386fad906e751a1be3fe14ebbd630b1796c758fca4ed947fa7cceb7c5dfa",
+    "studies/m100_to_ucc/negative-transfer.csv": "644a2f355bb7ad2402c83b62bef478f3300b11585ec6c2eb0a99155a67842563",
+    "studies/m100_to_ucc/predeclared-plan.json": "2820fef24ad6a7f74ba6120167b35b6090ec1261a80751d6976e3dcc7551247e",
+    "studies/m100_to_ucc/risk-summary.csv": "51cf8cf20d09e2725874b0ccb443b9a3ca32447e2af0a15ad06b430ad70dce62",
+    "studies/m100_to_ucc/saved-model-audit.json": "66ee00b23bc57d0e82806975dcd575979ad954c153f5fbf4299649db2718c229",
+    "studies/m100_to_ucc/test-start.json": "fb1230a05e5a4116b62746de827b7115d8bb95c0dec50e7504858ff3c4181653",
+    "studies/ucc_to_m100/audit.json": "d3dac67777097d3c9f8b814f7093e244694101b0d04e9a45f60c43aa1c30ba00",
+    "studies/ucc_to_m100/domain-summary.csv": "7777f41169e26c82f61920ee5a976ea778d60c3e9e58fffa9fc41642025a3aa1",
+    "studies/ucc_to_m100/frozen-before-test.json": "cdec23d744c8a24fb2bee15cd4aa6ce2c91f8f3f4fb1e5823c3be1853e2ef568",
+    "studies/ucc_to_m100/gain-diagnostics.csv": "0eff036ee0093f9232218fe494a599e96a362692b5e45ab3687d6438fb0a9444",
+    "studies/ucc_to_m100/manifest.json": "ca276e0aef9a77fee9777a31a219251558f30c1a5fcb9978c8197c9b2f2f6157",
+    "studies/ucc_to_m100/metrics.csv": "7271af5890f237064f869d5fdd44332676c44329b6cbbb8f774d235e11be883a",
+    "studies/ucc_to_m100/negative-transfer.csv": "794e47c87fbc5499c4174021d440b045a9da49a5ce300767a36441c59af74634",
+    "studies/ucc_to_m100/predeclared-plan.json": "f8565b285f3d847349485904e7a692a3fff219cfdcc504a0a158f6a9346c9481",
+    "studies/ucc_to_m100/risk-summary.csv": "6c7eedafc7d13f917ccb1d818a804e01abd79a333915dcd284144558bebe1d75",
+    "studies/ucc_to_m100/saved-model-audit.json": "2bc75274ece8f95a117cea3c87c80f65562e03b1c10d8f3d02a1f75e84f59cdf",
+    "studies/ucc_to_m100/test-start.json": "973e3bd94a5d31cdc4bff39523428a29a7a913592fa9ba918f31253d79e80257",
+    "groups/m100/gain-training.csv": "fb70138ecddd42851eb01dfb17340bffc69b0e0975da92261c928273dfb2f616",
+    "groups/m100/past-performance.csv": "14e0b76737f8d5371d9e3aec43cef9c9ffae151e6273d9e7d1e784c3783af5a0",
+    "groups/ucc/gain-training.csv": "c7e708683431e5cde1d94cab92aa6d19863bdb900f0041b902ee4cbbb96a043c",
+    "groups/ucc/past-performance.csv": "9d44f1b510894542af3883159f98482eb3e41ff6c96bf5e0de6957b849476375",
+    "groups/ucc/24h/training-records.json": "4cc2891cb0a0abbdd13c6e44e001a5c95bd5cd9569a2780e8601daacdff71fc0",
+    "groups/ucc/3d/training-records.json": "a39825d82d71d8273c8a51b1b90e131b644f6663469f46377c915b5ab02901e7",
+    "groups/m100/24h/training-records.json": "a74a48985f58f71503a0b09b1715e160e229ea23f402fdd92111fcdda194671f",
+    "groups/m100/3d/training-records.json": "c0e3ce69606406cef0dc086b5f186ff912fb4f42d35407847b90b4599de48ebd"
+  },
+  "preregistration_utc": "2026-10-25T14:33:54.981189+00:00",
+  "original_log_byte_sha256": {
+    "pytest-final.log": "8c42e8da9d6a192421a22a0e4506da4a00938acb38883c48176250a09cd170ad",
+    "real-run.log": "aeba731c34cd226f8ed437ec44b5708a562de303c3d33f5d2775118f0606a5c1",
+    "results-latest.log": "e9b8d702c11263b08e2b46167f2ee12524d994165f4b566873c7e2a9997a5d6c"
+  },
+  "visual_review": {
+    "passed": true,
+    "files": [
+      "mean-mape.png",
+      "worst-mape.png",
+      "risk-and-fallback.png"
+    ]
+  },
+  "delivery_verification": {
+    "passed": true,
+    "computational_files_matched": 73,
+    "frozen_source_archive_exact": true,
+    "pre_extension_snapshot_exact": true,
+    "snapshot_files": 133,
+    "old_evidence_files_unchanged": 60,
+    "old_frozen_model_states_unchanged": 136,
+    "documentation_links_checked": 44,
+    "source_code_changed_after_preregistration": false,
+    "scope": "Hashes and document links only; no fit, forecast, or Eagle observations accessed."
+  },
+  "documentation_sha256": {
+    "README.md": "ae4277a0515d74b2d0e5ab311b79a9d78ca42e5651d71bf5599376f4117bfed2",
+    "docs/BENEFIT_TRANSFER_RESULTS.md": "2bf37c0cda488ecca2af27a688de0dbeab7262be22f7d40c7ee57a0494a68d74",
+    "docs/BENEFIT_TRANSFER_PROTOCOL.md": "ef2df70f1a2cdbbf81aa67bb2a56f6fd241409bd2ce87e4e0291a651d73e0a6d",
+    "archive/pre_gain_transfer_20261025/README.md": "5217731d94315a80c085fe418adbbb7a8e2a32a6ccc0b47c69f402b123228684"
+  }
+}

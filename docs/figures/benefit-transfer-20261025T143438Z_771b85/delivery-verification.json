@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "computational_files_matched": 73,
+  "frozen_source_archive_exact": true,
+  "pre_extension_snapshot_exact": true,
+  "snapshot_files": 133,
+  "old_evidence_files_unchanged": 60,
+  "old_frozen_model_states_unchanged": 136,
+  "documentation_links_checked": 44,
+  "source_code_changed_after_preregistration": false,
+  "scope": "Hashes and document links only; no fit, forecast, or Eagle observations accessed."
+}

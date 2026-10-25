@@ -1,71 +1,16 @@
-"""Fixed-cutoff supervised windows over separate Google power domains.
-
-Datetime values are coordinates for the public interface only. Known features
-use trace-relative day/slot phases, never fabricated real weekdays or weather.
-"""
-import numpy as np
-import pandas as pd
-
+"""Strict Google power-domain ingestion and shared per-series windows for SAPF."""
 from dataclasses import dataclass
 from hashlib import sha256
+
+import numpy as np
+import pandas as pd
 
 from src.data.adapters import adapt_frame
 from src.data.domains import DomainMetadata, validate_compatible
 from src.data.features import trace_calendar_features
 from src.data.resampling import resample_frame
-from src.data.splitting import build_windows, concatenate_domain_batches
+from src.data.splitting import WindowBatch, build_windows, concatenate_domain_batches
 from src.utils import resolve_path
-
-from src.data.splitting import ForecastInputs, WindowBatch
-
-
-def panel_windows(data, origins, context_days, horizon):
-    context = context_days*96
-    flat = data.target.reshape(data.n_series, -1)
-    histories, futures, labels, times, metadata, origin_times = [], [], [], [], [], []
-    base = pd.Timestamp("2000-01-01", tz="UTC")
-
-    def phases(points):
-        day = points/96
-        return np.stack([np.sin(2*np.pi*day), np.cos(2*np.pi*day),
-                         np.sin(2*np.pi*day/7), np.cos(2*np.pi*day/7)], axis=-1).astype(np.float32)
-
-    for origin in origins:
-        position = int(origin)*96
-        if position < context or position+horizon > flat.shape[1]:
-            raise ValueError(f"Invalid Google context/horizon at D{origin}.")
-        past_known = phases(np.arange(position-context, position))
-        future = phases(np.arange(position, position+horizon))
-        target_times = pd.date_range(base+pd.Timedelta(minutes=15*position), periods=horizon, freq="15min").to_numpy()
-        for series_id in range(data.n_series):
-            histories.append(np.column_stack([flat[series_id, position-context:position], past_known]))
-            futures.append(future)
-            labels.append(flat[series_id, position:position+horizon])
-            times.append(target_times)
-            origin_times.append(base+pd.Timedelta(days=int(origin)))
-            metadata.append((series_id, int(origin)))
-    if not labels:
-        raise ValueError("No Google supervised windows before the declared cutoff.")
-    batch = WindowBatch(ForecastInputs(np.asarray(histories, np.float32), np.asarray(futures, np.float32),
-        pd.DatetimeIndex(origin_times), np.asarray(times)), np.asarray(labels, np.float32))
-    return batch, np.asarray(metadata, dtype=int)
-
-
-def training_panel(data, cutoff, context_days, horizon):
-    origins = range(context_days, cutoff-horizon//96+1)
-    batch, metadata = panel_windows(data, origins, context_days, horizon)
-    if (metadata[:, 1]+horizon//96 > cutoff).any():
-        raise AssertionError("Training labels cross the fixed Google cutoff.")
-    return batch, metadata
-
-
-def assign_predictions(frame, name, predictions, metadata):
-    if predictions.shape[0] != len(metadata) or not np.isfinite(predictions).all():
-        raise ValueError(f"Invalid panel predictions for {name}.")
-    lookup = {(int(series), int(origin)): i for i, (series, origin) in enumerate(metadata)}
-    rows = np.asarray([lookup[(int(s), int(o))] for s, o in zip(frame.series_id, frame.origin_day)])
-    leads = frame.horizon_step.to_numpy(dtype=int)-1
-    frame[name] = predictions[rows, leads]
 
 
 @dataclass
@@ -77,6 +22,24 @@ class DomainPanel:
     sources: dict
     anchor: pd.Timestamp
     audit: dict
+
+    @property
+    def target_field(self):
+        fields = {meta.target_field or "measured_power_util" for meta in self.metadata.values()}
+        if len(fields) != 1:
+            raise ValueError("A jointly evaluated panel needs one explicitly compatible target field.")
+        return next(iter(fields))
+
+    @property
+    def frequency(self):
+        frequencies = {m.evaluation_frequency for m in self.metadata.values()}
+        if len(frequencies) != 1:
+            raise ValueError("A panel must have one declared evaluation cadence.")
+        return next(iter(frequencies))
+
+    @property
+    def points_per_day(self):
+        return int(pd.Timedelta(days=1)/pd.Timedelta(self.frequency))
 
 
 def load_google_domains(config: dict) -> DomainPanel:
@@ -167,24 +130,29 @@ def domain_windows(panel: DomainPanel, domains: list[str], origins: list[int], c
         raise ValueError("Choose distinct nonempty domains and origins.")
     batches = {}
     skipped = 0
+    target_field = panel.target_field
+    period = panel.points_per_day
     for domain in domains:
         frame = panel.series[domain]
-        expected = pd.date_range(frame.index[0], periods=len(frame), freq="15min", name=frame.index.name)
+        expected = pd.date_range(frame.index[0], periods=len(frame), freq=panel.frequency, name=frame.index.name)
         if not frame.index.equals(expected) or frame.index[0] != panel.anchor:
-            raise ValueError(f"{domain}: preserve the complete 15min grid and trace anchor.")
+            raise ValueError(f"{domain}: preserve the complete declared grid and trace anchor.")
         known = trace_calendar_features(frame.index, panel.anchor)
-        history = pd.concat([frame[["measured_power_util"]].astype(np.float32), known], axis=1)
+        history = pd.concat([frame[[target_field]].astype(np.float32), known], axis=1)
         parts = {}
         for day in origins:
-            position = int(day)*96
+            position = int(day)*period
             if position < context or position+horizon > len(frame):
                 raise ValueError(f"{domain}: insufficient full history/horizon at D{day}.")
+            latency = panel.audit.get(domain, {}).get("history_availability_upper_bound_minutes", 0)
+            if frame.index[position-1]+pd.Timedelta(minutes=latency) > frame.index[position]:
+                raise ValueError("A published historical aggregate would be unavailable at the issue time.")
             # Check missingness without catching unrelated builder errors.
-            if not np.isfinite(frame.measured_power_util.iloc[position-context:position+horizon]).all():
+            if not np.isfinite(frame[target_field].iloc[position-context:position+horizon]).all():
                 skipped += 1
                 continue
-            parts[str(day)] = build_windows(history, known, frame.measured_power_util,
-                                            (position, position+horizon), context, horizon, 96)
+            parts[str(day)] = build_windows(history, known, frame[target_field],
+                                            (position, position+horizon), context, horizon, period, period)
         if parts:
             batches[domain] = concatenate_domain_batches(parts)
     if not batches:

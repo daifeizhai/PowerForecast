@@ -29,9 +29,11 @@ def snapshot() -> dict:
                                                           text=True, encoding="utf-8"),
                    index_entries=subprocess.check_output(["git", "ls-files", "--stage"], text=True, encoding="utf-8"))
     roots = [resolve_path(p) for p in ("data/raw", "data/processed", "data/interim", "results/runs", "results/cache")]
-    weights = resolve_path(load_config("configs/models.yaml")["foundation_defaults"]["weights_cache"])
-    if weights.exists():
-        roots.append(weights)
+    weights_path = load_config("configs/models.yaml").get("foundation_defaults", {}).get("weights_cache")
+    if weights_path:
+        weights = resolve_path(weights_path)
+        if weights.exists():
+            roots.append(weights)
     records = []
     for root in roots:
         for path in sorted(root.rglob("*")):

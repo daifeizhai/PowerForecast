@@ -1,0 +1,380 @@
+{
+  "config": {
+    "protocol": "sapf_google_holdout_v1",
+    "research_method": "SAPF mechanism study",
+    "dataset_config": "configs/datasets/google_cross_domain.yaml",
+    "model_config": "configs/models.yaml",
+    "seed": 42,
+    "frequency": "15min",
+    "context_length": 1344,
+    "horizons": {
+      "24h": 96,
+      "3d": 288
+    },
+    "target_kind": "power_utilization",
+    "target_scope": "power_domain",
+    "previously_evaluated_pilot_domains": [
+      "cella_pdu10",
+      "cellb_pdu11",
+      "cellc_pdu40"
+    ],
+    "domain_assignment": "natural_pdu_order_within_cell_modulo_three",
+    "quality_screen": "full_trace_native_sample_masks_only",
+    "temporal_protocol": {
+      "24h": {
+        "development_cutoff_day": 18,
+        "final_cutoff_day": 22,
+        "validation_origins": [
+          18,
+          19
+        ],
+        "test_origins": [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ]
+      },
+      "3d": {
+        "development_cutoff_day": 18,
+        "final_cutoff_day": 22,
+        "validation_origins": [
+          18,
+          19
+        ],
+        "test_origins": [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ]
+      }
+    },
+    "pairwise_source_diagnostics": true,
+    "prediction_batch_size": 32,
+    "blas_threads": 1,
+    "clip_min": 0.0,
+    "mape_threshold": 1e-08,
+    "results_dir": "results/runs",
+    "save_models": true,
+    "save_plots": true
+  },
+  "models": {
+    "default_models": [
+      "seasonal_naive",
+      "three_day_mean",
+      "ridge",
+      "normalized_ridge",
+      "sapf_similarity",
+      "sapf"
+    ],
+    "models": {
+      "naive": {},
+      "seasonal_naive": {
+        "period": 96
+      },
+      "three_day_mean": {},
+      "seasonal_ar": {},
+      "ridge": {
+        "alpha": 100.0,
+        "solver": "auto",
+        "feature_mode": "observed_history"
+      },
+      "extra_trees": {
+        "n_estimators": 100,
+        "max_depth": 12,
+        "max_features": "sqrt",
+        "n_jobs": 2,
+        "feature_mode": "observed_history"
+      },
+      "lightgbm": {
+        "n_estimators": 100,
+        "num_leaves": 15,
+        "verbosity": -1,
+        "n_jobs": 2,
+        "output_jobs": 4,
+        "feature_mode": "observed_history"
+      },
+      "xgboost": {
+        "n_estimators": 100,
+        "max_depth": 4,
+        "n_jobs": 2,
+        "tree_method": "hist",
+        "output_jobs": 4,
+        "feature_mode": "observed_history"
+      },
+      "sarima": {
+        "order": [
+          1,
+          0,
+          1
+        ],
+        "seasonal_order": [
+          1,
+          0,
+          0,
+          96
+        ],
+        "fit_points": 2048,
+        "maxiter": 50
+      },
+      "lstm": {
+        "hidden_size": 32,
+        "epochs": 10,
+        "batch_size": 32,
+        "learning_rate": 0.001
+      },
+      "tcn": {
+        "hidden_size": 32,
+        "epochs": 10,
+        "batch_size": 32,
+        "learning_rate": 0.001
+      },
+      "dlinear": {
+        "epochs": 10,
+        "batch_size": 32,
+        "learning_rate": 0.001,
+        "kernel_size": 25
+      },
+      "normalized_ridge": {
+        "base_model": "ridge",
+        "base_params": {
+          "alpha": 100.0,
+          "solver": "auto",
+          "feature_mode": "observed_history"
+        },
+        "scale_fraction": 0.01,
+        "epsilon": 1e-06
+      },
+      "normalized_extra_trees": {
+        "base_model": "extra_trees",
+        "base_params": {
+          "n_estimators": 100,
+          "max_depth": 12,
+          "max_features": "sqrt",
+          "n_jobs": 2
+        },
+        "scale_fraction": 0.01,
+        "epsilon": 1e-06
+      },
+      "sapf_similarity": {
+        "base_model": "ridge",
+        "base_params": {
+          "alpha": 100.0,
+          "solver": "auto",
+          "feature_mode": "observed_history"
+        },
+        "scale_fraction": 0.01,
+        "epsilon": 1e-06,
+        "top_k": [
+          1,
+          3,
+          7
+        ],
+        "temperatures": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "feature_groups": [
+          "shape",
+          "level_shape"
+        ],
+        "transfer_strengths": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "reliability_powers": [
+          0.0,
+          1.0
+        ],
+        "worst_domain_penalty": 0.1,
+        "mape_threshold": 1e-08
+      },
+      "sapf": {
+        "base_model": "ridge",
+        "base_params": {
+          "alpha": 100.0,
+          "solver": "auto",
+          "feature_mode": "observed_history"
+        },
+        "scale_fraction": 0.01,
+        "epsilon": 1e-06,
+        "top_k": [
+          1,
+          3,
+          7
+        ],
+        "temperatures": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "feature_groups": [
+          "shape",
+          "level_shape"
+        ],
+        "transfer_strengths": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "reliability_powers": [
+          0.0,
+          1.0
+        ],
+        "worst_domain_penalty": 0.1,
+        "mape_threshold": 1e-08
+      }
+    }
+  },
+  "roles": {
+    "source": [
+      "cella_pdu6",
+      "cella_pdu9",
+      "cellb_pdu12",
+      "celld_pdu32",
+      "celld_pdu36",
+      "celle_pdu26",
+      "celle_pdu29",
+      "cellf_pdu16",
+      "cellf_pdu19",
+      "cellf_pdu22",
+      "cellf_pdu25",
+      "cellg_pdu1",
+      "cellg_pdu4",
+      "cellh_pdu45"
+    ],
+    "validation": [
+      "cella_pdu7",
+      "cellb_pdu14",
+      "celld_pdu33",
+      "celle_pdu27",
+      "celle_pdu30",
+      "cellf_pdu17",
+      "cellf_pdu20",
+      "cellf_pdu23",
+      "cellg_pdu2",
+      "cellg_pdu5",
+      "cellh_pdu53"
+    ],
+    "test": [
+      "cella_pdu8",
+      "cellb_pdu15",
+      "celld_pdu34",
+      "celle_pdu28",
+      "celle_pdu31",
+      "cellf_pdu18",
+      "cellf_pdu21",
+      "cellf_pdu24",
+      "cellg_pdu3",
+      "cellh_pdu54"
+    ],
+    "excluded_domains": {
+      "cella_pdu10": "Previous pilot target; excluded from this mechanism experiment.",
+      "cellb_pdu11": "Previous pilot target; excluded from this mechanism experiment.",
+      "cellb_pdu13": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellc_pdu38": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellc_pdu39": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellc_pdu40": "Previous pilot target; excluded from this mechanism experiment.",
+      "cellc_pdu41": "Ambiguous machine membership; do not claim equipment independence.",
+      "cellc_pdu42": "Ambiguous machine membership; do not claim equipment independence.",
+      "cellc_pdu43": "Ambiguous machine membership; do not claim equipment independence.",
+      "celld_pdu35": "Full-trace native 3/3 coverage mask is incomplete.",
+      "celld_pdu37": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu44": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu46": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu47": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu48": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu49": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu50": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu51": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu52": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu55": "Full-trace native 3/3 coverage mask is incomplete.",
+      "celli_mvpp1": "Different MVPP structure; separate future protocol.",
+      "cellj_mvpp2": "Different MVPP structure; separate future protocol."
+    },
+    "rule": "Natural PDU order within each cell, position modulo 3 = source/validation/test; full-coverage masks only."
+  },
+  "temporal_plan": {
+    "24h": {
+      "development_cutoff_day": 18,
+      "final_cutoff_day": 22,
+      "development_origins": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "final_origins": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "validation_origins": [
+        18,
+        19
+      ],
+      "test_origins": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    "3d": {
+      "development_cutoff_day": 18,
+      "final_cutoff_day": 22,
+      "development_origins": [
+        14,
+        15
+      ],
+      "final_origins": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "validation_origins": [
+        18,
+        19
+      ],
+      "test_origins": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    }
+  },
+  "created_at_utc": "2026-10-25T08:23:46.162943+00:00",
+  "test_metrics_not_accessed": true
+}

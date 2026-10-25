@@ -10,7 +10,7 @@ def freeze_for_test(folder, **fields):
     if path.exists():
         raise FileExistsError(f"Do not overwrite an existing freeze record: {path}")
     record = dict(**fields,
-                  model_sha256={str(p.relative_to(folder)): sha256(p.read_bytes()).hexdigest()
+                  model_sha256={p.relative_to(folder).as_posix(): sha256(p.read_bytes()).hexdigest()
                                 for p in folder.rglob("model.*")},
                   frozen_at_utc=datetime.now(timezone.utc).isoformat())
     write_json(path, record)

@@ -1,0 +1,14 @@
+name: m100_ucc_published_power_30min
+m100_config: configs/datasets/m100_nodes.yaml
+m100_clock_start: '2021-12-08T00:00:00Z'
+ucc_clock_start: '2019-04-09T00:00:00'
+days: 72
+protocol_anchor: '2000-01-03T00:00:00Z'
+ucc_files:
+  - {filename: dataset1_combined.csv, cohort: d1, sha256: 18592c5a1a9edf021cb16e5775cd12bfb1479d244c10e4d913bf18cefe7b0256}
+  - {filename: dataset2_combined.csv, cohort: d2, sha256: 2b5709f16e6ae94d274d1f2b111ef67a38edcca8e1d22c6c02182308042a08bb}
+ucc_root: data/raw/UCC2023
+ucc_timezone_verified: false
+ucc_clock_policy: preserve_naive_source_clock_no_UTC_conversion_exclude_DST_transition_by_fixed_period
+aggregation: arithmetic_mean_of_exactly_2_M100_or_3_UCC_published_native_slots_no_interpolation
+physical_scope: node_or_physical_server_measured_power_W_to_kW

@@ -63,6 +63,6 @@ def test_invalid_model_does_not_fall_back_to_baseline():
         create_model("missing")
 
 
-def test_proposed_remains_explicitly_unimplemented(batch):
-    with pytest.raises(NotImplementedError, match="not been defined"):
-        train_model("proposed", batch)
+def test_archived_models_are_not_active_fallbacks(batch):
+    with pytest.raises(ValueError, match="archived"):
+        train_model("hdsf", batch)

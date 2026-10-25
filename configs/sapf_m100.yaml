@@ -1,0 +1,37 @@
+protocol: sapf_m100_nodes_v1
+research_method: M100 cross-node SAPF controlled ablations
+dataset_config: configs/datasets/m100_nodes.yaml
+model_config: configs/m100_models.yaml
+seed: 42
+frequency: 15min
+context_length: 1344
+horizons: {24h: 96, 3d: 288}
+target_kind: active_power
+target_scope: node
+target_unit: kW
+domain_assignment: natural_node_order_within_each_of_two_racks_modulo_three
+quality_screen: fixed_60_UTC_days_from_longest_all_33_node_common_quality_mask_only
+domain_roles:
+  source: [m100_rack0_node2, m100_rack0_node5, m100_rack0_node8, m100_rack0_node11, m100_rack0_node16, m100_rack0_node19, m100_rack1_node20, m100_rack1_node23, m100_rack1_node26, m100_rack1_node29, m100_rack1_node33, m100_rack1_node37]
+  validation: [m100_rack0_node3, m100_rack0_node6, m100_rack0_node9, m100_rack0_node13, m100_rack0_node17, m100_rack1_node21, m100_rack1_node24, m100_rack1_node27, m100_rack1_node31, m100_rack1_node35, m100_rack1_node38]
+  test: [m100_rack0_node4, m100_rack0_node7, m100_rack0_node10, m100_rack0_node14, m100_rack0_node18, m100_rack1_node22, m100_rack1_node25, m100_rack1_node28, m100_rack1_node32, m100_rack1_node36]
+temporal_protocol:
+  24h:
+    development_cutoff_day: 30
+    final_cutoff_day: 40
+    validation_origins: [30, 31, 32, 33, 34, 35, 36]
+    test_origins: [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+  3d:
+    development_cutoff_day: 30
+    final_cutoff_day: 40
+    validation_origins: [30, 31, 32, 33, 34, 35, 36]
+    test_origins: [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57]
+pairwise_source_diagnostics: true
+prediction_batch_size: 32
+blas_threads: 1
+clip_min: 0.0
+mape_threshold: 1.0e-8
+results_dir: results/runs
+save_models: true
+save_plots: true
+ablation_protocol: one_mechanism_disabled_with_full_SAPF_validation_choices_frozen_no_independent_retuning

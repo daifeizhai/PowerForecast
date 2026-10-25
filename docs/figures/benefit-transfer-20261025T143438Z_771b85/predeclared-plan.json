@@ -1,0 +1,398 @@
+{
+  "created_at_utc": "2026-10-25T14:34:38.775109+00:00",
+  "config": {
+    "protocol": "sapf_transfer_suite_v1",
+    "research_method": "Learned benefit veto and bidirectional 30min power transfer",
+    "seed": 42,
+    "frequency": "30min",
+    "context_length": 672,
+    "horizons": {
+      "24h": 48,
+      "3d": 144
+    },
+    "target_kind": "active_power",
+    "target_scope": "node",
+    "target_unit": "kW",
+    "dataset_config": "configs/datasets/transfer30.yaml",
+    "model_config": "configs/benefit_models.yaml",
+    "domain_roles": {
+      "m100": {
+        "source": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "validation": [
+          "m100_rack0_node16",
+          "m100_rack0_node19",
+          "m100_rack1_node33",
+          "m100_rack1_node37"
+        ],
+        "test": [
+          "m100_rack0_node6",
+          "m100_rack0_node9",
+          "m100_rack0_node13",
+          "m100_rack0_node17",
+          "m100_rack1_node21",
+          "m100_rack1_node24",
+          "m100_rack1_node27",
+          "m100_rack1_node31",
+          "m100_rack1_node35",
+          "m100_rack1_node38"
+        ]
+      },
+      "ucc": {
+        "source": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "validation": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc220",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "test": [
+          "ucc_d1_qh2_rcc130",
+          "ucc_d1_qh2_rcc131",
+          "ucc_d1_qh2_rcc132",
+          "ucc_d1_qh2_rcc133",
+          "ucc_d1_qh2_rcc134",
+          "ucc_d1_qh2_rcc135",
+          "ucc_d1_qh2_rcc136",
+          "ucc_d1_qh2_rcc137",
+          "ucc_d1_qh2_rcc138",
+          "ucc_d1_qh2_rcc139",
+          "ucc_d1_qh2_rcc140",
+          "ucc_d1_qh2_rcc141",
+          "ucc_d1_qh2_rcc142",
+          "ucc_d1_qh2_rcc143",
+          "ucc_d1_qh2_rcc144",
+          "ucc_d1_qh2_rcc145",
+          "ucc_d1_qh2_rcc146",
+          "ucc_d1_qh2_rcc147",
+          "ucc_d1_qh2_rcc148",
+          "ucc_d1_qh2_rcc149",
+          "ucc_d1_qh2_rcc150",
+          "ucc_d1_qh2_rcc151",
+          "ucc_d1_qh2_rcc152",
+          "ucc_d1_qh2_rcc153",
+          "ucc_d1_qh2_rcc154",
+          "ucc_d1_qh2_rcc155",
+          "ucc_d1_qh2_rcc156",
+          "ucc_d1_qh2_rcc157",
+          "ucc_d1_qh2_rcc158",
+          "ucc_d1_qh2_rcc159",
+          "ucc_d1_qh2_rcc160",
+          "ucc_d1_qh2_rcc161",
+          "ucc_d1_qh2_rcc162",
+          "ucc_d1_qh2_rcc163",
+          "ucc_d1_qh2_rcc164",
+          "ucc_d1_qh2_rcc165",
+          "ucc_d1_qh2_rcc166",
+          "ucc_d1_qh2_rcc167",
+          "ucc_d1_qh2_rcc168",
+          "ucc_d1_qh2_rcc169",
+          "ucc_d1_qh2_rcc170",
+          "ucc_d1_qh2_rcc171",
+          "ucc_d1_qh2_rcc172",
+          "ucc_d1_qh2_rcc173",
+          "ucc_d1_qh2_rcc174",
+          "ucc_d1_qh2_rcc175",
+          "ucc_d1_qh2_rcc176",
+          "ucc_d1_qh2_rcc177",
+          "ucc_d1_qh2_rcc178",
+          "ucc_d1_qh2_rcc179",
+          "ucc_d1_qh2_rcc180",
+          "ucc_d1_qh2_rcc181",
+          "ucc_d1_qh2_rcc182",
+          "ucc_d1_qh2_rcc183",
+          "ucc_d1_qh2_rcc184",
+          "ucc_d1_qh2_rcc185",
+          "ucc_d1_qh2_rcc186",
+          "ucc_d1_qh2_rcc187",
+          "ucc_d1_qh2_rcc188",
+          "ucc_d1_qh2_rcc189",
+          "ucc_d1_qh2_rcc190",
+          "ucc_d1_qh2_rcc191",
+          "ucc_d1_qh2_rcc192",
+          "ucc_d1_qh2_rcc193",
+          "ucc_d1_qh2_rcc194",
+          "ucc_d1_qh2_rcc195",
+          "ucc_d2_qh2_rcc222",
+          "ucc_d2_qh2_rcc223",
+          "ucc_d2_qh2_rcc224",
+          "ucc_d2_qh2_rcc225",
+          "ucc_d2_qh2_rcc227",
+          "ucc_d2_qh2_rcc228",
+          "ucc_d2_qh2_rcc229",
+          "ucc_d2_qh2_rcc230",
+          "ucc_d2_qh2_rcc231",
+          "ucc_d2_qh2_rcc233",
+          "ucc_d2_qh2_rcc234",
+          "ucc_d2_qh2_rcc235",
+          "ucc_d2_qh2_rcc238",
+          "ucc_d2_qh2_rcc239",
+          "ucc_d2_qh2_rcc243",
+          "ucc_d2_qh2_rcc246",
+          "ucc_d2_qh2_rcc248",
+          "ucc_d2_qh2_rcc249",
+          "ucc_d2_qh2_rcc251",
+          "ucc_d2_qh2_rcc255",
+          "ucc_d2_qh2_rcc256",
+          "ucc_d2_qh2_rcc259",
+          "ucc_d2_qh2_rcc260",
+          "ucc_d2_qh2_rcc261"
+        ]
+      },
+      "retired_m100_previous_test": [
+        "m100_rack0_node4",
+        "m100_rack0_node7",
+        "m100_rack0_node10",
+        "m100_rack0_node14",
+        "m100_rack0_node18",
+        "m100_rack1_node22",
+        "m100_rack1_node25",
+        "m100_rack1_node28",
+        "m100_rack1_node32",
+        "m100_rack1_node36"
+      ],
+      "quality_excluded": [
+        "m100_rack0_node3",
+        "ucc_d1_qh2_rcc196",
+        "ucc_d1_qh2_rcc197",
+        "ucc_d1_qh2_rcc198",
+        "ucc_d1_qh2_rcc199",
+        "ucc_d1_qh2_rcc200",
+        "ucc_d2_qh2_rcc201",
+        "ucc_d2_qh2_rcc204",
+        "ucc_d2_qh2_rcc205",
+        "ucc_d2_qh2_rcc206",
+        "ucc_d2_qh2_rcc208",
+        "ucc_d2_qh2_rcc211",
+        "ucc_d2_qh2_rcc212",
+        "ucc_d2_qh2_rcc214",
+        "ucc_d2_qh2_rcc215",
+        "ucc_d2_qh2_rcc216",
+        "ucc_d2_qh2_rcc217",
+        "ucc_d2_qh2_rcc226",
+        "ucc_d2_qh2_rcc232",
+        "ucc_d2_qh2_rcc236",
+        "ucc_d2_qh2_rcc237",
+        "ucc_d2_qh2_rcc240",
+        "ucc_d2_qh2_rcc241",
+        "ucc_d2_qh2_rcc242",
+        "ucc_d2_qh2_rcc244",
+        "ucc_d2_qh2_rcc245",
+        "ucc_d2_qh2_rcc247",
+        "ucc_d2_qh2_rcc250",
+        "ucc_d2_qh2_rcc252",
+        "ucc_d2_qh2_rcc253",
+        "ucc_d2_qh2_rcc254",
+        "ucc_d2_qh2_rcc257",
+        "ucc_d2_qh2_rcc258",
+        "ucc_d2_qh2_rcc262",
+        "ucc_d2_qh2_rcc263",
+        "ucc_d2_qh2_rcc264"
+      ]
+    },
+    "temporal_protocol": {
+      "24h": {
+        "development_cutoff_day": 50,
+        "final_cutoff_day": 60,
+        "validation_origins": [
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56
+        ],
+        "test_origins": [
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71
+        ]
+      },
+      "3d": {
+        "development_cutoff_day": 50,
+        "final_cutoff_day": 60,
+        "validation_origins": [
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56
+        ],
+        "test_origins": [
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69
+        ]
+      }
+    },
+    "benefit_training": {
+      "prior_cutoff_day": 20,
+      "prior_origins": [
+        20,
+        21
+      ],
+      "meta_cutoffs": [
+        24,
+        32,
+        40
+      ],
+      "meta_block_days": 8
+    },
+    "studies": [
+      {
+        "name": "m100_gain",
+        "source_group": "m100",
+        "test_group": "m100"
+      },
+      {
+        "name": "m100_to_ucc",
+        "source_group": "m100",
+        "test_group": "ucc"
+      },
+      {
+        "name": "ucc_to_m100",
+        "source_group": "ucc",
+        "test_group": "m100"
+      }
+    ],
+    "prediction_batch_size": 32,
+    "blas_threads": 1,
+    "clip_min": 0.0,
+    "mape_threshold": 1e-08,
+    "results_dir": "results/runs",
+    "save_plots": true,
+    "protocol_anchor": "2000-01-03T00:00:00Z",
+    "timestamp_axis": "Synthetic protocol coordinate only; original source-clock strings retained; no cross-dataset contemporaneity assumed."
+  },
+  "models": {
+    "default_models": [
+      "seasonal_naive",
+      "three_day_mean",
+      "ridge",
+      "normalized_ridge",
+      "uniform_transfer",
+      "fixed_blend",
+      "sapf_similarity",
+      "sapf",
+      "sapf_gain",
+      "sapf_gain_no_veto"
+    ],
+    "ridge": {
+      "alpha": 100.0,
+      "solver": "auto",
+      "feature_mode": "observed_history"
+    },
+    "sapf": {
+      "base_model": "ridge",
+      "base_params": {
+        "alpha": 100.0,
+        "solver": "auto",
+        "feature_mode": "observed_history"
+      },
+      "scale_fraction": 0.01,
+      "epsilon": 1e-06,
+      "top_k": [
+        1,
+        3,
+        7
+      ],
+      "temperatures": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "feature_groups": [
+        "shape",
+        "level_shape"
+      ],
+      "transfer_strengths": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "reliability_powers": [
+        0.0,
+        1.0
+      ],
+      "worst_domain_penalty": 0.1,
+      "mape_threshold": 1e-08
+    },
+    "benefit": {
+      "n_estimators": 128,
+      "max_depth": 6,
+      "min_samples_leaf": 20,
+      "n_jobs": 1
+    },
+    "policy_grid": {
+      "minimum_gain_pp": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "maximum_negative_risk": [
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "strengths": [
+        0.25,
+        0.5,
+        1.0
+      ],
+      "top_k": [
+        1,
+        3
+      ],
+      "worst_domain_penalty": 0.1
+    },
+    "fixed_blend_strength": 0.5
+  },
+  "forecast_test_metrics_not_accessed": true
+}

@@ -1,0 +1,1254 @@
+{
+  "method": "Independent full native-grid reindex plus boolean run grouping; four checks per node.",
+  "nodes": 178,
+  "checks": 712,
+  "all_passed": true,
+  "node_checks": [
+    {
+      "dataset": "M100",
+      "node": "11",
+      "longest_power_run_points": 13825,
+      "valid_points": 77023,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "3",
+      "longest_power_run_points": 6155,
+      "valid_points": 66346,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "9",
+      "longest_power_run_points": 13825,
+      "valid_points": 77123,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "13",
+      "longest_power_run_points": 13825,
+      "valid_points": 76787,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "19",
+      "longest_power_run_points": 13822,
+      "valid_points": 74621,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "7",
+      "longest_power_run_points": 14677,
+      "valid_points": 77147,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "18",
+      "longest_power_run_points": 13825,
+      "valid_points": 76230,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "5",
+      "longest_power_run_points": 10671,
+      "valid_points": 70364,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "2",
+      "longest_power_run_points": 10844,
+      "valid_points": 72849,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "17",
+      "longest_power_run_points": 13825,
+      "valid_points": 76786,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "6",
+      "longest_power_run_points": 10671,
+      "valid_points": 76243,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "10",
+      "longest_power_run_points": 13825,
+      "valid_points": 77122,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "16",
+      "longest_power_run_points": 13825,
+      "valid_points": 75780,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "8",
+      "longest_power_run_points": 14677,
+      "valid_points": 76796,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "14",
+      "longest_power_run_points": 13825,
+      "valid_points": 77121,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "4",
+      "longest_power_run_points": 10671,
+      "valid_points": 75200,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "37",
+      "longest_power_run_points": 14672,
+      "valid_points": 79627,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "27",
+      "longest_power_run_points": 11694,
+      "valid_points": 78004,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "35",
+      "longest_power_run_points": 14609,
+      "valid_points": 79211,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "33",
+      "longest_power_run_points": 14672,
+      "valid_points": 79283,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "26",
+      "longest_power_run_points": 14677,
+      "valid_points": 79629,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "23",
+      "longest_power_run_points": 14677,
+      "valid_points": 79639,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "36",
+      "longest_power_run_points": 14672,
+      "valid_points": 80109,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "20",
+      "longest_power_run_points": 13825,
+      "valid_points": 79620,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "31",
+      "longest_power_run_points": 14672,
+      "valid_points": 79289,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "32",
+      "longest_power_run_points": 14672,
+      "valid_points": 79194,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "29",
+      "longest_power_run_points": 14677,
+      "valid_points": 79282,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "22",
+      "longest_power_run_points": 13825,
+      "valid_points": 79605,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "25",
+      "longest_power_run_points": 14677,
+      "valid_points": 79633,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "21",
+      "longest_power_run_points": 12170,
+      "valid_points": 79759,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "38",
+      "longest_power_run_points": 14672,
+      "valid_points": 78056,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "28",
+      "longest_power_run_points": 14677,
+      "valid_points": 79288,
+      "passed": true
+    },
+    {
+      "dataset": "M100",
+      "node": "24",
+      "longest_power_run_points": 14677,
+      "valid_points": 79277,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc120",
+      "longest_power_run_points": 10699,
+      "valid_points": 35856,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc121",
+      "longest_power_run_points": 10699,
+      "valid_points": 28779,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc122",
+      "longest_power_run_points": 10699,
+      "valid_points": 35858,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc123",
+      "longest_power_run_points": 10699,
+      "valid_points": 35858,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc124",
+      "longest_power_run_points": 10699,
+      "valid_points": 35854,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc125",
+      "longest_power_run_points": 10699,
+      "valid_points": 35851,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc126",
+      "longest_power_run_points": 10699,
+      "valid_points": 35857,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc127",
+      "longest_power_run_points": 10699,
+      "valid_points": 35858,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc128",
+      "longest_power_run_points": 10699,
+      "valid_points": 35857,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc129",
+      "longest_power_run_points": 10699,
+      "valid_points": 35854,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc130",
+      "longest_power_run_points": 10699,
+      "valid_points": 35843,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc131",
+      "longest_power_run_points": 10699,
+      "valid_points": 28485,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc132",
+      "longest_power_run_points": 10699,
+      "valid_points": 35856,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc133",
+      "longest_power_run_points": 10699,
+      "valid_points": 35859,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc134",
+      "longest_power_run_points": 10699,
+      "valid_points": 35855,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc135",
+      "longest_power_run_points": 10699,
+      "valid_points": 35860,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc136",
+      "longest_power_run_points": 10699,
+      "valid_points": 35860,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc137",
+      "longest_power_run_points": 10699,
+      "valid_points": 35862,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc138",
+      "longest_power_run_points": 10699,
+      "valid_points": 35861,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc139",
+      "longest_power_run_points": 10699,
+      "valid_points": 35859,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc140",
+      "longest_power_run_points": 10699,
+      "valid_points": 36153,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc141",
+      "longest_power_run_points": 10699,
+      "valid_points": 36151,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc142",
+      "longest_power_run_points": 10699,
+      "valid_points": 36144,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc143",
+      "longest_power_run_points": 10699,
+      "valid_points": 36147,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc144",
+      "longest_power_run_points": 10699,
+      "valid_points": 35855,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc145",
+      "longest_power_run_points": 10699,
+      "valid_points": 35845,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc146",
+      "longest_power_run_points": 10699,
+      "valid_points": 35965,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc147",
+      "longest_power_run_points": 10699,
+      "valid_points": 35969,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc148",
+      "longest_power_run_points": 10699,
+      "valid_points": 35855,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc149",
+      "longest_power_run_points": 10699,
+      "valid_points": 35854,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc150",
+      "longest_power_run_points": 10699,
+      "valid_points": 35709,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc151",
+      "longest_power_run_points": 10699,
+      "valid_points": 28788,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc152",
+      "longest_power_run_points": 10699,
+      "valid_points": 35840,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc153",
+      "longest_power_run_points": 10699,
+      "valid_points": 35843,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc154",
+      "longest_power_run_points": 10699,
+      "valid_points": 35841,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc155",
+      "longest_power_run_points": 10699,
+      "valid_points": 35843,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc156",
+      "longest_power_run_points": 10699,
+      "valid_points": 35844,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc157",
+      "longest_power_run_points": 10699,
+      "valid_points": 35845,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc158",
+      "longest_power_run_points": 10699,
+      "valid_points": 35845,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc159",
+      "longest_power_run_points": 10699,
+      "valid_points": 35842,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc160",
+      "longest_power_run_points": 10699,
+      "valid_points": 35834,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc161",
+      "longest_power_run_points": 10699,
+      "valid_points": 35844,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc162",
+      "longest_power_run_points": 10699,
+      "valid_points": 35846,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc163",
+      "longest_power_run_points": 10699,
+      "valid_points": 35846,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc164",
+      "longest_power_run_points": 10699,
+      "valid_points": 35844,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc165",
+      "longest_power_run_points": 10699,
+      "valid_points": 35845,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc166",
+      "longest_power_run_points": 10699,
+      "valid_points": 35846,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc167",
+      "longest_power_run_points": 10699,
+      "valid_points": 35846,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc168",
+      "longest_power_run_points": 10699,
+      "valid_points": 35842,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc169",
+      "longest_power_run_points": 10699,
+      "valid_points": 35847,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc170",
+      "longest_power_run_points": 10699,
+      "valid_points": 35846,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc171",
+      "longest_power_run_points": 10699,
+      "valid_points": 35844,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc172",
+      "longest_power_run_points": 10699,
+      "valid_points": 35846,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc173",
+      "longest_power_run_points": 10699,
+      "valid_points": 35848,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc174",
+      "longest_power_run_points": 10699,
+      "valid_points": 35846,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc175",
+      "longest_power_run_points": 10699,
+      "valid_points": 35850,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc176",
+      "longest_power_run_points": 10699,
+      "valid_points": 35850,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc177",
+      "longest_power_run_points": 10699,
+      "valid_points": 28793,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc178",
+      "longest_power_run_points": 10699,
+      "valid_points": 35850,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc179",
+      "longest_power_run_points": 10699,
+      "valid_points": 35849,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc180",
+      "longest_power_run_points": 10699,
+      "valid_points": 28794,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc181",
+      "longest_power_run_points": 10699,
+      "valid_points": 35847,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc182",
+      "longest_power_run_points": 10699,
+      "valid_points": 35850,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc183",
+      "longest_power_run_points": 10699,
+      "valid_points": 35847,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc184",
+      "longest_power_run_points": 10699,
+      "valid_points": 29056,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc185",
+      "longest_power_run_points": 10699,
+      "valid_points": 35586,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc186",
+      "longest_power_run_points": 10699,
+      "valid_points": 29056,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc187",
+      "longest_power_run_points": 10699,
+      "valid_points": 29060,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc188",
+      "longest_power_run_points": 10699,
+      "valid_points": 34413,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc189",
+      "longest_power_run_points": 10699,
+      "valid_points": 34411,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc190",
+      "longest_power_run_points": 10699,
+      "valid_points": 34414,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc191",
+      "longest_power_run_points": 10699,
+      "valid_points": 34413,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc192",
+      "longest_power_run_points": 10699,
+      "valid_points": 35837,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc193",
+      "longest_power_run_points": 10699,
+      "valid_points": 35838,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc194",
+      "longest_power_run_points": 10699,
+      "valid_points": 35838,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc195",
+      "longest_power_run_points": 10699,
+      "valid_points": 35836,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc196",
+      "longest_power_run_points": 7702,
+      "valid_points": 16735,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc197",
+      "longest_power_run_points": 7703,
+      "valid_points": 16736,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc198",
+      "longest_power_run_points": 7702,
+      "valid_points": 16736,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc199",
+      "longest_power_run_points": 7689,
+      "valid_points": 16723,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D1",
+      "node": "qh2-rcc200",
+      "longest_power_run_points": 7688,
+      "valid_points": 16722,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc201",
+      "longest_power_run_points": 6966,
+      "valid_points": 15227,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc202",
+      "longest_power_run_points": 10699,
+      "valid_points": 18965,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc203",
+      "longest_power_run_points": 10699,
+      "valid_points": 18964,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc204",
+      "longest_power_run_points": 5004,
+      "valid_points": 17623,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc205",
+      "longest_power_run_points": 7015,
+      "valid_points": 11669,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc206",
+      "longest_power_run_points": 6386,
+      "valid_points": 18957,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc207",
+      "longest_power_run_points": 10699,
+      "valid_points": 18962,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc208",
+      "longest_power_run_points": 3690,
+      "valid_points": 16548,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc209",
+      "longest_power_run_points": 10699,
+      "valid_points": 18960,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc210",
+      "longest_power_run_points": 10699,
+      "valid_points": 18962,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc211",
+      "longest_power_run_points": 6318,
+      "valid_points": 18828,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc212",
+      "longest_power_run_points": 7017,
+      "valid_points": 17591,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc213",
+      "longest_power_run_points": 10699,
+      "valid_points": 18960,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc214",
+      "longest_power_run_points": 7917,
+      "valid_points": 18820,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc215",
+      "longest_power_run_points": 7332,
+      "valid_points": 17969,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc216",
+      "longest_power_run_points": 7014,
+      "valid_points": 18758,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc217",
+      "longest_power_run_points": 3371,
+      "valid_points": 18561,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc218",
+      "longest_power_run_points": 10699,
+      "valid_points": 18959,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc219",
+      "longest_power_run_points": 10699,
+      "valid_points": 18958,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc220",
+      "longest_power_run_points": 10699,
+      "valid_points": 18959,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc221",
+      "longest_power_run_points": 10699,
+      "valid_points": 18932,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc222",
+      "longest_power_run_points": 10699,
+      "valid_points": 18935,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc223",
+      "longest_power_run_points": 10699,
+      "valid_points": 18931,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc224",
+      "longest_power_run_points": 10699,
+      "valid_points": 18934,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc225",
+      "longest_power_run_points": 10699,
+      "valid_points": 18933,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc226",
+      "longest_power_run_points": 2397,
+      "valid_points": 4107,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc227",
+      "longest_power_run_points": 10699,
+      "valid_points": 18932,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc228",
+      "longest_power_run_points": 10699,
+      "valid_points": 18935,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc229",
+      "longest_power_run_points": 10699,
+      "valid_points": 18933,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc230",
+      "longest_power_run_points": 10699,
+      "valid_points": 18929,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc231",
+      "longest_power_run_points": 10699,
+      "valid_points": 18929,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc232",
+      "longest_power_run_points": 8693,
+      "valid_points": 18927,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc233",
+      "longest_power_run_points": 10699,
+      "valid_points": 18932,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc234",
+      "longest_power_run_points": 10699,
+      "valid_points": 18909,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc235",
+      "longest_power_run_points": 10699,
+      "valid_points": 18906,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc236",
+      "longest_power_run_points": 7213,
+      "valid_points": 17311,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc237",
+      "longest_power_run_points": 7618,
+      "valid_points": 17718,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc238",
+      "longest_power_run_points": 10699,
+      "valid_points": 18934,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc239",
+      "longest_power_run_points": 10699,
+      "valid_points": 18930,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc240",
+      "longest_power_run_points": 6705,
+      "valid_points": 16493,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc241",
+      "longest_power_run_points": 6647,
+      "valid_points": 14880,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc242",
+      "longest_power_run_points": 3371,
+      "valid_points": 16016,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc243",
+      "longest_power_run_points": 10699,
+      "valid_points": 18931,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc244",
+      "longest_power_run_points": 7016,
+      "valid_points": 14580,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc245",
+      "longest_power_run_points": 8693,
+      "valid_points": 18927,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc246",
+      "longest_power_run_points": 10699,
+      "valid_points": 18929,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc247",
+      "longest_power_run_points": 7016,
+      "valid_points": 14036,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc248",
+      "longest_power_run_points": 10699,
+      "valid_points": 18933,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc249",
+      "longest_power_run_points": 10699,
+      "valid_points": 18934,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc250",
+      "longest_power_run_points": 6880,
+      "valid_points": 15140,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc251",
+      "longest_power_run_points": 10699,
+      "valid_points": 18935,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc252",
+      "longest_power_run_points": 5461,
+      "valid_points": 18524,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc253",
+      "longest_power_run_points": 8693,
+      "valid_points": 18953,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc254",
+      "longest_power_run_points": 5447,
+      "valid_points": 18544,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc255",
+      "longest_power_run_points": 10699,
+      "valid_points": 18932,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc256",
+      "longest_power_run_points": 10699,
+      "valid_points": 17110,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc257",
+      "longest_power_run_points": 6554,
+      "valid_points": 18950,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc258",
+      "longest_power_run_points": 7014,
+      "valid_points": 10157,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc259",
+      "longest_power_run_points": 10699,
+      "valid_points": 18955,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc260",
+      "longest_power_run_points": 10699,
+      "valid_points": 18952,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc261",
+      "longest_power_run_points": 10699,
+      "valid_points": 18901,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc262",
+      "longest_power_run_points": 6386,
+      "valid_points": 16748,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc263",
+      "longest_power_run_points": 1,
+      "valid_points": 427,
+      "passed": true
+    },
+    {
+      "dataset": "UCC_D2",
+      "node": "qh2-rcc264",
+      "longest_power_run_points": 0,
+      "valid_points": 0,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,2522 @@
+{
+  "status": "complete",
+  "protocol": "sapf_google_holdout_v1",
+  "research_method": "SAPF mechanism study",
+  "data": "Google PowerData 2019",
+  "is_demo": false,
+  "target": "measured_power_util",
+  "target_kind": "power_utilization",
+  "target_scope": "power_domain",
+  "target_unit": "utilization_fraction",
+  "trace_anchor_utc": "2019-05-01 07:00:00+00:00",
+  "requested_horizons": [
+    "24h",
+    "3d"
+  ],
+  "requested_models": [
+    "seasonal_naive",
+    "three_day_mean",
+    "ridge",
+    "normalized_ridge",
+    "sapf_similarity",
+    "sapf"
+  ],
+  "experiment": {
+    "protocol": "sapf_google_holdout_v1",
+    "research_method": "SAPF mechanism study",
+    "dataset_config": "configs/datasets/google_cross_domain.yaml",
+    "model_config": "configs/models.yaml",
+    "seed": 42,
+    "frequency": "15min",
+    "context_length": 1344,
+    "horizons": {
+      "24h": 96,
+      "3d": 288
+    },
+    "target_kind": "power_utilization",
+    "target_scope": "power_domain",
+    "previously_evaluated_pilot_domains": [
+      "cella_pdu10",
+      "cellb_pdu11",
+      "cellc_pdu40"
+    ],
+    "domain_assignment": "natural_pdu_order_within_cell_modulo_three",
+    "quality_screen": "full_trace_native_sample_masks_only",
+    "temporal_protocol": {
+      "24h": {
+        "development_cutoff_day": 18,
+        "final_cutoff_day": 22,
+        "validation_origins": [
+          18,
+          19
+        ],
+        "test_origins": [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ]
+      },
+      "3d": {
+        "development_cutoff_day": 18,
+        "final_cutoff_day": 22,
+        "validation_origins": [
+          18,
+          19
+        ],
+        "test_origins": [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ]
+      }
+    },
+    "pairwise_source_diagnostics": true,
+    "prediction_batch_size": 32,
+    "blas_threads": 1,
+    "clip_min": 0.0,
+    "mape_threshold": 1e-08,
+    "results_dir": "results/runs",
+    "save_models": true,
+    "save_plots": true
+  },
+  "dataset": {
+    "name": "google_power2019_cross_domain",
+    "raw_data": "data/raw/Google",
+    "expected_domains": 57,
+    "expected_days": 31,
+    "trace_start": "2019-05-01T00:00:00-07:00",
+    "trace_start_microseconds": 600000000,
+    "source_documentation": "https://github.com/google/cluster-data/blob/master/power_trace_analysis_colab.ipynb",
+    "domain_metadata": {
+      "dataset_id": "google_power2019",
+      "site_id": "per_file_cell",
+      "domain_id": "per_file_power_domain",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      }
+    }
+  },
+  "model_config": {
+    "default_models": [
+      "seasonal_naive",
+      "three_day_mean",
+      "ridge",
+      "normalized_ridge",
+      "sapf_similarity",
+      "sapf"
+    ],
+    "models": {
+      "naive": {},
+      "seasonal_naive": {
+        "period": 96
+      },
+      "three_day_mean": {},
+      "seasonal_ar": {},
+      "ridge": {
+        "alpha": 100.0,
+        "solver": "auto",
+        "feature_mode": "observed_history"
+      },
+      "extra_trees": {
+        "n_estimators": 100,
+        "max_depth": 12,
+        "max_features": "sqrt",
+        "n_jobs": 2,
+        "feature_mode": "observed_history"
+      },
+      "lightgbm": {
+        "n_estimators": 100,
+        "num_leaves": 15,
+        "verbosity": -1,
+        "n_jobs": 2,
+        "output_jobs": 4,
+        "feature_mode": "observed_history"
+      },
+      "xgboost": {
+        "n_estimators": 100,
+        "max_depth": 4,
+        "n_jobs": 2,
+        "tree_method": "hist",
+        "output_jobs": 4,
+        "feature_mode": "observed_history"
+      },
+      "sarima": {
+        "order": [
+          1,
+          0,
+          1
+        ],
+        "seasonal_order": [
+          1,
+          0,
+          0,
+          96
+        ],
+        "fit_points": 2048,
+        "maxiter": 50
+      },
+      "lstm": {
+        "hidden_size": 32,
+        "epochs": 10,
+        "batch_size": 32,
+        "learning_rate": 0.001
+      },
+      "tcn": {
+        "hidden_size": 32,
+        "epochs": 10,
+        "batch_size": 32,
+        "learning_rate": 0.001
+      },
+      "dlinear": {
+        "epochs": 10,
+        "batch_size": 32,
+        "learning_rate": 0.001,
+        "kernel_size": 25
+      },
+      "normalized_ridge": {
+        "base_model": "ridge",
+        "base_params": {
+          "alpha": 100.0,
+          "solver": "auto",
+          "feature_mode": "observed_history"
+        },
+        "scale_fraction": 0.01,
+        "epsilon": 1e-06
+      },
+      "normalized_extra_trees": {
+        "base_model": "extra_trees",
+        "base_params": {
+          "n_estimators": 100,
+          "max_depth": 12,
+          "max_features": "sqrt",
+          "n_jobs": 2
+        },
+        "scale_fraction": 0.01,
+        "epsilon": 1e-06
+      },
+      "sapf_similarity": {
+        "base_model": "ridge",
+        "base_params": {
+          "alpha": 100.0,
+          "solver": "auto",
+          "feature_mode": "observed_history"
+        },
+        "scale_fraction": 0.01,
+        "epsilon": 1e-06,
+        "top_k": [
+          1,
+          3,
+          7
+        ],
+        "temperatures": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "feature_groups": [
+          "shape",
+          "level_shape"
+        ],
+        "transfer_strengths": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "reliability_powers": [
+          0.0,
+          1.0
+        ],
+        "worst_domain_penalty": 0.1,
+        "mape_threshold": 1e-08
+      },
+      "sapf": {
+        "base_model": "ridge",
+        "base_params": {
+          "alpha": 100.0,
+          "solver": "auto",
+          "feature_mode": "observed_history"
+        },
+        "scale_fraction": 0.01,
+        "epsilon": 1e-06,
+        "top_k": [
+          1,
+          3,
+          7
+        ],
+        "temperatures": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "feature_groups": [
+          "shape",
+          "level_shape"
+        ],
+        "transfer_strengths": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "reliability_powers": [
+          0.0,
+          1.0
+        ],
+        "worst_domain_penalty": 0.1,
+        "mape_threshold": 1e-08
+      }
+    }
+  },
+  "domain_roles": {
+    "source": [
+      "cella_pdu6",
+      "cella_pdu9",
+      "cellb_pdu12",
+      "celld_pdu32",
+      "celld_pdu36",
+      "celle_pdu26",
+      "celle_pdu29",
+      "cellf_pdu16",
+      "cellf_pdu19",
+      "cellf_pdu22",
+      "cellf_pdu25",
+      "cellg_pdu1",
+      "cellg_pdu4",
+      "cellh_pdu45"
+    ],
+    "validation": [
+      "cella_pdu7",
+      "cellb_pdu14",
+      "celld_pdu33",
+      "celle_pdu27",
+      "celle_pdu30",
+      "cellf_pdu17",
+      "cellf_pdu20",
+      "cellf_pdu23",
+      "cellg_pdu2",
+      "cellg_pdu5",
+      "cellh_pdu53"
+    ],
+    "test": [
+      "cella_pdu8",
+      "cellb_pdu15",
+      "celld_pdu34",
+      "celle_pdu28",
+      "celle_pdu31",
+      "cellf_pdu18",
+      "cellf_pdu21",
+      "cellf_pdu24",
+      "cellg_pdu3",
+      "cellh_pdu54"
+    ],
+    "excluded_domains": {
+      "cella_pdu10": "Previous pilot target; excluded from this mechanism experiment.",
+      "cellb_pdu11": "Previous pilot target; excluded from this mechanism experiment.",
+      "cellb_pdu13": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellc_pdu38": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellc_pdu39": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellc_pdu40": "Previous pilot target; excluded from this mechanism experiment.",
+      "cellc_pdu41": "Ambiguous machine membership; do not claim equipment independence.",
+      "cellc_pdu42": "Ambiguous machine membership; do not claim equipment independence.",
+      "cellc_pdu43": "Ambiguous machine membership; do not claim equipment independence.",
+      "celld_pdu35": "Full-trace native 3/3 coverage mask is incomplete.",
+      "celld_pdu37": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu44": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu46": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu47": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu48": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu49": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu50": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu51": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu52": "Full-trace native 3/3 coverage mask is incomplete.",
+      "cellh_pdu55": "Full-trace native 3/3 coverage mask is incomplete.",
+      "celli_mvpp1": "Different MVPP structure; separate future protocol.",
+      "cellj_mvpp2": "Different MVPP structure; separate future protocol."
+    },
+    "rule": "Natural PDU order within each cell, position modulo 3 = source/validation/test; full-coverage masks only."
+  },
+  "temporal_plan": {
+    "24h": {
+      "development_cutoff_day": 18,
+      "final_cutoff_day": 22,
+      "development_origins": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "final_origins": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "validation_origins": [
+        18,
+        19
+      ],
+      "test_origins": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    "3d": {
+      "development_cutoff_day": 18,
+      "final_cutoff_day": 22,
+      "development_origins": [
+        14,
+        15
+      ],
+      "final_origins": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "validation_origins": [
+        18,
+        19
+      ],
+      "test_origins": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    }
+  },
+  "console_methods": [
+    "seasonal_naive",
+    "three_day_mean",
+    "single_ridge__cella_pdu6",
+    "ridge",
+    "single_normalized_ridge__cella_pdu6",
+    "normalized_ridge",
+    "sapf_similarity",
+    "sapf"
+  ],
+  "method_names": {
+    "single_ridge__cella_pdu6": "预定单源 Ridge",
+    "single_normalized_ridge__cella_pdu6": "预定单源归一化 Ridge"
+  },
+  "data_provenance": {
+    "machine_to_pdu_mapping.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\machine_to_pdu_mapping.csv.gz",
+      "bytes": 532199,
+      "sha256": "69b88e5662348030b074fef2008a4f2c16927a68b2d218a8c7c5cf350dc0aa8d"
+    },
+    "cella_pdu10.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cella_pdu10.csv.gz",
+      "bytes": 46010,
+      "sha256": "2493578ef1a2322c345f22cf477cf34997ba048783c73a50440f29393f01b16d"
+    },
+    "cella_pdu6.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cella_pdu6.csv.gz",
+      "bytes": 45392,
+      "sha256": "7c56bcfd1694dadc2abb3d4fd6ba179fb96cf45adea6288b47667e12b1fe734e"
+    },
+    "cella_pdu7.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cella_pdu7.csv.gz",
+      "bytes": 44063,
+      "sha256": "17c8b11b6bd5d951bcea974e11afe9537d6ada0f59752f4ac80dc08b6cc1180f"
+    },
+    "cella_pdu8.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cella_pdu8.csv.gz",
+      "bytes": 45721,
+      "sha256": "5cc51d4a94eda2cb4e9e26a497e67c5784af4501fb9c7795a5d99d00cc09cf7b"
+    },
+    "cella_pdu9.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cella_pdu9.csv.gz",
+      "bytes": 44774,
+      "sha256": "6bcee9928bdee9c85c56f987003c458a380b52952cbabe4eb1fc8eaee0bb4f50"
+    },
+    "cellb_pdu11.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellb_pdu11.csv.gz",
+      "bytes": 45906,
+      "sha256": "3e7e3d50e6fe5e1929a595dd226bef06d11ed5d0b959fffe619c611b8f42e58c"
+    },
+    "cellb_pdu12.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellb_pdu12.csv.gz",
+      "bytes": 46590,
+      "sha256": "a8f4e6090a0b4b6eab75906f71cf12e21860d50c78dced35627dd1d01f90d879"
+    },
+    "cellb_pdu13.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellb_pdu13.csv.gz",
+      "bytes": 45996,
+      "sha256": "c2a75ae3361d904c5deb5f6a65499ded7b62428c89a7785f236c20ebb27d47e8"
+    },
+    "cellb_pdu14.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellb_pdu14.csv.gz",
+      "bytes": 45686,
+      "sha256": "aaa1f2cc51db9ad05514cb61e860f548bd4b9bb4311211754a04d69e25aa7fc4"
+    },
+    "cellb_pdu15.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellb_pdu15.csv.gz",
+      "bytes": 46844,
+      "sha256": "9561a0f72552264f8c1d7acc6f6081167b64072174cf29cb68bc48da13ec7094"
+    },
+    "cellc_pdu38.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellc_pdu38.csv.gz",
+      "bytes": 48417,
+      "sha256": "fba41238e7c8a41e97a12c5c47dcfa5069bfda4df8bdafca1e4c422b8bb7ce1a"
+    },
+    "cellc_pdu39.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellc_pdu39.csv.gz",
+      "bytes": 48814,
+      "sha256": "195182218871400ddfae78189e4138c1d1992cb516e7bc23275b7a3d403ab403"
+    },
+    "cellc_pdu40.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellc_pdu40.csv.gz",
+      "bytes": 47302,
+      "sha256": "957c040b296c917eaadec3ab533ca4b03ed6e73c2c45990082c3a56725178721"
+    },
+    "cellc_pdu41.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellc_pdu41.csv.gz",
+      "bytes": 45268,
+      "sha256": "3a097916fe277803c5d61b243ecee7b66d4796a51172724eca97d1424a08252b"
+    },
+    "cellc_pdu42.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellc_pdu42.csv.gz",
+      "bytes": 44742,
+      "sha256": "91c989471498f798e36c91a004c8f547371258bb25bbaade94347c5fec04caef"
+    },
+    "cellc_pdu43.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellc_pdu43.csv.gz",
+      "bytes": 44279,
+      "sha256": "f7c723addbf9019e7c9eb3f497ffc4fb33078f70f042cde33f66ef0928edccf7"
+    },
+    "celld_pdu32.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\celld_pdu32.csv.gz",
+      "bytes": 47780,
+      "sha256": "4614ddd36c64218f0755ef469d0c5e8cda475d01b7d30d1663d2757934c6748e"
+    },
+    "celld_pdu33.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\celld_pdu33.csv.gz",
+      "bytes": 47116,
+      "sha256": "27719aea05b1051f58a20e2ca54199873ef480f00176255743af1873f4af66a5"
+    },
+    "celld_pdu34.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\celld_pdu34.csv.gz",
+      "bytes": 47457,
+      "sha256": "b7d9265ca3bf34a0d66b8e73859964ad3f1cbb698640e252ec6bbb601ae664f0"
+    },
+    "celld_pdu35.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\celld_pdu35.csv.gz",
+      "bytes": 47812,
+      "sha256": "e4c40921f351b0addab341ac2970ef8d34cccddb979f8b3b9ed598c3fffb6d27"
+    },
+    "celld_pdu36.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\celld_pdu36.csv.gz",
+      "bytes": 48272,
+      "sha256": "804010422dee70cc19056e1b2c993ca994e7b79933e67dc09c83866f024b0a09"
+    },
+    "celld_pdu37.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\celld_pdu37.csv.gz",
+      "bytes": 48484,
+      "sha256": "42a32a0e2087e93372af07db80cd13c909abbf9b9978c3049482c000e50c789e"
+    },
+    "celle_pdu26.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\celle_pdu26.csv.gz",
+      "bytes": 51663,
+      "sha256": "6eb1fdb032aa1b7617bc796eb1e6ebf960de31f8a98ba9fda689aa3996c899f6"
+    },
+    "celle_pdu27.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\celle_pdu27.csv.gz",
+      "bytes": 50736,
+      "sha256": "bfd662eea7a7248deeae63a876de838332671d7f07c994994b88c5a7839e92d6"
+    },
+    "celle_pdu28.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\celle_pdu28.csv.gz",
+      "bytes": 50906,
+      "sha256": "1caed8b965bb16a98be016e02df1ea53d20f4be7502f3da24d342929f45a4cfa"
+    },
+    "celle_pdu29.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\celle_pdu29.csv.gz",
+      "bytes": 50791,
+      "sha256": "72bd341f6ce4c4e75f133bba07d75e84b948c68e66fabe4ab61036269f310f13"
+    },
+    "celle_pdu30.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\celle_pdu30.csv.gz",
+      "bytes": 50952,
+      "sha256": "a847b3001c7e7bca185b13ed391eb3f3306db6a55795e22f172e53538dfe26fa"
+    },
+    "celle_pdu31.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\celle_pdu31.csv.gz",
+      "bytes": 50156,
+      "sha256": "96597fd820c8e3d989b7d9893af11112aa49986646879591ebf6f5af4a125e0b"
+    },
+    "cellf_pdu16.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellf_pdu16.csv.gz",
+      "bytes": 48661,
+      "sha256": "b33b513febeb44146c419bed3eabbe94f8b0a9e25b57a86e62efd558dd803ed6"
+    },
+    "cellf_pdu17.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellf_pdu17.csv.gz",
+      "bytes": 48730,
+      "sha256": "62af3015031d0430c1b6ff82f8b5a692fbe7303a15005a3c2bd2a60b1861d28e"
+    },
+    "cellf_pdu18.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellf_pdu18.csv.gz",
+      "bytes": 49588,
+      "sha256": "fbe6829ec63866bda8895e4ace05aedf6ad156ba9d0f5d28772f050e83d1e631"
+    },
+    "cellf_pdu19.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellf_pdu19.csv.gz",
+      "bytes": 48952,
+      "sha256": "b62803f82dd5c118ada7a01a64f9edadb5c43b4e371af062fd7bd95f4cfab1a6"
+    },
+    "cellf_pdu20.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellf_pdu20.csv.gz",
+      "bytes": 48121,
+      "sha256": "9451e34a7c91cfa0aea7022dccafbd2e5d7c06b4fa17bbb43e7b2e899e2a1faa"
+    },
+    "cellf_pdu21.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellf_pdu21.csv.gz",
+      "bytes": 45524,
+      "sha256": "92cb9cb5860215ddc9da2122d0bcab76bdcac86e92a986b6f6b121f1d3c9d83b"
+    },
+    "cellf_pdu22.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellf_pdu22.csv.gz",
+      "bytes": 46105,
+      "sha256": "57944b4d22a20f5fe027b868b7a22271bc6c0de3461f922c2c594dd5661ff189"
+    },
+    "cellf_pdu23.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellf_pdu23.csv.gz",
+      "bytes": 45917,
+      "sha256": "f0ad526501411bcf809b814eb7f0b9aaf87985b3ed1ecab548387456a09e46c6"
+    },
+    "cellf_pdu24.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellf_pdu24.csv.gz",
+      "bytes": 45867,
+      "sha256": "b279e8134a95077538a80893874b84889e2f93ebbb0073f177fce81d6fd82da2"
+    },
+    "cellf_pdu25.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellf_pdu25.csv.gz",
+      "bytes": 46261,
+      "sha256": "67df7ecd1bf2499206cc5ea02be74e31c0a6ff63dfe734e572f54740bc7c3bb0"
+    },
+    "cellg_pdu1.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellg_pdu1.csv.gz",
+      "bytes": 46941,
+      "sha256": "a36fdd24b677a0a08f6a88db5c9aab48e22f789311263702babc69135fdaa178"
+    },
+    "cellg_pdu2.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellg_pdu2.csv.gz",
+      "bytes": 47373,
+      "sha256": "fed7419eb18da4da52c8b4e8c7f419671aa14f35f13f731af7de66cd646b69c5"
+    },
+    "cellg_pdu3.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellg_pdu3.csv.gz",
+      "bytes": 47155,
+      "sha256": "9ae1a0d4c65997dd24f3eb4d9efb425e762696a5b3749bd844d19f281d914c2d"
+    },
+    "cellg_pdu4.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellg_pdu4.csv.gz",
+      "bytes": 46208,
+      "sha256": "ceadc33f6b9acd7cf9ad7245d7256d1b17945714eae20e2b2fbe6034c816894d"
+    },
+    "cellg_pdu5.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellg_pdu5.csv.gz",
+      "bytes": 47714,
+      "sha256": "f26ce0d1bf51c1469a82109c9be17c39c2458631339b66ed5991a266a01d1005"
+    },
+    "cellh_pdu44.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellh_pdu44.csv.gz",
+      "bytes": 48951,
+      "sha256": "64799615d180a73bb095a1ad5034f1e20e5ee616d699f9bc79326e88f03ea4b0"
+    },
+    "cellh_pdu45.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellh_pdu45.csv.gz",
+      "bytes": 49241,
+      "sha256": "6f917495b85ad568c29188ba33c9db2f736a3c603f0622f547df349e4c8a9990"
+    },
+    "cellh_pdu46.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellh_pdu46.csv.gz",
+      "bytes": 55323,
+      "sha256": "7cb31e257015910eecded98fdd78374e1f767814202746e28fbed672ea2a6c68"
+    },
+    "cellh_pdu47.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellh_pdu47.csv.gz",
+      "bytes": 48969,
+      "sha256": "b2f045603dfce9d73294a39ae6836aad07355a89481179ed2210c03d9a40616a"
+    },
+    "cellh_pdu48.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellh_pdu48.csv.gz",
+      "bytes": 49246,
+      "sha256": "b2848d9c15ab3b73625ad048257e0c2b7a38391e59c8fe403c41380165a27017"
+    },
+    "cellh_pdu49.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellh_pdu49.csv.gz",
+      "bytes": 51122,
+      "sha256": "a2af48fd01cff570ecbc062126d33e91cfc1ae46a3498f5bdab17fa003edd959"
+    },
+    "cellh_pdu50.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellh_pdu50.csv.gz",
+      "bytes": 48268,
+      "sha256": "3c88c8c9a3dcbcb910cc301b3a804a39e48c8d77ede3a443dc54066278fb7ec5"
+    },
+    "cellh_pdu51.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellh_pdu51.csv.gz",
+      "bytes": 47744,
+      "sha256": "c04489b68165a378bfed048606d46c590c865e08c56531c1295e741de73d31c9"
+    },
+    "cellh_pdu52.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellh_pdu52.csv.gz",
+      "bytes": 47172,
+      "sha256": "961fbd5d9225bbd5652cbe6e692ead58a7875b63c79db818498df61d3ea460b5"
+    },
+    "cellh_pdu53.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellh_pdu53.csv.gz",
+      "bytes": 48308,
+      "sha256": "d4f5c7801ce1275ca83731db57f1523a439c6161e2a65906377526e3c10f78f4"
+    },
+    "cellh_pdu54.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellh_pdu54.csv.gz",
+      "bytes": 51778,
+      "sha256": "03488de47a8bc0753f5d6c8ec898ddf0b798ee8499b5ff7666100febc4799970"
+    },
+    "cellh_pdu55.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellh_pdu55.csv.gz",
+      "bytes": 46843,
+      "sha256": "d15353c1a7c32b2f9c3c46ff19e818c0dea4faba73788f27c563d09e9e0d5667"
+    },
+    "celli_mvpp1.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\celli_mvpp1.csv.gz",
+      "bytes": 46957,
+      "sha256": "eefebe4008366e647179eb4e55021f9a67fc63205953c9b48591196f6e36c49c"
+    },
+    "cellj_mvpp2.csv.gz": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\Google\\cellj_mvpp2.csv.gz",
+      "bytes": 45566,
+      "sha256": "7530fb0d34bf5f07e638fa379abc7e63d83cbf5b0478e011d41c51905669ba22"
+    }
+  },
+  "domain_metadata": {
+    "cella_pdu10": {
+      "dataset_id": "google_power2019",
+      "site_id": "cella",
+      "domain_id": "cella_pdu10",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu10",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cella_pdu6": {
+      "dataset_id": "google_power2019",
+      "site_id": "cella",
+      "domain_id": "cella_pdu6",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu6",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cella_pdu7": {
+      "dataset_id": "google_power2019",
+      "site_id": "cella",
+      "domain_id": "cella_pdu7",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu7",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cella_pdu8": {
+      "dataset_id": "google_power2019",
+      "site_id": "cella",
+      "domain_id": "cella_pdu8",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu8",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cella_pdu9": {
+      "dataset_id": "google_power2019",
+      "site_id": "cella",
+      "domain_id": "cella_pdu9",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu9",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellb_pdu11": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellb",
+      "domain_id": "cellb_pdu11",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu11",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellb_pdu12": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellb",
+      "domain_id": "cellb_pdu12",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu12",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellb_pdu13": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellb",
+      "domain_id": "cellb_pdu13",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu13",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellb_pdu14": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellb",
+      "domain_id": "cellb_pdu14",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu14",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellb_pdu15": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellb",
+      "domain_id": "cellb_pdu15",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu15",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellc_pdu38": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellc",
+      "domain_id": "cellc_pdu38",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu38",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellc_pdu39": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellc",
+      "domain_id": "cellc_pdu39",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu39",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellc_pdu40": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellc",
+      "domain_id": "cellc_pdu40",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu40",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellc_pdu41": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellc",
+      "domain_id": "cellc_pdu41",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu41",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellc_pdu42": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellc",
+      "domain_id": "cellc_pdu42",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu42",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellc_pdu43": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellc",
+      "domain_id": "cellc_pdu43",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu43",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "celld_pdu32": {
+      "dataset_id": "google_power2019",
+      "site_id": "celld",
+      "domain_id": "celld_pdu32",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu32",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "celld_pdu33": {
+      "dataset_id": "google_power2019",
+      "site_id": "celld",
+      "domain_id": "celld_pdu33",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu33",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "celld_pdu34": {
+      "dataset_id": "google_power2019",
+      "site_id": "celld",
+      "domain_id": "celld_pdu34",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu34",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "celld_pdu35": {
+      "dataset_id": "google_power2019",
+      "site_id": "celld",
+      "domain_id": "celld_pdu35",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu35",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "celld_pdu36": {
+      "dataset_id": "google_power2019",
+      "site_id": "celld",
+      "domain_id": "celld_pdu36",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu36",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "celld_pdu37": {
+      "dataset_id": "google_power2019",
+      "site_id": "celld",
+      "domain_id": "celld_pdu37",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu37",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "celle_pdu26": {
+      "dataset_id": "google_power2019",
+      "site_id": "celle",
+      "domain_id": "celle_pdu26",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu26",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "celle_pdu27": {
+      "dataset_id": "google_power2019",
+      "site_id": "celle",
+      "domain_id": "celle_pdu27",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu27",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "celle_pdu28": {
+      "dataset_id": "google_power2019",
+      "site_id": "celle",
+      "domain_id": "celle_pdu28",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu28",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "celle_pdu29": {
+      "dataset_id": "google_power2019",
+      "site_id": "celle",
+      "domain_id": "celle_pdu29",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu29",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "celle_pdu30": {
+      "dataset_id": "google_power2019",
+      "site_id": "celle",
+      "domain_id": "celle_pdu30",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu30",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "celle_pdu31": {
+      "dataset_id": "google_power2019",
+      "site_id": "celle",
+      "domain_id": "celle_pdu31",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu31",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellf_pdu16": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellf",
+      "domain_id": "cellf_pdu16",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu16",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellf_pdu17": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellf",
+      "domain_id": "cellf_pdu17",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu17",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellf_pdu18": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellf",
+      "domain_id": "cellf_pdu18",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu18",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellf_pdu19": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellf",
+      "domain_id": "cellf_pdu19",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu19",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellf_pdu20": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellf",
+      "domain_id": "cellf_pdu20",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu20",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellf_pdu21": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellf",
+      "domain_id": "cellf_pdu21",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu21",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellf_pdu22": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellf",
+      "domain_id": "cellf_pdu22",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu22",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellf_pdu23": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellf",
+      "domain_id": "cellf_pdu23",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu23",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellf_pdu24": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellf",
+      "domain_id": "cellf_pdu24",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu24",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellf_pdu25": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellf",
+      "domain_id": "cellf_pdu25",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu25",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellg_pdu1": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellg",
+      "domain_id": "cellg_pdu1",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu1",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellg_pdu2": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellg",
+      "domain_id": "cellg_pdu2",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu2",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellg_pdu3": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellg",
+      "domain_id": "cellg_pdu3",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu3",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellg_pdu4": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellg",
+      "domain_id": "cellg_pdu4",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu4",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellg_pdu5": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellg",
+      "domain_id": "cellg_pdu5",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu5",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellh_pdu44": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellh",
+      "domain_id": "cellh_pdu44",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu44",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellh_pdu45": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellh",
+      "domain_id": "cellh_pdu45",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu45",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellh_pdu46": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellh",
+      "domain_id": "cellh_pdu46",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu46",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellh_pdu47": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellh",
+      "domain_id": "cellh_pdu47",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu47",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellh_pdu48": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellh",
+      "domain_id": "cellh_pdu48",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu48",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellh_pdu49": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellh",
+      "domain_id": "cellh_pdu49",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu49",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellh_pdu50": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellh",
+      "domain_id": "cellh_pdu50",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu50",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellh_pdu51": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellh",
+      "domain_id": "cellh_pdu51",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu51",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellh_pdu52": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellh",
+      "domain_id": "cellh_pdu52",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu52",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellh_pdu53": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellh",
+      "domain_id": "cellh_pdu53",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu53",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellh_pdu54": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellh",
+      "domain_id": "cellh_pdu54",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu54",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellh_pdu55": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellh",
+      "domain_id": "cellh_pdu55",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "pdu55",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "celli_mvpp1": {
+      "dataset_id": "google_power2019",
+      "site_id": "celli",
+      "domain_id": "celli_mvpp1",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "mvpp1",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    },
+    "cellj_mvpp2": {
+      "dataset_id": "google_power2019",
+      "site_id": "cellj",
+      "domain_id": "cellj_mvpp2",
+      "target_kind": "power_utilization",
+      "target_scope": "power_domain",
+      "target_unit": "utilization_fraction",
+      "label_origin": "measured",
+      "timezone": "America/Los_Angeles",
+      "timezone_verified": true,
+      "raw_frequency": "5min",
+      "sampling_semantics": "sample_mean",
+      "interval_definition": "start; [timestamp, timestamp + 15 minutes)",
+      "coverage": "Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.",
+      "source_version": "Google PowerData 2019 local csv.gz",
+      "power_domain_id": "mvpp2",
+      "rack_id": null,
+      "node_id": null,
+      "mapping_route": null,
+      "assumptions": [
+        "15min sample mean is not a continuous power integral.",
+        "Power-domain generalization does not establish facility-meter generalization."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": null,
+      "usage_role": "development"
+    }
+  },
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "pyarrow": "24.0.0"
+  },
+  "config_digest": "5b19983bd30d8ae212f2d26d808dd91b9115c6eb2865983379868be82de1c622",
+  "archive_baseline": "bc6a439",
+  "source_sha256": {
+    "src\\legacy.py": "ae1db7b9caaee6d309726f6fa5dc4db62a48cbbbf41ff4018f6b73ecf693a170",
+    "src\\utils.py": "b48318ea15f50a821c12913ceeae5b1530cae9e9938d1fbe4b2c1669b3ed46a8",
+    "src\\__init__.py": "2fa2356fbbcc2d00592a358253e84560084968478089d896da358488139a38bb",
+    "src\\data\\adapters.py": "a3da2fa588698d068709f6a9be49fc5e7ce7a93cf7b297801b7f4fced375a790",
+    "src\\data\\cleaning.py": "175f9fd3946cbd3cabcdfa90a38a203ea2afcc0c5126fa7a45a6834837fdbacf",
+    "src\\data\\cross_domain.py": "a1232680e7d3c6f2b16fb45e632c913b69e21864ea4029d87e7701534b461302",
+    "src\\data\\domains.py": "68c5cb678ad9a37481861ed4507fdad6ef601ca894b00f39a85a2643e27f0c86",
+    "src\\data\\features.py": "3926b9ec124c32d6a1e1b8e21e6f6dfc956129279c0df570ce5674c12d1ed914",
+    "src\\data\\google_panel.py": "a6282f48dfd61b72f37490fc55ff1423ee11770b02250eedcee3a9cbbfb44fed",
+    "src\\data\\heterogeneous.py": "4557e1f8129aa3097e91aac5c047acf5114ffd2bb4df7001f8cfab435c1ea78a",
+    "src\\data\\loaders.py": "4b3ac1763240365fcfe7c9ed15487735947aa669ca8764a403607f996bfdbee9",
+    "src\\data\\pipeline.py": "9bf9b14bedcb81d6db5e3b6510d9f0f8ab8f15702af1a5170e3930175f0db114",
+    "src\\data\\resampling.py": "2bba851c8c85ef5e3cbcefd3543e3d5722db2eb5b253ce50a2f7645a36fc05e6",
+    "src\\data\\shape_features.py": "8560c4d6879be366cdcb9f97b31a3455100dc143e24853dfad14a8389173a433",
+    "src\\data\\splitting.py": "d4844365a8f0cd44ccf4135c70715853b61e3819a61332044fceabfc52e446ef",
+    "src\\data\\synthetic.py": "697badeb55ce1cb9200158aed2d237f50930d4a6e88c75c4d4a2da16892442ae",
+    "src\\data\\__init__.py": "845e692e06c749da01aec95f9eafefa1300f2657b007b3336d716fbc12418928",
+    "src\\evaluation\\artifacts.py": "07f81690f03e505b98fdc5a0dca4abf33d5e9a7920e00c7e2bafb74d9fea5f41",
+    "src\\evaluation\\backtest.py": "d21e77bc6b7a918b5e3b99a2164d6a57aa8f511e92951077dbf7ce06dd14b5bb",
+    "src\\evaluation\\cross_domain.py": "9226ad9a5877876ae5e0026150bade1b2ae0940ed947745782dfff7a6bd085d2",
+    "src\\evaluation\\metrics.py": "190a02fbd55fb4e8823d5d174eaa2b0efdfe81281026122f88ae8e15cb558528",
+    "src\\evaluation\\reporting.py": "a1c7495fabe22a295c0812e2a77fd34d4f6e8542cd2643a02eb4116295f7d5d9",
+    "src\\evaluation\\visualization.py": "9df9043d4a16d467a59654b46a3feb525d421972bce8b90ce628ec998ae88d30",
+    "src\\evaluation\\__init__.py": "061bfae3496d47c948ae7c44ce9e0ffba7188024835e282bc4f5cdda28cd5974",
+    "src\\models\\base.py": "928a7930f75a9cfdd8ef6635aa5c9da6064c1cd0cb81d2407b1bc578d4683c5f",
+    "src\\models\\__init__.py": "843e5fdcb43d012292a81a3b6204e9a2d1cfdecaad2ed64dba3672ef85e8193f",
+    "src\\training\\experiment.py": "28470881eb945cb835f3e40b43300db6407a289ab5e8040ad87f6a2dd3e1d44d",
+    "src\\training\\lifecycle.py": "92de33865a1d75122a32cb6deac56dbedd8cadd6c582e98a5aa6c6e469d5d456",
+    "src\\training\\predictor.py": "73aac5a6f02c323954de9fb1b5aa26e29c1d2471a1cd8f9b1c563af1a4d03056",
+    "src\\training\\trainer.py": "fcedddad3bf394de9eaaf957258552fa80dcb1ff12225edeb38378a1feb2d5d8",
+    "src\\training\\__init__.py": "6a54f0f403202352c11a0d25e5e422d14bb185c30a4f1ae1f6f7d15c36b32ad4",
+    "src\\models\\deep\\forecasters.py": "2441b10e9d47d1d72af8db8e4ee70fc138df5cab997e292d263d73c4b2e68fab",
+    "src\\models\\deep\\__init__.py": "81612e6ea5a4179687fecdd7e83a20655508fe2b9bf2e6e7f0958122c7df25cf",
+    "src\\models\\ml\\normalized.py": "ceba1360fccf3949cc8999dae395d5685f05cab4dea8ac5d57e1072d51aba3b2",
+    "src\\models\\ml\\sapf.py": "ebc86a99d6ad307618456733b9ceb83bdabe3cca9e09e1215cffb413fed6119f",
+    "src\\models\\ml\\tabular.py": "f98309a25764ecc2adad46461074f26595bca1b2823d29381d01534112b5f132",
+    "src\\models\\ml\\__init__.py": "6ae30aed1eef987efc37bd52c3d69976723f10319484b871208fa41bdd5ef618",
+    "src\\models\\statistical\\baselines.py": "3baf2fee0299fa31626c75b94ef96aeee7c8209d04328a379e0d1c154e2f8051",
+    "src\\models\\statistical\\sarima.py": "9f1de05507e67bab14793ed69db6088eb1c73ec3c72b0d7c53cc6370fd24515a",
+    "src\\models\\statistical\\__init__.py": "cc1c11d30f4bc0bcbb7e11b42ab0f33c013acd63d3c43d4c7206cbca3404c94d",
+    "scripts\\audit_cross_domain.py": "26cb8e800c6e815ad7aa35328037144f93f844a30ee03308bbd6cc0ecf19b2d3",
+    "scripts\\audit_datasets.py": "85e15b7dac89ce0bbb6b6d36718b7d8d5602ba9fc51a3427f1e0cfe3a20aec86",
+    "scripts\\inspect_data.py": "6736fb435fb323479557018152ea623e072ce3b896d3ece69af0c34f3c065726",
+    "scripts\\prepare_data.py": "55eaf514f6800ce6cd2ce702a6e2742af675dd84b24659d5b842130f6dcce07c",
+    "scripts\\run_experiment.py": "5271c861af5c04ee013d1bc8aae37bcf616e72788427915a03c389ec5cb09fcb",
+    "scripts\\__init__.py": "7d27e830002bbe144c804b6197ef02975307d875d7bb93abc9102ece148a6fad",
+    "configs\\models.yaml": "6ca76453f63038e6d77cbd527916cf72e822cdfdbda7866abc4f97c131778e9a",
+    "configs\\sapf_google.yaml": "ef24f483f48b2f87cb929190ac6da75371f1fefd3c6f14df096c89b7533b96c6",
+    "configs\\datasets\\google_cross_domain.yaml": "5b41d60630af044b69ce98b52a6e104ff9623e041cb55a21b3451643f91e8ee4",
+    "configs\\datasets\\nlr.yaml": "dd74f2a01d3c3b430b1adf27a43bd535c26f6c0e3efc8b22d7657ce3b6cc24f5",
+    "configs\\datasets\\other.yaml": "5057394f2e3f477f2db30b524fa6a32c08fb3716f7e4fdae8543d35e7bfb3fa4",
+    "configs\\datasets\\registry.yaml": "cafaf88f087ad7ec43064efa38f9a809e1a0b32452bac2ee02394c6c14e966a0"
+  },
+  "limitations": [
+    "Power-domain utilization, not facility-meter kW.",
+    "Validation domains select SAPF settings; their calibrated scores are not unbiased holdout results.",
+    "Quality screening conditions on complete full-trace masks.",
+    "The same historical Google release has been studied before; no claim of a newly collected untouched dataset.",
+    "3d test windows overlap; cross-domain holdout is not independent-site generalization.",
+    "Eagle is reserved as a final holdout and is not loaded."
+  ],
+  "completed_at_utc": "2026-10-25T08:30:44.169337+00:00"
+}

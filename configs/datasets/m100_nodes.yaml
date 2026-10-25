@@ -1,0 +1,41 @@
+name: m100_exadata_15min_nodes
+loader: m100_aggregated
+raw_data: data/raw/M100
+source_documentation: https://zenodo.org/records/7541722
+trace_start: '2021-04-23T00:00:00Z'
+expected_days: 60
+expected_domains: 33
+target: node_power_kw
+published_target: total_power_avg
+published_unit: W
+target_unit: kW
+archives:
+  - filename: 0.tar
+    rack_id: '0'
+    sha256: d46ec4db0c12037c298eb074d256374730fab92e6efedaa073348533d3ab3840
+    node_ids: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 18, 19]
+  - filename: 1.tar
+    rack_id: '1'
+    sha256: 1465e8c102e52cf8da5e39ff95829949afde719596af42680d5f610b7432ba8f
+    node_ids: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33, 35, 36, 37, 38]
+domain_metadata:
+  dataset_id: m100_exadata_15min
+  site_id: marconi100
+  domain_id: per_archive_node
+  target_field: node_power_kw
+  target_kind: active_power
+  target_scope: node
+  target_unit: kW
+  label_origin: measured
+  timezone: UTC
+  timezone_verified: true
+  raw_frequency: 15min
+  sampling_semantics: interval_mean
+  interval_definition: 'Published 15min grid label; upstream left/right boundary unverified. Only preceding published slots enter history.'
+  coverage: 'One finite nonnegative published aggregate per unique node/timestamp; no interpolation; upstream sample counts unavailable.'
+  source_version: 'M100 aggregated data DOI 10.5281/zenodo.7541722; local racks 0 and 1, SHA256 pinned.'
+  assumptions:
+    - 'Conservative availability upper bound is published timestamp plus 15min; assumed no additional reporting delay; last historical availability must not exceed issue time.'
+    - 'Published aggregates cannot establish 45-of-45 raw 20s sample coverage or exact upstream interval boundaries.'
+    - 'BMC node power is not facility-meter power; two racks do not establish cross-datacenter generalization.'
+  feature_availability: {target: history_only, trace_calendar: future_known}

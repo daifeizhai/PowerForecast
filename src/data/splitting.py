@@ -15,13 +15,14 @@ class ForecastInputs:
     origins: pd.DatetimeIndex  # first interval to predict
     target_times: np.ndarray
     domain_ids: tuple[str, ...] | None = None  # optional side metadata, never a numeric feature
+    points_per_day: int = 96
 
     def __len__(self) -> int:
         return len(self.history)
 
     def take(self, indices: slice | np.ndarray) -> "ForecastInputs":
         domains = None if self.domain_ids is None else tuple(np.asarray(self.domain_ids)[indices].tolist())
-        return ForecastInputs(self.history[indices], self.future_known[indices], self.origins[indices], self.target_times[indices], domains)
+        return ForecastInputs(self.history[indices], self.future_known[indices], self.origins[indices], self.target_times[indices], domains, self.points_per_day)
 
 
 @dataclass(frozen=True)
@@ -39,6 +40,8 @@ def concatenate_domain_batches(batches: dict[str, WindowBatch]) -> WindowBatch:
     if not batches or any(not len(b) for b in batches.values()):
         raise ValueError("Domain batches must be nonempty.")
     values = list(batches.values())
+    if len({b.inputs.points_per_day for b in values}) != 1:
+        raise ValueError("Never concatenate different forecast cadences.")
     arrays = [np.concatenate([getattr(b.inputs, key) for b in values])
               for key in ("history", "future_known", "target_times")]
     labels = np.concatenate([b.targets for b in values])
@@ -46,7 +49,7 @@ def concatenate_domain_batches(batches: dict[str, WindowBatch]) -> WindowBatch:
         array.setflags(write=False)
     origins = values[0].inputs.origins.append([b.inputs.origins for b in values[1:]])
     domains = tuple(domain for domain, batch in batches.items() for _ in range(len(batch)))
-    inputs = ForecastInputs(arrays[0], arrays[1], origins, arrays[2], domains)
+    inputs = ForecastInputs(arrays[0], arrays[1], origins, arrays[2], domains, values[0].inputs.points_per_day)
     return WindowBatch(inputs, labels, sum(b.skipped_windows for b in values))
 
 
@@ -97,7 +100,7 @@ def adaptive_day_splits(days: int, train_fraction: float = .6, validation_fracti
             "test": ((train+validation)*96, days*96)}
 
 
-def build_windows(history: pd.DataFrame, known: pd.DataFrame, target: pd.Series, bounds: tuple[int, int], context: int, horizon: int, stride: int) -> WindowBatch:
+def build_windows(history: pd.DataFrame, known: pd.DataFrame, target: pd.Series, bounds: tuple[int, int], context: int, horizon: int, stride: int, points_per_day: int = 96) -> WindowBatch:
     if min(context, horizon, stride) <= 0:
         raise ValueError("Context, horizon, and stride must be positive.")
     if not history.index.equals(known.index) or not history.index.equals(target.index):
@@ -122,5 +125,5 @@ def build_windows(history: pd.DataFrame, known: pd.DataFrame, target: pd.Series,
         times.append(history.index[origin:origin+horizon].to_numpy())
     if not labels:
         raise ValueError(f"No valid windows for bounds={bounds}, context={context}, horizon={horizon}; skipped={skipped}. Check data length and missing values.")
-    inputs = ForecastInputs(np.stack(contexts), np.stack(calendars), pd.DatetimeIndex(origins), np.stack(times))
+    inputs = ForecastInputs(np.stack(contexts), np.stack(calendars), pd.DatetimeIndex(origins), np.stack(times), points_per_day=points_per_day)
     return WindowBatch(inputs, np.stack(labels), skipped)

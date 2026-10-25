@@ -1,0 +1,33 @@
+protocol: sapf_google_holdout_v1
+research_method: SAPF mechanism study
+dataset_config: configs/datasets/google_cross_domain.yaml
+model_config: configs/models.yaml
+seed: 42
+frequency: 15min
+context_length: 1344
+horizons: {24h: 96, 3d: 288}
+target_kind: power_utilization
+target_scope: power_domain
+# Predeclared before new test predictions. These old pilot targets are not reused for selection.
+previously_evaluated_pilot_domains: [cella_pdu10, cellb_pdu11, cellc_pdu40]
+domain_assignment: natural_pdu_order_within_cell_modulo_three
+quality_screen: full_trace_native_sample_masks_only
+temporal_protocol:
+  24h:
+    development_cutoff_day: 18
+    final_cutoff_day: 22
+    validation_origins: [18, 19]
+    test_origins: [22, 23, 24, 25, 26, 27, 28, 29, 30]
+  3d:
+    development_cutoff_day: 18
+    final_cutoff_day: 22
+    validation_origins: [18, 19]
+    test_origins: [22, 23, 24, 25, 26, 27, 28]
+pairwise_source_diagnostics: true
+prediction_batch_size: 32
+blas_threads: 1
+clip_min: 0.0
+mape_threshold: 1.0e-8
+results_dir: results/runs
+save_models: true
+save_plots: true

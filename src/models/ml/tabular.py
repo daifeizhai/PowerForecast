@@ -64,5 +64,5 @@ class TabularForecaster(BaseForecaster):
         # Retain every observed lag. Direct lead-specific models need only the
         # origin/day calendar phases, not thousands of repeated calendar columns.
         return np.concatenate([inputs.history[:, :, :observed_count].reshape(len(inputs), -1),
-            inputs.history[:, -1, observed_count:], inputs.future_known[:, ::96].reshape(len(inputs), -1),
+            inputs.history[:, -1, observed_count:], inputs.future_known[:, ::inputs.points_per_day].reshape(len(inputs), -1),
             inputs.future_known[:, -1]], axis=1)

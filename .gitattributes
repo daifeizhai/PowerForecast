@@ -1,0 +1,3 @@
+# Preserve byte-level checksums across checkouts and Git archives.
+archive/** -text
+docs/figures/** -text

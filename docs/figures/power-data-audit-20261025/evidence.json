@@ -1,0 +1,25 @@
+{
+  "audit_report": "docs/M100_UCC2023_DATA_AUDIT.md",
+  "audit_script": "scripts/audit_power_sources.py",
+  "script_sha256": "953138ca63b728bbf7726bbe8ea3f7909a9e85d86b6a7bd8124b856503c62682",
+  "original_raw_files_not_modified": true,
+  "eagle_opened": false,
+  "verification": {
+    "nodes": 178,
+    "raw_rows": 6811975,
+    "official_file_hash_matches": 4,
+    "extracted_member_hash_matches": 16,
+    "independent_node_checks": 712,
+    "independent_passed": true,
+    "synthetic_boundary_checks_passed": true,
+    "data_contract_tests_passed": 5
+  },
+  "hashes": {
+    "audit.json": "a60956f59051372f2a1fd05e263ce144d3b0b09d695a9be50372cc2d5458ee7e",
+    "continuous-days.png": "06d32f27d7a9b60594bd53363b33a331d0ac69e1b206870a0c488b6d798a0c5a",
+    "duplicate-clock-times.csv": "beadcd50f7e4613169099b128a851d8628d96f6dab38620871f54c54761a6f4e",
+    "features.csv": "ad0b22f77e792c243e0336d29fa2ccf06c967ee04755b83f2d4c8d663f7ba662",
+    "independent-checks.json": "a8e20fd728aa3d285f5cd765d441f81b380f9a7383dfef2f545c08903f3b537b",
+    "nodes.csv": "3502c1e35163bdbdf6a490b02e2d97af8860a6639868f7471b776553eded29c4"
+  }
+}

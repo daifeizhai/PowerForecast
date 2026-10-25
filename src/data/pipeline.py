@@ -17,8 +17,10 @@ from src.utils import preparation_config_digest, resolve_path, write_json
 def prepare_dataset(config: dict, output: str | Path | None = None, start: str | None = None, end: str | None = None) -> tuple[pd.DataFrame, dict]:
     domain_metadata = metadata_from_config(config)
     if config.get("frequency", "15min") != "15min":
-        raise ValueError("This framework's 96/672-step tasks require frequency=15min.")
+        raise ValueError("SAPF 24h/3d tasks require frequency=15min.")
     output = resolve_path(output or config["processed_path"])
+    if any(path.exists() for path in (output, output.with_suffix(".metadata.json"), output.with_suffix(".coverage.parquet"))):
+        raise FileExistsError("Prepared output already exists; choose a new versioned output path to preserve historical data.")
     raw_root = resolve_path("data/raw")
     sources = {name: locate_source(spec) for name, spec in config["sources"].items()}
     protected = [raw_root, *[path.parent for path in sources.values()]]

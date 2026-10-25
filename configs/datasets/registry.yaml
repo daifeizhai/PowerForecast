@@ -1,0 +1,86 @@
+# Evidence-backed source roles. Candidate metadata does not imply local ingestion or validation.
+sources:
+  google_power2019:
+    local_path: data/raw/Google
+    status: audited_and_used_for_mechanism_study
+    target_kind: power_utilization
+    target_scope: power_domain
+    target_unit: utilization_fraction
+    label_origin: measured
+    raw_frequency: 5min
+    use: disjoint_source_validation_test_domains
+    source: https://github.com/google/cluster-data/blob/master/PowerData2019.md
+  alibaba_gpu_v2020:
+    local_path: data/raw/Alibaba-GPU-v2020
+    status: headerless_schema_adapter_and_local_hash_audit
+    target_kind: resource_activity
+    target_scope: instance_or_machine
+    label_origin: not_estimable
+    use: future_unlabeled_resource_pattern_learning_only
+    causal_limit: sensor statistics are instance-lifetime means/maxima; unavailable before instance completion
+    source: https://github.com/alibaba/clusterdata/tree/master/cluster-trace-gpu-v2020
+  m100_exadata:
+    local_path: data/raw/M100
+    status: local_15min_adapter_and_frozen_cross_node_experiment_completed
+    target_kind: active_power
+    target_scope: node
+    target_unit: W
+    adapted_target_unit: kW
+    label_origin: measured
+    raw_frequency: 15min
+    upstream_raw_frequency: 20s
+    audited_metric: total_power_avg
+    sampling_semantics: published_ipmi_interval_mean_with_std_min_max
+    timestamp_timezone: UTC
+    aggregation_boundary_verified: false
+    raw_sample_counts_available: false
+    local_audited_nodes: 33
+    local_files: [0.tar, 1.tar]
+    local_power_null_pct: 8.279932691830798
+    audit_report: docs/M100_UCC2023_DATA_AUDIT.md
+    use: supervised_cross_node_mechanism_study_only_same_site_two_racks
+    experiment_config: configs/sapf_m100.yaml
+    experiment_report: docs/M100_RESULTS.md
+    source: https://zenodo.org/records/7541722
+    upstream_raw_source: https://zenodo.org/records/7588815
+    schema: https://gitlab.com/ecs-lab/exadata/-/blob/main/documentation/plugins/ipmi.md
+    upstream_raw_adapter: src/data/heterogeneous.py:adapt_m100_total_power
+    adapter: src/data/m100_panel.py:adapt_m100_aggregated
+    remaining_limits: [aggregation_boundary_unverified_conservative_slot_availability_assumed, raw_sample_counts_not_available, same_site_two_racks_only, common_complete_quality_period_conditioning]
+  ucc2023:
+    local_path: data/raw/UCC2023
+    status: local_full_csvs_audited_requires_timezone_and_native_grid_protocol
+    target_kind: active_power
+    target_scope: node
+    target_unit: W
+    label_origin: measured
+    raw_frequency: 10min
+    audited_metric: Power
+    timestamp_timezone: unverified_naive_clock_time
+    local_audited_host_ids: {D1: 81, D2: 64}
+    local_power_null_pct: {D1: 0.003019801529911498, D2: 13.836118605115907}
+    audit_report: docs/M100_UCC2023_DATA_AUDIT.md
+    use: future_independent_native_or_30min_protocol
+    source: https://zenodo.org/records/10069402
+    paper: https://hpc.ec.tuwien.ac.at/files/UCC_23_data_center_analysis.pdf
+    blockers: [timezone_and_dst_fold_not_verified, power_missing_hosts_require_role_declaration, native_10min_cannot_create_native_15min_labels, auxiliary_unit_multipliers_not_fully_verified]
+  nlr_eagle:
+    local_path: data/raw/Eagle
+    status: reserved_final_holdout_not_opened
+    usage_role: final_holdout
+    allow_training: false
+    allow_validation: false
+    allow_strategy_design: false
+    allow_inference_history: true
+    target_scope: requires_node_rack_or_facility_audit
+    use: final_independent_evaluation_only
+  nlr_esif:
+    local_path: data/raw/NLR_Dataset
+    status: legacy_facility_component_reference
+    target_kind: active_power
+    target_scope: facility
+    target_unit: kW
+    label_origin: component_sum
+    timezone_verified: false
+    use: physical_contract_and_legacy_reproduction_only
+    distinct_from: nlr_eagle

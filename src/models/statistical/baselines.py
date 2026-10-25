@@ -40,13 +40,14 @@ class ThreeDayMeanForecaster(BaseForecaster):
     name = "three_day_mean"
 
     def fit(self, batch):
-        if batch.inputs.history.shape[1] < 288:
+        if batch.inputs.history.shape[1] < batch.inputs.points_per_day*3:
             raise ValueError("three_day_mean requires 3 complete observed days.")
         return self
 
     def predict(self, inputs):
-        shape = inputs.history[:, -288:, 0].reshape(len(inputs), 3, 96).mean(1)
-        return shape[:, np.arange(inputs.future_known.shape[1]) % 96]
+        period = inputs.points_per_day
+        shape = inputs.history[:, -3*period:, 0].reshape(len(inputs), 3, period).mean(1)
+        return shape[:, np.arange(inputs.future_known.shape[1]) % period]
 
 
 class SeasonalARForecaster(BaseForecaster):

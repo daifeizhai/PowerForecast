@@ -30,6 +30,8 @@ class DomainMetadata:
     assumptions: tuple[str, ...] = ()
     feature_availability: dict = field(default_factory=dict)
     target_field: str | None = None
+    usage_role: str = "development"
+    evaluation_frequency: str = "15min"
 
     def __post_init__(self):
         required = (self.dataset_id, self.site_id, self.domain_id, self.target_scope,
@@ -38,6 +40,8 @@ class DomainMetadata:
             raise ValueError("Domain identity, time, coverage and source version must be explicit.")
         if not isinstance(self.timezone_verified, bool):
             raise ValueError("timezone_verified must be a boolean, not an inferred truth value.")
+        if self.usage_role not in {"development", "final_holdout"}:
+            raise ValueError("usage_role must be development or final_holdout.")
         if self.label_origin not in {"measured", "energy_converted", "component_sum", "calibrated_estimate",
                                      "assumed_scenario", "not_estimable"}:
             raise ValueError(f"Unknown label_origin: {self.label_origin}")
@@ -46,8 +50,9 @@ class DomainMetadata:
         if self.target_kind not in units or self.target_unit not in units[self.target_kind]:
             raise ValueError(f"Incompatible target_kind/unit: {self.target_kind}/{self.target_unit}")
         raw_seconds = pd.Timedelta(self.raw_frequency).total_seconds()
-        if raw_seconds <= 0 or raw_seconds > 900 or 900 % raw_seconds:
-            raise ValueError("Native sampling cannot form comparable 15min labels; no interpolation is permitted.")
+        output_seconds = pd.Timedelta(self.evaluation_frequency).total_seconds()
+        if output_seconds not in {900, 1800} or raw_seconds <= 0 or raw_seconds > output_seconds or output_seconds % raw_seconds:
+            raise ValueError("Native sampling cannot form the declared 15min/30min labels; no interpolation is permitted.")
         if self.sampling_semantics not in {"sample_mean", "interval_mean", "interval_energy"}:
             raise ValueError("Declare sample_mean, interval_mean or interval_energy sampling semantics.")
         if self.target_kind == "energy" and self.sampling_semantics != "interval_energy":
@@ -68,9 +73,17 @@ def validate_compatible(metadata: list[DomainMetadata]) -> None:
     if not metadata or len({m.domain_id for m in metadata}) != len(metadata):
         raise ValueError("Choose distinct, explicitly identified domains.")
     keys = {(m.target_kind, m.target_scope, m.target_unit, m.label_origin, m.sampling_semantics,
-             m.interval_definition) for m in metadata}
+             m.interval_definition, m.evaluation_frequency) for m in metadata}
     if len(keys) != 1 or metadata[0].label_origin == "not_estimable":
         raise ValueError("Incompatible physical targets, scopes, units, label origins or intervals.")
+
+
+def assert_data_usage(metadata: DomainMetadata, phase: str) -> None:
+    """Reserve Eagle as a whole dataset; observed history is allowed only at inference."""
+    identity = metadata.dataset_id.lower().replace("-", "_")
+    reserved = metadata.usage_role == "final_holdout" or identity in {"nlr_eagle", "nrel_eagle", "eagle"}
+    if reserved and phase not in {"test", "inference_history"}:
+        raise ValueError(f"{metadata.dataset_id} is a final holdout; no training, calibration, validation or strategy design.")
 
 
 def convert_target(values, source: DomainMetadata, *, target_kind: str, target_scope: str,
