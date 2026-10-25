@@ -1,0 +1,296 @@
+[
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "24h",
+    "model": "seasonal_naive",
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "24h",
+    "model": "three_day_mean",
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "24h",
+    "model": "ridge_single__cella_pdu6",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "24h",
+    "model": "ridge_single__cellb_pdu12",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "24h",
+    "model": "ridge_single__celld_pdu32",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "24h",
+    "model": "ridge_multi",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "24h",
+    "model": "ridge_target_reference",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "7d",
+    "model": "seasonal_naive",
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "7d",
+    "model": "three_day_mean",
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "7d",
+    "model": "ridge_single__cella_pdu6",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "7d",
+    "model": "ridge_single__cellb_pdu12",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "7d",
+    "model": "ridge_single__celld_pdu32",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "7d",
+    "model": "ridge_multi",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cella_pdu10",
+    "horizon": "7d",
+    "model": "ridge_target_reference",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "24h",
+    "model": "seasonal_naive",
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "24h",
+    "model": "three_day_mean",
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "24h",
+    "model": "ridge_single__cella_pdu6",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "24h",
+    "model": "ridge_single__cellb_pdu12",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "24h",
+    "model": "ridge_single__celld_pdu32",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "24h",
+    "model": "ridge_multi",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "24h",
+    "model": "ridge_target_reference",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "7d",
+    "model": "seasonal_naive",
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "7d",
+    "model": "three_day_mean",
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "7d",
+    "model": "ridge_single__cella_pdu6",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "7d",
+    "model": "ridge_single__cellb_pdu12",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "7d",
+    "model": "ridge_single__celld_pdu32",
+    "maximum_absolute_difference": 1.1920928955078125e-07,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "7d",
+    "model": "ridge_multi",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellb_pdu11",
+    "horizon": "7d",
+    "model": "ridge_target_reference",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "24h",
+    "model": "seasonal_naive",
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "24h",
+    "model": "three_day_mean",
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "24h",
+    "model": "ridge_single__cella_pdu6",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "24h",
+    "model": "ridge_single__cellb_pdu12",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "24h",
+    "model": "ridge_single__celld_pdu32",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "24h",
+    "model": "ridge_multi",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "24h",
+    "model": "ridge_target_reference",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "7d",
+    "model": "seasonal_naive",
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "7d",
+    "model": "three_day_mean",
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "7d",
+    "model": "ridge_single__cella_pdu6",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "7d",
+    "model": "ridge_single__cellb_pdu12",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "7d",
+    "model": "ridge_single__celld_pdu32",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "7d",
+    "model": "ridge_multi",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  },
+  {
+    "target_domain": "cellc_pdu40",
+    "horizon": "7d",
+    "model": "ridge_target_reference",
+    "maximum_absolute_difference": 5.960464477539063e-08,
+    "passed": true
+  }
+]

@@ -33,6 +33,11 @@ def config_digest(config: dict) -> str:
     return hashlib.sha256(payload).hexdigest()
 
 
+def preparation_config_digest(config: dict) -> str:
+    """Semantic annotations do not change the identity of existing numerical preprocessing."""
+    return config_digest({k: v for k, v in config.items() if k != "domain_metadata"})
+
+
 def write_json(path: str | Path, data: Any) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)

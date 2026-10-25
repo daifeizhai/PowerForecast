@@ -7,6 +7,10 @@ import pandas as pd
 
 
 def adapt_frame(frame: pd.DataFrame, source: dict, timezone: str) -> pd.DataFrame:
+    identity_columns = source.get("domain_columns", ["dataset_id", "site_id", "domain_id", "power_domain_id", "rack_id", "node_id", "cell", "pdu"])
+    for identity in identity_columns:
+        if identity in frame and frame[identity].nunique(dropna=False) > 1:
+            raise ValueError(f"Multiple values of {identity}; partition by physical domain before timestamp aggregation.")
     mapping = source["columns"]  # canonical name -> raw field name
     missing = set(mapping.values()) - set(frame.columns)
     if missing:

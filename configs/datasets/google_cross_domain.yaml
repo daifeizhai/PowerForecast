@@ -1,0 +1,25 @@
+name: google_power2019_cross_domain
+raw_data: data/raw/Google
+expected_domains: 57
+expected_days: 31
+# Official Google notebook: microseconds since 600 seconds before May 1, 2019, 00:00 PT.
+trace_start: '2019-05-01T00:00:00-07:00'
+trace_start_microseconds: 600000000
+source_documentation: https://github.com/google/cluster-data/blob/master/power_trace_analysis_colab.ipynb
+domain_metadata:
+  dataset_id: google_power2019
+  site_id: per_file_cell
+  domain_id: per_file_power_domain
+  target_kind: power_utilization
+  target_scope: power_domain
+  target_unit: utilization_fraction
+  label_origin: measured
+  timezone: America/Los_Angeles
+  timezone_verified: true
+  raw_frequency: 5min
+  sampling_semantics: sample_mean
+  interval_definition: 'start; [timestamp, timestamp + 15 minutes)'
+  coverage: 'Three finite nonnegative measurements without bad_measurement_data per interval; no target filling. Machine mapping is descriptive, not a kW calibration.'
+  source_version: Google PowerData 2019 local csv.gz
+  assumptions: ['15min sample mean is not a continuous power integral.', 'Power-domain generalization does not establish facility-meter generalization.']
+  feature_availability: {target: history_only, trace_calendar: future_known}

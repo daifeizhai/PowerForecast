@@ -86,7 +86,7 @@ def print_results(metrics, *, manifest, windows=None, fusions=None):
             continue
         baseline = manifest.get("baseline_models", {}).get(task, "seasonal_naive" if task == "24h" else "three_day_mean")
         methods = ([baseline] if baseline in methods else [])+[name for name in methods if name != baseline]
-        names = {**METHOD_NAMES, **manifest.get("method_names", {})}
+        names = {**METHOD_NAMES, **manifest.get("method_names", {}), **manifest.get("task_method_names", {}).get(task, {})}
         for canonical, member in (("chronos2", "chronos2_long"), ("patchtstfm", "patchtstfm_long")):
             if canonical in methods and member in methods:
                 names[member] = names[canonical]+"（HDSF成员）"
@@ -165,6 +165,10 @@ def print_saved_results(run_dir, *, results_dir="results/runs"):
     manifest = json.loads((folder/"manifest.json").read_text(encoding="utf-8"))
     if manifest["status"] != "complete":
         raise ValueError("Display requires a completed experiment.")
+    if manifest.get("protocol") == "cross_domain_google_lodo_v1":
+        print_cross_domain_results(pd.read_csv(folder/"metrics.csv"), manifest=manifest, folder=folder)
+        print(f"结果目录：{folder}", flush=True)
+        return folder
     windows, fusions = {}, {}
     for task in manifest["requested_horizons"]:
         for path, destination in ((folder/task/"windows.json", windows), (folder/task/"hdsf/fusion.json", fusions)):
@@ -173,3 +177,45 @@ def print_saved_results(run_dir, *, results_dir="results/runs"):
     print_results(pd.read_csv(folder/"metrics.csv"), manifest=manifest, windows=windows, fusions=fusions)
     print(f"结果目录：{folder}", flush=True)
     return folder
+
+
+def print_cross_domain_results(metrics, *, manifest, folder):
+    """Keep the ordinary Chinese tables, scoped to one held-out physical domain."""
+    configure_console()
+    print("\nGoogle 电力域 LODO：利用率任务；目标有监督模型仅作不同训练条件的参考。")
+    print("零样本方法的验证列为 N/A；源域开发诊断单列保存，不使用目标域标签选参。")
+    for target in manifest["target_domains"]:
+        print(f"\n留出目标域：{target}")
+        windows = {}
+        for task in manifest["requested_horizons"]:
+            path = folder/target/task/"windows.json"
+            if path.exists():
+                windows[task] = json.loads(path.read_text(encoding="utf-8"))
+        selected = metrics[metrics.target_domain == target]
+        task_names = {}
+        for task in manifest["requested_horizons"]:
+            task_names[task] = {row.model: f"{METHOD_NAMES.get(row.algorithm, row.algorithm)}（多源 {len(json.loads(row.source_domains))}域）"
+                                for row in selected[(selected.horizon == task) & (selected.source_strategy == "multi_source")].itertuples()}
+        print_results(selected, manifest={**manifest, "task_method_names": task_names}, windows=windows)
+    summary_path = folder/"domain-summary.csv"
+    if summary_path.exists():
+        summary = pd.read_csv(summary_path)
+        print("\n跨目标域等权汇总（MAPE；参考模型与零样本训练条件不同）")
+        names = manifest.get("method_names", {}).copy()
+        for row in metrics[metrics.source_strategy == "multi_source"].itertuples():
+            names[row.model] = f"{METHOD_NAMES.get(row.algorithm, row.algorithm)}（多源联合）"
+        _print_table(["任务 / 方法", "目标域数", "平均 MAPE", "最差 MAPE"], [
+            [f"{row.horizon} / {names.get(row.model, row.model)}", str(row.targets),
+             _number(row.mean_MAPE, percent=True), _number(row.worst_MAPE, percent=True)]
+            for row in summary.itertuples()])
+    negative_path = folder/"negative-transfer.csv"
+    if negative_path.exists() and negative_path.stat().st_size > 2:
+        negative = pd.read_csv(negative_path)
+        for task, group in negative.groupby("horizon", sort=False):
+            valid = group.negative_transfer.dropna()
+            count = int(valid.sum())
+            affected = group.loc[group.negative_transfer == True, "target_domain"].nunique()
+            total_targets = group.target_domain.nunique()
+            print(f"{task} 增加源域后 MAPE 增大的比较：{count}/{len(valid)}；"
+                  f"涉及目标域 {affected}/{total_targets}；"
+                  "以预先指定单源为基线，同一目标域和相同起报窗口；不与目标有监督参考相减。")

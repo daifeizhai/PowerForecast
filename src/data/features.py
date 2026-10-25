@@ -30,3 +30,11 @@ def make_features(frame: pd.DataFrame, target: str, covariates: list[str], timez
     known = calendar_features(frame.index, timezone)
     # Observed weather and IT loads are never taken from the forecast interval.
     return pd.concat([frame[columns].astype(np.float32), known], axis=1), known
+
+
+def trace_calendar_features(index: pd.DatetimeIndex, anchor: pd.Timestamp) -> pd.DataFrame:
+    """Trace-relative phases; do not infer weekdays or business schedules."""
+    days = np.asarray((index-anchor)/pd.Timedelta(days=1), dtype=float)
+    return pd.DataFrame({"day_sin": np.sin(2*np.pi*days), "day_cos": np.cos(2*np.pi*days),
+                         "week_sin": np.sin(2*np.pi*days/7), "week_cos": np.cos(2*np.pi*days/7)},
+                        index=index, dtype=np.float32)

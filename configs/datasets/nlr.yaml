@@ -6,6 +6,25 @@ timezone_verified: false
 frequency: 15min
 target: facility_power_kw
 target_unit: kW
+domain_metadata:
+  dataset_id: nlr_esif_pue
+  site_id: esif
+  domain_id: esif_supplied_components
+  target_field: facility_power_kw
+  target_kind: active_power
+  target_scope: facility
+  target_unit: kW
+  label_origin: component_sum
+  mapping_route: C
+  timezone: UTC
+  timezone_verified: false
+  raw_frequency: 1min
+  sampling_semantics: sample_mean
+  interval_definition: 'start; [timestamp, timestamp + 15 minutes)'
+  coverage: 'IT + cooling + HVAC + plug/light + pump; complete supplied components required per interval. Exhaustiveness and nonoverlap against an independent facility meter are unverified.'
+  source_version: ESIF combined parquet files
+  assumptions: ['Naive source ts provisionally interpreted as UTC.', 'Nominal minute sampling has jitter and variable interval counts; finite-sample means are not a verified continuous integral.', 'Not an independent facility total meter.']
+  feature_availability: {target: history_only, it_power_kw: history_only, cooling_kw: history_only, hvac_kw: history_only, pump_kw: history_only, temperature_c: history_only, humidity_pct: history_only, calendar: future_known}
 primary_source: power
 # Keep the previous prepared data available to historical experiment records.
 processed_path: data/processed/nlr_esif_combined.parquet

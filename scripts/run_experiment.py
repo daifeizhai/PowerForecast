@@ -22,10 +22,13 @@ from src.data.loaders import read_table
 from src.data.splitting import build_windows, adaptive_day_splits, complete_days
 from src.data.synthetic import make_demo_data
 from src.evaluation.backtest import backtest, prediction_table, score_predictions
+from src.evaluation.artifacts import save_result, add_baseline_reductions
 from src.evaluation.reporting import configure_console, print_results, print_saved_results
 from src.models import MODEL_NAMES, create_model
 from src.training.trainer import train_model
-from src.utils import PROJECT_ROOT, config_digest, load_config, resolve_path, seed_everything, write_json
+from src.training.lifecycle import freeze_for_test
+from src.data.domains import metadata_from_config
+from src.utils import PROJECT_ROOT, preparation_config_digest, load_config, resolve_path, seed_everything, write_json
 
 
 def ablation_covariates(covariates, ablation):
@@ -34,33 +37,14 @@ def ablation_covariates(covariates, ablation):
     return [name for name in covariates if name not in excluded.get(ablation, set())]
 
 
-def save_result(folder, task, name, split, batch, result, rows, seconds, unit, plots):
-    model_dir = folder/task/name
-    model_dir.mkdir(exist_ok=True, parents=True)
-    for evaluation, metrics in (("curve", result.metrics), ("daily_mean", result.daily_metrics)):
-        rows.append(dict(horizon=task, model=name, split=split, evaluation=evaluation,
-                         train_seconds=seconds, inference_seconds=result.inference_seconds, **metrics))
-    for label, table in (("per_lead", result.per_lead), ("per_origin", result.per_origin),
-                         ("daily_per_origin", result.daily_per_origin), ("per_day", result.per_day)):
-        table.to_csv(model_dir/f"{split}_{label}.csv", index=False)
-    table = prediction_table(batch, result.predictions)
-    table.to_parquet(model_dir/f"{split}_predictions.parquet", index=False)
-    write_json(model_dir/f"{split}_metrics.json", dict(curve=result.metrics, daily_mean=result.daily_metrics,
-        nonoverlap=result.nonoverlap_metrics, inference_seconds=result.inference_seconds))
-    if split == "test":
-        if plots:
-            from src.evaluation.visualization import plot_forecast
-            plot_forecast(table, model_dir/"forecast.png", f"{name}, {task}", unit)
-        fmt = lambda v: "undefined" if v is None else f"{v:.4f}"
-        print(f"{task} {name}: MAPE={fmt(result.metrics['MAPE'])}% RMSE={fmt(result.metrics['RMSE'])} {unit} "
-              f"WAPE={fmt(result.metrics['WAPE'])}% n={result.metrics['n']}", flush=True)
-
-
 def run_experiment(args):
     experiment = load_config(args.config)
     if experiment.get("protocol") == "google_hdsf_d14_d22":
         from scripts.reproduce_google_hdsf import run_reproduction
         return run_reproduction(args, experiment)
+    if experiment.get("protocol") == "cross_domain_google_lodo_v1":
+        from scripts.cross_domain_experiment import run_cross_domain
+        return run_cross_domain(args, experiment)
     dataset = load_config(args.dataset_config or experiment["dataset_config"])
     model_config = load_config(args.model_config or experiment["model_config"])
     names, tasks = args.models or model_config["default_models"], args.horizons or list(experiment["horizons"])
@@ -94,7 +78,7 @@ def run_experiment(args):
         sidecar = path.with_suffix(".metadata.json")
         if sidecar.is_file():
             provenance["preparation"] = json.loads(sidecar.read_text(encoding="utf-8"))
-            if provenance["preparation"]["config_digest"] != config_digest(dataset):
+            if provenance["preparation"]["config_digest"] != preparation_config_digest(dataset):
                 raise ValueError("Dataset configuration changed after preparation. Prepare again.")
     if not isinstance(frame.index, pd.DatetimeIndex) or frame.index.tz is None:
         raise ValueError("Prepared data needs a timezone-aware DatetimeIndex.")
@@ -131,6 +115,10 @@ def run_experiment(args):
         source_sha256={str(p.relative_to(PROJECT_ROOT)): sha256(p.read_bytes()).hexdigest()
                        for directory in ("src", "scripts", "configs") for p in (PROJECT_ROOT/directory).rglob("*")
                        if p.is_file() and p.suffix in {".py", ".yaml"}})
+    semantics = metadata_from_config(dataset) if not args.demo else None
+    if semantics is not None:
+        manifest["domain_metadata"] = semantics.to_dict()
+        manifest["domain_metadata_origin"] = "Current declarative annotation; historical preparation metadata remains unchanged."
     for package in ("numpy", "pandas", "pyarrow", "scikit-learn", "matplotlib", "torch", "lightgbm", "xgboost", "statsmodels",
                     "timesfm", "chronos-forecasting", "granite-tsfm", "tirex-2", "toto-2"):
         try:
@@ -200,10 +188,9 @@ def run_experiment(args):
             write_json(task_dir/"selection.json", dict(criterion=f"validation origin-mean {criterion}", scores=scores,
                 selected_model=best_models[task], frozen_before_test=True))
             prepared[task] = (trained, timings, window_info)
-        write_json(folder/"frozen-before-test.json", dict(tasks=tasks, selected_models=best_models,
+        freeze_for_test(folder, tasks=tasks, selected_models=best_models,
             test_start=manifest["splits"]["test"]["start"], mape_threshold=threshold,
-            model_sha256={str(p.relative_to(folder)): sha256(p.read_bytes()).hexdigest() for p in folder.rglob("model.*")},
-            frozen_at_utc=datetime.now(timezone.utc).isoformat()))
+        )
         for task in tasks:
             trained, timings, window_info = prepared[task]
             batch = build_windows(history, known, frame[target], boundaries["test"], context,
@@ -229,15 +216,7 @@ def run_experiment(args):
                         trained[name].release()
             pd.DataFrame(rows).to_csv(folder/"metrics.csv", index=False)
         metrics = pd.DataFrame(rows)
-        for task in tasks:
-            baseline = "seasonal_naive" if task == "24h" else "three_day_mean"
-            for evaluation in ("curve", "daily_mean"):
-                ref = metrics[(metrics.horizon == task) & (metrics.model == baseline) &
-                              (metrics.split == "test") & (metrics.evaluation == evaluation)]
-                for metric in ("MAPE", "WAPE"):
-                    mask = (metrics.horizon == task) & (metrics.split == "test") & (metrics.evaluation == evaluation)
-                    if len(ref) and ref[metric].iloc[0] > 0:
-                        metrics.loc[mask, f"{metric}_reduction_pct"] = 100*(1-metrics.loc[mask, metric]/ref[metric].iloc[0])
+        metrics = add_baseline_reductions(metrics, {task: "seasonal_naive" if task == "24h" else "three_day_mean" for task in tasks})
         metrics.to_csv(folder/"metrics.csv", index=False)
         print_results(metrics, manifest={**manifest, "selected_models": best_models},
             windows={task: prepared[task][2] for task in tasks},

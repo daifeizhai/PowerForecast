@@ -1,0 +1,40 @@
+protocol: cross_domain_google_lodo_v1
+split_protocol: leave_one_power_domain_out
+dataset_config: configs/datasets/google_cross_domain.yaml
+model_config: configs/models.yaml
+seed: 42
+frequency: 15min
+context_length: 1344
+horizons: {24h: 96, 7d: 672}
+target_kind: power_utilization
+target_scope: power_domain
+normalization: source_training_only
+# Fixed before observing transfer errors; coverage masks may reject, never replace them silently.
+target_selection_rule: 'Before test predictions: first fully complete and unambiguously mapped PDU in each lexically sorted cell, taking the first three cells (a/b/c). Single sources are the first remaining complete PDU in cells a/b/d. Full trace sample masks only; no ranking by test error. Evidence: results/analysis/cross-domain-v2/coverage-screening.json.'
+target_domains: [cella_pdu10, cellb_pdu11, cellc_pdu40]
+source_domains: all_other
+single_source_domains: [cella_pdu6, cellb_pdu12, celld_pdu32]
+minimum_train_windows_per_domain: 2
+default_models: [seasonal_naive, three_day_mean, ridge]
+strategies: [single_source, multi_source, target_supervised_reference]
+# Existing Ridge, fixed parameters; source development is diagnostic, never target selection.
+model_overrides: {ridge: {alpha: 100.0, solver: auto, feature_mode: observed_history}}
+temporal_protocol:
+  24h:
+    development_cutoff_day: 16
+    development_origins: [16, 18, 20]
+    final_cutoff_day: 22
+    test_origins: [22, 23, 24, 25, 26, 27, 28, 29, 30]
+  7d:
+    development_cutoff_day: null
+    development_origins: []
+    no_validation_reason: '14d history + 7d labels first trains at D21. A disjoint 7d development window would end at D28, after D22 freeze. Fixed preregistered Ridge parameters; no validation/model selection.'
+    final_cutoff_day: 22
+    test_origins: [22, 23, 24]
+prediction_batch_size: 32
+blas_threads: 1
+clip_min: 0.0
+mape_threshold: 1.0e-8
+results_dir: results/runs
+save_models: true
+save_plots: true

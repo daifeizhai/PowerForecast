@@ -14,12 +14,14 @@ class ForecastInputs:
     future_known: np.ndarray  # [sample, horizon, calendar_feature]
     origins: pd.DatetimeIndex  # first interval to predict
     target_times: np.ndarray
+    domain_ids: tuple[str, ...] | None = None  # optional side metadata, never a numeric feature
 
     def __len__(self) -> int:
         return len(self.history)
 
     def take(self, indices: slice | np.ndarray) -> "ForecastInputs":
-        return ForecastInputs(self.history[indices], self.future_known[indices], self.origins[indices], self.target_times[indices])
+        domains = None if self.domain_ids is None else tuple(np.asarray(self.domain_ids)[indices].tolist())
+        return ForecastInputs(self.history[indices], self.future_known[indices], self.origins[indices], self.target_times[indices], domains)
 
 
 @dataclass(frozen=True)
@@ -30,6 +32,22 @@ class WindowBatch:
 
     def __len__(self) -> int:
         return len(self.targets)
+
+
+def concatenate_domain_batches(batches: dict[str, WindowBatch]) -> WindowBatch:
+    """Combine independent series windows without treating coincident times as duplicates."""
+    if not batches or any(not len(b) for b in batches.values()):
+        raise ValueError("Domain batches must be nonempty.")
+    values = list(batches.values())
+    arrays = [np.concatenate([getattr(b.inputs, key) for b in values])
+              for key in ("history", "future_known", "target_times")]
+    labels = np.concatenate([b.targets for b in values])
+    for array in [*arrays, labels]:
+        array.setflags(write=False)
+    origins = values[0].inputs.origins.append([b.inputs.origins for b in values[1:]])
+    domains = tuple(domain for domain, batch in batches.items() for _ in range(len(batch)))
+    inputs = ForecastInputs(arrays[0], arrays[1], origins, arrays[2], domains)
+    return WindowBatch(inputs, labels, sum(b.skipped_windows for b in values))
 
 
 def chronological_splits(length: int, train_fraction: float, validation_fraction: float) -> dict[str, tuple[int, int]]:
