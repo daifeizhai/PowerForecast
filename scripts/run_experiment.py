@@ -15,6 +15,9 @@ from src.utils import load_config
 
 def run_experiment(args):
     config = load_config(args.config)
+    if config.get("protocol") == "sapf_gain_v2_suite":
+        from src.training.gain_v2_experiment import run_gain_v2
+        return run_gain_v2(args, config)
     if config.get("protocol") == "sapf_transfer_suite_v1":
         from src.training.transfer_suite import run_transfer_suite
         return run_transfer_suite(args, config)
@@ -34,7 +37,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="SAPF 24h/3d cross-domain forecasting; 14-day observed history.")
     parser.add_argument("--config", default="configs/sapf_google.yaml")
     parser.add_argument("--models", nargs="+", choices=MODEL_NAMES)
-    parser.add_argument("--horizons", nargs="+", choices=["24h", "3d"])
+    parser.add_argument("--horizons", nargs="+", choices=["4h", "24h", "3d"])
     parser.add_argument("--demo", action="store_true", help="Synthetic domain data; program verification only.")
     parser.add_argument("--demo-days", type=int, default=31)
     parser.add_argument("--results", metavar="RUN_DIR", help="Display a saved run; latest selects completed real SAPF runs.")

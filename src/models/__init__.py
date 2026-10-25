@@ -10,10 +10,22 @@ MODEL_NAMES = (*COMPARISON_MODELS, "normalized_ridge", "normalized_extra_trees",
 from src.models.ml.ablation import ABLATION_MODES
 MODEL_NAMES = (*MODEL_NAMES, *ABLATION_MODES)
 MODEL_NAMES = (*MODEL_NAMES, "uniform_transfer", "fixed_blend", "sapf_gain", "sapf_gain_no_veto")
+MODEL_NAMES = (*MODEL_NAMES, "ridge_raw", "ridge_zscore", "ridge_level_shape", "ridge_scale_metadata",
+               "fixed_blend_25", "fixed_blend_50", "fixed_blend_75", "gain_v2_single", "gain_v2_fixed",
+               "gain_v2_marginal", "gain_v2_rank", "gain_v2_forced", "gain_v2_uncalibrated")
 
 
 def create_model(name: str, params: dict | None = None, seed: int = 42) -> BaseForecaster:
     params = dict(params or {})
+    if name in {"ridge_raw", "ridge_zscore", "ridge_level_shape", "ridge_scale_metadata"}:
+        from src.models.ml.level_shape import RepresentationRidge
+        return RepresentationRidge(representation=name[6:], name=name, seed=seed, **params)
+    if name in {"fixed_blend_25", "fixed_blend_50", "fixed_blend_75"}:
+        from src.models.ml.gain_v2 import FixedExpertBlend
+        return FixedExpertBlend(name=name, strength=int(name.rsplit('_',1)[1])/100, seed=seed, **params)
+    if name.startswith("gain_v2_"):
+        from src.models.ml.gain_v2 import GainV2Policy
+        return GainV2Policy(name=name, seed=seed, **params)
     if name in {"uniform_transfer", "fixed_blend", "sapf_gain", "sapf_gain_no_veto"}:
         from src.models.ml.benefit import BenefitTransferPolicy
         return BenefitTransferPolicy(name=name, seed=seed, **params)

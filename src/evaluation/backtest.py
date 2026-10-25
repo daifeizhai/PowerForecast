@@ -45,11 +45,15 @@ def score_predictions(batch, predictions, mape_threshold=1e-8, anchor=None, infe
     horizon = batch.targets.shape[1]
     period = batch.inputs.points_per_day
     if horizon % period:
-        daily_truth, daily_pred = batch.targets.mean(1, keepdims=True), predictions.mean(1, keepdims=True)
+        # A 4h mean is not a daily mean. Preserve explicit N/A rows for the
+        # shared artifact schema rather than relabeling a partial day.
+        daily_truth, daily_pred = np.empty((len(batch), 0)), np.empty((len(batch), 0))
     else:
         daily_truth = batch.targets.reshape(len(batch), -1, period).mean(-1)
         daily_pred = predictions.reshape(len(batch), -1, period).mean(-1)
-    daily_rows = [{"origin": str(origin), **metrics(y, p)} for origin, y, p in
+    empty_daily = dict(MAPE=None, WAPE=None, RMSE=None, MAE=None, n=0, mape_n=0, mape_excluded=0)
+    daily_score = lambda y, p: metrics(y, p) if y.size else empty_daily.copy()
+    daily_rows = [{"origin": str(origin), **daily_score(y, p)} for origin, y, p in
                   zip(batch.inputs.origins, daily_truth, daily_pred)]
     summary = metrics(batch.targets, predictions)
     for name in ("MAPE", "WAPE", "RMSE"):
@@ -69,7 +73,7 @@ def score_predictions(batch, predictions, mape_threshold=1e-8, anchor=None, infe
                           **metrics(batch.targets[keep], predictions[keep]),
                           "daily_mean": metrics(daily_truth[keep], daily_pred[keep])}
     return BacktestResult(summary, predictions, pd.DataFrame(lead_rows), pd.DataFrame(origin_rows),
-                          metrics(daily_truth, daily_pred), pd.DataFrame(daily_rows), pd.DataFrame(day_rows),
+                          daily_score(daily_truth, daily_pred), pd.DataFrame(daily_rows), pd.DataFrame(day_rows),
                           nonoverlap, inference_seconds)
 
 

@@ -21,7 +21,7 @@ sources:
     source: https://github.com/alibaba/clusterdata/tree/master/cluster-trace-gpu-v2020
   m100_exadata:
     local_path: data/raw/M100
-    status: local_15min_adapter_and_frozen_cross_node_experiment_completed
+    status: local_15min_and_30min_adapters_with_explicit_quality_and_publication_contracts
     target_kind: active_power
     target_scope: node
     target_unit: W
@@ -46,10 +46,12 @@ sources:
     schema: https://gitlab.com/ecs-lab/exadata/-/blob/main/documentation/plugins/ipmi.md
     upstream_raw_adapter: src/data/heterogeneous.py:adapt_m100_total_power
     adapter: src/data/m100_panel.py:adapt_m100_aggregated
+    gain_v2_adapter: src/data/gain_v2_panel.py:load_gain_v2_panel
+    gain_v2_protocol: configs/sapf_gain_v2.yaml
     remaining_limits: [aggregation_boundary_unverified_conservative_slot_availability_assumed, raw_sample_counts_not_available, same_site_two_racks_only, common_complete_quality_period_conditioning]
   ucc2023:
     local_path: data/raw/UCC2023
-    status: local_full_csvs_audited_requires_timezone_and_native_grid_protocol
+    status: audited_native_10min_and_strict_30min_adapter_with_unknown_source_timezone
     target_kind: active_power
     target_scope: node
     target_unit: W
@@ -60,7 +62,9 @@ sources:
     local_audited_host_ids: {D1: 81, D2: 64}
     local_power_null_pct: {D1: 0.003019801529911498, D2: 13.836118605115907}
     audit_report: docs/M100_UCC2023_DATA_AUDIT.md
-    use: future_independent_native_or_30min_protocol
+    use: offline_30min_measured_power_transfer_with_disjoint_source_calibration_selection_test_nodes
+    adapter: src/data/gain_v2_panel.py:load_gain_v2_panel
+    gain_v2_protocol: configs/sapf_gain_v2.yaml
     source: https://zenodo.org/records/10069402
     paper: https://hpc.ec.tuwien.ac.at/files/UCC_23_data_center_analysis.pdf
     blockers: [timezone_and_dst_fold_not_verified, power_missing_hosts_require_role_declaration, native_10min_cannot_create_native_15min_labels, auxiliary_unit_multipliers_not_fully_verified]

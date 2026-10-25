@@ -1,0 +1,14 @@
+{
+  "created_at_utc": "2026-10-25T17:52:28.748844+00:00",
+  "computational_files": 85,
+  "source_protocol_matches": true,
+  "files_sha256": {
+    "data-contract-audit.json": "16ae0cd5563c7692cb6cb15e1dce1593eb70761a5c8964fb1a8eb8eaffcedd96",
+    "frozen-computational-source.tar.gz": "e7f64c081ec8bbb3da58b73889c45bb913cc9ea78130aad7e8318be4e0781636",
+    "preregistration.json": "2b1aa74cb197c7adb29f22e816e5b6988ac06ebc7d0727f7e521f57277291676",
+    "protocol-at-preregistration.md": "517ad5f1419ff23c2fd95867a95aa3afb2e9e135dab516aa7f8764ce6cec956d",
+    "pytest-final.log": "7950c05384d4821dbfef0f97d9592ffa315a223b6e82a6a5650d219a3131abfd",
+    "quality-final.csv": "40dda4960defc53b74428b2b9024ac663d8c2f9af40b5649c7c113b6743695d6",
+    "environment.json": "3b80335079e9b6e62d1f511eaa5d2216420f4e027b9af284074c159361412d0e"
+  }
+}

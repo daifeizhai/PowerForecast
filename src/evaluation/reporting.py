@@ -20,6 +20,13 @@ METHOD_NAMES = {
     "sapf_no_fallback": "SAPF 关闭历史回退", "sapf_no_reliability": "SAPF 关闭可靠性加权",
     "uniform_transfer": "等权纯迁移", "fixed_blend": "固定50%历史混合",
     "sapf_gain": "收益预测与零迁移拒绝", "sapf_gain_no_veto": "收益策略强制非零迁移",
+    "ridge_raw": "Ridge 原始尺度", "ridge_zscore": "Ridge 局部z-score",
+    "ridge_level_shape": "Ridge Level+Shape双通道", "ridge_scale_metadata": "Ridge z-score+均值/尺度",
+    "fixed_blend_25": "固定25%迁移", "fixed_blend_50": "固定50%迁移", "fixed_blend_75": "固定75%迁移",
+    "gain_v2_single": "Gain-v2 单专家标签", "gain_v2_fixed": "Gain-v2 固定融合标签",
+    "gain_v2_marginal": "Gain-v2 边际融合标签", "gain_v2_rank": "Gain-v2 配对排序",
+    "gain_v2_forced": "Gain-v2 强制迁移消融", "gain_v2_uncalibrated": "Gain-v2 关闭校准消融",
+    "oracle_posthoc": "事后oracle（不可部署）",
 }
 
 
@@ -44,6 +51,8 @@ def print_results(metrics, *, manifest, windows=None, fusions=None, detailed=Fal
         cadence = manifest.get("experiment", {}).get("frequency", "15min")
         print(f"源域 {len(roles['source'])} / 独立验证域 {len(roles['validation'])} / 测试域 {len(roles['test'])}；"
               f"14 天历史，{cadence}采样，测试前冻结。")
+        if 'calibration' in roles:
+            print(f"另有独立校准域 {len(roles['calibration'])}，与策略验证域分开；新时段测试，节点身份曾见。")
     rows = metrics[(metrics.split == "test") & (metrics.evaluation == "curve")]
     methods = manifest.get("console_methods") or rows.model.drop_duplicates().tolist()
     for task in manifest["requested_horizons"]:
@@ -65,6 +74,13 @@ def print_results(metrics, *, manifest, windows=None, fusions=None, detailed=Fal
                     count = int((matched.MAPE > matched.MAPE_local+1e-10).sum())
                     worse = f"{count}/{len(matched)} ({100*count/len(matched):.1f}%)"
             print(f"{task} | {label} | {_number(values.mean())} | {_number(worst)} | {worse}")
+    if manifest.get('protocol')=='sapf_gain_v2':
+        nonoverlap=metrics[(metrics.split=='test')&(metrics.evaluation=='curve_nonoverlap')]
+        print('\n3d 非重叠主检验 | 方法 | 平均 MAPE | 最差域 MAPE')
+        for method in methods:
+            values=nonoverlap.loc[nonoverlap.model==method,'MAPE']
+            if not values.empty:print(f"3d | {METHOD_NAMES.get(method,method)} | {_number(values.mean())} | {_number(values.max())}")
+        print('4h不含完整日均值，daily_mean显示N/A；oracle仅为事后有限候选上界。')
     if detailed:
         columns = [c for c in ["target_domain", "horizon", "model", "MAPE", "WAPE", "RMSE", "MAE", "n"] if c in rows]
         print("\n完整曲线指标（WAPE/MAPE 为 %，RMSE/MAE 为目标单位）：")
@@ -91,7 +107,7 @@ def print_saved_results(run_dir, *, results_dir="results/runs", detailed=False):
     manifest = json.loads((folder/"manifest.json").read_text(encoding="utf-8"))
     if manifest.get("status") != "complete":
         raise ValueError("Display requires a completed experiment.")
-    if manifest.get("protocol") == "sapf_transfer_suite_v1":
+    if manifest.get("protocol") in {"sapf_transfer_suite_v1", "sapf_gain_v2_suite"}:
         for spec in manifest["studies"]:
             child = folder/"studies"/spec["name"]
             child_manifest = json.loads((child/"manifest.json").read_text(encoding="utf-8"))

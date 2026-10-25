@@ -8,21 +8,8 @@ from src.evaluation.backtest import prediction_table
 from src.utils import write_json
 
 
-def save_result(folder, task, name, split, batch, result, rows, seconds, unit, plots,
-                *, row_metadata=None, quiet=False):
-    model_dir = folder/task/name
-    model_dir.mkdir(exist_ok=True, parents=True)
-    extra = row_metadata or {}
-    for evaluation, metrics in (("curve", result.metrics), ("daily_mean", result.daily_metrics)):
-        rows.append(dict(horizon=task, model=name, split=split, evaluation=evaluation,
-                         train_seconds=seconds, inference_seconds=result.inference_seconds, **extra, **metrics))
-    for label, table in (("per_lead", result.per_lead), ("per_origin", result.per_origin),
-                         ("daily_per_origin", result.daily_per_origin), ("per_day", result.per_day)):
-        table = table.copy()
-        if batch.inputs.domain_ids is not None and label in {"per_origin", "daily_per_origin"}:
-            table["domain_id"] = batch.inputs.domain_ids
-        table.to_csv(model_dir/f"{split}_{label}.csv", index=False)
-    table = prediction_table(batch, result.predictions)
+def _prediction_artifact(batch, predictions, extra):
+    table = prediction_table(batch, predictions)
     if batch.inputs.domain_ids is not None:
         table["domain_id"] = np.repeat(batch.inputs.domain_ids, batch.targets.shape[1])
     if extra.get("source_clock_start"):
@@ -31,6 +18,32 @@ def save_result(folder, task, name, split, batch, result, rows, seconds, unit, p
         table["source_clock_timestamp"] = [t.isoformat() for t in start+(pd.DatetimeIndex(table.timestamp)-anchor)]
         table["source_clock_origin"] = [t.isoformat() for t in start+(pd.DatetimeIndex(table.origin)-anchor)]
         table["source_clock_timezone_verified"] = extra["source_clock_timezone_verified"]
+    return table
+
+
+def save_result(folder, task, name, split, batch, result, rows, seconds, unit, plots,
+                *, row_metadata=None, quiet=False, compact_sink=None):
+    model_dir = folder/task/name
+    if compact_sink is None:
+        model_dir.mkdir(exist_ok=True, parents=True)
+    extra = row_metadata or {}
+    for evaluation, metrics in (("curve", result.metrics), ("daily_mean", result.daily_metrics)):
+        rows.append(dict(horizon=task, model=name, split=split, evaluation=evaluation,
+                         train_seconds=seconds, inference_seconds=result.inference_seconds, **extra, **metrics))
+    if compact_sink is not None:
+        table = _prediction_artifact(batch, result.predictions, extra)
+        table['horizon'], table['model'], table['split'] = task, name, split
+        table['oracle_only'] = bool(extra.get('oracle_only', False))
+        origin = result.per_origin.assign(target_domain=extra['target_domain'], horizon=task, model=name, split=split)
+        compact_sink(table, origin)
+        return
+    for label, table in (("per_lead", result.per_lead), ("per_origin", result.per_origin),
+                         ("daily_per_origin", result.daily_per_origin), ("per_day", result.per_day)):
+        table = table.copy()
+        if batch.inputs.domain_ids is not None and label in {"per_origin", "daily_per_origin"}:
+            table["domain_id"] = batch.inputs.domain_ids
+        table.to_csv(model_dir/f"{split}_{label}.csv", index=False)
+    table = _prediction_artifact(batch, result.predictions, extra)
     table.to_parquet(model_dir/f"{split}_predictions.parquet", index=False)
     write_json(model_dir/f"{split}_metrics.json", dict(curve=result.metrics, daily_mean=result.daily_metrics,
         nonoverlap=result.nonoverlap_metrics, inference_seconds=result.inference_seconds))

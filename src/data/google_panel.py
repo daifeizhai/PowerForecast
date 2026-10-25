@@ -147,6 +147,13 @@ def domain_windows(panel: DomainPanel, domains: list[str], origins: list[int], c
             latency = panel.audit.get(domain, {}).get("history_availability_upper_bound_minutes", 0)
             if frame.index[position-1]+pd.Timedelta(minutes=latency) > frame.index[position]:
                 raise ValueError("A published historical aggregate would be unavailable at the issue time.")
+            if 'available_at' in frame and (pd.DatetimeIndex(frame.available_at.iloc[position-context:position]) > frame.index[position]).any():
+                raise ValueError('An observed historical label was not available at forecast issue time.')
+            if 'quality_mask' in frame:
+                quality=frame.quality_mask.iloc[position-context:position+horizon].to_numpy()
+                values=frame[target_field].iloc[position-context:position+horizon].to_numpy()
+                if ((quality!=0)&np.isfinite(values)).any():
+                    raise ValueError('A bad-quality target must remain missing; never silently fill labels.')
             # Check missingness without catching unrelated builder errors.
             if not np.isfinite(frame[target_field].iloc[position-context:position+horizon]).all():
                 skipped += 1

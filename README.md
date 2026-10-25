@@ -2,6 +2,8 @@
 
 **选择性自适应功率预测（Selective Adaptive Power Forecasting）研究框架。**
 
+当前开发阶段为[Gain-v2四周协议](docs/SAPF_GAIN_V2_PROTOCOL.md)：四种迁移价值目标、独立校准、Level–Shape表示、4h/24h/3d和配对统计。正式入口为 `scripts/run_experiment.py --config configs/sapf_gain_v2.yaml`，测试日期与旧报告分开；最终结果和建议门槛须以本轮冻结测试报告为准。基线提交f89dc7d已打本地冻结标签，开发分支为research/sapf-gain-v2。
+
 当前主线研究哪些负荷规律可共享、哪些源域值得迁移，以及如何减少未知域上的负迁移。已实现基于 Ridge 的历史窗口归一化、源域相似性、验证域可靠性，以及源内留域监督的收益/风险预测与零迁移拒绝。尚未实现完整深度共享表征架构或跨设施总表精度验收。
 
 预测任务为 **24h / 3d**、过去 **14天** 输入。原 Google/M100 协议为15分钟：1344点历史、96/288点预测；新增 M100↔UCC 协议为30分钟：672点历史、48/144点预测。7d、HDSF 和旧预测方案转入[归档](archive/pre_sapf_bc6a439/README.md)，不参与默认运行。原始数据、历史预测、模型与缓存均保留。
@@ -17,6 +19,8 @@ Google 10 个测试电力域的 SAPF 平均曲线 MAPE 为 **24h 3.0232%、3d 3.
 Python 3.11+；优先使用已有 .venv，无需升级本机环境。首次安装只需 requirements.txt，其他基础模型的依赖见 requirements-optional.txt。
 
 ```powershell
+# Gain-v2：完整联合冻结；需先具备该版本的预注册JSON
+.\.venv\Scripts\python.exe scripts/run_experiment.py --config configs/sapf_gain_v2.yaml
 # 最新：收益预测、M100新留节点及M100↔UCC；完整联合30min协议
 .\.venv\Scripts\python.exe scripts/run_experiment.py --config configs/sapf_transfer_suite.yaml
 # M100：当前新增的真实节点功率实验，包含四项受控消融；协议与 Google 分开
@@ -100,9 +104,13 @@ MAPE、WAPE、RMSE、MAE 仍由唯一公共指标函数计算；MAPE 排除 |标
 | src/data/ | 物理契约、逐域适配、14 天窗口、角色/时间隔离、历史特征 |
 | src/data/m100_panel.py | M100 15min 宽表、节点身份、W→kW、缺失掩码、发布槽可用性约束 |
 | src/data/transfer30.py | M100/UCC完整原生槽的30min聚合、原始钟表溯源、全局留域角色 |
+| src/data/contracts.py / gain_v2_panel.py | DataAdapter统一物理/时钟/质量/available_at契约；角色对应原始日期，Google桥接及M100/UCC15/30min检查 |
 | src/models/ml/normalized.py / sapf.py / ablation.py | 可保存恢复的归一化、选择性机制与冻结设置下的独立消融，预测不接收标签 |
 | src/models/ml/benefit.py / src/training/benefit_learning.py | 源内留域收益/风险监督、历史表现先验、精确零迁移与受控强制迁移对照 |
 | src/training/transfer_suite.py / src/evaluation/transfer_audit.py | 双向源组共同冻结、相同M100模型复用、跨数据集目标标签隔离和统一审计 |
+| src/models/ml/level_shape.py / gain_v2.py | 四种Ridge表示、源内监督的四种收益目标、独立校准、两步互补融合与受控干预 |
+| src/training/gain_v2_experiment.py / src/evaluation/gain_v2_audit.py | Gain-v2四研究/三时长统一冻结；共享紧凑产物、恢复及逐域评分复算 |
+| src/evaluation/statistics.py / gain_v2_diagnostics.py | 非重叠3d、域级/块bootstrap、HAC-DM、Holm、正迁移识别与校准曲线 |
 | src/training/experiment.py / lifecycle.py | 源拟合、验证选择、最终拟合、全任务冻结、测试 |
 | src/evaluation/ | 公共评分/归档、紧凑输出、配对诊断与独立复算 |
 | archive/pre_sapf_bc6a439/ | 旧源码压缩包、逐文件哈希、44 次历史运行索引及产物保护清单 |
