@@ -1,0 +1,1190 @@
+[
+  {
+    "model": "seasonal_naive",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/seasonal_naive/model.joblib",
+    "source_domains": [],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "three_day_mean",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/three_day_mean/model.joblib",
+    "source_domains": [],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "ridge_raw",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/ridge_raw/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "ridge_zscore",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/ridge_zscore/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "ridge_level_shape",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/ridge_level_shape/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "ridge_scale_metadata",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/ridge_scale_metadata/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "uniform_transfer",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/uniform_transfer/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "fixed_blend_25",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/fixed_blend_25/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "fixed_blend_50",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/fixed_blend_50/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "fixed_blend_75",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/fixed_blend_75/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "sapf",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/sapf/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "gain_v2_single",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/gain_v2_single/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_fixed",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/gain_v2_fixed/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": {
+      "margin_pp": 0.1,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_marginal",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/gain_v2_marginal/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_rank",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/gain_v2_rank/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_forced",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/gain_v2_forced/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_uncalibrated",
+    "horizon": "4h",
+    "model_path": "groups/m100_30/4h/gain_v2_uncalibrated/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 03:30:00+00:00",
+    "windows": 320,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "seasonal_naive",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/seasonal_naive/model.joblib",
+    "source_domains": [],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "three_day_mean",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/three_day_mean/model.joblib",
+    "source_domains": [],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "ridge_raw",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/ridge_raw/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "ridge_zscore",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/ridge_zscore/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "ridge_level_shape",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/ridge_level_shape/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "ridge_scale_metadata",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/ridge_scale_metadata/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "uniform_transfer",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/uniform_transfer/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "fixed_blend_25",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/fixed_blend_25/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "fixed_blend_50",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/fixed_blend_50/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "fixed_blend_75",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/fixed_blend_75/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "sapf",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/sapf/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": null
+  },
+  {
+    "model": "gain_v2_single",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/gain_v2_single/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_fixed",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/gain_v2_fixed/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_marginal",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/gain_v2_marginal/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_rank",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/gain_v2_rank/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_forced",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/gain_v2_forced/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_uncalibrated",
+    "horizon": "24h",
+    "model_path": "groups/m100_30/24h/gain_v2_uncalibrated/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 320,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "seasonal_naive",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/seasonal_naive/model.joblib",
+    "source_domains": [],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": null
+  },
+  {
+    "model": "three_day_mean",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/three_day_mean/model.joblib",
+    "source_domains": [],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": null
+  },
+  {
+    "model": "ridge_raw",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/ridge_raw/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": null
+  },
+  {
+    "model": "ridge_zscore",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/ridge_zscore/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": null
+  },
+  {
+    "model": "ridge_level_shape",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/ridge_level_shape/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": null
+  },
+  {
+    "model": "ridge_scale_metadata",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/ridge_scale_metadata/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": null
+  },
+  {
+    "model": "uniform_transfer",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/uniform_transfer/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": null
+  },
+  {
+    "model": "fixed_blend_25",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/fixed_blend_25/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": null
+  },
+  {
+    "model": "fixed_blend_50",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/fixed_blend_50/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": null
+  },
+  {
+    "model": "fixed_blend_75",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/fixed_blend_75/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": null
+  },
+  {
+    "model": "sapf",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/sapf/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": null
+  },
+  {
+    "model": "gain_v2_single",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/gain_v2_single/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_fixed",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/gain_v2_fixed/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": {
+      "margin_pp": 0.1,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_marginal",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/gain_v2_marginal/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_rank",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/gain_v2_rank/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_forced",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/gain_v2_forced/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  },
+  {
+    "model": "gain_v2_uncalibrated",
+    "horizon": "3d",
+    "model_path": "groups/m100_30/3d/gain_v2_uncalibrated/model.joblib",
+    "source_domains": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration_domains": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "selection_domains": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "final_cutoff_day": 54,
+    "last_training_label": "2000-02-25 23:30:00+00:00",
+    "windows": 304,
+    "rule": {
+      "margin_pp": 0.5,
+      "max_risk": 0.5
+    }
+  }
+]

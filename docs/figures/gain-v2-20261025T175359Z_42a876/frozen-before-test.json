@@ -1,0 +1,4609 @@
+{
+  "global_domain_roles": {
+    "m100": {
+      "source": [
+        "m100_rack0_node2",
+        "m100_rack0_node5",
+        "m100_rack0_node8",
+        "m100_rack0_node11",
+        "m100_rack1_node20",
+        "m100_rack1_node23",
+        "m100_rack1_node26",
+        "m100_rack1_node29"
+      ],
+      "calibration": [
+        "m100_rack0_node16",
+        "m100_rack1_node33"
+      ],
+      "validation": [
+        "m100_rack0_node19",
+        "m100_rack1_node37"
+      ],
+      "test": [
+        "m100_rack0_node6",
+        "m100_rack0_node9",
+        "m100_rack0_node13",
+        "m100_rack0_node17",
+        "m100_rack1_node21",
+        "m100_rack1_node24",
+        "m100_rack1_node31",
+        "m100_rack1_node35",
+        "m100_rack1_node38"
+      ]
+    },
+    "ucc": {
+      "source": [
+        "ucc_d1_qh2_rcc120",
+        "ucc_d1_qh2_rcc121",
+        "ucc_d1_qh2_rcc122",
+        "ucc_d1_qh2_rcc123",
+        "ucc_d1_qh2_rcc124",
+        "ucc_d1_qh2_rcc125",
+        "ucc_d2_qh2_rcc202",
+        "ucc_d2_qh2_rcc203",
+        "ucc_d2_qh2_rcc207",
+        "ucc_d2_qh2_rcc209",
+        "ucc_d2_qh2_rcc210",
+        "ucc_d2_qh2_rcc213"
+      ],
+      "calibration": [
+        "ucc_d1_qh2_rcc126",
+        "ucc_d1_qh2_rcc128",
+        "ucc_d2_qh2_rcc218",
+        "ucc_d2_qh2_rcc220"
+      ],
+      "validation": [
+        "ucc_d1_qh2_rcc127",
+        "ucc_d1_qh2_rcc129",
+        "ucc_d2_qh2_rcc219",
+        "ucc_d2_qh2_rcc221"
+      ],
+      "test": [
+        "ucc_d1_qh2_rcc130",
+        "ucc_d1_qh2_rcc131",
+        "ucc_d1_qh2_rcc132",
+        "ucc_d1_qh2_rcc133",
+        "ucc_d1_qh2_rcc134",
+        "ucc_d1_qh2_rcc135",
+        "ucc_d1_qh2_rcc136",
+        "ucc_d1_qh2_rcc137",
+        "ucc_d1_qh2_rcc138",
+        "ucc_d1_qh2_rcc139",
+        "ucc_d1_qh2_rcc140",
+        "ucc_d1_qh2_rcc141",
+        "ucc_d1_qh2_rcc142",
+        "ucc_d1_qh2_rcc143",
+        "ucc_d1_qh2_rcc144",
+        "ucc_d1_qh2_rcc145",
+        "ucc_d1_qh2_rcc146",
+        "ucc_d1_qh2_rcc147",
+        "ucc_d1_qh2_rcc148",
+        "ucc_d1_qh2_rcc149",
+        "ucc_d1_qh2_rcc150",
+        "ucc_d1_qh2_rcc151",
+        "ucc_d1_qh2_rcc152",
+        "ucc_d1_qh2_rcc153",
+        "ucc_d1_qh2_rcc154",
+        "ucc_d1_qh2_rcc155",
+        "ucc_d1_qh2_rcc156",
+        "ucc_d1_qh2_rcc157",
+        "ucc_d1_qh2_rcc158",
+        "ucc_d1_qh2_rcc159",
+        "ucc_d1_qh2_rcc160",
+        "ucc_d1_qh2_rcc161",
+        "ucc_d1_qh2_rcc162",
+        "ucc_d1_qh2_rcc163",
+        "ucc_d1_qh2_rcc164",
+        "ucc_d1_qh2_rcc165",
+        "ucc_d1_qh2_rcc166",
+        "ucc_d1_qh2_rcc167",
+        "ucc_d1_qh2_rcc168",
+        "ucc_d1_qh2_rcc169",
+        "ucc_d1_qh2_rcc170",
+        "ucc_d1_qh2_rcc171",
+        "ucc_d1_qh2_rcc172",
+        "ucc_d1_qh2_rcc173",
+        "ucc_d1_qh2_rcc174",
+        "ucc_d1_qh2_rcc175",
+        "ucc_d1_qh2_rcc176",
+        "ucc_d1_qh2_rcc177",
+        "ucc_d1_qh2_rcc178",
+        "ucc_d1_qh2_rcc179",
+        "ucc_d1_qh2_rcc180",
+        "ucc_d1_qh2_rcc181",
+        "ucc_d1_qh2_rcc182",
+        "ucc_d1_qh2_rcc183",
+        "ucc_d1_qh2_rcc184",
+        "ucc_d1_qh2_rcc185",
+        "ucc_d1_qh2_rcc186",
+        "ucc_d1_qh2_rcc187",
+        "ucc_d1_qh2_rcc188",
+        "ucc_d1_qh2_rcc189",
+        "ucc_d1_qh2_rcc190",
+        "ucc_d1_qh2_rcc191",
+        "ucc_d1_qh2_rcc192",
+        "ucc_d1_qh2_rcc193",
+        "ucc_d1_qh2_rcc194",
+        "ucc_d1_qh2_rcc195",
+        "ucc_d2_qh2_rcc222",
+        "ucc_d2_qh2_rcc223",
+        "ucc_d2_qh2_rcc224",
+        "ucc_d2_qh2_rcc225",
+        "ucc_d2_qh2_rcc227",
+        "ucc_d2_qh2_rcc228",
+        "ucc_d2_qh2_rcc229",
+        "ucc_d2_qh2_rcc230",
+        "ucc_d2_qh2_rcc231",
+        "ucc_d2_qh2_rcc233",
+        "ucc_d2_qh2_rcc234",
+        "ucc_d2_qh2_rcc235",
+        "ucc_d2_qh2_rcc238",
+        "ucc_d2_qh2_rcc239",
+        "ucc_d2_qh2_rcc243",
+        "ucc_d2_qh2_rcc248",
+        "ucc_d2_qh2_rcc249",
+        "ucc_d2_qh2_rcc251",
+        "ucc_d2_qh2_rcc255",
+        "ucc_d2_qh2_rcc256",
+        "ucc_d2_qh2_rcc259",
+        "ucc_d2_qh2_rcc260",
+        "ucc_d2_qh2_rcc261"
+      ]
+    }
+  },
+  "group_training_records": {
+    "m100_30": [
+      {
+        "model": "seasonal_naive",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/seasonal_naive/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "three_day_mean",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/three_day_mean/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_raw",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/ridge_raw/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_zscore",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/ridge_zscore/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_level_shape",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/ridge_level_shape/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_scale_metadata",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/ridge_scale_metadata/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "uniform_transfer",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/uniform_transfer/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_25",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/fixed_blend_25/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_50",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/fixed_blend_50/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_75",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/fixed_blend_75/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "sapf",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/sapf/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "gain_v2_single",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/gain_v2_single/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_fixed",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/gain_v2_fixed/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.1,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_marginal",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/gain_v2_marginal/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_rank",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/gain_v2_rank/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_forced",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/gain_v2_forced/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_uncalibrated",
+        "horizon": "4h",
+        "model_path": "groups/m100_30/4h/gain_v2_uncalibrated/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "seasonal_naive",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/seasonal_naive/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "three_day_mean",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/three_day_mean/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_raw",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/ridge_raw/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_zscore",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/ridge_zscore/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_level_shape",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/ridge_level_shape/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_scale_metadata",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/ridge_scale_metadata/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "uniform_transfer",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/uniform_transfer/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_25",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/fixed_blend_25/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_50",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/fixed_blend_50/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_75",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/fixed_blend_75/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "sapf",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/sapf/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "gain_v2_single",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/gain_v2_single/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_fixed",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/gain_v2_fixed/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_marginal",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/gain_v2_marginal/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_rank",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/gain_v2_rank/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_forced",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/gain_v2_forced/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_uncalibrated",
+        "horizon": "24h",
+        "model_path": "groups/m100_30/24h/gain_v2_uncalibrated/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "seasonal_naive",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/seasonal_naive/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "three_day_mean",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/three_day_mean/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "ridge_raw",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/ridge_raw/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "ridge_zscore",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/ridge_zscore/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "ridge_level_shape",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/ridge_level_shape/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "ridge_scale_metadata",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/ridge_scale_metadata/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "uniform_transfer",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/uniform_transfer/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_25",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/fixed_blend_25/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_50",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/fixed_blend_50/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_75",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/fixed_blend_75/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "sapf",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/sapf/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "gain_v2_single",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/gain_v2_single/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_fixed",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/gain_v2_fixed/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": {
+          "margin_pp": 0.1,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_marginal",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/gain_v2_marginal/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_rank",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/gain_v2_rank/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_forced",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/gain_v2_forced/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_uncalibrated",
+        "horizon": "3d",
+        "model_path": "groups/m100_30/3d/gain_v2_uncalibrated/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 304,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      }
+    ],
+    "m100_15": [
+      {
+        "model": "seasonal_naive",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/seasonal_naive/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "three_day_mean",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/three_day_mean/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_raw",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/ridge_raw/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_zscore",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/ridge_zscore/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_level_shape",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/ridge_level_shape/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_scale_metadata",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/ridge_scale_metadata/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "uniform_transfer",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/uniform_transfer/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_25",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/fixed_blend_25/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_50",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/fixed_blend_50/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_75",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/fixed_blend_75/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "sapf",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/sapf/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "gain_v2_single",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/gain_v2_single/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_fixed",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/gain_v2_fixed/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.75
+        }
+      },
+      {
+        "model": "gain_v2_marginal",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/gain_v2_marginal/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_rank",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/gain_v2_rank/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_forced",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/gain_v2_forced/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_uncalibrated",
+        "horizon": "4h",
+        "model_path": "groups/m100_15/4h/gain_v2_uncalibrated/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:45:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "seasonal_naive",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/seasonal_naive/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "three_day_mean",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/three_day_mean/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_raw",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/ridge_raw/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_zscore",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/ridge_zscore/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_level_shape",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/ridge_level_shape/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "ridge_scale_metadata",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/ridge_scale_metadata/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "uniform_transfer",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/uniform_transfer/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_25",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/fixed_blend_25/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_50",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/fixed_blend_50/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_75",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/fixed_blend_75/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "sapf",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/sapf/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": null
+      },
+      {
+        "model": "gain_v2_single",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/gain_v2_single/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_fixed",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/gain_v2_fixed/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.75
+        }
+      },
+      {
+        "model": "gain_v2_marginal",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/gain_v2_marginal/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_rank",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/gain_v2_rank/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_forced",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/gain_v2_forced/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_uncalibrated",
+        "horizon": "24h",
+        "model_path": "groups/m100_15/24h/gain_v2_uncalibrated/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 320,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "seasonal_naive",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/seasonal_naive/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "three_day_mean",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/three_day_mean/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "ridge_raw",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/ridge_raw/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "ridge_zscore",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/ridge_zscore/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "ridge_level_shape",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/ridge_level_shape/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "ridge_scale_metadata",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/ridge_scale_metadata/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "uniform_transfer",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/uniform_transfer/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_25",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/fixed_blend_25/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_50",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/fixed_blend_50/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_75",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/fixed_blend_75/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "sapf",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/sapf/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": null
+      },
+      {
+        "model": "gain_v2_single",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/gain_v2_single/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_fixed",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/gain_v2_fixed/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.75
+        }
+      },
+      {
+        "model": "gain_v2_marginal",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/gain_v2_marginal/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_rank",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/gain_v2_rank/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_forced",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/gain_v2_forced/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_uncalibrated",
+        "horizon": "3d",
+        "model_path": "groups/m100_15/3d/gain_v2_uncalibrated/model.joblib",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "selection_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:45:00+00:00",
+        "windows": 304,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      }
+    ],
+    "ucc_30": [
+      {
+        "model": "seasonal_naive",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/seasonal_naive/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "three_day_mean",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/three_day_mean/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "ridge_raw",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/ridge_raw/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "ridge_zscore",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/ridge_zscore/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "ridge_level_shape",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/ridge_level_shape/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "ridge_scale_metadata",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/ridge_scale_metadata/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "uniform_transfer",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/uniform_transfer/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_25",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/fixed_blend_25/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_50",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/fixed_blend_50/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_75",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/fixed_blend_75/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "sapf",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/sapf/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "gain_v2_single",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/gain_v2_single/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_fixed",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/gain_v2_fixed/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_marginal",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/gain_v2_marginal/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_rank",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/gain_v2_rank/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_forced",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/gain_v2_forced/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_uncalibrated",
+        "horizon": "4h",
+        "model_path": "groups/ucc_30/4h/gain_v2_uncalibrated/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 03:30:00+00:00",
+        "windows": 480,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "seasonal_naive",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/seasonal_naive/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "three_day_mean",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/three_day_mean/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "ridge_raw",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/ridge_raw/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "ridge_zscore",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/ridge_zscore/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "ridge_level_shape",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/ridge_level_shape/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "ridge_scale_metadata",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/ridge_scale_metadata/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "uniform_transfer",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/uniform_transfer/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_25",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/fixed_blend_25/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_50",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/fixed_blend_50/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_75",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/fixed_blend_75/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "sapf",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/sapf/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": null
+      },
+      {
+        "model": "gain_v2_single",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/gain_v2_single/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_fixed",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/gain_v2_fixed/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_marginal",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/gain_v2_marginal/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_rank",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/gain_v2_rank/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_forced",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/gain_v2_forced/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_uncalibrated",
+        "horizon": "24h",
+        "model_path": "groups/ucc_30/24h/gain_v2_uncalibrated/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 480,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "seasonal_naive",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/seasonal_naive/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": null
+      },
+      {
+        "model": "three_day_mean",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/three_day_mean/model.joblib",
+        "source_domains": [],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": null
+      },
+      {
+        "model": "ridge_raw",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/ridge_raw/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": null
+      },
+      {
+        "model": "ridge_zscore",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/ridge_zscore/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": null
+      },
+      {
+        "model": "ridge_level_shape",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/ridge_level_shape/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": null
+      },
+      {
+        "model": "ridge_scale_metadata",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/ridge_scale_metadata/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": null
+      },
+      {
+        "model": "uniform_transfer",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/uniform_transfer/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_25",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/fixed_blend_25/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_50",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/fixed_blend_50/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": null
+      },
+      {
+        "model": "fixed_blend_75",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/fixed_blend_75/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": null
+      },
+      {
+        "model": "sapf",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/sapf/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": null
+      },
+      {
+        "model": "gain_v2_single",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/gain_v2_single/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_fixed",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/gain_v2_fixed/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_marginal",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/gain_v2_marginal/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_rank",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/gain_v2_rank/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_forced",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/gain_v2_forced/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      },
+      {
+        "model": "gain_v2_uncalibrated",
+        "horizon": "3d",
+        "model_path": "groups/ucc_30/3d/gain_v2_uncalibrated/model.joblib",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "selection_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "final_cutoff_day": 54,
+        "last_training_label": "2000-02-25 23:30:00+00:00",
+        "windows": 456,
+        "rule": {
+          "margin_pp": 0.5,
+          "max_risk": 0.5
+        }
+      }
+    ]
+  },
+  "studies": [
+    {
+      "name": "m100_internal_30",
+      "source_group": "m100",
+      "test_group": "m100",
+      "frequency": "30min"
+    },
+    {
+      "name": "m100_to_ucc_30",
+      "source_group": "m100",
+      "test_group": "ucc",
+      "frequency": "30min"
+    },
+    {
+      "name": "ucc_to_m100_30",
+      "source_group": "ucc",
+      "test_group": "m100",
+      "frequency": "30min"
+    },
+    {
+      "name": "m100_internal_15",
+      "source_group": "m100",
+      "test_group": "m100",
+      "frequency": "15min"
+    }
+  ],
+  "adapted_data_sha256": {
+    "adapted-data/m100_30/m100_rack0_node2.parquet": "65212e81d65676e08b04de58f94090b77b4b83517d46416a5b9a12a65123edd7",
+    "adapted-data/m100_30/m100_rack0_node5.parquet": "a4c04d844cbd7f82b6f189e414b1a0d61472c733dca089bf822f7cbf16035c04",
+    "adapted-data/m100_30/m100_rack0_node8.parquet": "e099873f85e330808b82b50650bd4849ba96cafba21b9355b4e6c8a74aa4933e",
+    "adapted-data/m100_30/m100_rack0_node11.parquet": "50e9b1d930be3956444706184a19a4f0e1164f133f412e8c0483b24c97fa8b05",
+    "adapted-data/m100_30/m100_rack1_node20.parquet": "9215706c141f5d9bf51d14e73116be95d5a26f7034b36a695271a602a55ec3dd",
+    "adapted-data/m100_30/m100_rack1_node23.parquet": "2a578f067c399ed5a2100fde206b07405b61b59aa9b4f3f4cee0df4a68d9a5db",
+    "adapted-data/m100_30/m100_rack1_node26.parquet": "c3ccb306cdb48748261087e4591f3e6cbfa7c84211ccf89eda712d7c1fd43586",
+    "adapted-data/m100_30/m100_rack1_node29.parquet": "94ec71ec6379f6ac757ff1d18e6f18ee94a9d2c9ddcea4c38d9feb4ed8f9016d",
+    "adapted-data/m100_30/m100_rack0_node16.parquet": "c26e3c2d44c5b84084540f322a1437f2d495c9a50c0ea4418e0c9ae84f0aafea",
+    "adapted-data/m100_30/m100_rack1_node33.parquet": "66c8e447a35d88cbfc190b57dacd7c4b8f705bd396501fad9e0938357feca6d8",
+    "adapted-data/m100_30/m100_rack0_node19.parquet": "063eea632b2462f4c9473c17ecac8fc94642667439b5f1cc694d327adcbd5c57",
+    "adapted-data/m100_30/m100_rack1_node37.parquet": "8613fa105afd18b87f3e1b092f004d9fb98d52e9dd2a56ce8f1ec8b1c2007b26",
+    "adapted-data/m100_30/m100_rack0_node6.parquet": "ebda37cf381797af3822a6d813f5b0382c824e66a83ed2a5dc7380c44c030d2a",
+    "adapted-data/m100_30/m100_rack0_node9.parquet": "da9cb43f43cc76fcb60db4dc0f0193ef888c588eacfd05056fa12805bb4805e1",
+    "adapted-data/m100_30/m100_rack0_node13.parquet": "f7f882b8f3eb4f5f836703cd0a9ab32b7faab79ef0b20f5970fb525a627f53c7",
+    "adapted-data/m100_30/m100_rack0_node17.parquet": "7ed31193b66f853feb13c38f5798c18c1fda6b604a5ba709ddcfb92c654a185a",
+    "adapted-data/m100_30/m100_rack1_node21.parquet": "44936d6cdf9357e58065f7f3f053e606272597677ea3af03d2b39859565d0321",
+    "adapted-data/m100_30/m100_rack1_node24.parquet": "111ceb1ed2eb7cef676bac7def55741c107e8f98fa8d110460a648dd10ba1995",
+    "adapted-data/m100_30/m100_rack1_node31.parquet": "25dffdbcb978bf620af64acdff5c5501c7920b329873e8b8f170731a54e43251",
+    "adapted-data/m100_30/m100_rack1_node35.parquet": "275bb0b6028cdad68190a74d5b60426fdb06ee3f89b1c2bbda8aa73e495b1a5a",
+    "adapted-data/m100_30/m100_rack1_node38.parquet": "43a75b6d380cbffe8178234ab4c231623ff44ee31adfaeda61790fb7cafc87d2",
+    "adapted-data/m100_15/m100_rack0_node2.parquet": "926f898183c2cd42260c4aeb3e77000f70eb65e0d745ca90d63b78d498b65fcb",
+    "adapted-data/m100_15/m100_rack0_node5.parquet": "0812bfefe3a315884ca97dd65af85153fab6e5eb00694e79e390231c8a4828fa",
+    "adapted-data/m100_15/m100_rack0_node8.parquet": "3b6d69a0f13f2bdcf049a742dbb34ab5179a0c3291c8c80a7ba99a0baac44877",
+    "adapted-data/m100_15/m100_rack0_node11.parquet": "8f5593f40f7e19e4a6c9dcea87eb04e021581e86425a9992673f74b19b5c443b",
+    "adapted-data/m100_15/m100_rack1_node20.parquet": "0db785599ef4558fa9974f7fbbf5dc7a4163d409fb3c28097cb614cb7bbfec78",
+    "adapted-data/m100_15/m100_rack1_node23.parquet": "9e5e73224f7fe4abd01c00bcf1868652ea0edc62cc2f9ed7d18790aefb173313",
+    "adapted-data/m100_15/m100_rack1_node26.parquet": "e8272cd8299c6c38a2e06c8c06093d528bb2b0e79954f3c6ace23e02227bb7e5",
+    "adapted-data/m100_15/m100_rack1_node29.parquet": "3044cc15975c315e519e3b7dc0ea542c8f656ddadba339f6c2c04c3c0fbcaeaa",
+    "adapted-data/m100_15/m100_rack0_node16.parquet": "bcd5a0fe11f4897a657c5058aecb3bc1a1cb523a6006431ec4df1f407a96f1bc",
+    "adapted-data/m100_15/m100_rack1_node33.parquet": "f75a09c0c19c906597ac600b3346766d0d2f69d94e3345e35c9a517c0fcc7b1d",
+    "adapted-data/m100_15/m100_rack0_node19.parquet": "66fa62e1de0575ea80256fbd82c6a4a2cba2a99af219ad29451b7966b47e4910",
+    "adapted-data/m100_15/m100_rack1_node37.parquet": "e4358dd32ea1f1e96af76b86820cbecac38f7797484e05b5b1bfb582842d80c4",
+    "adapted-data/m100_15/m100_rack0_node6.parquet": "aba67d3348dd19a246b0442db1d684c7c203bb56d4aed1adc5563b5efdd2bd93",
+    "adapted-data/m100_15/m100_rack0_node9.parquet": "2d8763f0a2394aae76cfecca2af74a07db71d429c77e00fb6f6ee8d676285d13",
+    "adapted-data/m100_15/m100_rack0_node13.parquet": "eae7c7b4d9a0a3082e92d6b62bad07102451672125550e86bb26f21397111d23",
+    "adapted-data/m100_15/m100_rack0_node17.parquet": "2dfb5296452bb379ed368f61a470ed3127d7ecf05790dcaf5adb5ef72d8bad98",
+    "adapted-data/m100_15/m100_rack1_node21.parquet": "a32efc15cc34f53346babea29b7f342cb111f806179ae7da05c66d9b58d7839d",
+    "adapted-data/m100_15/m100_rack1_node24.parquet": "bb7a29a19dc106527e38f09210bbc5b04a1fc15226413a0039536bb9f13a2c02",
+    "adapted-data/m100_15/m100_rack1_node31.parquet": "f49836187883de37ba4bd2ecc8ae9a69e2c17a31c7fb781c7361b42c61165079",
+    "adapted-data/m100_15/m100_rack1_node35.parquet": "9ee199fd219efbaae63ccb8c3149807f5ff3b407a0dbc22aa08e8cf94d87a2cf",
+    "adapted-data/m100_15/m100_rack1_node38.parquet": "730667d6a7f0fe11c7f0c007cabd87f02da995cba155f026e18494e667155897",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc120.parquet": "f592fd22700de9ca9039657a2f870d78ecfb3d3bba479e6af748020380fed8a7",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc121.parquet": "ef4de9a244b185512cb3171e1570b9082b608687ee40a9f75f998ad169dcb959",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc122.parquet": "e76ef760a24e3b9ef74609ab774c42b74828f9726a5279a772f5168a5794e14a",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc123.parquet": "1822ee87ad22650141e8e4f733b33965db6da46d2fc14a6247ab7ac70f479231",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc124.parquet": "bd85cff3a13dd01b3c0f282ace84656e4ba220106308bd72d51a1f67a5b813f8",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc125.parquet": "ee7b85e06e10ad87c2970b1f51b578d57b7af4a0a6ba603b82d4c670c9ec6fff",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc202.parquet": "6487da8934d7eb56078552fc77d01f92a47839180d06998445c829d39b582c32",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc203.parquet": "0553e603253ce2f2c3b2636f0d4b8a366ff91cc2a537af25e40a36084a10ccdf",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc207.parquet": "31891da1a6128a5702d9048d60d13457d75adf66b1706a14c132232169528ef4",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc209.parquet": "d3f2f8871bb88a4eb213cef083c4482d84e8765cf092edbb16fdcdf0a7e332a6",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc210.parquet": "494ab402faa32f3ba33a0413afa9584309308f32387a23829ad7eb677da94b2e",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc213.parquet": "ff6697a41e80a5e9f1dbbca6cead780871281b91953a94dff5a8f376fe732f4d",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc126.parquet": "6c52afbf9cf4824528590eab8331d870a2beb333f33a4d8ad125e25c47733e52",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc128.parquet": "786256f2dfaac686448d03a0073db2d4a1cff7c2cd81f0fba1870232d38dc9e6",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc218.parquet": "34b60fc94fecb323e0689d4db68248497f3a7ae3c3088f4e63b2d0d477f0577e",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc220.parquet": "2716b626bad664f66db55a4068b135c9fb2cdd222ea3e41d0555af56adfde4e0",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc127.parquet": "ff01fa2c72e85d4fa7d77178a7edd4b49d9898e4e44f49672c1e7c98597547c8",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc129.parquet": "b706aabb857ec0578fe2a962a495f1890eb48f8ee0923473691d9cb3d63e6503",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc219.parquet": "f5d4b127184b198ef84daa0d4930eb5a8a994c81fc2b083f36becf564e087ac7",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc221.parquet": "c4e4ae520a6c5172aebacd8de7f92510a51b85e14a8a60c66b4d7c87128b9020",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc130.parquet": "296e003603d928f31e0f771d5d0c3001abe0dbb16f96844487d39f2fa5c3a4c0",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc131.parquet": "1dde148598aef845d4b382d0e38b7c5fc16310690bad8a71d1575ae85200648b",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc132.parquet": "534b1a50079af2a59128927c64ff5d742a05ef4cbb642d3ff890536de4811ac0",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc133.parquet": "87eac49870dec68a37eada801aa36f0ce154a4676389fecfa7b2eaeb730cec3e",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc134.parquet": "5d0bb63df20115050f66d04521dd40b23d14050d0fa0ec3c6baaaea3e8905632",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc135.parquet": "d3607933c29ab0eb1e270033e99737f7bf349139de79984236fdb1d66b45ab74",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc136.parquet": "ba71700f45648a1f6fe228f9c70ad658b8b695d7f7d5301aec53c2c17e3d95d5",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc137.parquet": "b4bc4c27cdf12829d8c16ebd3f338262c005b68dd0e98732337b57c144d7e6cd",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc138.parquet": "707cb98b01ae26996dab353df36662fe0221fe3f9c52bf7d7ccb2162069b236a",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc139.parquet": "8a040aa7c62acd27c259d60bc7098aa1be2aeb04811e148552c42c7873160e4b",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc140.parquet": "ac62ff1cfa9051813eee69eb97dbf7c8690d99e147308a0347ac7d3cbc3bee49",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc141.parquet": "ed5ea3a7ba1c4e0fe385be920b3228a09bee9bc1a2b6bc53758bf6b860e8ff3b",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc142.parquet": "38bccbf2869c73de230b17779278cf455de528df55281aa8e3a3f5704fd4b9f1",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc143.parquet": "ec1b48547f84899ae69029e02102b90c42312e7c03dce8473bb4a7aa715c7c85",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc144.parquet": "230c5ad198fa9750071eeb098b3acf0e79532adce640ea5955aff80393383e10",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc145.parquet": "9c8c21e282dd6224873e2cd295c84647e76950a3e868c2440f65a3f304f66af8",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc146.parquet": "d6f556b7ae127c9b5e946457f6df9e81f264574c835df23167f0924597d46946",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc147.parquet": "77c3691f1919a9199b6077127382256a3bffce0ed0e913ee12668ff0c7c762c2",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc148.parquet": "d5ce21b700347c9d7aa6c519c0c1d7b3d51ef6e2349e407dc588d2b62a2bd3d0",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc149.parquet": "5d31dc6ee5331ef22728d0ea47b69b688f1c2ad0c21a88e68a608f7f70cde49d",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc150.parquet": "6d7b1bdab4eaa9c21b3e8b715ff0d1c2b58010abc1a9228c5af21a96ee8dc910",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc151.parquet": "e96fb735dc312becdf1627819e9fa2a711233783bdeba62d521a975f598b5ce3",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc152.parquet": "4d10e2383090e95576039b11f560b2b5c8bfd9e0b6b3a106779f1b5d0094d1a2",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc153.parquet": "75e0fd7e0f9a32f4e0f38f87f0ccb4aedfb4e4cfb858529bb04399c3b23972f1",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc154.parquet": "571e88a8c7496a348db927f099f2ac0443dfeb37971120c11afe4bc15ce7465b",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc155.parquet": "a326a4e02bc6e2d4ee994c8c3b68b881ef61c8cc024ec502ecfefb67431be964",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc156.parquet": "54107f7cf1867b05b980b14cd41b37bab2e053dbdf17199c51ff452bc7c3d2af",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc157.parquet": "3f0ff177ee13cdad7e0be62d4e030f25c5224164381957be55d087de2372e2a2",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc158.parquet": "c97c283231325ce807dfede7e87d64dea6baa17e9e8b2558202aacaca9337a19",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc159.parquet": "84559017763352c0489e582e3e33a695bdb3614c57284a90408174d8ff00bea7",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc160.parquet": "e9804e70bb98f3868dfc350449a747926ea489d0ba66dcd586fb0215260eb4f4",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc161.parquet": "3c2f662d08fb2a76f24601401655b5eaf2cd2a7f3246befa1fdacb7c63026875",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc162.parquet": "2baffac270571e6aa8b9e2480f52cb4d930a76b6ab7abf889ba4e349ebc20744",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc163.parquet": "69d34b81c8d8e47366245dc094e59957a54103ddfbfb8c89be484f5facc1851b",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc164.parquet": "33237352960a2d59b3dde00e06714a1a8083808ce50cac17d4c31061d5f3b7e1",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc165.parquet": "d6b1869f69801dc7961b848dcfde100d1947157c97d00aee794c2e3f4f20717f",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc166.parquet": "7f2f03883b0b3e53a88c1075e1a4c54115f46e8bda6a32207ebb053d9ec2db15",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc167.parquet": "583bdab62089b5dd023fb2af55e9a7a9e2ed96e09e684bd0297222b69e8f13d0",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc168.parquet": "93e974306245575fe9c940df787b25b8b8f9bf0577e754b852ae8e7322f6fb3a",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc169.parquet": "8bc5af658a7775e710d438ebebf137857239f1eb069e2b7133739e607b23c4e0",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc170.parquet": "7e03847e3960072c85aeb8f594040ae11dbc6847d74c5c6de487005badd65edb",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc171.parquet": "3f9afa3c857f310c6fcad40f81af430d82fc6f352f5076a577365f65c5e90ef7",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc172.parquet": "3d05381f4b7dc7d94b4b4b76ba360d2cca10ca441a3b9b2ef38be14c26a23906",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc173.parquet": "bef50555d98f50a3414fe848583156053748f88468cb4218b55df274770c89cc",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc174.parquet": "10827f5261602c61053f2fa59d467497e39b62bb2e0fd8b3760bad97e986827a",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc175.parquet": "e4232cd9560c029adb70599027887c31e2c7f700209f168b2f05079dccbf9ebe",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc176.parquet": "f2692a6eaa2760f1189fda26bd3e2368da9a53ead6aeb11f1e803ba9f740b18b",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc177.parquet": "76183605311ed1a5cabf7053d08cfad34b782208b5301c2023102e51321a5cad",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc178.parquet": "2341078d25cd64ae6ad79c3e2f35df97ec028f5bbeeec8f7cc1198bacb70dade",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc179.parquet": "98c3f4db6eb67a6bf72eb7b9ad63e312b525c3694b81610a4682b0eb0c1716eb",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc180.parquet": "e7c2581263238e9eaf644833e16ae9891488cd16cce3a9f202e1ec3e28db15a0",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc181.parquet": "69f3d768637ac1e4a0ba506e13bea99f05c0a016b6ee19080e2ac4d2092ac653",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc182.parquet": "2cf6b91941407f0bf0c743c0d1bfc0ec2f9bcdb18f1185b0ed8d59c03c5e5ce5",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc183.parquet": "aaf01624ced5d32c437d72f8075f83d4d7d482ef175efa807ae9bd0be0a2465f",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc184.parquet": "b9c09cae5db81fe3aecd3668c5e7c983b989ec1545859a1430589432d5f0cebc",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc185.parquet": "bf500d7a74480b8ea1faff653a0f114ef18773b2fd69b379ad96852cd55cd22f",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc186.parquet": "295f20f32b427aad93df66681d52ec4c94d50279a4d7ac541b300655d92c1734",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc187.parquet": "5c60ef0e52d531941c22206601f3874b0bf3e426b997663ad47ffe0ee75d7fea",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc188.parquet": "185f18cc0c93b8734417e27e8b988351f080716b698360717b1db16c41b46cf0",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc189.parquet": "467bf6187d7b1f4cd5670b7ac1cfab333f925d260050192422e208a255e9847d",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc190.parquet": "82685612bc9edc75823df6e7ba586d1f731d2442e320c1e38e79ee2606dc618d",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc191.parquet": "148a0f213784268592d4faf84ecf58a195175e8ab3b1f79b5c4ac1df0b768cb4",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc192.parquet": "f4e338f0b99ad590bf45ef7dbb454993fdf6710790ac256805e8c7e1a07f7aea",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc193.parquet": "7bc767a7e8b7f6b8b8d7d29d1c9ab0b5d8fb854a153d08aa533659308666f242",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc194.parquet": "eb8b11ffdb0b9cdcd97ab900bac24d35a9e982fbd152a34db51eabed744a2b7a",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc195.parquet": "7d6a76871c7ce1db5a5f47a687eb1fa36c9fa15b208c4ed9aba64c84b4ccac53",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc222.parquet": "b5254ec5655e98e72bb362bd0c819ea6e255c0bfe4639edcd0a33738c82a8183",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc223.parquet": "972f008f656638a3644edd2ccabfaf5ecc27ef2e4e6a2a98a260e799bafac438",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc224.parquet": "a9e1e12fe75ec38b391227ee9c5c7203504c0e6610a649e122e291009252dad7",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc225.parquet": "64b7de7d9d6d379ec1d7775def31382fceef73e1c73fe54b73d089b59cb73e85",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc227.parquet": "1739f358a827d3f1ab4450e48fb9956428c3d62e926d41cc5119bcf6652a4685",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc228.parquet": "916abd1d3a2b224e5625b6e280061b8e04c8e4b0765f0ce139ae20ad82e12f40",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc229.parquet": "d7e82f33237adcf2949dae3f73de567d97a89893bd6ef7682785ae1ea21e961a",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc230.parquet": "6d5d8f897c6e99a7e1f20da29cc53f7d0491e9ab0988ade9f3f01f8bdd701954",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc231.parquet": "809dcc06ef9976fa37c7b0a8907ecf23fe3ab6d5be1493a2d1c118f2c4aecfbf",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc233.parquet": "789252e85fd0fd064ed7813700ebaf582dba67dd9f31b41036795328cb5a7067",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc234.parquet": "db7ccc8d41b61af2a735d25d9f9eac2b6955506808bf475ba077677af8df170a",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc235.parquet": "7f5e1b908858a40eb058848eea142576e634cbbc744d4de3fb8076be4a2931df",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc238.parquet": "c3019fb8e07f5ee02a11e12326010d8a7db92245f9ce96b68a8af9b4045cd95c",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc239.parquet": "0a1472bf4c258ef024d98711d04ffeae64caa971e2ebd5fecd6e5b01e69d5c10",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc243.parquet": "7c586c1387b92784ed59bf144a22b1ace4b93cb4bb46a820db097d6fb1474bee",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc248.parquet": "5858166d0b03c2788deb1c65259205d4dacabb2555db2ee7054dfe6c706dc7f8",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc249.parquet": "c33d5bf61a126ecbb017ed3b6569243d6ac3a2b364c18c4d9de914235153c0d0",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc251.parquet": "a5a9e0b2932ee1705d0aeaa6eae7c644a8f9d1ae154374e8afcdb348991a43dc",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc255.parquet": "82189886b951125d2414daa715a6c66953f3b3511dba8375d14fc8bfa156a820",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc256.parquet": "6c9dcf8d8efac7a5e02131730f41ef8e17dfa21f69a4e5a58ac762173c537122",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc259.parquet": "9b66a1c343180df4237489542dcae6ec784eae2a48e2678a82eb84f1d90cc5ca",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc260.parquet": "181e9702d9b1cfb6b5d86d467f66a2fd0374beaa0ea7b5c91cf874bf1e1d3cdc",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc261.parquet": "f393c5d555a604cb4e31733bdc9e53d1a8b9a3327ffe7d10465c8a3dd599e894"
+  },
+  "training_artifact_sha256": {
+    "groups/m100_15/calibration-curves.csv": "074658949dd7d262ba77f112074d34b4e2a98f008ef813949271fec0b721e0d2",
+    "groups/m100_15/calibration-data.parquet": "bef0427ba3d9e1ae8dc587ea590fd7c6d01627daf4ece4632ccaeb24afdb46cd",
+    "groups/m100_15/calibration-predictions.parquet": "696aaf07514b9b70ecc73805831df8878de11d05558cb1bf0500a2fd18023ed3",
+    "groups/m100_15/gain-training.parquet": "06a6f5dab488cf7c0b415754d02f7dffa387d84830f7b4fc493159b135ff43c6",
+    "groups/m100_15/training-records.json": "6ed938d7833847ef41ba517540eff39eae58a79d893c2cdbb3848993d4fe6d98",
+    "groups/m100_15/validation-metrics.csv": "637c600f3dd0acfaf39c406a648825e4066a8ad23f2ccfc7f6f90b43240c4b69",
+    "groups/m100_15/validation-per-origin.parquet": "d59d46e5616b8d883e5499fdf7828817ec122dd572340dd3316b5a528ab5c4b5",
+    "groups/m100_30/calibration-curves.csv": "6a404a66fbf9dfa02cbc4cd6b1c1942cabbbd5f1f0159effd9ad4f1ac26ddaaf",
+    "groups/m100_30/calibration-data.parquet": "b65327efb28c36fec8304cf92a501bacde16bd059199bd43f5714696072f1586",
+    "groups/m100_30/calibration-predictions.parquet": "526d98a6950514a84b3c013203148daae1b9e5a549a63a6fccbc59d1ab70e7ad",
+    "groups/m100_30/gain-training.parquet": "8ed3aab45142cefc8ec14b3d01f4611966ab39a88bc2ca8328e9c56dae7b532a",
+    "groups/m100_30/training-records.json": "32b953b6ef1f625bae26cee418a1944907df43b10d865dae0cdccd888d401553",
+    "groups/m100_30/validation-metrics.csv": "ecf289bbdedc2e3e2bc52d704c213bc0180d9dcb95d211a354776f5a6b13b6a6",
+    "groups/m100_30/validation-per-origin.parquet": "abe9f00801457960438b289b6197e4159ad14f24b60ce9ec417883bbb4cbb71b",
+    "groups/ucc_30/calibration-curves.csv": "5aa34a3a35e2121e667343369fdec4a46dc96f27f9bfebf9fadd9c7365b98c6e",
+    "groups/ucc_30/calibration-data.parquet": "49b31e9f7df91dc77de1b9209380b9889663d96733218594670a5b1dd0f972c1",
+    "groups/ucc_30/calibration-predictions.parquet": "41b6e7b0fbeb0f230d7b499e252c8ae793e5d9603bc57874f07b5dd23aed5cd0",
+    "groups/ucc_30/gain-training.parquet": "1744ad0a781820756470b7061de0fc7e0324c00780a970f6549201c924e0022d",
+    "groups/ucc_30/training-records.json": "ea9bbd5c6d575773984c3e059c79068c621e4937764eda7aafe99734b85ba78a",
+    "groups/ucc_30/validation-metrics.csv": "7c07ad6d4a3400c29acc4e9d28686947d2de2f00a4ece79d327f818ff51bb32b",
+    "groups/ucc_30/validation-per-origin.parquet": "30d8ce8cfdbdd0514545a9efb5f943d74e2f122c2d56e630d80037e9c63e5fc4",
+    "groups/ucc_30/24h/past-performance.csv": "5d7ff60d4229a4397e2af8109138cbad0f34e82cc12be5809063e48f72cd21ba",
+    "groups/ucc_30/24h/validation-selection.json": "033c4bc01b2a9c11284a605f1625a25a8f16eefc56461c1d101c49a128a140d4",
+    "groups/ucc_30/3d/past-performance.csv": "40a039d3215de9a8fa824df8f247a8ebfc415747ebcfa0e03c741c8e5faffefd",
+    "groups/ucc_30/3d/validation-selection.json": "22511eae18da1b1a9c39debb0d07e21d2f5828d2d41ae5f6668d31ad598beefc",
+    "groups/ucc_30/4h/past-performance.csv": "1deb520841a9e2268195ab5536ee9eeac9d4ed089cad2957699434ac41dd287c",
+    "groups/ucc_30/4h/validation-selection.json": "1cf2e9c0841d342b29e83b5753a59b02788ae446eeed7aae5cebf22d9d3f5592",
+    "groups/ucc_30/predictions/24h/fixed_blend_25.parquet": "7fe1d88e2fb01bb9add703bea655e2c47b99f00a5b28438c68a0b1e02043e688",
+    "groups/ucc_30/predictions/24h/fixed_blend_50.parquet": "f2dd795bbd1f15f849c5b471a01c062b33392eacf3f10597f7f9a9e792bfa4a7",
+    "groups/ucc_30/predictions/24h/fixed_blend_75.parquet": "16ddf1dd571b73f1caa0ebae4bfca90e1ac9e1e3256d6ad1838cc1e2e38e5381",
+    "groups/ucc_30/predictions/24h/gain_v2_fixed.parquet": "0ffd26d4cc9ec0c26f0f4e808b7e1fc47e898feb49de05d083fe2f9595635c9b",
+    "groups/ucc_30/predictions/24h/gain_v2_forced.parquet": "af7a24f18bb2223887c7d1b2293e15aff22801aafb3a677baaa3ba5ae94fa45b",
+    "groups/ucc_30/predictions/24h/gain_v2_marginal.parquet": "103fd50d5202339ce979e665fb862d6c007830b30fea4accc2a00972e26a7205",
+    "groups/ucc_30/predictions/24h/gain_v2_rank.parquet": "b6e7401d0ac68f70eb8c871f05d18fdd3882f388c1d4f2e073913e704fbbe9f1",
+    "groups/ucc_30/predictions/24h/gain_v2_single.parquet": "5e257106f3a9ac43c3ff22a86b2f45fcd0d71ce5c24c28cfdd3ff1b86a0fc6a0",
+    "groups/ucc_30/predictions/24h/gain_v2_uncalibrated.parquet": "c04c12353ac5c0ab66b2b32e3399cc44624e61ac147668ccf9755d484e7a2f53",
+    "groups/ucc_30/predictions/24h/ridge_level_shape.parquet": "ab64d042d62b5a015a2187e8944f2fa3bac34d4e87eefcbc60c76e0028d4d0a6",
+    "groups/ucc_30/predictions/24h/ridge_raw.parquet": "1316f23e628c0f62197bc1ccf73b89a2b24974edf180130eb844d2be2b48e7d7",
+    "groups/ucc_30/predictions/24h/ridge_scale_metadata.parquet": "d4ca4525f348895ee052810d1c15857c0424c8e848019188a6156afa69c62196",
+    "groups/ucc_30/predictions/24h/ridge_zscore.parquet": "9c07072800fd6bc8e1e770f1fa8bf05e40f9f5770a03d875c0d4d5a3f37f62ef",
+    "groups/ucc_30/predictions/24h/sapf.parquet": "2be340985af353b72ad16b1f3aed06c074cd3e83b610032783f0df6aeb777096",
+    "groups/ucc_30/predictions/24h/seasonal_naive.parquet": "04b2a11e43db859ad7792e7dcb1d6706cfc6668985a369e0eabd9de3a89403bb",
+    "groups/ucc_30/predictions/24h/three_day_mean.parquet": "5326755b67c0ac25b7cf16d0d54cf426b47d57f0abe5bda127ab3da9976a29a1",
+    "groups/ucc_30/predictions/24h/uniform_transfer.parquet": "7450e23b2e7f37b049a784a9e4d48c264db118d3dd210cb75f7192a82cd54fcc",
+    "groups/ucc_30/predictions/3d/fixed_blend_25.parquet": "4a48eafa2370b2925bab63882f165a38ed8ae3ab327495e8a6126e7dc3177da3",
+    "groups/ucc_30/predictions/3d/fixed_blend_50.parquet": "99886d6b3fce7c8c6e0f469a0858c5f8acf8a5dde08b13fea25144f184b3707c",
+    "groups/ucc_30/predictions/3d/fixed_blend_75.parquet": "ae96fa8b242e7b472c9f04c8e62685f962b88c0c2c631fed26270636ba8463e8",
+    "groups/ucc_30/predictions/3d/gain_v2_fixed.parquet": "1f24fb96903a1c5510fb0d097bad13fd1402d11f08a4b98df2b61a3d04ca22b7",
+    "groups/ucc_30/predictions/3d/gain_v2_forced.parquet": "f4f9f41ea96ee4bc894666b7fe94cef198b22a7c7e30b9b510040ea296108eb4",
+    "groups/ucc_30/predictions/3d/gain_v2_marginal.parquet": "c867e9ab0a621396373eb5b3334d5290fd33f354bc145a417da4fbfaec58f916",
+    "groups/ucc_30/predictions/3d/gain_v2_rank.parquet": "baadab30d59aa57fee21045981dda0d47daaebf99f0bf96e02e73a8c52e3281a",
+    "groups/ucc_30/predictions/3d/gain_v2_single.parquet": "c2f838399db7792040179fe97db354a3ab7bc1bcd4a77accbc7027ce98d8e529",
+    "groups/ucc_30/predictions/3d/gain_v2_uncalibrated.parquet": "e79b392d5281afa26bb38e5753969f3f05ad193431733f451bdb02614782bdec",
+    "groups/ucc_30/predictions/3d/ridge_level_shape.parquet": "77d2ee8d634909b4e6229dea2ee61dae501f9bacc831632d2a8f1587c8845e37",
+    "groups/ucc_30/predictions/3d/ridge_raw.parquet": "a643a525c3e54bbda4a8749447f6033b4e9d0b1ecaa7858aeee3369848303e90",
+    "groups/ucc_30/predictions/3d/ridge_scale_metadata.parquet": "cf46eec70bcf55c4594b31e6c98818591b9372a8e13a41676e1ce11dac8896fe",
+    "groups/ucc_30/predictions/3d/ridge_zscore.parquet": "5734d8bef5c70e058157b8872992854766a71212abfca86f16d77e5aab772e32",
+    "groups/ucc_30/predictions/3d/sapf.parquet": "ac6e30df921a1b0215b499a666b9bc29ab5c9628c34449a2cc9a169cbdb96d6b",
+    "groups/ucc_30/predictions/3d/seasonal_naive.parquet": "17001e8aba29d1f7d943e083eda678a96a29f58ad37bad682365b67fb9763783",
+    "groups/ucc_30/predictions/3d/three_day_mean.parquet": "b6a5a7b808fda668c239da58381aa6d7a20f6f46deb6d48197b7eddeae85b6fc",
+    "groups/ucc_30/predictions/3d/uniform_transfer.parquet": "a06d88ade99be8a669088e2a4f385de10b889bb21622054b0d240a61fa569342",
+    "groups/ucc_30/predictions/4h/fixed_blend_25.parquet": "711ccc71bdcf39f4948f7b0da87f1a38970f503a261e9b9a2b4fa302d6f02c77",
+    "groups/ucc_30/predictions/4h/fixed_blend_50.parquet": "b4ce5e4b8c57eebe7e8079f8f8b0ea9c090fc4ad2350b7568c2c4caf93500085",
+    "groups/ucc_30/predictions/4h/fixed_blend_75.parquet": "170e88b0ef4c6c5ac8e8215e07b499945f6b2e86362df6546d0c8458a914376b",
+    "groups/ucc_30/predictions/4h/gain_v2_fixed.parquet": "4440ded068444f3261086228fcc39fb3c3c57150642d41b8df5674ba3638ee06",
+    "groups/ucc_30/predictions/4h/gain_v2_forced.parquet": "dcbadfd92140afb24ceb8ab05a6a5b3be9a8ef660d7722b4ec2dc94fed76c9b1",
+    "groups/ucc_30/predictions/4h/gain_v2_marginal.parquet": "0b986fc7af3f6ca6dbe1210836f61833ec4d7e68e3304c1237168755ef4ef8ad",
+    "groups/ucc_30/predictions/4h/gain_v2_rank.parquet": "526dbf517ec731e04aced4e63f7f9b99537b2ef950dfd21f2d29ed93ea4a7383",
+    "groups/ucc_30/predictions/4h/gain_v2_single.parquet": "4c3222c3d48ca12d7cfc8b0dc4386d186df7927e1a34261ca51b087da7b97a3e",
+    "groups/ucc_30/predictions/4h/gain_v2_uncalibrated.parquet": "03b30463ca76bbafa27e5ace66b9a838a16e23ee4a7a5dceceefea106dc50c1c",
+    "groups/ucc_30/predictions/4h/ridge_level_shape.parquet": "9352287b16b5bbb4acf8e73e5cc0f273709721584cccfc55c1d85acd10e08c62",
+    "groups/ucc_30/predictions/4h/ridge_raw.parquet": "c814a4fa20ef63cb072a32c0796632eac3bd7a3ef303d4d135bcbe90af2c476c",
+    "groups/ucc_30/predictions/4h/ridge_scale_metadata.parquet": "e6d540a3f1a97168eb745a9466be6b34fea75f21cbbdebfffc6335d6653322dc",
+    "groups/ucc_30/predictions/4h/ridge_zscore.parquet": "198aef39cb017b3e806fc80f508ab71e8821835333b10f8629cf9b5f0da70a4f",
+    "groups/ucc_30/predictions/4h/sapf.parquet": "94e201122474ad76b68cbb2f6fdc18a1a2cdb250d2c0edcdfc531b17f3c45228",
+    "groups/ucc_30/predictions/4h/seasonal_naive.parquet": "80c9172fa22a664e858c6ae45ca84a6898c5ea7cc9f68d2a3601d2128aae2e62",
+    "groups/ucc_30/predictions/4h/three_day_mean.parquet": "afc4154926d2cc5934fd21b8cef3a08091eb6cdb9bad3850420210ae15cfe68e",
+    "groups/ucc_30/predictions/4h/uniform_transfer.parquet": "7fc9b5288231ee4f19d88d3e5b729083fc71f1d5b08f0dbc66a4aebffdf918e7",
+    "groups/ucc_30/learners/fixed/calibration.json": "b05344f949b2d8186fb0ce947afc6109fc2026facbf096965e8458c0e265d414",
+    "groups/ucc_30/learners/marginal/calibration.json": "8604896a231ddd2b937ea9089c1e6f6fd1157fbc9c48f3f05c32af39e3abdad5",
+    "groups/ucc_30/learners/rank/calibration.json": "bbbe16dffbf690512d05d82d00365d0186f3125e191313f574ceaaa018a5eb48",
+    "groups/ucc_30/learners/single/calibration.json": "528e02623958ca3ebb5b7849be2539e5c7d5afe5e62091b30c9e9dfd29fedb95",
+    "groups/m100_30/24h/past-performance.csv": "81e40518c90722447e6dbaf0082c0214b9b3de9b01ae0113c16f593c4ce9e03e",
+    "groups/m100_30/24h/validation-selection.json": "be8ef8113a157539b3bf753cf3e9894b400c6f61fe0f5ddd2ae4cb36b06c0d61",
+    "groups/m100_30/3d/past-performance.csv": "de12a112015f1063a0e05b16d7ebc56e603967c1936db5d424c293986ad4987e",
+    "groups/m100_30/3d/validation-selection.json": "e4c674a26ca017f951a940b741a83c6a0d2a40ec667704b1f8b70d055131024c",
+    "groups/m100_30/4h/past-performance.csv": "5ef0c183925cabb19d16fd4f59f17acbb01fb61f4f62b60ad5e827721e655d7a",
+    "groups/m100_30/4h/validation-selection.json": "d47325f2f40cbd1c38fed4756a6d5ac3010a4825d99a82024ff48f32c72dbf8b",
+    "groups/m100_30/predictions/24h/fixed_blend_25.parquet": "5154168cfbeda095ece42aa1dbb55e84da55d54b20a6c9f681c32669ed0768a6",
+    "groups/m100_30/predictions/24h/fixed_blend_50.parquet": "253e97d5400e8169bca260d176c04079d1c992a8b22a5cc17d4a58fca404bb36",
+    "groups/m100_30/predictions/24h/fixed_blend_75.parquet": "4ee163f4b6b0278dea8599def672c57562d23924c6f02bfe4ae3ecac361f0772",
+    "groups/m100_30/predictions/24h/gain_v2_fixed.parquet": "ee2b4e9f34f02ed1acfeed547021f0eee9ce15df722d6ee006b2b6a3c983f016",
+    "groups/m100_30/predictions/24h/gain_v2_forced.parquet": "2fe7111fc678cbc310ad257936471a863dcffd67a69e550008730e8c4df50769",
+    "groups/m100_30/predictions/24h/gain_v2_marginal.parquet": "52bf660672ed389c788290d69316c909ddc84a78d949e8b6e411dd45ef622fee",
+    "groups/m100_30/predictions/24h/gain_v2_rank.parquet": "5453adb1194a0c01d3a704792b5137834ec68bf06661992d483595d7577c6d47",
+    "groups/m100_30/predictions/24h/gain_v2_single.parquet": "22b3611c8d8afd506f791e14baf145b55972d9973d295f4fce42629b2ee031c6",
+    "groups/m100_30/predictions/24h/gain_v2_uncalibrated.parquet": "163c22b1e5491c74d52fa80b7e5c7098dd0add9fa9a4ebf74d44d4874ffe980b",
+    "groups/m100_30/predictions/24h/ridge_level_shape.parquet": "6ddd78a9fceac3d5511e519a10af40d7c1ff105c1bc7f9f7428b89a3eb9ede4e",
+    "groups/m100_30/predictions/24h/ridge_raw.parquet": "fd3ac6c1b1c3a3799904bae2aec071098bad5d3535481b1fe0e708c4be86851d",
+    "groups/m100_30/predictions/24h/ridge_scale_metadata.parquet": "8b79ebbba4124cdf53eda4db8dee9c7d5fa6acbb0e7bff9f999ac6cd04f232c9",
+    "groups/m100_30/predictions/24h/ridge_zscore.parquet": "adf5b381b0807693b5840e8469ff035d7f875432bdfc542f2284f6225c7f088d",
+    "groups/m100_30/predictions/24h/sapf.parquet": "9f930c47cda3a4c92434257b8e99a04f4239f2a741966bc9aa4b30c25fefd1b3",
+    "groups/m100_30/predictions/24h/seasonal_naive.parquet": "ce1acac4c96bd53399ab39d2065990b5941dcd3a7b514fa5ab8ee81b322b4e57",
+    "groups/m100_30/predictions/24h/three_day_mean.parquet": "eb03b51cdd972132c371befa5c4507dc55dad5a81dc7288adbec33c0c33bc0ad",
+    "groups/m100_30/predictions/24h/uniform_transfer.parquet": "51ce19c8c5681cd4469ccf10469c6da8b1491ea540f2407340652148d63d0231",
+    "groups/m100_30/predictions/3d/fixed_blend_25.parquet": "daca37a46d1d989c21119f9d010c885b30e437f1c5a25bfab2647606bc6c08f7",
+    "groups/m100_30/predictions/3d/fixed_blend_50.parquet": "5cf5aecfb1f73aeea7af7df04826b4e9f00c598304577ee5650076ce6029eb9a",
+    "groups/m100_30/predictions/3d/fixed_blend_75.parquet": "218afb1679662b8006474b74e2937fc3e9fe3a38186f893602f4ffdaca053136",
+    "groups/m100_30/predictions/3d/gain_v2_fixed.parquet": "757fa340ea43d8a7a3b3c31cc5f89c79b3a075cb4535048c17c4405f47dfea08",
+    "groups/m100_30/predictions/3d/gain_v2_forced.parquet": "5264aa213d5b528bedafab4d6808b5b7f7323a4494279ac6d5492f814204c375",
+    "groups/m100_30/predictions/3d/gain_v2_marginal.parquet": "73f3cd91ee5ef3783272c0ed44529638e424dbe5c2d5755eb8d0bf751dc69dbb",
+    "groups/m100_30/predictions/3d/gain_v2_rank.parquet": "f421df5b970d9ce2eaf8cc8c19e794de2bd0bad298353ec40e5a183f5d647de4",
+    "groups/m100_30/predictions/3d/gain_v2_single.parquet": "abad1df0f79e7b9ed21bc77c00879701a819062bdfeb6a055ca21c9a5165de8e",
+    "groups/m100_30/predictions/3d/gain_v2_uncalibrated.parquet": "7c27ae9a7a77ddc4767cecd03bfc024b911e214059f1b5b633a64431cfda90f0",
+    "groups/m100_30/predictions/3d/ridge_level_shape.parquet": "c7380ccffdd9294dcbbc18c513e8ff8d39890ceb1487c43d5ec238f3eacdffc9",
+    "groups/m100_30/predictions/3d/ridge_raw.parquet": "7f8dc14bd23ee60018bb9493f64381df6b1c408c4f79de5c38a6465aca057ec8",
+    "groups/m100_30/predictions/3d/ridge_scale_metadata.parquet": "55a81ea842f6508b1be3d21c90442b15e1b61c67a84090c084c9a5ee55abd825",
+    "groups/m100_30/predictions/3d/ridge_zscore.parquet": "bfa93154d2fd6e966fd306abc4985e6868427d2776098b2b8f239d5dbad8d6f2",
+    "groups/m100_30/predictions/3d/sapf.parquet": "0d4d7c6eaa32500e703f415fde727a1982e59010ca7bfc0986eab3e314e0a128",
+    "groups/m100_30/predictions/3d/seasonal_naive.parquet": "d7007fb44f80eee6c4354cc9e6acb9d3ebd67b0e227117ed7eb232f86ce97e9a",
+    "groups/m100_30/predictions/3d/three_day_mean.parquet": "7056631c34cef64a564b3f94a3c2593407c5b17b7c0746fe6fe4f23b8b7d9443",
+    "groups/m100_30/predictions/3d/uniform_transfer.parquet": "c068a7573007a5ee292e11ceb9959ab8f44827d5c951655e4a570a49f4daabe7",
+    "groups/m100_30/predictions/4h/fixed_blend_25.parquet": "332c6f806ff8f19a542c8fff073350f968d7e5336e383476bf74ca2c2b42462b",
+    "groups/m100_30/predictions/4h/fixed_blend_50.parquet": "8af3334b7d0b3c812bff8ecadb7949a6559d6a37fb96e3748fca79f54a4f1ecb",
+    "groups/m100_30/predictions/4h/fixed_blend_75.parquet": "5ea831880585758882e507e75fbf149e0ef6a284b5147dd30e2f1ba653d532a7",
+    "groups/m100_30/predictions/4h/gain_v2_fixed.parquet": "f22b7b7cca9abb72d9c777e71ac0d44f69f433abf37fe66138d79cfa5163349f",
+    "groups/m100_30/predictions/4h/gain_v2_forced.parquet": "a059cd9ee1886f52f9350640957c5961c47789281a194b7d62182befdf6eb5b0",
+    "groups/m100_30/predictions/4h/gain_v2_marginal.parquet": "9842c405df298b72cd629b5dad3ed2a75332ed8eecfc9ca0d3e44277056c1f53",
+    "groups/m100_30/predictions/4h/gain_v2_rank.parquet": "d6faa16bb2da66af84c8dffdc5f018ba6f2c4989b2f7a58a8977f4069027c50d",
+    "groups/m100_30/predictions/4h/gain_v2_single.parquet": "4b3954c70930eae0eed5b34f0d7dbff487f24550cf407d6a9a3e49229c3628db",
+    "groups/m100_30/predictions/4h/gain_v2_uncalibrated.parquet": "4085ee811466c354842264e36392e28046fc3834c1dbbd76964244b643269b5d",
+    "groups/m100_30/predictions/4h/ridge_level_shape.parquet": "4d2669df1d14e6d9ebbf1688ba104addfe21d30abc724a4067d609f9324694a2",
+    "groups/m100_30/predictions/4h/ridge_raw.parquet": "eef24d0fad733282b043e063cd7d747808ddcc9e17365d26036acea22823f093",
+    "groups/m100_30/predictions/4h/ridge_scale_metadata.parquet": "51036e45520b608d71f890a4333bfb98e92b807086f02f9cf696f161c762e777",
+    "groups/m100_30/predictions/4h/ridge_zscore.parquet": "15cb81827dc5942d4dcb5389fa7d4e9ec7a55e006e6829589a3f0281c76131ef",
+    "groups/m100_30/predictions/4h/sapf.parquet": "55e1069760aadbfbdd895e30a2f23be1b02130b7f862a0d6ce80b64cba68a291",
+    "groups/m100_30/predictions/4h/seasonal_naive.parquet": "f426125a8d545ef0199d3cf0383e8dfa6492fd5178fda8be81e23b56769147d5",
+    "groups/m100_30/predictions/4h/three_day_mean.parquet": "c4726b2799175b236a946d488dad07cc4957a76c95e6dd7e9704bb18ee151f03",
+    "groups/m100_30/predictions/4h/uniform_transfer.parquet": "c48d435da2756ff809405f58cfbe6cef1bdb01a5b1d695f93db7878dbaeede2f",
+    "groups/m100_30/learners/fixed/calibration.json": "9f2361d13639b8a0dac242e4c2ba29026dcedeab4e559c3a8dbdb5903ae8ba4a",
+    "groups/m100_30/learners/marginal/calibration.json": "118131aaa6de9e58c075b0c860164432a2f4b037cdbbd491a8163dcd56242c7a",
+    "groups/m100_30/learners/rank/calibration.json": "f022e8f5fabcf33205fac77ce912d9d5cc9d6cb9530ef4e354deb7a47d095eee",
+    "groups/m100_30/learners/single/calibration.json": "2f3f09c096865231ab90e8efaef90099584598d063a011bbf0cb93dabef102fb",
+    "groups/m100_15/24h/past-performance.csv": "3807040ce214b959bd1fb316e404bde322dab0036f1ef87392539173c73ec07e",
+    "groups/m100_15/24h/validation-selection.json": "e5b01705c21d2811ebee4f8512d26f811e0fa581c53b0633f0df8daa857687d4",
+    "groups/m100_15/3d/past-performance.csv": "07312ea5b4225739c3994f925c21bcbc90e6d6c01b406b2fc79dad6329b1c992",
+    "groups/m100_15/3d/validation-selection.json": "da63d1e2cd781fa4ffceaf65b9dcb6c4400d6ebf0a2271cb3fa232bcde3ed4fb",
+    "groups/m100_15/4h/past-performance.csv": "4528b3245f86b751493a7b6dd3f3b18917b9ad112db3ad1ae53151a941893839",
+    "groups/m100_15/4h/validation-selection.json": "9826d9ac73b45e016897e5655bc23e2328e55a21848e9a49d3736455d052234f",
+    "groups/m100_15/predictions/24h/fixed_blend_25.parquet": "e61d63c84d80bfc67e5b262ab211863f2210250efae7629a2e436648ac3b9295",
+    "groups/m100_15/predictions/24h/fixed_blend_50.parquet": "1056d71ebdd4031722ad073ddc39a0db5b6a8baa431373c10bfce0b49a604c53",
+    "groups/m100_15/predictions/24h/fixed_blend_75.parquet": "cd4c65b42417805dd16645e4ee1ee6f26b496b2bd0fa8eea0e55e6a06eae9aef",
+    "groups/m100_15/predictions/24h/gain_v2_fixed.parquet": "c8e139e6a01fcc03934c1d48b695322f7908e57028d8b174b2766cc1b416d28f",
+    "groups/m100_15/predictions/24h/gain_v2_forced.parquet": "d8d4d86e9dcc963c12aa66420ef9ebdd764601fcc42c32a52ed5b9bcb941056f",
+    "groups/m100_15/predictions/24h/gain_v2_marginal.parquet": "b8a5431d0072b88c3a3ead32a65e8f5ffca488c70e9850d68f0ba2b0f6613e08",
+    "groups/m100_15/predictions/24h/gain_v2_rank.parquet": "a4e46e3533ea2f6feb4fde78369307cc838e7e499963b439ff6a3d4f27f07f43",
+    "groups/m100_15/predictions/24h/gain_v2_single.parquet": "b838da463c9c7bb027e96457ead6a169c8ee79ff4c2af7729753cd8d6db25dfb",
+    "groups/m100_15/predictions/24h/gain_v2_uncalibrated.parquet": "433693d9affeee82aa96268b916a7472e6a89dda5e4fe8713d8e765f2197ea10",
+    "groups/m100_15/predictions/24h/ridge_level_shape.parquet": "2b5244a7365c33a88d2985ddc6d9773637f7704174d1c7fc2790d3be5fff644c",
+    "groups/m100_15/predictions/24h/ridge_raw.parquet": "94e9accbcb3cad712bea0af290241221cd645ab15328f38e400011fe3a50a49a",
+    "groups/m100_15/predictions/24h/ridge_scale_metadata.parquet": "87701679469b725a3261e698e146a58b61aa1f726d6a0c89f3ef39bbf5926ee6",
+    "groups/m100_15/predictions/24h/ridge_zscore.parquet": "3a617fdb81d4c8fed365a9023e0f663ffc1835dd8fd6089f44658d98e11a741b",
+    "groups/m100_15/predictions/24h/sapf.parquet": "fd56a7993b024a55cd8e034400d556372668f6878d40165960f14db0cbd6fb12",
+    "groups/m100_15/predictions/24h/seasonal_naive.parquet": "6749c16a6f6e37ec93f5524bb741f44f635bc051153af20f2689dcc75b4e51f7",
+    "groups/m100_15/predictions/24h/three_day_mean.parquet": "901fb63a85ae5a0b37e39ae5b8bf26f9b20f0b19001e0d9bb21f1d8cc45990e8",
+    "groups/m100_15/predictions/24h/uniform_transfer.parquet": "e8bce27f679c57233e5322d5056262e58e39210908d08a120a957be669c8d758",
+    "groups/m100_15/predictions/3d/fixed_blend_25.parquet": "609f4226fad928b7dc96a31bfdd18dff082395c03ce0e8c83bb84d08d45a4f52",
+    "groups/m100_15/predictions/3d/fixed_blend_50.parquet": "62af3b0b395022d29a7c210769d795b01dfced7e24cb7bfba05db351f2af8ac8",
+    "groups/m100_15/predictions/3d/fixed_blend_75.parquet": "b9b4ab117590e37a2032ed1741d06d48ae0d566dff13d181c0700e069b66132d",
+    "groups/m100_15/predictions/3d/gain_v2_fixed.parquet": "89f062a361addb1c5f359fc9682ba4aa7efd4fb190dcd30337c36b95fd1ca565",
+    "groups/m100_15/predictions/3d/gain_v2_forced.parquet": "afc1d9559e0215ccc151acf400f5c822283f3636c1ec2cb48ee3142f43abae4b",
+    "groups/m100_15/predictions/3d/gain_v2_marginal.parquet": "428c2a7b0fd998cdd98cb36068bea23e9e6862e57f3998cfa4e5a0a7e185ce49",
+    "groups/m100_15/predictions/3d/gain_v2_rank.parquet": "fb637720976803bbb631a7444c4af97975ac457f50753e77340a50e93f84a3b8",
+    "groups/m100_15/predictions/3d/gain_v2_single.parquet": "dfded9b52e2de908efaaacd64eefc8c2dc24aa136b1f86ef9b76fdaccf2f9db6",
+    "groups/m100_15/predictions/3d/gain_v2_uncalibrated.parquet": "7a2b01963c02f10cdda3be9a3f4b1c244cfe50f9ce9bf2537f75b753e247bf3a",
+    "groups/m100_15/predictions/3d/ridge_level_shape.parquet": "19d3c037f1ce094780172d71275a02396a57335e11b5a59af43864c6d29fe7d4",
+    "groups/m100_15/predictions/3d/ridge_raw.parquet": "ea2d85b5be22ca870e02c3eb6bc5452a40b302a2681737deb998e644c8467d3d",
+    "groups/m100_15/predictions/3d/ridge_scale_metadata.parquet": "9cfd989076771f7c8627ee1f5113ae338acf61f2d80d3ef865d32ba0df3ebca8",
+    "groups/m100_15/predictions/3d/ridge_zscore.parquet": "bbf132ee12c0efc861ded5e5dcec9db2c2bb7f86b21be2f5a3d9e46885ede14c",
+    "groups/m100_15/predictions/3d/sapf.parquet": "67f294550e25a8b0995a295b81a39a86699152dd88e5862eef2a61c02968adc1",
+    "groups/m100_15/predictions/3d/seasonal_naive.parquet": "a7727ec883b1a6f1fc42c52dc954f2f8b453cd07c189109c3c90e48f1683dde5",
+    "groups/m100_15/predictions/3d/three_day_mean.parquet": "8a924e6aaee7da4a3f24c0d4eaeda66746e3ad23c9a0ec860f61d2ace4dfe5e0",
+    "groups/m100_15/predictions/3d/uniform_transfer.parquet": "76fa5fba2566b799da6ecfaab81570b63207ddb1287ea183d8bc487ee1c35d18",
+    "groups/m100_15/predictions/4h/fixed_blend_25.parquet": "5095cb6936afbc85701b40cb5ffa96ced2847ce040e50022edf297040029c81d",
+    "groups/m100_15/predictions/4h/fixed_blend_50.parquet": "f0c32fb9303ac27738f6fc0d0506396b5c886089ba8fe2de9b1fd3768007ff93",
+    "groups/m100_15/predictions/4h/fixed_blend_75.parquet": "278d88d0ccd04593efb97997a36b2bc5c478b0ff4acfa3c67056a54031330100",
+    "groups/m100_15/predictions/4h/gain_v2_fixed.parquet": "3e8c9fdcd3d0d70ab423a0d19b48f521e747d31fecbbd0622d4ff375194f5467",
+    "groups/m100_15/predictions/4h/gain_v2_forced.parquet": "2732bd3b8788aaca418c9e09d1b786f9d0b87a9cb775cae2c12b3523fb937ed9",
+    "groups/m100_15/predictions/4h/gain_v2_marginal.parquet": "a5fe5d89d9351e291785f2026735ce15deee064eddea21d2001fbda5ddb1b33c",
+    "groups/m100_15/predictions/4h/gain_v2_rank.parquet": "c1e49dc05eec6328dd666ea4a8e10375c55a387b5ed372f560001957b606a043",
+    "groups/m100_15/predictions/4h/gain_v2_single.parquet": "7492344558bfaf2a1c8f9b0c49a1d987cd41d9e18409a5689ad9b5cc5a83c243",
+    "groups/m100_15/predictions/4h/gain_v2_uncalibrated.parquet": "5da838fee9cb3d1ece4c3f828abe3311eb208eeba2107176a9c7c359a0c0879f",
+    "groups/m100_15/predictions/4h/ridge_level_shape.parquet": "5e4359608adb678dc46ce995db514f789ef8826c7b4a28fe6ea8b748576535f1",
+    "groups/m100_15/predictions/4h/ridge_raw.parquet": "06dc62eaa32ee89b975ec5e97170d1be1ca7f6cd403c8090619bd28ff52f49d5",
+    "groups/m100_15/predictions/4h/ridge_scale_metadata.parquet": "ef6634300f2e9e35ba93ebc3bef3aba76cf71d0cc1f93b2fec898f4e0eab0cd3",
+    "groups/m100_15/predictions/4h/ridge_zscore.parquet": "a752e782c3f921cce9a97981aa69de52b92730c4ceb619ef0f2a5580c0b41b6b",
+    "groups/m100_15/predictions/4h/sapf.parquet": "60011607cb52801b0ea4fc18341fc970b463fca95f7ee04a02e9eb516409688f",
+    "groups/m100_15/predictions/4h/seasonal_naive.parquet": "07bb3982d838bed2067c4abe345f157025f8404ed4a570b37d90e1db16b583d8",
+    "groups/m100_15/predictions/4h/three_day_mean.parquet": "6e758a500cd5a29c7b14c52714c1b9e88c349cb2558332324458ab793d0d7c22",
+    "groups/m100_15/predictions/4h/uniform_transfer.parquet": "d10b1feabcdacb2fb8eab0f487eeb145368c04a9b9f89317e96fe3be9f8abc54",
+    "groups/m100_15/learners/fixed/calibration.json": "8b074bd520981e15b80f5d2b123720990ed033552ac88cae97991d94d6bf77b1",
+    "groups/m100_15/learners/marginal/calibration.json": "2bdfb6fe12bfd46075fd0d87047d46809acd2bd17829fe40239343030843e271",
+    "groups/m100_15/learners/rank/calibration.json": "e2a14fb363f026a8c5bc2fd47c54560b0781f27ec73028ac30aa78481674e0ab",
+    "groups/m100_15/learners/single/calibration.json": "2d7ea7b0eed504eda3e4ef1d17cfb0452b3fcb39e524070b6227fa1614495f13"
+  },
+  "model_sha256": {
+    "groups/ucc_30/learners/fixed/model.joblib": "2b006443f592fdf746b739d9ebad8373a6791886bdb02a4b4ff542d02a4622e0",
+    "groups/ucc_30/learners/marginal/model.joblib": "83fec20c9e85599e28da999bb61e7f0b9865ac7766a4ba2ef954ee652e50e82a",
+    "groups/ucc_30/learners/rank/model.joblib": "4e256314cae307bdc07d85d608b041139b878b8e80aa06e71e9b9e046d62dd68",
+    "groups/ucc_30/learners/single/model.joblib": "f792cadaf49a7d016fca8dfc080dc43911f38d24cf59f80976d909be5c963414",
+    "groups/ucc_30/4h/cutoff24/model.joblib": "44de1a79f9b41052ac594c65c8246b2dc39a89358c8d0fe4bbbb5aedeb4ea3e0",
+    "groups/ucc_30/4h/cutoff30/model.joblib": "c9dfaebf2b4339622cc12c4f4868b1cae40cac9357059df220d19b196b20ce95",
+    "groups/ucc_30/4h/cutoff36/model.joblib": "35f4a67d5e2ef17b9fd99eb3dea822d3dfd14992bae248536cab5bc73ff43040",
+    "groups/ucc_30/4h/fixed_blend_25/model.joblib": "74b5c7410f9a1e13d5f0297a2f95a90991150ce237418937d3328b40faddf5b7",
+    "groups/ucc_30/4h/fixed_blend_50/model.joblib": "3877390f73c4b64d8e7debe0f2dcf66c1efb70bb2830130bb0fc80d09d6e7bad",
+    "groups/ucc_30/4h/fixed_blend_75/model.joblib": "51728f14205421cb4f7525e25f82cfc010f53a86a3326cfd40b0053619e3510f",
+    "groups/ucc_30/4h/gain_v2_fixed/model.joblib": "6c1140c9ec76a34d659b79ef039030bc39de92d89d07474b64c720135a1dddbc",
+    "groups/ucc_30/4h/gain_v2_forced/model.joblib": "9b347ca98c7597c04c4345c1a8854a75e023d55d363dd5c7fe03981823631d67",
+    "groups/ucc_30/4h/gain_v2_marginal/model.joblib": "158b84c5cfdf377f6892a7665154e2cd9a0ea9bc0e66277f6501c52a7f07fae9",
+    "groups/ucc_30/4h/gain_v2_rank/model.joblib": "3f1afd361a2b29b196b8e70fb55b29ce39c98310e798b2af0207973d97cc2575",
+    "groups/ucc_30/4h/gain_v2_single/model.joblib": "2666a38085619e4e9133193b218191e8a522f5342e1bc7fe0ced4d5bae1ff434",
+    "groups/ucc_30/4h/gain_v2_uncalibrated/model.joblib": "7d4c68ecd0cc1b13599cec914d8f6121a7e1506c43de1234cd292f3ae12fe93f",
+    "groups/ucc_30/4h/prior/model.joblib": "69c47a2397207178aba4f0a3573a6a58577f34267a4f4a4f393af743cd804452",
+    "groups/ucc_30/4h/ridge_level_shape/model.joblib": "6eca15cb53c12643200992f35ecf50f62871b6a0722d87769942ef6515d8628b",
+    "groups/ucc_30/4h/ridge_raw/model.joblib": "ca77ee3f5e2da7cc083efe11b3f7ea65e45a34a0673638b14824872f5c6dc424",
+    "groups/ucc_30/4h/ridge_scale_metadata/model.joblib": "88827d712badbf4a58218ca447a833ab14b52f73e9a92b1ea32fd2f6f638356c",
+    "groups/ucc_30/4h/ridge_zscore/model.joblib": "d5186f957ae3c4119b8f23b4186c237a8ffe734b4e3df1674df07f4cb0dd634b",
+    "groups/ucc_30/4h/sapf/model.joblib": "2fee443e8e23568fcb9a0f5da593b109a7bff2cf3944f157c16d5e45a6459b2f",
+    "groups/ucc_30/4h/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/ucc_30/4h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/ucc_30/4h/uniform_transfer/model.joblib": "0c7d8c3cae36eb05f4f613b77535f54487351f958b32476ac11383918271b73c",
+    "groups/ucc_30/4h/expert-banks/level_shape/model.joblib": "610a06cd5cabe910579428319f46726901d280d737b77ea3a136387dc70c144e",
+    "groups/ucc_30/4h/expert-banks/raw/model.joblib": "591538578ca294824f99de41e51072b41b1efe456f5debe4c0713223a5737085",
+    "groups/ucc_30/4h/expert-banks/scale_metadata/model.joblib": "89a7c3ae454e65ca52d493ea05848784ce2da6f8bce6487429b7f4ac00b1c00e",
+    "groups/ucc_30/4h/expert-banks/zscore/model.joblib": "3bc0bb1d734c0098dcb54dd2038dd0e3fde7c3b6b35c8faa7e2c086591e4ec50",
+    "groups/ucc_30/3d/cutoff24/model.joblib": "7486322b5b63f972c5a1c4a75126470257fcec0ec46d6a40704c6939868309a9",
+    "groups/ucc_30/3d/cutoff30/model.joblib": "00fac9b74cb83f98e76ebf835e1b0fba38963f01e9677b28d1356567558f9524",
+    "groups/ucc_30/3d/cutoff36/model.joblib": "cea728f0c3ec144a95d5444640c19328dc3e5c78ec7d4f85bafd6549fed58fcc",
+    "groups/ucc_30/3d/fixed_blend_25/model.joblib": "3a11aa8ab3d2dd10f73a5727ca822157369ce904093a70cf19ee9a522db3af0e",
+    "groups/ucc_30/3d/fixed_blend_50/model.joblib": "3e8c15c801cdfb58dfdf10279b3b834a0afc824aa86115793406946ca87f233a",
+    "groups/ucc_30/3d/fixed_blend_75/model.joblib": "a3815c660164efcad064920c997bc6fd4e092453df40d8c9552cb7b2949657c7",
+    "groups/ucc_30/3d/gain_v2_fixed/model.joblib": "58242940929834073f57c52f77c08fe34872d4979eb0384a5db74d07d1ab6152",
+    "groups/ucc_30/3d/gain_v2_forced/model.joblib": "e4ba84c7211085b47dbbd71801a314646aab72a89b2a8a5bc463ce44422ee95c",
+    "groups/ucc_30/3d/gain_v2_marginal/model.joblib": "d87eaae016b23327199c90e66c7edb2a22a888ac82020f9576d3e65666f78321",
+    "groups/ucc_30/3d/gain_v2_rank/model.joblib": "459821c441fd9ba2ee332d8eb62c8de43df553b6176790416a01fa041a6c72bc",
+    "groups/ucc_30/3d/gain_v2_single/model.joblib": "5d0396de58e7d0b0b8f6d700165944c51dd5c99052be32146c2f0df1740e6a27",
+    "groups/ucc_30/3d/gain_v2_uncalibrated/model.joblib": "a7ac768b8a729d568f5572e46357753ed64ef7188856887ebb7634575aa930ad",
+    "groups/ucc_30/3d/prior/model.joblib": "0a51530c5e3578939c3c772e96437dbb22207b13f4e26b3eb6c180a7c8a9feeb",
+    "groups/ucc_30/3d/ridge_level_shape/model.joblib": "8c99fccffb1ef1b3e90c15cd9ac798f74125769e20d92723722c43a12cf3765b",
+    "groups/ucc_30/3d/ridge_raw/model.joblib": "2a17c7d387c778eab8d29739e88d64f1557c8884d2aa7c97ce82f788cdb50d85",
+    "groups/ucc_30/3d/ridge_scale_metadata/model.joblib": "c791b2fb45125387b1e1dd532c07104c303f80a453e7258a243d2f4d9333806d",
+    "groups/ucc_30/3d/ridge_zscore/model.joblib": "5170ffab7654a77a72c9c35f03f1777945df95357eb4d38680d457a7923c18b6",
+    "groups/ucc_30/3d/sapf/model.joblib": "5a02f9e0aae65d7add7428af47f4ae20c71aaf6ebd2555acda34418218851111",
+    "groups/ucc_30/3d/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/ucc_30/3d/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/ucc_30/3d/uniform_transfer/model.joblib": "b53a0d9e8a66eb56d84b01580a5e4690769ee07b383079db0e6277fb387c0e1d",
+    "groups/ucc_30/3d/expert-banks/level_shape/model.joblib": "4b5e96075bf56d73617afe6b9ffae8ad0666e08d121edecb151f5a0dc7d4f41e",
+    "groups/ucc_30/3d/expert-banks/raw/model.joblib": "4dc0d960576b9cdd20d64a8c4369f6fe15aa57ac88b78fac25337e9e13977430",
+    "groups/ucc_30/3d/expert-banks/scale_metadata/model.joblib": "9ea11ee588316f2a917968a61178beb2bd8b5c3aa28b7d748578c63f49e4bfcb",
+    "groups/ucc_30/3d/expert-banks/zscore/model.joblib": "f3bd0d9c0a671ade0e69a0ff6de2d8ca8fb77b69387b9a37cfb6a134e517063e",
+    "groups/ucc_30/24h/cutoff24/model.joblib": "0f11ef85b73e6612fc2f094f924d63279997d13cffaf51d2923c2b6a5dfc1d82",
+    "groups/ucc_30/24h/cutoff30/model.joblib": "bdd6ad5162c9ba09ba83e6cc150902c98733279a5b9ab7cde72049b2d5350aec",
+    "groups/ucc_30/24h/cutoff36/model.joblib": "cf870db3cc0693bc301d63041f65525cac70d125900bf684e13cc077bfbc83b2",
+    "groups/ucc_30/24h/fixed_blend_25/model.joblib": "1c9da6012304087bb706256efa181104eab4611b01b13bff6cc8d5e65ea592da",
+    "groups/ucc_30/24h/fixed_blend_50/model.joblib": "56bb966d56eef37719c7a680d028e267b5639173728e498fcd8e1766681c3f88",
+    "groups/ucc_30/24h/fixed_blend_75/model.joblib": "6d9c8dbc0d8a4dce6b8d980f151efe37db5388d806107dd27862cd0c0421b29a",
+    "groups/ucc_30/24h/gain_v2_fixed/model.joblib": "63e055876ccb7ca3d24ac3e18159a63a3e98737ff434bd2376b721d699c878f2",
+    "groups/ucc_30/24h/gain_v2_forced/model.joblib": "213420289daf06298c78a3c782c50ab65d63f066e057866c00ef28bf532eabad",
+    "groups/ucc_30/24h/gain_v2_marginal/model.joblib": "a71e4f89f954bbdbf4b1c5342b891ddf3ff25288a01ac62dac83af9011c701cc",
+    "groups/ucc_30/24h/gain_v2_rank/model.joblib": "37ffae267d43f4c2a8ff4f847dc891b3986c2e5c6f2e7753d144b3fed336ac04",
+    "groups/ucc_30/24h/gain_v2_single/model.joblib": "16e00fa3e1e9287f44de58508b4d935641ca64a752de10e8839319c259a8282d",
+    "groups/ucc_30/24h/gain_v2_uncalibrated/model.joblib": "f03c7a28542d255f539a3e88082cc13e1e288708acd1a22113dfbd6791290602",
+    "groups/ucc_30/24h/prior/model.joblib": "93d3762621b020b05fe967e9fdba489d426001bd8262feec2f84cc233ba65c27",
+    "groups/ucc_30/24h/ridge_level_shape/model.joblib": "db8610224f2812bcf22c04aa4d239e77d59b8508b31d816f713e1cb545279b19",
+    "groups/ucc_30/24h/ridge_raw/model.joblib": "e03fbfed3bdab448d50eec697d10110e7a2ddc0e36d15c25d43fd39576a766c0",
+    "groups/ucc_30/24h/ridge_scale_metadata/model.joblib": "984cd98787adcb0356c224f8ac54609a53b5cb2a7400e0cffded3fadb31ee137",
+    "groups/ucc_30/24h/ridge_zscore/model.joblib": "28066948e68a1e5a5523bcdb46848c2940071674ec8c69a8df115050dc21f8bf",
+    "groups/ucc_30/24h/sapf/model.joblib": "c96576fc5490b1003a84ee920ddf4dd2e5a66f65aff3ef6eee1c49180b6ff54c",
+    "groups/ucc_30/24h/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/ucc_30/24h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/ucc_30/24h/uniform_transfer/model.joblib": "2f4f27b8e747c411a5daa87ceecb3ff81234a945c1c8edf35dfb3a4422514a48",
+    "groups/ucc_30/24h/expert-banks/level_shape/model.joblib": "9c9bb0b671b00a46b97cd6144dca872c7cb1f6b463f833c5e5ccc1e46bd525af",
+    "groups/ucc_30/24h/expert-banks/raw/model.joblib": "5b6d78160c4b459b56d58e16d411e6d68786c6b0b60ec67e33e0d433ea9efe4b",
+    "groups/ucc_30/24h/expert-banks/scale_metadata/model.joblib": "208f7557e6e851f246a6c5afcc1123dc1936b96abc2a7187b2923d9a52fa6ad2",
+    "groups/ucc_30/24h/expert-banks/zscore/model.joblib": "489bdc60859c5fc9f70b460d77ab1d99dfacf0f3bf83e3e21cdd6c459480c2ab",
+    "groups/m100_30/learners/fixed/model.joblib": "ff3980d483f0622c876fa15a238bb2c9bb4ad19e9221c0c7d056f4f58ee0f9ba",
+    "groups/m100_30/learners/marginal/model.joblib": "228e75e9050aa03cd220b8a45d234af49d56e40ce1c69b67fa46f1c1b0d355cc",
+    "groups/m100_30/learners/rank/model.joblib": "4923072eb9d0fe9bc52cd94c727c63c29c0cac942dabc26a8d57c0084b738772",
+    "groups/m100_30/learners/single/model.joblib": "1371442df861214e94aeeb9bc826c6ded25a051feee322f24610a8b23e5fe80b",
+    "groups/m100_30/4h/cutoff24/model.joblib": "bfd54dbbf6712c5a8b8978a6be21b410259b090605a10cda68e3b23dcd04348e",
+    "groups/m100_30/4h/cutoff30/model.joblib": "5d1784ad1e810fe5f8ad6dd127e4b6011f3594329ba0661110630de54702cf71",
+    "groups/m100_30/4h/cutoff36/model.joblib": "83fc7b72b68e3b814a27cf82a1e57101fe859bd6a354559d54322bf5eaa3009c",
+    "groups/m100_30/4h/fixed_blend_25/model.joblib": "de1c201eb9ed37c26893d89d9a59236cae139d8417b9361439b7dd99988e8922",
+    "groups/m100_30/4h/fixed_blend_50/model.joblib": "4a977ab184cc175afdfb62dcb03dd587df36a245f111ddd7a298d1d6bff5667f",
+    "groups/m100_30/4h/fixed_blend_75/model.joblib": "dbeb928a7adaf0ee1555548e397310c454796351c9ccd55efc6027d5237c92d2",
+    "groups/m100_30/4h/gain_v2_fixed/model.joblib": "59d40a8c311b6f00aecd203a36ed21106f7a190f1b0c3e636c3d9e02bc4049ee",
+    "groups/m100_30/4h/gain_v2_forced/model.joblib": "a89f43274a3d864ab05b995eaf4a7abdb9ef08176ff404831473811399495c0d",
+    "groups/m100_30/4h/gain_v2_marginal/model.joblib": "dda37dba58b5933179b45cbf2ab81f1ed93e91ed001fb2ca1a969e6aa2617807",
+    "groups/m100_30/4h/gain_v2_rank/model.joblib": "c52f6dc8a60c0f8a0b12009992f176d0a775a0c8493c16e793154551cfbf4d8c",
+    "groups/m100_30/4h/gain_v2_single/model.joblib": "b9ff7cb78bbe3cf1c4f2bd75314e25824b932080ff98b29d9383d149249b9756",
+    "groups/m100_30/4h/gain_v2_uncalibrated/model.joblib": "493509fc4fd4ffb29599ba3b3e15363a520dc4f9f974d86233945864de379924",
+    "groups/m100_30/4h/prior/model.joblib": "27dd7fe7de62046300695bfe6060205d26080be131e09bd0ad298b0da124e32b",
+    "groups/m100_30/4h/ridge_level_shape/model.joblib": "31e6bd56d9d90ec2a14292f9a3a6347c6eea8285d2d92e675a29e1a2392f6a72",
+    "groups/m100_30/4h/ridge_raw/model.joblib": "9be9477fc51f36d1fd228940a800a36e88f137712a1214b1b0b1d723b0f60639",
+    "groups/m100_30/4h/ridge_scale_metadata/model.joblib": "2824555ed713c4793f70f8259d710e5dad38ed6f851038ba73a51ca1706b6899",
+    "groups/m100_30/4h/ridge_zscore/model.joblib": "8c0001e34cb363be2f61fbcff018931c09b809036eca65129ce1616b9e92f2cf",
+    "groups/m100_30/4h/sapf/model.joblib": "db7df8ed90652929f68118e817c63e739bab2c8f727506c707230a572c337be3",
+    "groups/m100_30/4h/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/m100_30/4h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_30/4h/uniform_transfer/model.joblib": "c68ff551f36507abba81b0c4b414d1a8effc38770bbf987d037171af636141c5",
+    "groups/m100_30/4h/expert-banks/level_shape/model.joblib": "2f3c53a36527c4992d59880b7d2b4f1c64aa005b7bde76aad66f9205704dcdb8",
+    "groups/m100_30/4h/expert-banks/raw/model.joblib": "84701503c38c0d77acf2183e9ae4bb99bdfd82bf525bfacd2f7c55d34c32aa6f",
+    "groups/m100_30/4h/expert-banks/scale_metadata/model.joblib": "9293d31123c3802e1c79843b453e4c6c2f4d965c95d44a4982e1e6a3cca4daea",
+    "groups/m100_30/4h/expert-banks/zscore/model.joblib": "374b532eeb8a6eb117ecfcf873afc7617e4382cf68823f2116f4dcac82ef609d",
+    "groups/m100_30/3d/cutoff24/model.joblib": "bec220b047e5b28a3d1fbc57ab909a6c1fa108d090d16aa542e801865e2bc181",
+    "groups/m100_30/3d/cutoff30/model.joblib": "0c1a130e1f54acf8ae0663037727decfe1105b0f3acb970131a78facdf824160",
+    "groups/m100_30/3d/cutoff36/model.joblib": "9dd2c99947c212c0f69f4be73134a7cd6b01642ac2b6656e0a232560d5ef1fc3",
+    "groups/m100_30/3d/fixed_blend_25/model.joblib": "3b879eb5ac0cd3adcda3fa0da63778d09df08261bb59ba6f3a8e7a3615bb52cf",
+    "groups/m100_30/3d/fixed_blend_50/model.joblib": "967b389513a72512611ccc251c5e360f06bc785a568a28140adaee16ff2b0cdf",
+    "groups/m100_30/3d/fixed_blend_75/model.joblib": "f6806fb3df889e1fae58398cf42aed7e86432e95a270b2d42464b1b878038948",
+    "groups/m100_30/3d/gain_v2_fixed/model.joblib": "74382519d9dbb8df3d7e7c3fe760b42fd77fc45bf569d7b71d51f99bfa654fd4",
+    "groups/m100_30/3d/gain_v2_forced/model.joblib": "301831ebe993becbbf2378255d0c64d6a57c38020005b6526c2cf7bb879d31ca",
+    "groups/m100_30/3d/gain_v2_marginal/model.joblib": "1059ae4d01c0f8a6806da2a2936a64df4c080abf9b8ad9c7d539274b2e61a4f7",
+    "groups/m100_30/3d/gain_v2_rank/model.joblib": "cc7e49078c22c8ccb9c0395c3bc5c89b0f41049bc5b6a5a8507464d381e7766c",
+    "groups/m100_30/3d/gain_v2_single/model.joblib": "a0968d7b91674581160fcc147a6661d92135b4d38b907685a20a699f7973a241",
+    "groups/m100_30/3d/gain_v2_uncalibrated/model.joblib": "bbce6bad10bad036408413b9beca9412e23f78490653bca1d8a2df8fc84428ca",
+    "groups/m100_30/3d/prior/model.joblib": "95e5a37b4eb689a378e453ee80e9a8a6d6eefe9dac7b764278d4fc2ed1c84938",
+    "groups/m100_30/3d/ridge_level_shape/model.joblib": "86a2a6a1f2d77d80c1da2af7bc85cb2c602976b651766b6a4b67019ec964b0be",
+    "groups/m100_30/3d/ridge_raw/model.joblib": "80152028202c548f5e70a130517eae1ebf7ed9a557446d2de1e67aaa58dab1a3",
+    "groups/m100_30/3d/ridge_scale_metadata/model.joblib": "48ca3577fed2ae1f0330b02c3106305bf879bc7f42df22b4da95f88f633c63f1",
+    "groups/m100_30/3d/ridge_zscore/model.joblib": "a769cd3ac095621996b04db6b0ab26001be37d748374f066687eea46895fbd99",
+    "groups/m100_30/3d/sapf/model.joblib": "a794fabb40b7bf3444eb9ecf27843f40a2b4bd4f088834684645ad2e1f8d18e0",
+    "groups/m100_30/3d/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/m100_30/3d/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_30/3d/uniform_transfer/model.joblib": "9496768db0d09183a7f87c040a80be8fc09715deed20f714a477487bc17d6c2a",
+    "groups/m100_30/3d/expert-banks/level_shape/model.joblib": "080252eb6d3b83f5137fff8291df48fb0549e6ec0e7036414d9cb2c46171734d",
+    "groups/m100_30/3d/expert-banks/raw/model.joblib": "10def26e785c04d8f6b1c092c84c6dcf19266c4646f4262eb87e087abc1252dc",
+    "groups/m100_30/3d/expert-banks/scale_metadata/model.joblib": "0a5fd1d3da2ca2f4968f5df2dc5c42a6e8205df6bf57427bf7e2e83bf18f82c2",
+    "groups/m100_30/3d/expert-banks/zscore/model.joblib": "b46a17b5b292e21fe4d492b80552b67abedff4643084ecbcc170bd43e8fa163c",
+    "groups/m100_30/24h/cutoff24/model.joblib": "9d101db784c07f90ada2dcc1e300ae6910a5ed22ce5f1559cbb84a789fd980b4",
+    "groups/m100_30/24h/cutoff30/model.joblib": "48c7d75e481b1d4e7a02d54e25b53ed56d40014e8f27cb71c71c55675c0103e1",
+    "groups/m100_30/24h/cutoff36/model.joblib": "a634741fa97b90e22408b4f41fc88f965b319bca5d0291e4dec5e89b75330bf3",
+    "groups/m100_30/24h/fixed_blend_25/model.joblib": "dbab7060aca232c2038bfd090ded97163fd93c26db0bc9ef0401479d7b51f752",
+    "groups/m100_30/24h/fixed_blend_50/model.joblib": "1abbe0f3b5bb3d3008870a52bf2d053664c3674e80c192b7f78d165817baded8",
+    "groups/m100_30/24h/fixed_blend_75/model.joblib": "145b6bf1a688a533c5300e7994f6b5e9aabb8c64303a6138acb071fdb4fc687f",
+    "groups/m100_30/24h/gain_v2_fixed/model.joblib": "b1073918032d3cbe8c2cdf26836ea12e97ad2322304f269bbd3babe24d25cef2",
+    "groups/m100_30/24h/gain_v2_forced/model.joblib": "bec01f0dea6187b00414be0a08251e0653baf239d84725c3df7a19a4b8eb9cc6",
+    "groups/m100_30/24h/gain_v2_marginal/model.joblib": "395f5526c6ad995684fc732a1f59cb5cc9fff95b45a672babf2f44586b18efb2",
+    "groups/m100_30/24h/gain_v2_rank/model.joblib": "a7e0a3ad05abafa7c25fe1658bece10af18c11bd33d0f847735c7d6e1c030956",
+    "groups/m100_30/24h/gain_v2_single/model.joblib": "ff352e147b6c88c06d441d9e0928ebf4e5d2c3fd9b2936c3c028e00df7bbd227",
+    "groups/m100_30/24h/gain_v2_uncalibrated/model.joblib": "4f482d515e0880853f3c600c34f68a0f5bf67fbdd4d80aee9b236461559dbeec",
+    "groups/m100_30/24h/prior/model.joblib": "0ea877f62d5b3c94cc2053290207f48290bac0ba4ed6b10296d94d27a53c9f82",
+    "groups/m100_30/24h/ridge_level_shape/model.joblib": "57eef9bc007cb05406ab742df09adb80fc1c076c867235968c472eaafa2bb52f",
+    "groups/m100_30/24h/ridge_raw/model.joblib": "144dbca50f06587a7d6696c9cfb656f4ac8f48990b636bbe558d5f0de916b22f",
+    "groups/m100_30/24h/ridge_scale_metadata/model.joblib": "54c424fe616ced0ab6b1341719668afdd9d6ac13b997b0bf06043ecf994e72f0",
+    "groups/m100_30/24h/ridge_zscore/model.joblib": "b550df158b420dcd10085f6633d10d9248738630a41935f8c476c88e662cb2ed",
+    "groups/m100_30/24h/sapf/model.joblib": "92caa5f3dcfa4b8b4b2d4f093f56cbb78cb82ec06fc34509e97759e064c76ec7",
+    "groups/m100_30/24h/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/m100_30/24h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_30/24h/uniform_transfer/model.joblib": "773865b1026b8af06e5ecf7bce5daa44e23a1eccc750dfbb9d0d24f3128a408e",
+    "groups/m100_30/24h/expert-banks/level_shape/model.joblib": "4f59a1b9f528728396276ab4fd3e63edd1fcb6e624a168b814cf220684b3e50c",
+    "groups/m100_30/24h/expert-banks/raw/model.joblib": "a7105831792e337b296986ed21ae02270354e5da4ced5ebf12f9e5377be4bbae",
+    "groups/m100_30/24h/expert-banks/scale_metadata/model.joblib": "989cef0e8c2724dd1e5af2e422d5ceddcb84e531b2fa21c862da23ac677be65e",
+    "groups/m100_30/24h/expert-banks/zscore/model.joblib": "d8ee582fd7c7f5e4cbee57b5d1cd7d0bed38bcfff9174a685e18cb0a233b7522",
+    "groups/m100_15/learners/fixed/model.joblib": "f4cc699271f0c87482ecb30c330e1217dab3c2661e129a23e77b2e37c8e1a621",
+    "groups/m100_15/learners/marginal/model.joblib": "b73b4e9466834c94409ecee073bb1b78f3ca91693648dd9d2c1e83f0a2179110",
+    "groups/m100_15/learners/rank/model.joblib": "4c3b412de70b18239f0f791408664b1aa5091b1104086970b1a1ed73bce3fa68",
+    "groups/m100_15/learners/single/model.joblib": "5411008d875fe693f388cccaeb38257da2daafed70cd1c3ba593378f1c7032c1",
+    "groups/m100_15/4h/cutoff24/model.joblib": "8a4c5ef286a54f464d7be31174d5bdbd9fd93d90c0b099198797fba286272838",
+    "groups/m100_15/4h/cutoff30/model.joblib": "f628c5d2a4ac99715766107b249b8071be84fad460c7c172a078541521976a64",
+    "groups/m100_15/4h/cutoff36/model.joblib": "f1b6b2f1d89adf08c6ce37fab4004f3804960d12a7e983c6a671c5aabb1dccc0",
+    "groups/m100_15/4h/fixed_blend_25/model.joblib": "8da705c8beca0c2925c5570511a1c579903dfe47824860ddeebfdbfaf3188e5a",
+    "groups/m100_15/4h/fixed_blend_50/model.joblib": "d84ef842862fc2abeb872d1fe91aac30e8036f0b466fa58be8c2ba2afd38fbe7",
+    "groups/m100_15/4h/fixed_blend_75/model.joblib": "b1778ac017e6adf972e0b9ba542c14147a531177d458fd13925fbde607eb99c5",
+    "groups/m100_15/4h/gain_v2_fixed/model.joblib": "212ca61d198b698fd8ea53dd034235882bc30d5b2c572713380f0162d3c90c24",
+    "groups/m100_15/4h/gain_v2_forced/model.joblib": "1d2ae60b828d4a2f5663a8f645ba21e6c1ca104a9e82cdfaaf5e3bf5c5cc8b02",
+    "groups/m100_15/4h/gain_v2_marginal/model.joblib": "c1e1630cd7c5dba7f67d44ea4a9fb92420ce29965d4f52eb1f59893947d45494",
+    "groups/m100_15/4h/gain_v2_rank/model.joblib": "1a3e03ab0b938199a1298ab1a623d079243e8e45af03e6bd4aec1fa813ba2142",
+    "groups/m100_15/4h/gain_v2_single/model.joblib": "cd05dce2db87d087f68b60198ea7e2e0b6880263753100566a4f7353692862c9",
+    "groups/m100_15/4h/gain_v2_uncalibrated/model.joblib": "474d838efb597cfdf73185f3a57adf0f3afd6771d8179eb874f1a750acadc8b1",
+    "groups/m100_15/4h/prior/model.joblib": "71f6ae1634626a25c938f167bcee2be683261bd0aa14db303e847cc01a102ac5",
+    "groups/m100_15/4h/ridge_level_shape/model.joblib": "93354514a5f8bdcf5da4df36263436a7f1f1cfa409d252ed269a02299132180e",
+    "groups/m100_15/4h/ridge_raw/model.joblib": "ef45ee092c6d49f758d68531b03b01b506d8f5ff2af862a4c648f7d5195ae132",
+    "groups/m100_15/4h/ridge_scale_metadata/model.joblib": "4fe98060116700276b81105eee00e74aa853b87e81f4a365ad0c77b01f9f453e",
+    "groups/m100_15/4h/ridge_zscore/model.joblib": "c4095864bdc97b53b4342fa5150b6c3d0ea3a9b817fc94f9dc81e9120864d922",
+    "groups/m100_15/4h/sapf/model.joblib": "c6772cea4291fbd06fb7c41b880b7899b2f8dafce8360353e02ee592e67bb516",
+    "groups/m100_15/4h/seasonal_naive/model.joblib": "a94033cb0109ef95ba988447bfc9b68c96ba0f4065d7befaacb607b0525afec6",
+    "groups/m100_15/4h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_15/4h/uniform_transfer/model.joblib": "7121c3c6625fa7e7047049c7aedbec86a60f055fc8c7b47f523448081b4e5b07",
+    "groups/m100_15/4h/expert-banks/level_shape/model.joblib": "1982b9ab5c77bea550ea9ef67a4de53ab0ade441f94e0446509a2752e34bbb77",
+    "groups/m100_15/4h/expert-banks/raw/model.joblib": "e198f0b1fad3a2538969d77b3df9cd88edb499b24a3483849959ea4c47c00f4b",
+    "groups/m100_15/4h/expert-banks/scale_metadata/model.joblib": "d1ce79d44042c68d27b334911238951eedaf0d98bd85eec9cc2824516fafb37a",
+    "groups/m100_15/4h/expert-banks/zscore/model.joblib": "581735cd5214d5e06e5cc131aa8c62cb84d045e743553c0ae8885ffecfe77eb1",
+    "groups/m100_15/3d/cutoff24/model.joblib": "bfcecb418014ca08b7876f4bc0481152df8404ad813740be04fbee8f61cb3975",
+    "groups/m100_15/3d/cutoff30/model.joblib": "5d4535b69a9d40968d8f22515849945960463500ac38238d5919b268d8942bbd",
+    "groups/m100_15/3d/cutoff36/model.joblib": "fb49d77abaa388989e5a1e4f8655419bd0dab25dd1ca4f338dc83d25a0d910e6",
+    "groups/m100_15/3d/fixed_blend_25/model.joblib": "2fe1cb0d02a0e6f8a12eb118eca0d1bf3e60e071dd5d4eff9d3409d654d49004",
+    "groups/m100_15/3d/fixed_blend_50/model.joblib": "e6123ddf280871db246e4c1f92d7e9f3182563082030eb3a14a88323b3280a08",
+    "groups/m100_15/3d/fixed_blend_75/model.joblib": "f1c330df696127d56c1191bc8604df549a1eab99767dda234ccaeea724d40336",
+    "groups/m100_15/3d/gain_v2_fixed/model.joblib": "38033081eb9d48cd06205c14f3afedbccf5f588630a4c759002812a751f6b5dc",
+    "groups/m100_15/3d/gain_v2_forced/model.joblib": "982ca39429abc21053c9434ca30502d050a542b92e03e0c6ad172d1ffdda1511",
+    "groups/m100_15/3d/gain_v2_marginal/model.joblib": "d318bbddc2b789908791e21a4ed9febeff6a07b6d8d196f67ee06d5fdca4739d",
+    "groups/m100_15/3d/gain_v2_rank/model.joblib": "05c8e37d1e252b94633877785d87bb06d0f3f3c71e778e7b7ffb512e407c42bc",
+    "groups/m100_15/3d/gain_v2_single/model.joblib": "d2c51f9b8d94ec5af7f2baec0673c2dcee1b90ce98b36de0d3721fcc376ac186",
+    "groups/m100_15/3d/gain_v2_uncalibrated/model.joblib": "59d72cba703e1a512ca897dec851a9b6c0228aeb77bd8be86b2d36d332b8536f",
+    "groups/m100_15/3d/prior/model.joblib": "0fd8c0418e8063cd9177c76ee6b029b0d39e1bd0c35e5e51e558b906307b64e7",
+    "groups/m100_15/3d/ridge_level_shape/model.joblib": "522f5251129615a0f2a95cbc6fdde87ce675592172d7caad76a67bfe1b094f8f",
+    "groups/m100_15/3d/ridge_raw/model.joblib": "7fb114a8c2a1fdfb62d85915b90e58d421330a55015d0b94a1022598acf33650",
+    "groups/m100_15/3d/ridge_scale_metadata/model.joblib": "220030f4829a008595b4ba4b5554c8c516ff3be8fc977814b48c2ad9beb2dfe9",
+    "groups/m100_15/3d/ridge_zscore/model.joblib": "208d1ace5d8ea87c7bf0f5cb2c695790a419f3c42106f47018a56c755d63f138",
+    "groups/m100_15/3d/sapf/model.joblib": "8f2e876cf3de2baa9e41a6fd9e072691fd67d3063ddd5a91bbdb382cb76d4e11",
+    "groups/m100_15/3d/seasonal_naive/model.joblib": "a94033cb0109ef95ba988447bfc9b68c96ba0f4065d7befaacb607b0525afec6",
+    "groups/m100_15/3d/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_15/3d/uniform_transfer/model.joblib": "3891c94ee104f89c9c6f634e4f72f935cfca3917a2f9456979e1010dce22e490",
+    "groups/m100_15/3d/expert-banks/level_shape/model.joblib": "dfa137ec2a363e69d8c3079d802b844fa787044037b80529aa2141b6a530b177",
+    "groups/m100_15/3d/expert-banks/raw/model.joblib": "120d075f571fb98b1db09da1ad782393bbfc2a1aa1e1ddbd59094d73fc795ea6",
+    "groups/m100_15/3d/expert-banks/scale_metadata/model.joblib": "04b2cd2acc3e25833c950768851c76184813975f30bc77910e0224a2943dfec4",
+    "groups/m100_15/3d/expert-banks/zscore/model.joblib": "03bed258739987b165d76d8bc319b494bb1e517b5574d1f67857b5f06783e755",
+    "groups/m100_15/24h/cutoff24/model.joblib": "70ab0f4cd40087f5b3f5dbe1182f99f95870770897662fa7d907bb43a3239071",
+    "groups/m100_15/24h/cutoff30/model.joblib": "cd3ff042a5f6630320f628ccde17fd5882504a3c1af0966fed8ef3e1c85742f5",
+    "groups/m100_15/24h/cutoff36/model.joblib": "2c9e1d891a7a0346654688c635b47055af9e89dd4cd8b8623cdc152db41d6165",
+    "groups/m100_15/24h/fixed_blend_25/model.joblib": "d4ba6dfe994167e9d589478212d3640205b467a29f61a36361a5cce67a7cb740",
+    "groups/m100_15/24h/fixed_blend_50/model.joblib": "b74338a6ff146496934286be638c465441f05ee47b99147c0d9393911c78c8d3",
+    "groups/m100_15/24h/fixed_blend_75/model.joblib": "75eca52af900577cdced3575d0e4d9b89159ad0fa2e689dd7d9f73a12f1db046",
+    "groups/m100_15/24h/gain_v2_fixed/model.joblib": "44060594d004aded63a1db889456cb79d63555b00dc848e6d03b09b82ee9baf5",
+    "groups/m100_15/24h/gain_v2_forced/model.joblib": "4e5edc216dd396c629cc19520611da1a7e883376b2d3bd10636a4d29f47cd2c3",
+    "groups/m100_15/24h/gain_v2_marginal/model.joblib": "ca469521edf03a2172873425f89f7a9bca4d4f7c402ed99b5f5d1109e371318b",
+    "groups/m100_15/24h/gain_v2_rank/model.joblib": "4dfdeaaa49e45aff91a6126bbeceb508dc15ba0ebcc30e6ba76f01d2a2fe8297",
+    "groups/m100_15/24h/gain_v2_single/model.joblib": "fd91a368f84ca732f4e24e84e9789069316c685ca3a74ec4e953c12f4b02a339",
+    "groups/m100_15/24h/gain_v2_uncalibrated/model.joblib": "4215218674a2d5c7e7fc72a4c0ba176aad0e22a47fbeef84526930fceb0fda88",
+    "groups/m100_15/24h/prior/model.joblib": "9c628a6639e8b3c22dfe8660b31b72d593717bf946a15e191e092ac7be8ff99f",
+    "groups/m100_15/24h/ridge_level_shape/model.joblib": "33801db1fc672f915a821192a5301bbc4455b661048719e298e659517f6dee5a",
+    "groups/m100_15/24h/ridge_raw/model.joblib": "fe04cb25aa45c59d22c6c271aa4ee9347e21188caffa6a3ef465da7c8931be45",
+    "groups/m100_15/24h/ridge_scale_metadata/model.joblib": "3a384d5f3fc6b38c902f78cdba32239b0a37b1faf5115e06fb764c8f04c332d5",
+    "groups/m100_15/24h/ridge_zscore/model.joblib": "4516f1fcc1ae79ca6aa9865c2a5c3277330ecdc337bfb0c5d85ee7ddd885c52c",
+    "groups/m100_15/24h/sapf/model.joblib": "777c066bea598e467cf05d9906420f3e94ea2e18bc2c09dce4249ad57bb3effc",
+    "groups/m100_15/24h/seasonal_naive/model.joblib": "a94033cb0109ef95ba988447bfc9b68c96ba0f4065d7befaacb607b0525afec6",
+    "groups/m100_15/24h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_15/24h/uniform_transfer/model.joblib": "665d278b62cedd906562e22ef25b091c7db982bd69dd38c3b7d926a13913671e",
+    "groups/m100_15/24h/expert-banks/level_shape/model.joblib": "6f4fb581be7f20529e1e3b55992126983af9b1c2002f3966f5d1d5ec51c1b622",
+    "groups/m100_15/24h/expert-banks/raw/model.joblib": "9244a182d16b9237d594614060a89331091f0c32c62f0f6db7096f848730201b",
+    "groups/m100_15/24h/expert-banks/scale_metadata/model.joblib": "f1ef890473b1a1947203d2bc57e3a3548d27e25c46354e790146d8dd0f3b414e",
+    "groups/m100_15/24h/expert-banks/zscore/model.joblib": "94e02c239a7663b9cac2eaa2213b7a6676719ec67ab0e4a58d5625798c3e15ea"
+  },
+  "frozen_at_utc": "2026-10-25T17:57:02.423502+00:00"
+}

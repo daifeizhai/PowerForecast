@@ -1,0 +1,13 @@
+group,objective,rows,rank_pairs
+m100_30,single,4992,0
+m100_30,fixed,4992,0
+m100_30,marginal,4992,0
+m100_30,rank,4992,19930
+m100_15,single,4992,0
+m100_15,fixed,4992,0
+m100_15,marginal,4992,0
+m100_15,rank,4992,19968
+ucc_30,single,12096,0
+ucc_30,fixed,12096,0
+ucc_30,marginal,12096,0
+ucc_30,rank,12096,48376

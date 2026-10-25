@@ -1,0 +1,466 @@
+{
+  "status": "complete",
+  "protocol": "sapf_gain_v2",
+  "research_method": "m100_internal_30",
+  "data": "M100 source -> M100 new-period nodes",
+  "target": "node_power_kw",
+  "target_unit": "kW",
+  "is_demo": false,
+  "experiment": {
+    "frequency": "30min"
+  },
+  "requested_horizons": [
+    "4h",
+    "24h",
+    "3d"
+  ],
+  "console_methods": [
+    "seasonal_naive",
+    "three_day_mean",
+    "ridge_raw",
+    "ridge_zscore",
+    "ridge_level_shape",
+    "ridge_scale_metadata",
+    "uniform_transfer",
+    "fixed_blend_25",
+    "fixed_blend_50",
+    "fixed_blend_75",
+    "sapf",
+    "gain_v2_single",
+    "gain_v2_fixed",
+    "gain_v2_marginal",
+    "gain_v2_rank",
+    "gain_v2_forced",
+    "gain_v2_uncalibrated",
+    "oracle_posthoc"
+  ],
+  "domain_roles": {
+    "source": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "validation": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "test": [
+      "m100_rack0_node6",
+      "m100_rack0_node9",
+      "m100_rack0_node13",
+      "m100_rack0_node17",
+      "m100_rack1_node21",
+      "m100_rack1_node24",
+      "m100_rack1_node31",
+      "m100_rack1_node35",
+      "m100_rack1_node38"
+    ]
+  },
+  "source_group": "m100_30",
+  "target_dataset_labels_used_for_selection": true,
+  "domain_metadata": {
+    "m100_rack0_node6": {
+      "dataset_id": "m100_gain_v2",
+      "site_id": "marconi100",
+      "domain_id": "m100_rack0_node6",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "UTC",
+      "timezone_verified": true,
+      "raw_frequency": "15min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "node6",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "m100_rack0_node9": {
+      "dataset_id": "m100_gain_v2",
+      "site_id": "marconi100",
+      "domain_id": "m100_rack0_node9",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "UTC",
+      "timezone_verified": true,
+      "raw_frequency": "15min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "node9",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "m100_rack0_node13": {
+      "dataset_id": "m100_gain_v2",
+      "site_id": "marconi100",
+      "domain_id": "m100_rack0_node13",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "UTC",
+      "timezone_verified": true,
+      "raw_frequency": "15min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "node13",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "m100_rack0_node17": {
+      "dataset_id": "m100_gain_v2",
+      "site_id": "marconi100",
+      "domain_id": "m100_rack0_node17",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "UTC",
+      "timezone_verified": true,
+      "raw_frequency": "15min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "node17",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "m100_rack1_node21": {
+      "dataset_id": "m100_gain_v2",
+      "site_id": "marconi100",
+      "domain_id": "m100_rack1_node21",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "UTC",
+      "timezone_verified": true,
+      "raw_frequency": "15min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "node21",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "m100_rack1_node24": {
+      "dataset_id": "m100_gain_v2",
+      "site_id": "marconi100",
+      "domain_id": "m100_rack1_node24",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "UTC",
+      "timezone_verified": true,
+      "raw_frequency": "15min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "node24",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "m100_rack1_node31": {
+      "dataset_id": "m100_gain_v2",
+      "site_id": "marconi100",
+      "domain_id": "m100_rack1_node31",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "UTC",
+      "timezone_verified": true,
+      "raw_frequency": "15min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "node31",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "m100_rack1_node35": {
+      "dataset_id": "m100_gain_v2",
+      "site_id": "marconi100",
+      "domain_id": "m100_rack1_node35",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "UTC",
+      "timezone_verified": true,
+      "raw_frequency": "15min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "node35",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "m100_rack1_node38": {
+      "dataset_id": "m100_gain_v2",
+      "site_id": "marconi100",
+      "domain_id": "m100_rack1_node38",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "UTC",
+      "timezone_verified": true,
+      "raw_frequency": "15min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "node38",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    }
+  },
+  "source_clock_audit": {
+    "m100_rack0_node6": {
+      "source_clock_start": "2021-12-26T00:00:00+00:00",
+      "source_clock_timezone_verified": true,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 0
+    },
+    "m100_rack0_node9": {
+      "source_clock_start": "2021-12-26T00:00:00+00:00",
+      "source_clock_timezone_verified": true,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 0
+    },
+    "m100_rack0_node13": {
+      "source_clock_start": "2021-12-26T00:00:00+00:00",
+      "source_clock_timezone_verified": true,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 0
+    },
+    "m100_rack0_node17": {
+      "source_clock_start": "2021-12-26T00:00:00+00:00",
+      "source_clock_timezone_verified": true,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 0
+    },
+    "m100_rack1_node21": {
+      "source_clock_start": "2021-12-26T00:00:00+00:00",
+      "source_clock_timezone_verified": true,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 0
+    },
+    "m100_rack1_node24": {
+      "source_clock_start": "2021-12-26T00:00:00+00:00",
+      "source_clock_timezone_verified": true,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 0
+    },
+    "m100_rack1_node31": {
+      "source_clock_start": "2021-12-26T00:00:00+00:00",
+      "source_clock_timezone_verified": true,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 0
+    },
+    "m100_rack1_node35": {
+      "source_clock_start": "2021-12-26T00:00:00+00:00",
+      "source_clock_timezone_verified": true,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 0
+    },
+    "m100_rack1_node38": {
+      "source_clock_start": "2021-12-26T00:00:00+00:00",
+      "source_clock_timezone_verified": true,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 0
+    }
+  },
+  "model_paths": {
+    "4h": {
+      "seasonal_naive": "groups/m100_30/4h/seasonal_naive/model.joblib",
+      "three_day_mean": "groups/m100_30/4h/three_day_mean/model.joblib",
+      "ridge_raw": "groups/m100_30/4h/ridge_raw/model.joblib",
+      "ridge_zscore": "groups/m100_30/4h/ridge_zscore/model.joblib",
+      "ridge_level_shape": "groups/m100_30/4h/ridge_level_shape/model.joblib",
+      "ridge_scale_metadata": "groups/m100_30/4h/ridge_scale_metadata/model.joblib",
+      "uniform_transfer": "groups/m100_30/4h/uniform_transfer/model.joblib",
+      "fixed_blend_25": "groups/m100_30/4h/fixed_blend_25/model.joblib",
+      "fixed_blend_50": "groups/m100_30/4h/fixed_blend_50/model.joblib",
+      "fixed_blend_75": "groups/m100_30/4h/fixed_blend_75/model.joblib",
+      "sapf": "groups/m100_30/4h/sapf/model.joblib",
+      "gain_v2_single": "groups/m100_30/4h/gain_v2_single/model.joblib",
+      "gain_v2_fixed": "groups/m100_30/4h/gain_v2_fixed/model.joblib",
+      "gain_v2_marginal": "groups/m100_30/4h/gain_v2_marginal/model.joblib",
+      "gain_v2_rank": "groups/m100_30/4h/gain_v2_rank/model.joblib",
+      "gain_v2_forced": "groups/m100_30/4h/gain_v2_forced/model.joblib",
+      "gain_v2_uncalibrated": "groups/m100_30/4h/gain_v2_uncalibrated/model.joblib"
+    },
+    "24h": {
+      "seasonal_naive": "groups/m100_30/24h/seasonal_naive/model.joblib",
+      "three_day_mean": "groups/m100_30/24h/three_day_mean/model.joblib",
+      "ridge_raw": "groups/m100_30/24h/ridge_raw/model.joblib",
+      "ridge_zscore": "groups/m100_30/24h/ridge_zscore/model.joblib",
+      "ridge_level_shape": "groups/m100_30/24h/ridge_level_shape/model.joblib",
+      "ridge_scale_metadata": "groups/m100_30/24h/ridge_scale_metadata/model.joblib",
+      "uniform_transfer": "groups/m100_30/24h/uniform_transfer/model.joblib",
+      "fixed_blend_25": "groups/m100_30/24h/fixed_blend_25/model.joblib",
+      "fixed_blend_50": "groups/m100_30/24h/fixed_blend_50/model.joblib",
+      "fixed_blend_75": "groups/m100_30/24h/fixed_blend_75/model.joblib",
+      "sapf": "groups/m100_30/24h/sapf/model.joblib",
+      "gain_v2_single": "groups/m100_30/24h/gain_v2_single/model.joblib",
+      "gain_v2_fixed": "groups/m100_30/24h/gain_v2_fixed/model.joblib",
+      "gain_v2_marginal": "groups/m100_30/24h/gain_v2_marginal/model.joblib",
+      "gain_v2_rank": "groups/m100_30/24h/gain_v2_rank/model.joblib",
+      "gain_v2_forced": "groups/m100_30/24h/gain_v2_forced/model.joblib",
+      "gain_v2_uncalibrated": "groups/m100_30/24h/gain_v2_uncalibrated/model.joblib"
+    },
+    "3d": {
+      "seasonal_naive": "groups/m100_30/3d/seasonal_naive/model.joblib",
+      "three_day_mean": "groups/m100_30/3d/three_day_mean/model.joblib",
+      "ridge_raw": "groups/m100_30/3d/ridge_raw/model.joblib",
+      "ridge_zscore": "groups/m100_30/3d/ridge_zscore/model.joblib",
+      "ridge_level_shape": "groups/m100_30/3d/ridge_level_shape/model.joblib",
+      "ridge_scale_metadata": "groups/m100_30/3d/ridge_scale_metadata/model.joblib",
+      "uniform_transfer": "groups/m100_30/3d/uniform_transfer/model.joblib",
+      "fixed_blend_25": "groups/m100_30/3d/fixed_blend_25/model.joblib",
+      "fixed_blend_50": "groups/m100_30/3d/fixed_blend_50/model.joblib",
+      "fixed_blend_75": "groups/m100_30/3d/fixed_blend_75/model.joblib",
+      "sapf": "groups/m100_30/3d/sapf/model.joblib",
+      "gain_v2_single": "groups/m100_30/3d/gain_v2_single/model.joblib",
+      "gain_v2_fixed": "groups/m100_30/3d/gain_v2_fixed/model.joblib",
+      "gain_v2_marginal": "groups/m100_30/3d/gain_v2_marginal/model.joblib",
+      "gain_v2_rank": "groups/m100_30/3d/gain_v2_rank/model.joblib",
+      "gain_v2_forced": "groups/m100_30/3d/gain_v2_forced/model.joblib",
+      "gain_v2_uncalibrated": "groups/m100_30/3d/gain_v2_uncalibrated/model.joblib"
+    }
+  }
+}

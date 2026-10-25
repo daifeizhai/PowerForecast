@@ -1,0 +1,28 @@
+{
+  "calibration_domains": [
+    "m100_rack0_node16",
+    "m100_rack1_node33"
+  ],
+  "source_domains": [
+    "m100_rack0_node11",
+    "m100_rack0_node2",
+    "m100_rack0_node5",
+    "m100_rack0_node8",
+    "m100_rack1_node20",
+    "m100_rack1_node23",
+    "m100_rack1_node26",
+    "m100_rack1_node29"
+  ],
+  "independent_rows": 270,
+  "risk_cross_domain_oof_brier": {
+    "0.0": 0.25425299870818957,
+    "0.5": 0.18863273219413335,
+    "1.0": 0.19057917507490676
+  },
+  "selected_risk_mix": 0.5,
+  "source_marginal_negative_prior": 0.6412259615384616,
+  "gain_slope": 1.0795349752146648,
+  "gain_intercept": 4.673388789469726,
+  "risk_target": "negative marginal fusion gain",
+  "risk_calibration": "sigmoid, convex shrinkage to source marginal prevalence selected by leave-calibration-domain-out Brier"
+}

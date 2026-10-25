@@ -1,0 +1,34 @@
+{
+  "calibration_domains": [
+    "ucc_d1_qh2_rcc126",
+    "ucc_d1_qh2_rcc128",
+    "ucc_d2_qh2_rcc218",
+    "ucc_d2_qh2_rcc220"
+  ],
+  "source_domains": [
+    "ucc_d1_qh2_rcc120",
+    "ucc_d1_qh2_rcc121",
+    "ucc_d1_qh2_rcc122",
+    "ucc_d1_qh2_rcc123",
+    "ucc_d1_qh2_rcc124",
+    "ucc_d1_qh2_rcc125",
+    "ucc_d2_qh2_rcc202",
+    "ucc_d2_qh2_rcc203",
+    "ucc_d2_qh2_rcc207",
+    "ucc_d2_qh2_rcc209",
+    "ucc_d2_qh2_rcc210",
+    "ucc_d2_qh2_rcc213"
+  ],
+  "independent_rows": 828,
+  "risk_cross_domain_oof_brier": {
+    "0.0": 0.2774338387443622,
+    "0.5": 0.2182103396502815,
+    "1.0": 0.19820678667788463
+  },
+  "selected_risk_mix": 1.0,
+  "source_marginal_negative_prior": 0.7132109788359788,
+  "gain_slope": 1.0367378595459233,
+  "gain_intercept": 3.0992250904137144,
+  "risk_target": "negative marginal fusion gain",
+  "risk_calibration": "sigmoid, convex shrinkage to source marginal prevalence selected by leave-calibration-domain-out Brier"
+}

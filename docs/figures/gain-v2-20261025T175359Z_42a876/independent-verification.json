@@ -1,0 +1,1080 @@
+{
+  "passed": true,
+  "verified_at_utc": "2026-10-25T18:12:54.334517+00:00",
+  "run": "results/runs/20261025T175359Z_sapf_gain_v2_42a876",
+  "metric_checks": 14616,
+  "independent_native_caches": 151,
+  "native_labels": 528384,
+  "representation_expert_pairs": 96400,
+  "route_origin_checks": 17400,
+  "stage0_risk_pairs": 144600,
+  "zero_transfer_origin_checks": 11047,
+  "maximum_route_difference_kw": 0.0,
+  "maximum_oracle_finite_family_difference_pp": 3.027889948492568e-06,
+  "oracle_tolerance_pp": 0.0001,
+  "scientific_source_and_fit_configs_match_preregistration_except_documented_auditor": true,
+  "amended_audit_files": [
+    "src/evaluation/gain_v2_audit.py"
+  ],
+  "statistical_families_and_short_series_DM_guard_verified": true,
+  "scope": "Read-only native-slot scatter/count aggregation, NumPy metrics, manual Ridge feature construction, logged-action routing and finite-family oracle; no fit or policy change.",
+  "native_records": [
+    {
+      "domain": "m100_rack0_node11",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node11",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node9",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node9",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node13",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node13",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node19",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node19",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node5",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node5",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node2",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 241,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node2",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 121,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node17",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node17",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node6",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node6",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node16",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node16",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node8",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack0_node8",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node37",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node37",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node35",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node35",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node33",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node33",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node26",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node26",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node23",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node23",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node20",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node20",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node31",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node31",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node29",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node29",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node21",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node21",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node38",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node38",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node24",
+      "cadence": "15",
+      "labels": 6144,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "m100_rack1_node24",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc120",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc121",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc122",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc123",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc124",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc125",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc126",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc127",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc128",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc129",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc130",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 48,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc131",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 272,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc132",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc133",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc134",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc135",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc136",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc137",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc138",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc139",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc140",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc141",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc142",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 48,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc143",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc144",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc145",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc146",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc147",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc148",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc149",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc150",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc151",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 171,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc152",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc153",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc154",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc155",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc156",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc157",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc158",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc159",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 48,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc160",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc161",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc162",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc163",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc164",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 48,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc165",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc166",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc167",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc168",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc169",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc170",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc171",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc172",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc173",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc174",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc175",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc176",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc177",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 171,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc178",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc179",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc180",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 172,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc181",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc182",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc183",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 48,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc184",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc185",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc186",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc187",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc188",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc189",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc190",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc191",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc192",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc193",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc194",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 47,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d1_qh2_rcc195",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 46,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc202",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc203",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc207",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc209",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc210",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc213",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc218",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc219",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc220",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc221",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 0,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc222",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 288,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc223",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 290,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc224",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 289,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc225",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 289,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc227",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 289,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc228",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 288,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc229",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 289,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc230",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 291,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc231",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 291,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc233",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 289,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc234",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 297,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc235",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 298,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc238",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 288,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc239",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 290,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc243",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 289,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc248",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 289,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc249",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 289,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc251",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 288,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc255",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 289,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc256",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 896,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc259",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 281,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc260",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 282,
+      "passed": true
+    },
+    {
+      "domain": "ucc_d2_qh2_rcc261",
+      "cadence": "30",
+      "labels": 3072,
+      "bad_labels": 299,
+      "passed": true
+    }
+  ]
+}

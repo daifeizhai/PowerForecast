@@ -4,6 +4,8 @@
 
 当前开发阶段为[Gain-v2四周协议](docs/SAPF_GAIN_V2_PROTOCOL.md)：四种迁移价值目标、独立校准、Level–Shape表示、4h/24h/3d和配对统计。正式入口为 `scripts/run_experiment.py --config configs/sapf_gain_v2.yaml`，测试日期与旧报告分开；最终结果和建议门槛须以本轮冻结测试报告为准。基线提交f89dc7d已打本地冻结标签，开发分支为research/sapf-gain-v2。
 
+[四周执行结果](docs/SAPF_GAIN_V2_RESULTS.md)已完成：M100内部及正向4h有所改善，正向24h/3d恶化，反向仍全回退；简单z-score固定混合仍是强对照。73项完整测试、237状态冻结、204项恢复及14,616条指标复算通过。唯一审计器浮点比较修订有独立记录，模型和375个已有结果文件未改。工程交付完成，不代表科学门槛全部达到；[当前版本复现说明](docs/figures/gain-v2-20261025T175359Z_42a876/README.md)区分原预注册与仅用于重放的副本。
+
 当前主线研究哪些负荷规律可共享、哪些源域值得迁移，以及如何减少未知域上的负迁移。已实现基于 Ridge 的历史窗口归一化、源域相似性、验证域可靠性，以及源内留域监督的收益/风险预测与零迁移拒绝。尚未实现完整深度共享表征架构或跨设施总表精度验收。
 
 预测任务为 **24h / 3d**、过去 **14天** 输入。原 Google/M100 协议为15分钟：1344点历史、96/288点预测；新增 M100↔UCC 协议为30分钟：672点历史、48/144点预测。7d、HDSF 和旧预测方案转入[归档](archive/pre_sapf_bc6a439/README.md)，不参与默认运行。原始数据、历史预测、模型与缓存均保留。
@@ -85,7 +87,7 @@ MAPE、WAPE、RMSE、MAE 仍由唯一公共指标函数计算；MAPE 排除 |标
 | NLR Eagle | 整体保留为最终独立测试域，禁止训练、验证、选参和策略设计；本轮未打开观测或标签 |
 | NLR ESIF | 设施五分项 component_sum、kW、UTC 未核实；只作物理契约与旧实验参考，区别于 Eagle |
 
-来源与首阶段准入状态保留在 [registry.yaml](configs/datasets/registry.yaml)，详见[多源核验](docs/SAPF_DATA_AUDIT.md)和 [M100/UCC2023 实际文件审计报告](docs/M100_UCC2023_DATA_AUDIT.md)。registry属于本轮冻结源码快照，未在测试后修改；新增30min能力和准入范围以[专用配置](configs/datasets/transfer30.yaml)、[协议](docs/BENEFIT_TRANSFER_PROTOCOL.md)及[结果](docs/BENEFIT_TRANSFER_RESULTS.md)为准。原始审计和旧预测结果保持原证据版本。
+来源与当前已实现适配契约见 [registry.yaml](configs/datasets/registry.yaml)，Gain-v2版本在本轮测试前更新并预注册；旧状态仍保存在基线提交f89dc7d及各轮快照。详见[多源核验](docs/SAPF_DATA_AUDIT.md)、[原始文件审计](docs/M100_UCC2023_DATA_AUDIT.md)和[Gain-v2协议](docs/SAPF_GAIN_V2_PROTOCOL.md)。原始审计与旧预测保持各自证据版本，不能以当前源码冒称旧运行原始哈希。
 
 ```powershell
 # 只核对本地数据，不下载外部大数据

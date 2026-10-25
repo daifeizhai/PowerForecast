@@ -1,0 +1,359 @@
+[
+  {
+    "horizon": "4h",
+    "model": "seasonal_naive",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "three_day_mean",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "ridge_raw",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "ridge_zscore",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "ridge_level_shape",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "ridge_scale_metadata",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "uniform_transfer",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "fixed_blend_25",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "fixed_blend_50",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "fixed_blend_75",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "sapf",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "gain_v2_single",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "gain_v2_fixed",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "gain_v2_marginal",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "gain_v2_rank",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "gain_v2_forced",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "4h",
+    "model": "gain_v2_uncalibrated",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "seasonal_naive",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "three_day_mean",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "ridge_raw",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "ridge_zscore",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "ridge_level_shape",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "ridge_scale_metadata",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "uniform_transfer",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "fixed_blend_25",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "fixed_blend_50",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "fixed_blend_75",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "sapf",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "gain_v2_single",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "gain_v2_fixed",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "gain_v2_marginal",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "gain_v2_rank",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "gain_v2_forced",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "24h",
+    "model": "gain_v2_uncalibrated",
+    "windows": 801,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "seasonal_naive",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "three_day_mean",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "ridge_raw",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "ridge_zscore",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "ridge_level_shape",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "ridge_scale_metadata",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "uniform_transfer",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "fixed_blend_25",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "fixed_blend_50",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "fixed_blend_75",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "sapf",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "gain_v2_single",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "gain_v2_fixed",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "gain_v2_marginal",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "gain_v2_rank",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "gain_v2_forced",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  },
+  {
+    "horizon": "3d",
+    "model": "gain_v2_uncalibrated",
+    "windows": 623,
+    "maximum_absolute_difference": 0.0,
+    "passed": true
+  }
+]

@@ -1,0 +1,370 @@
+{
+  "created_at_utc": "2026-10-25T17:53:59.539755+00:00",
+  "config": {
+    "protocol": "sapf_gain_v2_suite",
+    "research_method": "Marginal fusion benefit and level-shape controlled study",
+    "seed": 42,
+    "days": 64,
+    "protocol_anchor": "2000-01-03T00:00:00Z",
+    "source_clock_periods": {
+      "m100": {
+        "development_start": "2021-12-26T00:00:00Z",
+        "test_start": "2021-12-26T00:00:00Z"
+      },
+      "ucc": {
+        "development_start": "2019-04-09T00:00:00",
+        "test_start": "2019-02-03T00:00:00"
+      }
+    },
+    "domain_roles": {
+      "m100": {
+        "source": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "validation": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "test": [
+          "m100_rack0_node6",
+          "m100_rack0_node9",
+          "m100_rack0_node13",
+          "m100_rack0_node17",
+          "m100_rack1_node21",
+          "m100_rack1_node24",
+          "m100_rack1_node31",
+          "m100_rack1_node35",
+          "m100_rack1_node38"
+        ]
+      },
+      "ucc": {
+        "source": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "validation": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "test": [
+          "ucc_d1_qh2_rcc130",
+          "ucc_d1_qh2_rcc131",
+          "ucc_d1_qh2_rcc132",
+          "ucc_d1_qh2_rcc133",
+          "ucc_d1_qh2_rcc134",
+          "ucc_d1_qh2_rcc135",
+          "ucc_d1_qh2_rcc136",
+          "ucc_d1_qh2_rcc137",
+          "ucc_d1_qh2_rcc138",
+          "ucc_d1_qh2_rcc139",
+          "ucc_d1_qh2_rcc140",
+          "ucc_d1_qh2_rcc141",
+          "ucc_d1_qh2_rcc142",
+          "ucc_d1_qh2_rcc143",
+          "ucc_d1_qh2_rcc144",
+          "ucc_d1_qh2_rcc145",
+          "ucc_d1_qh2_rcc146",
+          "ucc_d1_qh2_rcc147",
+          "ucc_d1_qh2_rcc148",
+          "ucc_d1_qh2_rcc149",
+          "ucc_d1_qh2_rcc150",
+          "ucc_d1_qh2_rcc151",
+          "ucc_d1_qh2_rcc152",
+          "ucc_d1_qh2_rcc153",
+          "ucc_d1_qh2_rcc154",
+          "ucc_d1_qh2_rcc155",
+          "ucc_d1_qh2_rcc156",
+          "ucc_d1_qh2_rcc157",
+          "ucc_d1_qh2_rcc158",
+          "ucc_d1_qh2_rcc159",
+          "ucc_d1_qh2_rcc160",
+          "ucc_d1_qh2_rcc161",
+          "ucc_d1_qh2_rcc162",
+          "ucc_d1_qh2_rcc163",
+          "ucc_d1_qh2_rcc164",
+          "ucc_d1_qh2_rcc165",
+          "ucc_d1_qh2_rcc166",
+          "ucc_d1_qh2_rcc167",
+          "ucc_d1_qh2_rcc168",
+          "ucc_d1_qh2_rcc169",
+          "ucc_d1_qh2_rcc170",
+          "ucc_d1_qh2_rcc171",
+          "ucc_d1_qh2_rcc172",
+          "ucc_d1_qh2_rcc173",
+          "ucc_d1_qh2_rcc174",
+          "ucc_d1_qh2_rcc175",
+          "ucc_d1_qh2_rcc176",
+          "ucc_d1_qh2_rcc177",
+          "ucc_d1_qh2_rcc178",
+          "ucc_d1_qh2_rcc179",
+          "ucc_d1_qh2_rcc180",
+          "ucc_d1_qh2_rcc181",
+          "ucc_d1_qh2_rcc182",
+          "ucc_d1_qh2_rcc183",
+          "ucc_d1_qh2_rcc184",
+          "ucc_d1_qh2_rcc185",
+          "ucc_d1_qh2_rcc186",
+          "ucc_d1_qh2_rcc187",
+          "ucc_d1_qh2_rcc188",
+          "ucc_d1_qh2_rcc189",
+          "ucc_d1_qh2_rcc190",
+          "ucc_d1_qh2_rcc191",
+          "ucc_d1_qh2_rcc192",
+          "ucc_d1_qh2_rcc193",
+          "ucc_d1_qh2_rcc194",
+          "ucc_d1_qh2_rcc195",
+          "ucc_d2_qh2_rcc222",
+          "ucc_d2_qh2_rcc223",
+          "ucc_d2_qh2_rcc224",
+          "ucc_d2_qh2_rcc225",
+          "ucc_d2_qh2_rcc227",
+          "ucc_d2_qh2_rcc228",
+          "ucc_d2_qh2_rcc229",
+          "ucc_d2_qh2_rcc230",
+          "ucc_d2_qh2_rcc231",
+          "ucc_d2_qh2_rcc233",
+          "ucc_d2_qh2_rcc234",
+          "ucc_d2_qh2_rcc235",
+          "ucc_d2_qh2_rcc238",
+          "ucc_d2_qh2_rcc239",
+          "ucc_d2_qh2_rcc243",
+          "ucc_d2_qh2_rcc248",
+          "ucc_d2_qh2_rcc249",
+          "ucc_d2_qh2_rcc251",
+          "ucc_d2_qh2_rcc255",
+          "ucc_d2_qh2_rcc256",
+          "ucc_d2_qh2_rcc259",
+          "ucc_d2_qh2_rcc260",
+          "ucc_d2_qh2_rcc261"
+        ]
+      }
+    },
+    "retired_m100_v1_test": [
+      "m100_rack0_node4",
+      "m100_rack0_node7",
+      "m100_rack0_node10",
+      "m100_rack0_node14",
+      "m100_rack0_node18",
+      "m100_rack1_node22",
+      "m100_rack1_node25",
+      "m100_rack1_node28",
+      "m100_rack1_node32",
+      "m100_rack1_node36"
+    ],
+    "context_days": 14,
+    "horizon_days": {
+      "4h": 0.16666666666666666,
+      "24h": 1,
+      "3d": 3
+    },
+    "prior_cutoff_day": 20,
+    "prior_origins": [
+      20,
+      21
+    ],
+    "meta_cutoffs": [
+      24,
+      30,
+      36
+    ],
+    "meta_block_days": 6,
+    "development_cutoff_day": 44,
+    "calibration_origins": [
+      44,
+      45,
+      46
+    ],
+    "validation_origins": [
+      49,
+      50,
+      51
+    ],
+    "final_cutoff_day": 54,
+    "test_origins": {
+      "4h": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62
+      ],
+      "24h": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62
+      ],
+      "3d": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    },
+    "studies": [
+      {
+        "name": "m100_internal_30",
+        "source_group": "m100",
+        "test_group": "m100",
+        "frequency": "30min"
+      },
+      {
+        "name": "m100_to_ucc_30",
+        "source_group": "m100",
+        "test_group": "ucc",
+        "frequency": "30min"
+      },
+      {
+        "name": "ucc_to_m100_30",
+        "source_group": "ucc",
+        "test_group": "m100",
+        "frequency": "30min"
+      },
+      {
+        "name": "m100_internal_15",
+        "source_group": "m100",
+        "test_group": "m100",
+        "frequency": "15min"
+      }
+    ],
+    "model_config": "configs/gain_v2_models.yaml",
+    "results_dir": "results/runs",
+    "mape_threshold": 1e-08,
+    "blas_threads": 1,
+    "statistics": {
+      "seed": 20261026,
+      "replicates": 2000,
+      "block_origins": 3,
+      "alpha": 0.05,
+      "dm_min_origins": 8,
+      "holm_family": "all_predeclared_gain_v2_vs_local3_local1_fixed50_comparisons_across_studies_horizons"
+    }
+  },
+  "models": {
+    "ridge_alpha": 100.0,
+    "benefit": {
+      "n_estimators": 64,
+      "max_depth": 6,
+      "min_samples_leaf": 20,
+      "n_jobs": 1
+    },
+    "policy_grid": {
+      "margin_pp": [
+        0.0,
+        0.1,
+        0.5
+      ],
+      "max_risk": [
+        0.5,
+        0.75,
+        1.0
+      ],
+      "worst_domain_penalty": 0.1
+    },
+    "fusion": {
+      "alpha": 0.5,
+      "maximum_steps": 2
+    },
+    "main_representation": "level_shape",
+    "sapf": {
+      "base_model": "ridge",
+      "base_params": {
+        "alpha": 100.0
+      },
+      "top_k": [
+        1,
+        3
+      ],
+      "temperatures": [
+        1.0
+      ],
+      "feature_groups": [
+        "shape",
+        "level_shape"
+      ],
+      "transfer_strengths": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "reliability_powers": [
+        0.0,
+        1.0
+      ],
+      "worst_domain_penalty": 0.1
+    },
+    "default_models": [
+      "seasonal_naive",
+      "three_day_mean",
+      "ridge_raw",
+      "ridge_zscore",
+      "ridge_level_shape",
+      "ridge_scale_metadata",
+      "uniform_transfer",
+      "fixed_blend_25",
+      "fixed_blend_50",
+      "fixed_blend_75",
+      "sapf",
+      "gain_v2_single",
+      "gain_v2_fixed",
+      "gain_v2_marginal",
+      "gain_v2_rank",
+      "gain_v2_forced",
+      "gain_v2_uncalibrated"
+    ],
+    "oracle": {
+      "role": "post_test_analysis_only_never_predictor",
+      "candidates": "local_previous_day_previous_three_days_all_frozen_methods_and_each_level_shape_expert_alpha_grid_and_two_distinct_expert_half_steps",
+      "alpha_grid": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+[m100_30] source=8 calibration=2 selection=2; source-internal value learning
+[m100_30] 4h final fit and independent selection complete; no test error accessed
+[m100_30] 24h final fit and independent selection complete; no test error accessed
+[m100_30] 3d final fit and independent selection complete; no test error accessed
+[m100_15] source=8 calibration=2 selection=2; source-internal value learning
+[m100_15] 4h final fit and independent selection complete; no test error accessed
+[m100_15] 24h final fit and independent selection complete; no test error accessed
+[m100_15] 3d final fit and independent selection complete; no test error accessed
+[ucc_30] source=12 calibration=4 selection=4; source-internal value learning
+[ucc_30] 4h final fit and independent selection complete; no test error accessed
+[ucc_30] 24h final fit and independent selection complete; no test error accessed
+[ucc_30] 3d final fit and independent selection complete; no test error accessed
+[Gain-v2] All source groups frozen. Starting all new held-out tests.
+[m100_internal_30] 4h test and saved-model replay complete
+[m100_internal_30] 24h test and saved-model replay complete
+[m100_internal_30] 3d test and saved-model replay complete
+[m100_to_ucc_30] 4h test and saved-model replay complete
+[m100_to_ucc_30] 24h test and saved-model replay complete
+[m100_to_ucc_30] 3d test and saved-model replay complete
+[ucc_to_m100_30] 4h test and saved-model replay complete
+[ucc_to_m100_30] 24h test and saved-model replay complete
+[ucc_to_m100_30] 3d test and saved-model replay complete
+[m100_internal_15] 4h test and saved-model replay complete
+[m100_internal_15] 24h test and saved-model replay complete
+[m100_internal_15] 3d test and saved-model replay complete
+[Gain-v2] Frozen tests complete; target-cluster/block uncertainty and calibration diagnostics.
+.\.venv\Scripts\python.exe : Traceback (most recent call last):
+所在位置 行:2 字符: 1
++ .\.venv\Scripts\python.exe -u -X utf8 -W ignore::DeprecationWarning s ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+  File "D:\AAA_Project\PowerForecast\scripts\run_experiment.py", line 63, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "D:\AAA_Project\PowerForecast\scripts\run_experiment.py", line 56, in main
+    run_experiment(args)
+    ~~~~~~~~~~~~~~^^^^^^
+  File "D:\AAA_Project\PowerForecast\scripts\run_experiment.py", line 20, in run_experiment
+    return run_gain_v2(args, config)
+  File "D:\AAA_Project\PowerForecast\src\training\gain_v2_experiment.py", line 345, in run_gain_v2
+    audit=audit_gain_v2(folder);write_json(folder/'audit.json',audit)
+  File "D:\AAA_Project\PowerForecast\src\evaluation\gain_v2_audit.py", line 91, in audit_gain_v2
+    assert np.array_equal(final.loc[zero,'final_MAPE'].to_numpy(),final.loc[zero,'local_MAPE'].to_numpy())
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

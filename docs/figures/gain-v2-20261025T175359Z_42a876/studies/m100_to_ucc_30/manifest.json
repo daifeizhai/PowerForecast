@@ -1,0 +1,3506 @@
+{
+  "status": "complete",
+  "protocol": "sapf_gain_v2",
+  "research_method": "m100_to_ucc_30",
+  "data": "M100 source -> UCC new-period nodes",
+  "target": "node_power_kw",
+  "target_unit": "kW",
+  "is_demo": false,
+  "experiment": {
+    "frequency": "30min"
+  },
+  "requested_horizons": [
+    "4h",
+    "24h",
+    "3d"
+  ],
+  "console_methods": [
+    "seasonal_naive",
+    "three_day_mean",
+    "ridge_raw",
+    "ridge_zscore",
+    "ridge_level_shape",
+    "ridge_scale_metadata",
+    "uniform_transfer",
+    "fixed_blend_25",
+    "fixed_blend_50",
+    "fixed_blend_75",
+    "sapf",
+    "gain_v2_single",
+    "gain_v2_fixed",
+    "gain_v2_marginal",
+    "gain_v2_rank",
+    "gain_v2_forced",
+    "gain_v2_uncalibrated",
+    "oracle_posthoc"
+  ],
+  "domain_roles": {
+    "source": [
+      "m100_rack0_node2",
+      "m100_rack0_node5",
+      "m100_rack0_node8",
+      "m100_rack0_node11",
+      "m100_rack1_node20",
+      "m100_rack1_node23",
+      "m100_rack1_node26",
+      "m100_rack1_node29"
+    ],
+    "calibration": [
+      "m100_rack0_node16",
+      "m100_rack1_node33"
+    ],
+    "validation": [
+      "m100_rack0_node19",
+      "m100_rack1_node37"
+    ],
+    "test": [
+      "ucc_d1_qh2_rcc130",
+      "ucc_d1_qh2_rcc131",
+      "ucc_d1_qh2_rcc132",
+      "ucc_d1_qh2_rcc133",
+      "ucc_d1_qh2_rcc134",
+      "ucc_d1_qh2_rcc135",
+      "ucc_d1_qh2_rcc136",
+      "ucc_d1_qh2_rcc137",
+      "ucc_d1_qh2_rcc138",
+      "ucc_d1_qh2_rcc139",
+      "ucc_d1_qh2_rcc140",
+      "ucc_d1_qh2_rcc141",
+      "ucc_d1_qh2_rcc142",
+      "ucc_d1_qh2_rcc143",
+      "ucc_d1_qh2_rcc144",
+      "ucc_d1_qh2_rcc145",
+      "ucc_d1_qh2_rcc146",
+      "ucc_d1_qh2_rcc147",
+      "ucc_d1_qh2_rcc148",
+      "ucc_d1_qh2_rcc149",
+      "ucc_d1_qh2_rcc150",
+      "ucc_d1_qh2_rcc151",
+      "ucc_d1_qh2_rcc152",
+      "ucc_d1_qh2_rcc153",
+      "ucc_d1_qh2_rcc154",
+      "ucc_d1_qh2_rcc155",
+      "ucc_d1_qh2_rcc156",
+      "ucc_d1_qh2_rcc157",
+      "ucc_d1_qh2_rcc158",
+      "ucc_d1_qh2_rcc159",
+      "ucc_d1_qh2_rcc160",
+      "ucc_d1_qh2_rcc161",
+      "ucc_d1_qh2_rcc162",
+      "ucc_d1_qh2_rcc163",
+      "ucc_d1_qh2_rcc164",
+      "ucc_d1_qh2_rcc165",
+      "ucc_d1_qh2_rcc166",
+      "ucc_d1_qh2_rcc167",
+      "ucc_d1_qh2_rcc168",
+      "ucc_d1_qh2_rcc169",
+      "ucc_d1_qh2_rcc170",
+      "ucc_d1_qh2_rcc171",
+      "ucc_d1_qh2_rcc172",
+      "ucc_d1_qh2_rcc173",
+      "ucc_d1_qh2_rcc174",
+      "ucc_d1_qh2_rcc175",
+      "ucc_d1_qh2_rcc176",
+      "ucc_d1_qh2_rcc177",
+      "ucc_d1_qh2_rcc178",
+      "ucc_d1_qh2_rcc179",
+      "ucc_d1_qh2_rcc180",
+      "ucc_d1_qh2_rcc181",
+      "ucc_d1_qh2_rcc182",
+      "ucc_d1_qh2_rcc183",
+      "ucc_d1_qh2_rcc184",
+      "ucc_d1_qh2_rcc185",
+      "ucc_d1_qh2_rcc186",
+      "ucc_d1_qh2_rcc187",
+      "ucc_d1_qh2_rcc188",
+      "ucc_d1_qh2_rcc189",
+      "ucc_d1_qh2_rcc190",
+      "ucc_d1_qh2_rcc191",
+      "ucc_d1_qh2_rcc192",
+      "ucc_d1_qh2_rcc193",
+      "ucc_d1_qh2_rcc194",
+      "ucc_d1_qh2_rcc195",
+      "ucc_d2_qh2_rcc222",
+      "ucc_d2_qh2_rcc223",
+      "ucc_d2_qh2_rcc224",
+      "ucc_d2_qh2_rcc225",
+      "ucc_d2_qh2_rcc227",
+      "ucc_d2_qh2_rcc228",
+      "ucc_d2_qh2_rcc229",
+      "ucc_d2_qh2_rcc230",
+      "ucc_d2_qh2_rcc231",
+      "ucc_d2_qh2_rcc233",
+      "ucc_d2_qh2_rcc234",
+      "ucc_d2_qh2_rcc235",
+      "ucc_d2_qh2_rcc238",
+      "ucc_d2_qh2_rcc239",
+      "ucc_d2_qh2_rcc243",
+      "ucc_d2_qh2_rcc248",
+      "ucc_d2_qh2_rcc249",
+      "ucc_d2_qh2_rcc251",
+      "ucc_d2_qh2_rcc255",
+      "ucc_d2_qh2_rcc256",
+      "ucc_d2_qh2_rcc259",
+      "ucc_d2_qh2_rcc260",
+      "ucc_d2_qh2_rcc261"
+    ]
+  },
+  "source_group": "m100_30",
+  "target_dataset_labels_used_for_selection": false,
+  "domain_metadata": {
+    "ucc_d1_qh2_rcc130": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc130",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc130",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc131": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc131",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc131",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc132": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc132",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc132",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc133": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc133",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc133",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc134": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc134",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc134",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc135": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc135",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc135",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc136": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc136",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc136",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc137": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc137",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc137",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc138": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc138",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc138",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc139": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc139",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc139",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc140": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc140",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc140",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc141": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc141",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc141",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc142": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc142",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc142",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc143": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc143",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc143",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc144": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc144",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc144",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc145": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc145",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc145",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc146": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc146",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc146",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc147": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc147",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc147",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc148": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc148",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc148",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc149": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc149",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc149",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc150": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc150",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc150",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc151": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc151",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc151",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc152": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc152",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc152",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc153": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc153",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc153",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc154": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc154",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc154",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc155": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc155",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc155",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc156": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc156",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc156",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc157": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc157",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc157",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc158": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc158",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc158",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc159": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc159",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc159",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc160": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc160",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc160",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc161": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc161",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc161",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc162": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc162",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc162",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc163": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc163",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc163",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc164": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc164",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc164",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc165": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc165",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc165",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc166": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc166",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc166",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc167": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc167",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc167",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc168": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc168",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc168",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc169": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc169",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc169",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc170": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc170",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc170",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc171": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc171",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc171",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc172": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc172",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc172",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc173": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc173",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc173",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc174": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc174",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc174",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc175": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc175",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc175",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc176": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc176",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc176",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc177": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc177",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc177",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc178": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc178",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc178",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc179": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc179",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc179",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc180": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc180",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc180",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc181": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc181",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc181",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc182": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc182",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc182",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc183": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc183",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc183",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc184": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc184",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc184",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc185": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc185",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc185",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc186": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc186",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc186",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc187": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc187",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc187",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc188": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc188",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc188",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc189": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc189",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc189",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc190": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc190",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc190",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc191": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc191",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc191",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc192": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc192",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc192",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc193": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc193",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc193",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc194": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc194",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc194",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d1_qh2_rcc195": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d1_qh2_rcc195",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc195",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc222": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc222",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc222",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc223": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc223",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc223",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc224": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc224",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc224",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc225": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc225",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc225",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc227": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc227",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc227",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc228": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc228",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc228",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc229": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc229",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc229",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc230": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc230",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc230",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc231": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc231",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc231",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc233": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc233",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc233",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc234": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc234",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc234",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc235": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc235",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc235",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc238": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc238",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc238",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc239": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc239",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc239",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc243": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc243",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc243",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc248": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc248",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc248",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc249": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc249",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc249",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc251": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc251",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc251",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc255": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc255",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc255",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc256": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc256",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc256",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc259": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc259",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc259",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc260": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc260",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc260",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    },
+    "ucc_d2_qh2_rcc261": {
+      "dataset_id": "ucc_gain_v2",
+      "site_id": "ucc_research_cloud",
+      "domain_id": "ucc_d2_qh2_rcc261",
+      "target_kind": "active_power",
+      "target_scope": "node",
+      "target_unit": "kW",
+      "label_origin": "measured",
+      "timezone": "unverified_source_local_clock",
+      "timezone_verified": false,
+      "raw_frequency": "10min",
+      "sampling_semantics": "interval_mean",
+      "interval_definition": "Arithmetic mean of complete unique native published slots in 30min source-clock buckets.",
+      "coverage": "Explicit missing/duplicate/nonfinite/negative quality bitmask; no interpolation.",
+      "source_version": "Official local file SHA256 pinned.",
+      "power_domain_id": null,
+      "rack_id": null,
+      "node_id": "rcc261",
+      "mapping_route": null,
+      "assumptions": [
+        "Offline role-specific collection dates; synthetic protocol coordinates are not physical UTC.",
+        "Available by bucket label plus interval; actual aggregation edges and extra reporting delay unverified."
+      ],
+      "feature_availability": {
+        "target": "history_only",
+        "trace_calendar": "future_known"
+      },
+      "target_field": "node_power_kw",
+      "usage_role": "final_holdout",
+      "evaluation_frequency": "30min"
+    }
+  },
+  "source_clock_audit": {
+    "ucc_d1_qh2_rcc130": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 48
+    },
+    "ucc_d1_qh2_rcc131": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 272
+    },
+    "ucc_d1_qh2_rcc132": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc133": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc134": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc135": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc136": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc137": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc138": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc139": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc140": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc141": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc142": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 48
+    },
+    "ucc_d1_qh2_rcc143": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc144": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc145": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc146": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc147": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc148": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc149": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc150": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc151": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 171
+    },
+    "ucc_d1_qh2_rcc152": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc153": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc154": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc155": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc156": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc157": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc158": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc159": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 48
+    },
+    "ucc_d1_qh2_rcc160": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc161": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc162": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc163": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc164": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 48
+    },
+    "ucc_d1_qh2_rcc165": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc166": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc167": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc168": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc169": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc170": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc171": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc172": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc173": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc174": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc175": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc176": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc177": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 171
+    },
+    "ucc_d1_qh2_rcc178": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc179": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc180": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 172
+    },
+    "ucc_d1_qh2_rcc181": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc182": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc183": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 48
+    },
+    "ucc_d1_qh2_rcc184": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc185": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc186": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc187": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc188": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc189": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc190": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc191": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d1_qh2_rcc192": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc193": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc194": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 47
+    },
+    "ucc_d1_qh2_rcc195": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 46
+    },
+    "ucc_d2_qh2_rcc222": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 288
+    },
+    "ucc_d2_qh2_rcc223": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 290
+    },
+    "ucc_d2_qh2_rcc224": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 289
+    },
+    "ucc_d2_qh2_rcc225": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 289
+    },
+    "ucc_d2_qh2_rcc227": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 289
+    },
+    "ucc_d2_qh2_rcc228": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 288
+    },
+    "ucc_d2_qh2_rcc229": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 289
+    },
+    "ucc_d2_qh2_rcc230": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 291
+    },
+    "ucc_d2_qh2_rcc231": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 291
+    },
+    "ucc_d2_qh2_rcc233": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 289
+    },
+    "ucc_d2_qh2_rcc234": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 297
+    },
+    "ucc_d2_qh2_rcc235": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 298
+    },
+    "ucc_d2_qh2_rcc238": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 288
+    },
+    "ucc_d2_qh2_rcc239": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 290
+    },
+    "ucc_d2_qh2_rcc243": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 289
+    },
+    "ucc_d2_qh2_rcc248": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 289
+    },
+    "ucc_d2_qh2_rcc249": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 289
+    },
+    "ucc_d2_qh2_rcc251": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 288
+    },
+    "ucc_d2_qh2_rcc255": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 289
+    },
+    "ucc_d2_qh2_rcc256": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 896
+    },
+    "ucc_d2_qh2_rcc259": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 281
+    },
+    "ucc_d2_qh2_rcc260": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 282
+    },
+    "ucc_d2_qh2_rcc261": {
+      "source_clock_start": "2019-02-03T00:00:00",
+      "source_clock_timezone_verified": false,
+      "history_availability_upper_bound_minutes": 30.0,
+      "missing_bins": 299
+    }
+  },
+  "model_paths": {
+    "4h": {
+      "seasonal_naive": "groups/m100_30/4h/seasonal_naive/model.joblib",
+      "three_day_mean": "groups/m100_30/4h/three_day_mean/model.joblib",
+      "ridge_raw": "groups/m100_30/4h/ridge_raw/model.joblib",
+      "ridge_zscore": "groups/m100_30/4h/ridge_zscore/model.joblib",
+      "ridge_level_shape": "groups/m100_30/4h/ridge_level_shape/model.joblib",
+      "ridge_scale_metadata": "groups/m100_30/4h/ridge_scale_metadata/model.joblib",
+      "uniform_transfer": "groups/m100_30/4h/uniform_transfer/model.joblib",
+      "fixed_blend_25": "groups/m100_30/4h/fixed_blend_25/model.joblib",
+      "fixed_blend_50": "groups/m100_30/4h/fixed_blend_50/model.joblib",
+      "fixed_blend_75": "groups/m100_30/4h/fixed_blend_75/model.joblib",
+      "sapf": "groups/m100_30/4h/sapf/model.joblib",
+      "gain_v2_single": "groups/m100_30/4h/gain_v2_single/model.joblib",
+      "gain_v2_fixed": "groups/m100_30/4h/gain_v2_fixed/model.joblib",
+      "gain_v2_marginal": "groups/m100_30/4h/gain_v2_marginal/model.joblib",
+      "gain_v2_rank": "groups/m100_30/4h/gain_v2_rank/model.joblib",
+      "gain_v2_forced": "groups/m100_30/4h/gain_v2_forced/model.joblib",
+      "gain_v2_uncalibrated": "groups/m100_30/4h/gain_v2_uncalibrated/model.joblib"
+    },
+    "24h": {
+      "seasonal_naive": "groups/m100_30/24h/seasonal_naive/model.joblib",
+      "three_day_mean": "groups/m100_30/24h/three_day_mean/model.joblib",
+      "ridge_raw": "groups/m100_30/24h/ridge_raw/model.joblib",
+      "ridge_zscore": "groups/m100_30/24h/ridge_zscore/model.joblib",
+      "ridge_level_shape": "groups/m100_30/24h/ridge_level_shape/model.joblib",
+      "ridge_scale_metadata": "groups/m100_30/24h/ridge_scale_metadata/model.joblib",
+      "uniform_transfer": "groups/m100_30/24h/uniform_transfer/model.joblib",
+      "fixed_blend_25": "groups/m100_30/24h/fixed_blend_25/model.joblib",
+      "fixed_blend_50": "groups/m100_30/24h/fixed_blend_50/model.joblib",
+      "fixed_blend_75": "groups/m100_30/24h/fixed_blend_75/model.joblib",
+      "sapf": "groups/m100_30/24h/sapf/model.joblib",
+      "gain_v2_single": "groups/m100_30/24h/gain_v2_single/model.joblib",
+      "gain_v2_fixed": "groups/m100_30/24h/gain_v2_fixed/model.joblib",
+      "gain_v2_marginal": "groups/m100_30/24h/gain_v2_marginal/model.joblib",
+      "gain_v2_rank": "groups/m100_30/24h/gain_v2_rank/model.joblib",
+      "gain_v2_forced": "groups/m100_30/24h/gain_v2_forced/model.joblib",
+      "gain_v2_uncalibrated": "groups/m100_30/24h/gain_v2_uncalibrated/model.joblib"
+    },
+    "3d": {
+      "seasonal_naive": "groups/m100_30/3d/seasonal_naive/model.joblib",
+      "three_day_mean": "groups/m100_30/3d/three_day_mean/model.joblib",
+      "ridge_raw": "groups/m100_30/3d/ridge_raw/model.joblib",
+      "ridge_zscore": "groups/m100_30/3d/ridge_zscore/model.joblib",
+      "ridge_level_shape": "groups/m100_30/3d/ridge_level_shape/model.joblib",
+      "ridge_scale_metadata": "groups/m100_30/3d/ridge_scale_metadata/model.joblib",
+      "uniform_transfer": "groups/m100_30/3d/uniform_transfer/model.joblib",
+      "fixed_blend_25": "groups/m100_30/3d/fixed_blend_25/model.joblib",
+      "fixed_blend_50": "groups/m100_30/3d/fixed_blend_50/model.joblib",
+      "fixed_blend_75": "groups/m100_30/3d/fixed_blend_75/model.joblib",
+      "sapf": "groups/m100_30/3d/sapf/model.joblib",
+      "gain_v2_single": "groups/m100_30/3d/gain_v2_single/model.joblib",
+      "gain_v2_fixed": "groups/m100_30/3d/gain_v2_fixed/model.joblib",
+      "gain_v2_marginal": "groups/m100_30/3d/gain_v2_marginal/model.joblib",
+      "gain_v2_rank": "groups/m100_30/3d/gain_v2_rank/model.joblib",
+      "gain_v2_forced": "groups/m100_30/3d/gain_v2_forced/model.joblib",
+      "gain_v2_uncalibrated": "groups/m100_30/3d/gain_v2_uncalibrated/model.joblib"
+    }
+  }
+}

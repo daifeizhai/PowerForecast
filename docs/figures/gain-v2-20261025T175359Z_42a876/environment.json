@@ -1,0 +1,15 @@
+{
+  "recorded_at_utc": "2026-10-25T17:53:29.211540+00:00",
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0",
+    "pyarrow": "24.0.0",
+    "threadpoolctl": "3.7.0",
+    "matplotlib": "3.11.2"
+  }
+}

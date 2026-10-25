@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "verified_at_utc": "2026-10-25T18:30:55.498520+00:00",
+  "scientific_and_test_files_unchanged": 84,
+  "original_computational_files": 85,
+  "explicit_audit_only_amendment": [
+    "src/evaluation/gain_v2_audit.py"
+  ],
+  "original_outcomes_unchanged": 375,
+  "new_frozen_models_unchanged": 237,
+  "baseline_evidence_files_unchanged": 133,
+  "old_frozen_model_states_unchanged": 254,
+  "manifest_config_matches_preregistered_config": true,
+  "current_frozen_source_archive_exact": true,
+  "documentation_links_checked": 47,
+  "scope": "Read-only hashes and links. No refit, model/threshold update, forecast rewrite, or Eagle observation access."
+}
