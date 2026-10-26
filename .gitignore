@@ -8,6 +8,15 @@ build/
 dist/
 .ipynb_checkpoints/
 
+# Local pip/session scratch directories created by restricted Windows shells
+# (the harness cannot use the normal TEMP path, so pip falls back to the CWD).
+pip-build-env-*/
+pip-build-tracker-*/
+pip-ephem-wheel-cache-*/
+pip-install-*/
+pip-unpack-*/
+pip-modern-metadata-*/
+
 # Original / derived data and run outputs are never tracked. Placeholders keep
 # the directory layout in Git without committing data.
 data/raw/*
