@@ -1,7 +1,7 @@
+# CPU-only core dependencies. No GPU, no deep-learning framework, no
+# pretrained foundation model is required by this skeleton.
 numpy>=2.0,<3
 pandas>=2.2,<3
 pyarrow>=17,<25
 PyYAML>=6,<7
-scikit-learn>=1.5,<2
-matplotlib>=3.9,<4
 pytest>=8,<10

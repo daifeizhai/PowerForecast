@@ -1,6 +1,9 @@
+# Optional packages. None of them is needed for install, tests, or the smoke
+# runs. Research/plotting tools are listed here so the core install stays CPU
+# only. Do not add GPU-only packages.
 -r requirements.txt
-# Install these only when running the corresponding optional model.
-statsmodels>=0.14,<0.15
-lightgbm>=4,<5
-xgboost>=2,<4
-torch>=2.4,<3
+
+matplotlib>=3.9,<4          # optional run figures (must be labelled synthetic)
+scikit-learn>=1.5,<2        # reserved for future fitted baselines / preprocessing
+statsmodels>=0.14,<0.15     # reserved for future statistical baselines
+lightgbm>=4,<5              # planned only: never surfaced as a supported model

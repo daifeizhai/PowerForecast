@@ -4,10 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "powerforecast"
-version = "0.1.0"
-description = "Reproducible 15-minute facility load forecasting framework"
+version = "0.2.0"
+description = "Reproducible 15-minute facility active-power forecasting skeleton (CPU only)"
+readme = "README.md"
 requires-python = ">=3.11"
 dynamic = ["dependencies"]
+
+[project.optional-dependencies]
+optional = ["matplotlib>=3.9,<4", "scikit-learn>=1.5,<2"]
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
@@ -18,3 +22,5 @@ include = ["src*", "scripts*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+addopts = "-ra"
+filterwarnings = ["error:FutureWarning"]
