@@ -1,0 +1,623 @@
+# Stage-1 source-domain registry and panel configuration.
+#
+# This file is the single source of truth for the REAL source-domain data work of
+# Stage 1 (task book section 3.1-3.6). Python code contains no dataset-specific
+# constants: paths, domains, curated metrics, units, semantic types, aggregation
+# rules, physical ranges, audit status and UCC/Alibaba audit limits are all read
+# from here.
+#
+# Honesty rules encoded below (do not relax without an audit):
+#   * M100 ExaData is NODE-level hardware telemetry. It is NOT facility power and
+#     must never be reported as a facility total.
+#   * UCC native sampling is 10 minutes. A defensible 15-minute product is not
+#     available, so UCC is kept at its native frequency and marked
+#     `native_preserved_not_15min` (task book section 3.3 last paragraph).
+#   * Alibaba GPU v2020 is a candidate only: `pai_machine_metric.csv` in this
+#     local copy is headerless and the event tables are not aggregated. No
+#     continuous 15-minute series is fabricated from it.
+#   * No source-domain dataset below is approved for training. Every source has
+#     `training_approval.approved: false` with a concrete reason.
+
+schema_version: 1
+generated_config: "configs/datasets/sources.yaml"
+
+frequency: 15min
+points_per_day: 96
+timezone: UTC
+
+paths:
+  processed_dir: data/processed
+  feature_registry: configs/datasets/feature_registry.yaml
+
+# ---------------------------------------------------------------------------
+# Long-format source panel contract (task book section 3.2)
+# ---------------------------------------------------------------------------
+panel:
+  sources: [m100_exadata]
+  # Exactly these logical columns are written; no label/target column is allowed.
+  columns:
+    - timestamp
+    - domain_id
+    - feature_name
+    - feature_value
+    - unit
+    - observed_mask
+    - coverage_ratio
+  timeline_policy: >-
+    Each domain is reindexed onto its own complete 15-minute UTC grid from the first to the
+    last observed native timestamp. Internal gaps are preserved as rows with
+    observed_mask=false and feature_value=NaN; the time axis is never compressed and
+    different domains are never spliced or paired by date.
+  coverage_ratio_definition: >-
+    Fraction of expected native samples inside the 15-minute interval that were observed.
+    M100 is native 15-minute (one expected sample per interval), so coverage_ratio is 1.0
+    where observed and 0.0 where missing; it is never used to zero-fill a value.
+  duplicate_timestamp_policy: >-
+    Duplicate native timestamps raise ContractError instead of being silently averaged or
+    dropped; the audited M100 files contain none.
+  non_finite_policy: >-
+    inf/-inf are converted to NaN before masking (count recorded in source_quality.json);
+    values outside the declared physical_range are counted and reported, never clipped.
+  default_nodes: null          # null = every M100 parquet file discovered by `glob`
+  default_max_rows_per_node: null  # null = full native span; tests/CLI may bound it
+
+# ---------------------------------------------------------------------------
+# Primary REAL source: M100 ExaData, one parquet file per node/domain
+# ---------------------------------------------------------------------------
+m100_exadata:
+  enabled: true
+  dataset_id: m100_exadata_pretrain
+  display_name: "M100 ExaData node hardware telemetry"
+  site_id: m100
+  domain_id: m100_extracted_nodes
+  role: unlabeled_pretrain
+  native_frequency: 15min
+  timezone: UTC
+  timezone_verified: true
+  audit_status: partial
+  trace_anchor_timestamp: "2020-03-09T12:00:00+00:00"
+  glob: data/raw/M100/extracted/*.parquet
+  domain_id_template: "m100_node_{stem}"
+  scope: node
+  measurement_boundary: >-
+    Per-server node hardware telemetry (BMC / PSU / GPU / fan sensors). This is NODE-level
+    power and temperature telemetry: it is not facility-level power and not a facility total
+    meter. Node power must never be reported as facility kW.
+  interval_semantics: >-
+    timestamp = start of a native 15-minute [t, t+15min) interval. The `_avg` columns are the
+    mean of the underlying hardware samples over that native interval; no additional
+    resampling is performed in Stage 1.
+  availability_semantics: >-
+    Historical observations only. There is no future-known field. Missing rows are holes in
+    node telemetry (node offline / exporter gap), not zeros.
+  excluded_columns:
+    - value                      # integer bookkeeping column, not a physical metric
+    - __index_level_0__          # parquet/pandas index bookkeeping, not a physical metric
+  excluded_metrics:
+    pcie_avg: >-
+      Deferred: the unit/physical meaning of `pcie_avg` is not documented in the local copy;
+      it is not registered as a physical feature rather than guessing W.
+    gpu0_mem_temp_avg: >-
+      Deferred: memory-junction temperature duplicates gpu core thermal telemetry for this
+      Stage-1 curated set; it remains available for later review.
+  metric_suffixes: >-
+    Only the `_avg` statistic is curated for the 15-minute panel in Stage 1; the `_std`,
+    `_min` and `_max` columns remain raw and are not registered. Available extras (e.g.
+    interval extremes) can be registered later with their own statistic semantics.
+  training_approval:
+    approved: false
+    reason: >-
+      audit_status=partial: units are inferred from column naming and vendor telemetry;
+      the physical mapping of p0/p1/ps0/ps1 channels is not independently documented, and
+      the data is node-level. Stage-3 pretraining use needs a separate field-semantics
+      review/approval; Stage-1/2 must not train on it.
+  features:
+    - canonical_name: node_total_power_w
+      raw_name: total_power_avg
+      unit: W
+      semantic_type: power
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [0, 3000]
+      measurement_point: "node total power rail (BMC/PSU-derived per-node total)"
+      notes: >-
+        Node-level power only. Real observed range is roughly 0.3-1.8 kW per node; this is an
+        auxiliary node signal, never a facility total.
+    - canonical_name: cpu0_power_w
+      raw_name: p0_power_avg
+      unit: W
+      semantic_type: power
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [0, 400]
+      measurement_point: "CPU socket 0 package power"
+      notes: "Socket-level power; the p0/p1 channel mapping is vendor telemetry, not independently audited."
+    - canonical_name: cpu1_power_w
+      raw_name: p1_power_avg
+      unit: W
+      semantic_type: power
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [0, 400]
+      measurement_point: "CPU socket 1 package power"
+      notes: "Socket-level power; the p0/p1 channel mapping is vendor telemetry, not independently audited."
+    - canonical_name: cpu0_memory_power_w
+      raw_name: p0_mem_power_avg
+      unit: W
+      semantic_type: power
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [0, 200]
+      measurement_point: "CPU socket 0 memory power domain"
+      notes: "Power-domain telemetry from the node management controller."
+    - canonical_name: cpu0_io_power_w
+      raw_name: p0_io_power_avg
+      unit: W
+      semantic_type: power
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [0, 200]
+      measurement_point: "CPU socket 0 IO power domain"
+      notes: "Power-domain telemetry from the node management controller."
+    - canonical_name: psu0_input_power_w
+      raw_name: ps0_input_power_avg
+      unit: W
+      semantic_type: power
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [0, 2000]
+      measurement_point: "power supply unit 0 AC/DC input power"
+      notes: "Per-PSU input power; two PSUs are not summed in Stage 1 (a sum would be a derived value)."
+    - canonical_name: psu1_input_power_w
+      raw_name: ps1_input_power_avg
+      unit: W
+      semantic_type: power
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [0, 2000]
+      measurement_point: "power supply unit 1 AC/DC input power"
+      notes: "Per-PSU input power; two PSUs are not summed in Stage 1 (a sum would be a derived value)."
+    - canonical_name: disk_power_w
+      raw_name: fan_disk_power_avg
+      unit: W
+      semantic_type: power
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [0, 500]
+      measurement_point: "disk backplane / fan board power rail"
+      notes: "Field name is `fan_disk_power_avg`; registered semantic type is power."
+    - canonical_name: node_ambient_temp_c
+      raw_name: ambient_avg
+      unit: "°C"
+      semantic_type: temperature
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [-40, 70]
+      measurement_point: "node chassis ambient/inlet temperature sensor"
+      notes: >-
+        Node-level ambient sensor, NOT site outdoor weather. It must not be merged with the
+        target domain's outdoor temperature field.
+    - canonical_name: gpu0_core_temp_c
+      raw_name: gpu0_core_temp_avg
+      unit: "°C"
+      semantic_type: temperature
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [-20, 120]
+      measurement_point: "GPU 0 core temperature"
+      notes: "GPU thermal telemetry; GPU presence per node is not separately audited."
+    - canonical_name: gpu1_core_temp_c
+      raw_name: gpu1_core_temp_avg
+      unit: "°C"
+      semantic_type: temperature
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [-20, 120]
+      measurement_point: "GPU 1 core temperature"
+      notes: "GPU thermal telemetry; GPU presence per node is not separately audited."
+    - canonical_name: fan0_0_speed_rpm
+      raw_name: fan0_0_avg
+      unit: RPM
+      semantic_type: fan_speed
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [0, 15000]
+      measurement_point: "chassis fan 0_0 speed"
+      notes: "Fan speed telemetry; 0 RPM is a legal observed value (fan stopped), not a missing marker."
+  # Comparison-only node label: FieldRegistry.align needs a non-unlabelled domain on one
+  # side. This declares M100's real measured node power as an auxiliary node-level label
+  # so M100 vs UCC field semantics can be compared. It is never promoted to facility kW
+  # and it is never used by the Stage-2 main model.
+  alignment_node_label:
+    dataset_id: m100_exadata_node_label
+    target_kind: active_power
+    target_scope: node
+    target_unit: W
+    label_origin: measured
+    measurement_boundary: "per-node measured power rail (NOT facility total)"
+    sampling_semantics: "15-minute interval mean of native node telemetry"
+    synthetic: false
+    notes: >-
+      Comparison-only declaration for field-semantic alignment. The formal facility-kW task
+      remains guarded by require_facility_active_power_kw and rejects this scope.
+
+# ---------------------------------------------------------------------------
+# Secondary REAL source: UCC 2023 (bounded audit only; native frequency preserved)
+# ---------------------------------------------------------------------------
+ucc2023:
+  enabled: true
+  dataset_id: ucc2023
+  display_name: "UCC 2023 public cloud-server operational dataset"
+  site_id: ucc
+  domain_id: ucc2023
+  role: unlabeled_pretrain
+  native_frequency: 10min
+  timezone: null
+  timezone_verified: false
+  audit_status: unverified
+  primary_file: data/raw/UCC2023/dataset1_combined.csv
+  secondary_file: data/raw/UCC2023/dataset2_combined.csv
+  bounded_audit_rows: 300000
+  aggregation:
+    target_frequency: 15min
+    status: native_preserved_not_15min
+    verdict: not_defensible_without_assumptions
+    reasons:
+      - >-
+        The file carries one row every 10 minutes per series, while the Stage-1 analysis grid
+        is 15 minutes. 15-minute bins are not covered by a whole number of 10-minute samples
+        (1.5 samples per bin), so a plain mean/forward-fill would fabricate the
+        interval-average definition rather than preserve it.
+      - >-
+        A time-weighted 10-min-to-15-min resampling is only defensible if the timestamps are
+        interval-start labels and the values are interval means, and even then the boundary
+        bins mix partial intervals. The local file provides no unit or interval-label
+        documentation, so this assumption is not audited.
+      - >-
+        Series have multi-day gaps; resampling would silently bridge holes. Task book section
+        3.3 requires keeping the native series and marking the missing aggregation instead of
+        manufacturing a continuous 15-minute product.
+    conclusion: >-
+      Keep UCC at its native 10-minute frequency for a future Stage-3 pretraining path (a
+      model may consume per-source native frequencies) and keep its aggregation_status
+      explicit as `native_preserved_not_15min`. UCC is NOT part of the 15-minute source panel.
+  training_approval:
+    approved: false
+    reason: >-
+      audit_status=unverified: bounded audit only; units, timezone and full-file coverage are
+      not documented. No pretraining or alignment use is approved before a full audit.
+  features:
+    - canonical_name: node_total_power_w
+      raw_name: Power
+      unit: unit_unverified
+      semantic_type: power
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: null
+      measurement_point: "per-machine power column; unit and measurement boundary unverified"
+      notes: >-
+        Same canonical hypothesis as the M100 node-total-power field, but the local file
+        documents neither unit nor interval statistic, so the two MUST NOT be merged.
+    - canonical_name: cpu_load
+      raw_name: CPU_Load
+      unit: unit_unverified
+      semantic_type: utilization
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: null
+      measurement_point: "per-machine CPU load column; percent vs ratio not documented"
+      notes: "Header only; semantics/denominator unverified."
+    - canonical_name: network_receive_rate
+      raw_name: Network_RX
+      unit: unit_unverified
+      semantic_type: network
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: null
+      measurement_point: "per-machine network receive column"
+      notes: "Header only; bytes vs bytes/s and aggregation interval unverified."
+    - canonical_name: network_transmit_rate
+      raw_name: Network_TX
+      unit: unit_unverified
+      semantic_type: network
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: null
+      measurement_point: "per-machine network transmit column"
+      notes: "Header only; bytes vs bytes/s and aggregation interval unverified."
+    - canonical_name: node_inlet_air_temperature
+      raw_name: Inlet_Temperature
+      unit: unit_unverified
+      semantic_type: temperature
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: null
+      measurement_point: "machine inlet temperature; sensor position unverified"
+      notes: >-
+        Not mergeable with M100 `node_ambient_temp_c` (different sensor position hypothesis)
+        or with the target's outdoor weather field.
+    - canonical_name: cpu1_temperature
+      raw_name: CPU1_Temperature
+      unit: unit_unverified
+      semantic_type: temperature
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: null
+      measurement_point: "CPU 1 temperature column"
+      notes: "Header only; unit unverified."
+    - canonical_name: cpu2_temperature
+      raw_name: CPU2_Temperature
+      unit: unit_unverified
+      semantic_type: temperature
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: null
+      measurement_point: "CPU 2 temperature column"
+      notes: "Header only; unit unverified."
+    - canonical_name: fan1_speed
+      raw_name: Fan_speed1
+      unit: unit_unverified
+      semantic_type: fan_speed
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: null
+      measurement_point: "chassis fan 1 speed column"
+      notes: "Header only; RPM vs percent unverified."
+    - canonical_name: fan2_speed
+      raw_name: Fan_speed2
+      unit: unit_unverified
+      semantic_type: fan_speed
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: null
+      measurement_point: "chassis fan 2 speed column"
+      notes: "Header only; RPM vs percent unverified."
+    - canonical_name: fan3_speed
+      raw_name: Fan_speed3
+      unit: unit_unverified
+      semantic_type: fan_speed
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: null
+      measurement_point: "chassis fan 3 speed column"
+      notes: "Header only; RPM vs percent unverified."
+    - canonical_name: fan4_speed
+      raw_name: Fan_speed4
+      unit: unit_unverified
+      semantic_type: fan_speed
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: null
+      measurement_point: "chassis fan 4 speed column"
+      notes: "Header only; RPM vs percent unverified."
+    - canonical_name: ram_total
+      raw_name: Ram
+      unit: unit_unverified
+      semantic_type: memory
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: null
+      measurement_point: "total RAM column"
+      notes: "Header only; GiB vs other unit unverified."
+    - canonical_name: ram_used
+      raw_name: Ram_Used
+      unit: unit_unverified
+      semantic_type: memory
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: null
+      measurement_point: "used RAM column"
+      notes: "Header only; GiB vs other unit unverified."
+    - canonical_name: running_vm_count
+      raw_name: No_Of_Running_vms
+      unit: count
+      semantic_type: event_count
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [0, 1000000]
+      measurement_point: "number of running VMs on the machine"
+      notes: "Count column; count semantics inferred from the header only."
+    - canonical_name: cpu_cores_total
+      raw_name: CPU_cores
+      unit: count
+      semantic_type: other
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [0, 65536]
+      measurement_point: "total CPU cores of the machine"
+      notes: "Count column; count semantics inferred from the header only."
+    - canonical_name: cpu_cores_used
+      raw_name: CPU_cores_used
+      unit: count
+      semantic_type: other
+      statistic: instantaneous
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [0, 65536]
+      measurement_point: "CPU cores in use on the machine"
+      notes: "Count column; count semantics inferred from the header only."
+
+# ---------------------------------------------------------------------------
+# Candidate source: Alibaba GPU v2020 (registered, NOT ingested)
+# ---------------------------------------------------------------------------
+alibaba_gpu_v2020:
+  enabled: false
+  dataset_id: alibaba_gpu_v2020
+  display_name: "Alibaba Cluster Trace GPU v2020"
+  site_id: alibaba
+  role: candidate
+  native_frequency: null
+  timezone: null
+  timezone_verified: false
+  audit_status: unverified
+  status: not_ingested
+  directory: data/raw/Alibaba-GPU-v2020
+  files:
+    - pai_machine_metric.csv
+    - pai_machine_spec.csv
+    - pai_instance_table.csv
+    - pai_job_table.csv
+    - pai_task_table.csv
+    - pai_sensor_table.csv
+    - pai_group_tag_table.csv
+  reasons:
+    - >-
+      `pai_machine_metric.csv` in this local copy is headerless (first line starts with a
+      machine-id hash and no column names), so the metric columns cannot be mapped to
+      audited semantic fields without the official schema.
+    - >-
+      The remaining tables are event/job/instance/sensor tables in long, per-event form;
+      they are not aggregated to a continuous 15-minute series in this round.
+    - >-
+      Task book section 3.3: when a source cannot be reliably converted to 15-minute
+      features, keep the raw events + field notes and mark the aggregation as incomplete.
+      No continuous series may be fabricated, so this source is registered but not processed.
+  training_approval:
+    approved: false
+    reason: >-
+      Not ingested and not audited: no field schema, no native-frequency audit, no aggregated
+      series. It stays a candidate for a later Stage-3 round.
+
+# ---------------------------------------------------------------------------
+# Target-domain reference facts (documented only; target-power owns the files)
+# ---------------------------------------------------------------------------
+# These facts let Stage 1 align source fields against the target domain without
+# importing any target pipeline. They are NOT a target data adapter. The
+# authoritative processed target files and their metadata are owned by the
+# `target-power` teammate (data/processed/nlr*.parquet).
+target_reference:
+  dataset_id: nlr_esif
+  display_name: "NLR ESIF building-data power + outdoor weather"
+  site_id: nlr_esif
+  domain_id: nlr_esif_combined
+  role: target_supervised
+  native_frequency: 15min
+  timezone: UTC
+  timezone_verified: false
+  audit_status: partial
+  trace_anchor_timestamp: "2015-11-10T03:00:00+00:00"
+  interval_semantics: >-
+    timestamp = start of a 15-minute [t, t+15min) interval; the processed frame is on a
+    contiguous 15-minute UTC grid.
+  availability_semantics: >-
+    Historical facility power and outdoor weather observations. The label is a component sum,
+    available after the interval closes; no future-known field is declared.
+  ownership_note: >-
+    Documented reference facts only. target-power owns the authoritative processed target
+    files and target metadata; Stage 1 changes neither of them.
+  label:
+    field: facility_derived_kw
+    target_kind: active_power
+    target_scope: facility
+    target_unit: kW
+    label_origin: component_sum
+    label_type: facility_derived_kw
+    measurement_boundary: >-
+      Sum of five audited facility sub-meter components (it, cooling, hvac, plug_and_light,
+      pump). This is a derived facility value, not an independent facility total meter.
+    sampling_semantics: "15-minute interval means, summed component-wise; timezone unverified"
+    synthetic: false
+    composition_fields:
+      - it_power_kw
+      - cooling_kw
+      - hvac_kw
+      - plug_and_light_kw
+      - pump_kw
+    composition_policy: >-
+      The five component columns compose the label. They are NOT candidate model inputs and
+      must never be used as future-known features to claim an independent operational-metric
+      mapping (task book section 3.5). They are registered as label semantics only.
+  features:
+    - canonical_name: site_outdoor_temperature_c
+      raw_name: temperature_c
+      unit: "°C"
+      semantic_type: temperature
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [-60, 60]
+      measurement_point: "outdoor weather station at the facility site"
+      notes: >-
+        Outdoor weather at the site, NOT the node chassis ambient/inlet temperature measured
+        by M100; the different measurement point forbids merging the two temperature fields.
+    - canonical_name: site_outdoor_humidity_pct
+      raw_name: humidity_pct
+      unit: "%"
+      semantic_type: other
+      statistic: interval_mean
+      aggregation_rule: native_kept
+      availability: historical_observed
+      physical_range: [0, 100]
+      measurement_point: "outdoor weather station at the facility site"
+      notes: "Outdoor relative humidity at the site; no comparable source-domain humidity field is registered."
+
+# ---------------------------------------------------------------------------
+# Field-registry / fusion semantics (task book sections 3.4 and 8.2)
+# ---------------------------------------------------------------------------
+field_registry:
+  output: configs/datasets/feature_registry.yaml
+  target_only:
+    future_mapping:
+      local_weight: 1.0
+      global_fusion_weight: null
+      status: semantic_reservation_only
+    execution_note: >-
+      `local_weight: 1.0` is a Stage-4 semantic reservation for target-only fields in their own
+      local branch ("do not additionally suppress"), NOT a physical coefficient and NOT a share
+      of the final prediction. Stages 1 and 2 must not execute any mapping and must not feed
+      target-only fields into the Stage-2 main model A.
+  global_fusion_weight: null
+  global_fusion_status: unresolved
+  approval:
+    approved_for_stage1_analysis: true
+    approved_for_pretraining: false
+    approved_for_facility_kw_training: false
+    reason: >-
+      Stage 1 is analysis/preprocessing only. M100 and UCC audits are partial/unverified, so no
+      source-domain dataset is approved for training in this round.
+
+# ---------------------------------------------------------------------------
+# Analysis defaults for scripts/analyze_sources.py (real-data figures only)
+# ---------------------------------------------------------------------------
+analysis:
+  seed: 0
+  distribution_sample_rows_per_feature: 50000
+  # Window chosen inside node 10's longest gap-free observed run (2021-11-04 .. 2022-03-28)
+  # so figures show real dynamics instead of a multi-week telemetry gap.
+  example_domain: m100_node_10
+  timeseries_start: "2021-11-10T00:00:00+00:00"
+  timeseries_end: "2021-11-24T00:00:00+00:00"
+  periodicity_start: "2021-11-10T00:00:00+00:00"
+  periodicity_end: "2021-12-10T00:00:00+00:00"
+  periodicity_max_lag: 672
+  periodicity_features:
+    - node_total_power_w
+    - gpu0_core_temp_c
+    - node_ambient_temp_c

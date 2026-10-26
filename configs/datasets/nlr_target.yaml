@@ -1,0 +1,216 @@
+# Stage 1 target-domain dataset: NLR ESIF five-component facility power.
+#
+# This file is the single source of truth for the Stage 1 target-domain pipeline
+# (src/data/target_power.py, scripts/prepare_target_power.py,
+# scripts/analyze_power.py).  No site-specific field name, path, unit factor or
+# threshold is hardcoded in Python: every one of them is declared here.
+#
+# HONEST LABEL STATEMENT
+# ----------------------
+# `facility_power_kw` is the sum of five audited facility sub-meter component
+# interval means (it / cooling / hvac / plug_and_light / pump).  It is therefore
+# a *derived* facility power label (`facility_derived_kw`), NOT an independent
+# facility total-meter measurement.  The dataset contains no independent facility
+# total-meter channel.  This distinction is kept in every artefact and must not
+# be "upgraded" to `facility_measured_kw`.
+
+dataset_id: nlr_esif_target
+site_id: nlr_esif
+domain_id: nlr_esif_target
+role: target_supervised
+
+# Raw influx timestamps are timezone-naive.  They are treated as naive UTC
+# (project-wide internal convention), but the local timezone of the ESIF site has
+# NOT been verified.  Stage 1 day/slot arithmetic is anchor-based on the 96-slot
+# trace grid, so it never needs a verified local timezone and never applies DST
+# rules; operations that would need local time are blocked downstream by
+# DatasetSpec.require_verified_timezone().
+timezone: UTC
+timezone_verified: false
+timezone_note: >-
+  Naive raw timestamps are stored as naive UTC. The site local timezone is
+  unverified (timezone_verified=false). All prepared time axes are anchor-based
+  96-slot trace grids anchored at the first valid 15-minute slot, so no local
+  time or DST conversion is applied anywhere in Stage 1.
+
+frequency: 15min
+points_per_day: 96
+
+native_sampling:
+  # Expected number of native (~60 s) samples inside one 15-minute interval.
+  # This is a *declared expectation* that is audited against the real data by
+  # build_target_power_frame(); the measured distribution is written to
+  # target_quality.json.  The raw export spacing is ~58-67 s (5-95%), so 15
+  # samples per interval is the expectation, not an assumption that every
+  # interval really has 15 samples.
+  expected_samples_per_interval: 15
+  expected_native_interval_seconds: 60
+
+coverage:
+  # coverage_ratio = min(valid native samples with ALL five components finite,
+  #                     expected_samples_per_interval)
+  #                  / expected_samples_per_interval   -> always in [0, 1]
+  #
+  # power_valid = (all five component interval means are finite) AND
+  #               (coverage_ratio >= coverage_validity_threshold)
+  #
+  # Threshold rationale (verified against the raw archive, not guessed):
+  # * The raw archive normally has 15 samples per 15-minute interval, but a few
+  #   logger windows sample every ~5 minutes: inside the verified first 31 trace
+  #   days there are intervals with only 2-14 samples.  Setting a 0.8 threshold
+  #   would mark 242 of those 2976 first-month slots invalid even though each has
+  #   real observations (two or more native samples).
+  # * Stage 1's declared acceptance criterion is that the first 31 trace days from
+  #   the first valid slot are 100% covered (2976/2976), so the validity gate must
+  #   accept an interval mean built from at least one native observation.
+  # * 1/15 therefore encodes "at least one expected native sample present".  It
+  #   is a *presence* gate, not a quality gate: the actual per-slot
+  #   coverage_ratio is stored and must be used for quality-aware evaluation
+  #   downstream.  Nothing is imputed, filled or back-filled.
+  expected_native_samples_per_interval: 15
+  coverage_validity_threshold: 0.06666666666666667   # == 1 / 15
+  validity_rule: >-
+    power_valid = all five component interval means finite AND coverage_ratio >=
+    coverage_validity_threshold. Missing/absent intervals keep their grid row with
+    power_kw=NaN and power_valid=false; the time axis is never compressed.
+  coverage_ratio_rule: >-
+    coverage_ratio = min(count of native samples whose five components are all
+    finite, expected_native_samples_per_interval) / expected_native_samples_per_interval.
+
+label:
+  name: facility_power_kw
+  kind: active_power
+  scope: facility
+  unit: kW
+  label_origin: component_sum
+  expected_label_type: facility_derived_kw
+  # Label composition (task book §3.1 C / §3.5): the facility label is the sum of
+  # these five component interval means on the same 15-minute grid.
+  derived_columns:
+    - it_power_kw
+    - cooling_kw
+    - hvac_kw
+    - plug_and_light_kw
+    - pump_kw
+  aggregation_rule: >-
+    Arithmetic mean of the ~60 s native samples inside each left-closed,
+    right-open 15-minute interval [t, t+15min); the interval START t is the label
+    timestamp. The facility label is the row-wise sum of the five component
+    interval means (Python float64, min_count=5 so any missing component makes the
+    label NaN instead of silently summing fewer components).
+  measurement_boundary: >-
+    Facility electrical boundary represented by five audited sub-meter channels
+    (IT power, cooling, HVAC, plug-and-light, pumps) exported by the ESIF building
+    data system. This is a component-sum estimate of facility active power, not
+    an independent facility total-meter reading.
+  sampling_semantics: >-
+    15-minute interval arithmetic mean of native ~60 s active-power samples,
+    labelled with the interval start (timezone-naive UTC by convention).
+  available_at_lag_seconds: 0
+  notes: >-
+    Label type is facility_derived_kw. The five components are the label
+    composition, not independent future-known features, and must never be fed to
+    a model as future-known covariates.
+  composition_warning: >-
+    COMPONENT-SUM LABEL: it_power_kw + cooling_kw + hvac_kw + plug_and_light_kw +
+    pump_kw. The components are the label composition and must NOT be used as
+    future-known features for predicting this label; doing so would reconstruct
+    the label instead of forecasting it.
+
+sources:
+  power:
+    path: data/raw/NLR_Dataset/esif.influx.buildingData.PUE.combined.parquet
+    timestamp_field: ts
+    component_fields:
+      - it_power_kw
+      - cooling_kw
+      - hvac_kw
+      - plug_and_light_kw
+      - pump_kw
+    audit_columns:
+      - energy_reuse
+      - ere
+      - pue
+      - day
+    expected_rows: 4569543          # pyarrow file-metadata row count, audited by inspect_table
+    expected_native_interval_seconds: 60
+  weather:
+    path: data/raw/NLR_Dataset/esif.influx.buildingData.outside.combined.parquet
+    timestamp_field: ts
+    expected_native_interval_seconds: 60
+    # The 1970-01-01 sentinel row is not a real observation and is excluded.
+    sentinel_before: "2000-01-01T00:00:00"
+    raw_unit_column: unit
+    raw_unit_note: >-
+      The raw `unit` column is null for most rows and equal to "outside" only from
+      2024 on; it is audited and reported but is not trusted as a unit declaration.
+      The values are degrees Fahrenheit, matching the documented historical config
+      conversion scale=0.5555555555555556, offset=-17.77777777777778 and verified
+      against the pre-existing processed NLR file (temperature_c agrees to <1e-9).
+    fields:
+      outdoor_air_temp:
+        source_field: outdoor_air_temp
+        feature_name: outdoor_air_temp_c
+        semantic_type: air_temperature
+        source_unit: degF
+        unit: degC
+        scale: 0.5555555555555556        # degC = degF * scale + offset
+        offset: -17.77777777777778
+        physical_range: [-60.0, 60.0]
+      outdoor_air_humidity:
+        source_field: outdoor_air_humidity
+        feature_name: relative_humidity_pct
+        semantic_type: relative_humidity
+        source_unit: percent
+        unit: percent
+        scale: 1.0
+        offset: 0.0
+        physical_range: [0.0, 100.0]
+    field_role: target_only             # registered for the future auxiliary path only
+    future_mapping:
+      local_weight: 1.0                 # semantics reserved for Stage 4; NOT used in Stage 1/2
+      global_fusion_weight: null
+      status: reserved_not_used_stage1_2
+    availability: historical_observed   # NOT a known-future feature
+
+analysis:
+  # t0 of the trace grid. Verified against the raw archive: the first raw row with
+  # all five components finite is 2016-06-12T06:00:18 UTC, whose 15-minute
+  # interval starts at 2016-06-12T06:00:00 UTC. All 136,484 earlier raw rows
+  # (2015-11-10 03:00 -> 2016-06-12 05:59) have all five components NaN (0%
+  # label coverage) and are excluded from the prepared label frame with explicit
+  # counts; this is a documented data-selection boundary, not gap compression.
+  window_start: "2016-06-12T06:00:00"
+  window_end: null                    # exclusive raw-sample upper bound; null = full archive
+  anchor_basis: >-
+    First 15-minute interval containing a fully finite raw component observation.
+    Anchor-based 96-slot trace days are used; because the timezone is unverified
+    they are NOT claimed to be local calendar days.
+  # Physical-range review only: out-of-range counts are reported in the quality
+  # report and are NEVER silently clipped (per data contract).
+  physical_ranges:
+    facility_power_kw: [0.0, 100000.0]
+    it_power_kw: [0.0, 20000.0]
+    cooling_kw: [-100.0, 20000.0]
+    hvac_kw: [-100.0, 20000.0]
+    plug_and_light_kw: [0.0, 1000.0]
+    pump_kw: [-100.0, 1000.0]
+
+raw_power_start_note: >-
+  All five power components are NaN before 2016-06-12 06:00 UTC: 136,484 raw rows
+  (2015-11-10 03:00:01 -> 2016-06-12 05:59) contain 0% finite component values.
+  The prepared label frame therefore starts at the first 15-minute interval with a
+  complete component observation (2016-06-12 06:00 UTC). The excluded rows and
+  the exact first finite raw sample (2016-06-12T06:00:18 UTC) are recorded in
+  target_metadata.json / target_quality.json. No missing grid position inside the
+  selected range is removed or shifted.
+
+outputs:
+  out_dir: data/processed
+  target_power_file: processed_target_power.parquet
+  target_components_file: target_components.parquet
+  target_features_file: processed_target_features.parquet
+  metadata_file: target_metadata.json
+  quality_file: target_quality.json
+
+analysis_output_dir: results/analysis/stage1/power_characteristics
