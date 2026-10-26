@@ -1,11 +1,67 @@
 # PowerForecast
 
-**面向算力中心（数据中心 / 超算中心）设施级有功功率（kW）预测的研究工程骨架**
+**面向算力中心（数据中心 / 超算中心）设施级有功功率（kW）预测的研究工程**
 
-> 本分支 `research/power-transfer-v1` 是从 `origin/main` 重建的**新工程骨架**，只包含数据契约、时间协议、两个真实可运行的 CPU 基线、评价与冻结生命周期。
-> **本轮不包含**任何迁移学习 / 无标签预训练 / 主辅融合的算法实现，也不产出真实设施 kW 的科研结论。合成数据结果一律标记 `synthetic=true`、`research_result=false`。
+> 当前分支 `research/power-transfer-v1` 已完成《算力中心中短期负荷预测模型开发任务书 V2.0》的
+> **第一阶段（多源数据预处理与特征分析）** 与 **第二阶段（历史功率主模型 A：Chronos-2 + TiRex-2 零样本等权融合）**。
+> 第三至第五阶段（无标签运行指标预训练、功率映射、主辅融合）**只保留接口与数据基础，未实现、未声称提升**。
 
-## 1. 本轮交付是什么
+## 0. V2.0 交付总览（当前主线）
+
+| 项目 | 状态 | 产物/证据 |
+|---|---|---|
+| 目标域真实功率数据处理（NLR ESIF，`facility_derived_kw`） | ✅ 完成 | `data/processed/processed_target_power.parquet`、`target_metadata.json`、`docs/STAGE1_TARGET_REPORT.md` |
+| 目标功率特性分析（曲线/典型日/ACF/爬坡/峰谷/覆盖率） | ✅ 完成 | `results/analysis/stage1/power_characteristics/`（7 图 + `power_stats.json`） |
+| 真实源域运行指标处理（M100，16 节点 15min 原生） | ✅ 完成 | `data/processed/processed_source_features.parquet`（1720 万行长表）、`source_metadata.json`、`docs/STAGE1_SOURCE_REPORT.md` |
+| 异构字段注册与对齐（共享/源独有/目标独有/不可比） | ✅ 完成 | `configs/datasets/feature_registry.yaml`、`docs/FEATURE_ALIGNMENT_REPORT.md` |
+| 主模型 A：Chronos-2 + TiRex-2，P50 零样本，固定 0.5/0.5 | ✅ 真实运行 | `src/models/foundation/`、`src/models/power_main/` |
+| 固定 D14/D22 协议：4h / 8h / 24h / 3d（7d 可选） | ✅ 真实运行 | `configs/experiments/power_main_v1.yaml`、`results/runs/<run_id>/` |
+| 基线 B0/B1 同协议对照 | ✅ 完成 | 同一 run 内同起报/同标签/同指标 |
+| 指标/分层报告/7 类图/可复现记录 | ✅ 完成 | `metrics.csv`、`origin_metrics.csv`、`daily_metrics.csv`、`improvements.csv`、`predictions.parquet`、`figures/` |
+| 第三至第五阶段（预训练/映射/融合） | 🚧 未实现 | `docs/TODO_RESEARCH.md`；全局融合权重 `None` |
+
+### 第二阶段真实测试集结果（NLR ESIF，`facility_derived_kw`，D22–D30 起报，CPU 零样本）
+
+| 预测跨度 | B0 前一天同刻 WAPE | B1 前三天均值 WAPE | A1 Chronos-2 WAPE | A2 TiRex-2 WAPE | **A3 等权融合 WAPE** |
+|---|---|---|---|---|---|
+| 4h | 9.05% | 9.74% | 1.27% | 1.11% | **1.17%** |
+| 8h | 9.14% | 9.80% | 1.49% | 1.38% | **1.41%** |
+| 24h | 7.59% | 8.61% | 5.82% | 5.95% | **5.87%** |
+| 3d | 7.58% | 8.40% | 6.07% | 6.57% | **6.23%** |
+| 7d（可选） | 10.61% | 8.69% | 6.85% | 7.68% | **7.12%** |
+
+**如实说明**：等权融合并不总是优于两个单模型 —— 4h/8h 上 TiRex-2 略优、24h/3d/7d 上 Chronos-2 略优，
+A3 只在 4h/8h 上优于两者之一；不使用测试集选择权重（见 `docs/DELIVERY_REPORT_V2.md`）。
+
+### 快速命令
+
+```powershell
+# 第一阶段：真实目标域 / 源域数据处理与分析（只读原始数据，写 data/processed 与 results/analysis）
+python -m scripts.prepare_target_power --config configs/datasets/nlr_target.yaml
+python -m scripts.analyze_power        --config configs/datasets/nlr_target.yaml
+python -m scripts.prepare_source_features --config configs/datasets/sources.yaml
+python -m scripts.analyze_sources      --config configs/datasets/sources.yaml
+
+# 第二阶段：真实零样本主模型（离线权重，4h/8h/24h/3d × dev+test × 5 模型）
+python -m scripts.run_power_main --config configs/experiments/power_main_v1.yaml
+
+# 可选 7d 预设（验证长跨度递推）与结果摘要
+python -m scripts.run_power_main --horizons 7d --splits development test
+python -m scripts.summarize_power_run --run results/runs/<run_id>
+
+# 权重/依赖自检（独立准备步骤；实验默认离线，不下载）
+python -m scripts.probe_foundation_models
+```
+
+真实实验需要 `torch(CPU) + chronos-forecasting==2.3.2 + tirex-2==0.3.0`（见 `requirements-optional.txt`）
+以及本地冻结权重缓存；权重缺失时脚本明确报错，绝不以随机初始化或别的模型输出冒充。
+
+## 1. 阶段 0：通用工程骨架（本分支前序交付）
+
+> 以下内容来自本轮之前的骨架重建，仍是当前工程的地基（数据契约、时间协议、冻结生命周期、合成 smoke）。
+> 合成数据结果一律标记 `synthetic=true`、`research_result=false`，不产出真实设施 kW 科研结论。
+
+## 1.1 阶段 0 交付是什么
 
 | 能力 | 状态 |
 |---|---|

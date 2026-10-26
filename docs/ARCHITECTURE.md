@@ -2,6 +2,21 @@
 
 > 本文件描述**代码实际结构**。凡标注"仅接口"的模块，本轮没有真实算法实现，调用会明确失败。
 
+> **V2.0 阶段一/二补充（当前主线）**：在下方骨架之上新增了两条真实数据/模型链路，
+> 详细说明见 `docs/STAGE1_TARGET_REPORT.md`、`docs/STAGE1_SOURCE_REPORT.md`、
+> `docs/FEATURE_ALIGNMENT_REPORT.md`、`docs/STAGE2_MAIN_MODEL.md`：
+>
+> ```text
+> 真实目标域: data/raw/NLR → src/data/target_power.py → data/processed/processed_target_power.parquet
+>                                └→ scripts/analyze_power.py → results/analysis/stage1/power_characteristics/
+> 真实源域:   data/raw/M100  → src/data/source_features.py → data/processed/processed_source_features.parquet
+>                                └→ FieldRegistry.align → configs/datasets/feature_registry.yaml
+> 主模型 A:   历史 kW → src/models/foundation/{chronos2,tirex2}.py → src/models/power_main/ensemble.py(0.5/0.5)
+>                        → scripts/run_power_main.py → results/runs/<run_id>/{predictions,metrics,...}
+> ```
+>
+> 第三~五阶段（无标签预训练、目标域映射、主辅融合）仍未实现，仅保留接口与数据基础。
+
 ## 1. 一句话架构
 
 ```text

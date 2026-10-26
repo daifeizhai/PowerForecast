@@ -1,9 +1,21 @@
-# Optional packages. None of them is needed for install, tests, or the smoke
-# runs. Research/plotting tools are listed here so the core install stays CPU
-# only. Do not add GPU-only packages.
+# Optional packages. None of them is needed for the Stage-0 skeleton install,
+# its tests, or the synthetic smoke runs. Stage 1/2 real runs need the parts
+# marked "Stage 2".
 -r requirements.txt
 
-matplotlib>=3.9,<4          # optional run figures (must be labelled synthetic)
+matplotlib>=3.9,<4          # optional run figures (must be labelled synthetic/real accordingly)
 scikit-learn>=1.5,<2        # reserved for future fitted baselines / preprocessing
 statsmodels>=0.14,<0.15     # reserved for future statistical baselines
 lightgbm>=4,<5              # planned only: never surfaced as a supported model
+
+# --- Stage 2 (historical-power main model A) — CPU only, no GPU required -------
+# Verified versions on the delivery machine (Windows 11, Python 3.13, CPU):
+#   chronos-forecasting 2.3.2, tirex-2 0.3.0, torch 2.8.0+cpu,
+#   transformers 4.57.6, accelerate 1.15.0, gluonts 0.16.3.
+# Model weights are NOT installed by pip: they are resolved from a local frozen
+# cache and hashed into every experiment manifest (see docs/STAGE2_MAIN_MODEL.md).
+torch>=2.4,<3
+chronos-forecasting>=2.3,<2.4
+tirex-2>=0.3,<0.4
+transformers>=4.57,<5
+accelerate>=1.0,<2
