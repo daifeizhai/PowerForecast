@@ -1,0 +1,437 @@
+{
+  "status": "complete",
+  "protocol": "sapf_robust_direction_v1",
+  "experiment": {
+    "protocol": "sapf_robust_direction_v1",
+    "research_method": "Stable z-score experts and constrained transfer decision",
+    "seed": 42,
+    "protocol_anchor": "2000-01-03T00:00:00Z",
+    "context_days": 14,
+    "dataset_clocks": {
+      "m100": {
+        "start": "2021-12-08T00:00:00Z",
+        "days": 110,
+        "test_start_day": 83,
+        "test_stop_day": 110
+      },
+      "ucc": {
+        "start": "2019-04-09T00:00:00",
+        "days": 72,
+        "test_start_day": 22,
+        "test_stop_day": 60
+      }
+    },
+    "domain_roles": {
+      "m100": {
+        "source": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "calibration": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "validation": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "test": [
+          "m100_rack0_node6",
+          "m100_rack0_node9",
+          "m100_rack0_node13",
+          "m100_rack0_node17",
+          "m100_rack1_node24",
+          "m100_rack1_node31",
+          "m100_rack1_node35",
+          "m100_rack1_node38"
+        ]
+      },
+      "ucc": {
+        "source": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "calibration": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "validation": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "test": [
+          "ucc_d1_qh2_rcc130",
+          "ucc_d1_qh2_rcc131",
+          "ucc_d1_qh2_rcc132",
+          "ucc_d1_qh2_rcc133",
+          "ucc_d1_qh2_rcc134",
+          "ucc_d1_qh2_rcc135",
+          "ucc_d1_qh2_rcc136",
+          "ucc_d1_qh2_rcc137",
+          "ucc_d1_qh2_rcc138",
+          "ucc_d1_qh2_rcc139",
+          "ucc_d1_qh2_rcc140",
+          "ucc_d1_qh2_rcc141",
+          "ucc_d1_qh2_rcc142",
+          "ucc_d1_qh2_rcc143",
+          "ucc_d1_qh2_rcc144",
+          "ucc_d1_qh2_rcc145",
+          "ucc_d1_qh2_rcc146",
+          "ucc_d1_qh2_rcc147",
+          "ucc_d1_qh2_rcc148",
+          "ucc_d1_qh2_rcc149",
+          "ucc_d1_qh2_rcc150",
+          "ucc_d1_qh2_rcc151",
+          "ucc_d1_qh2_rcc152",
+          "ucc_d1_qh2_rcc153",
+          "ucc_d1_qh2_rcc154",
+          "ucc_d1_qh2_rcc155",
+          "ucc_d1_qh2_rcc156",
+          "ucc_d1_qh2_rcc157",
+          "ucc_d1_qh2_rcc158",
+          "ucc_d1_qh2_rcc159",
+          "ucc_d1_qh2_rcc160",
+          "ucc_d1_qh2_rcc161",
+          "ucc_d1_qh2_rcc162",
+          "ucc_d1_qh2_rcc163",
+          "ucc_d1_qh2_rcc164",
+          "ucc_d1_qh2_rcc165",
+          "ucc_d1_qh2_rcc166",
+          "ucc_d1_qh2_rcc167",
+          "ucc_d1_qh2_rcc168",
+          "ucc_d1_qh2_rcc169",
+          "ucc_d1_qh2_rcc170",
+          "ucc_d1_qh2_rcc171",
+          "ucc_d1_qh2_rcc172",
+          "ucc_d1_qh2_rcc173",
+          "ucc_d1_qh2_rcc174",
+          "ucc_d1_qh2_rcc175",
+          "ucc_d1_qh2_rcc176",
+          "ucc_d1_qh2_rcc177",
+          "ucc_d1_qh2_rcc178",
+          "ucc_d1_qh2_rcc179",
+          "ucc_d1_qh2_rcc180",
+          "ucc_d1_qh2_rcc181",
+          "ucc_d1_qh2_rcc182",
+          "ucc_d1_qh2_rcc183",
+          "ucc_d1_qh2_rcc184",
+          "ucc_d1_qh2_rcc185",
+          "ucc_d1_qh2_rcc186",
+          "ucc_d1_qh2_rcc187",
+          "ucc_d1_qh2_rcc188",
+          "ucc_d1_qh2_rcc189",
+          "ucc_d1_qh2_rcc190",
+          "ucc_d1_qh2_rcc191",
+          "ucc_d1_qh2_rcc192",
+          "ucc_d1_qh2_rcc193",
+          "ucc_d1_qh2_rcc194",
+          "ucc_d1_qh2_rcc195",
+          "ucc_d2_qh2_rcc222",
+          "ucc_d2_qh2_rcc223",
+          "ucc_d2_qh2_rcc224",
+          "ucc_d2_qh2_rcc225",
+          "ucc_d2_qh2_rcc227",
+          "ucc_d2_qh2_rcc228",
+          "ucc_d2_qh2_rcc229",
+          "ucc_d2_qh2_rcc230",
+          "ucc_d2_qh2_rcc231",
+          "ucc_d2_qh2_rcc233",
+          "ucc_d2_qh2_rcc234",
+          "ucc_d2_qh2_rcc235",
+          "ucc_d2_qh2_rcc238",
+          "ucc_d2_qh2_rcc239",
+          "ucc_d2_qh2_rcc243",
+          "ucc_d2_qh2_rcc246",
+          "ucc_d2_qh2_rcc248",
+          "ucc_d2_qh2_rcc249",
+          "ucc_d2_qh2_rcc251",
+          "ucc_d2_qh2_rcc255",
+          "ucc_d2_qh2_rcc256",
+          "ucc_d2_qh2_rcc259",
+          "ucc_d2_qh2_rcc260",
+          "ucc_d2_qh2_rcc261"
+        ]
+      }
+    },
+    "retired_m100_v1_test": [
+      "m100_rack0_node4",
+      "m100_rack0_node7",
+      "m100_rack0_node10",
+      "m100_rack0_node14",
+      "m100_rack0_node18",
+      "m100_rack1_node22",
+      "m100_rack1_node25",
+      "m100_rack1_node28",
+      "m100_rack1_node32",
+      "m100_rack1_node36"
+    ],
+    "horizon_days": {
+      "4h": 0.16666666666666666,
+      "24h": 1,
+      "3d": 3
+    },
+    "source_development_cutoff": 44,
+    "development_days": [
+      44,
+      45,
+      46
+    ],
+    "validation_days": [
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61
+    ],
+    "final_source_cutoff": 72,
+    "ridge_alpha": 100.0,
+    "alpha_candidates": [
+      0.0,
+      0.1,
+      0.25,
+      0.5
+    ],
+    "correction_bound_sigma": 2.0,
+    "numerical_gate": {
+      "nonfinite_fraction_max": 0.0,
+      "negative_fraction_max": 0.01,
+      "severe_z_abs": 50.0,
+      "severe_z_fraction_max": 0.001,
+      "extreme_level_ratio": 5.0,
+      "extreme_level_fraction_max": 0.001
+    },
+    "source_signal_gate": {
+      "relative_MAPE_gain_min": 0.02,
+      "improved_domain_fraction_min": 0.5,
+      "worst_relative_increase_max": 0.05,
+      "leave_one_domain_out_gain_min": 0.0,
+      "require_development_and_validation": true
+    },
+    "decision": {
+      "relative_MAPE_gain_min": 0.02,
+      "worst_relative_increase_max": 0.05,
+      "improved_domain_fraction_min": 0.5,
+      "confidence_level": 0.95,
+      "require_primary_24h_and_3d": true
+    },
+    "studies": [
+      {
+        "name": "m100_internal_15",
+        "source_group": "m100",
+        "test_group": "m100",
+        "frequency": "15min"
+      },
+      {
+        "name": "m100_to_ucc_30",
+        "source_group": "m100",
+        "test_group": "ucc",
+        "frequency": "30min"
+      },
+      {
+        "name": "ucc_to_m100_30",
+        "source_group": "ucc",
+        "test_group": "m100",
+        "frequency": "30min"
+      }
+    ],
+    "statistics": {
+      "seed": 20261026,
+      "replicates": 2000,
+      "block_days": 3,
+      "scope": "paired target-node and time-block conditional uncertainty, not independent centers"
+    },
+    "results_dir": "results/runs",
+    "conditional_dynamic": {
+      "features": [
+        "source_target_shape_distance",
+        "forecast_disagreement_over_history_sigma"
+      ],
+      "neighbors_per_source": 4,
+      "minimum_expected_relative_gain": 0.02,
+      "teacher_cutoffs": [
+        24,
+        32,
+        40
+      ],
+      "teacher_block_days": 4,
+      "last_label_day": 44,
+      "alpha_grid": [
+        0.0,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "normalization": "source_only_median_IQR_floor_0_1",
+      "weights": "exp(-0.5*standardized_distance_squared), mean per source pseudo-target, no far-distance renormalization",
+      "allow_4h_only_after_primary_admission": true
+    }
+  },
+  "studies": [
+    {
+      "name": "m100_internal_15",
+      "source_group": "m100",
+      "test_group": "m100",
+      "frequency": "15min"
+    },
+    {
+      "name": "m100_to_ucc_30",
+      "source_group": "m100",
+      "test_group": "ucc",
+      "frequency": "30min"
+    },
+    {
+      "name": "ucc_to_m100_30",
+      "source_group": "ucc",
+      "test_group": "m100",
+      "frequency": "30min"
+    }
+  ],
+  "is_demo": false,
+  "target_unit": "kW",
+  "data": "New-date M100/UCC measured node/server power; known centers; offline transfer",
+  "development_run": "D:\\AAA_Project\\PowerForecast\\results\\runs\\20261026T080606Z_sapf_robust_dev_8b8652",
+  "source_sha256": {
+    "src/legacy.py": "0fd9e44a9e104085c00d3041582a82daf6b595614bfbbf741081145d6d46bb01",
+    "src/utils.py": "b48318ea15f50a821c12913ceeae5b1530cae9e9938d1fbe4b2c1669b3ed46a8",
+    "src/__init__.py": "2fa2356fbbcc2d00592a358253e84560084968478089d896da358488139a38bb",
+    "src/data/adapters.py": "a3da2fa588698d068709f6a9be49fc5e7ce7a93cf7b297801b7f4fced375a790",
+    "src/data/cleaning.py": "175f9fd3946cbd3cabcdfa90a38a203ea2afcc0c5126fa7a45a6834837fdbacf",
+    "src/data/contracts.py": "9882d98425f8c283d92824d60a1d72f058066b427736d7dd0d430826bf7b6775",
+    "src/data/cross_domain.py": "45f67b2972223c8644318b64e744ad2b7ccb190808b37a3679e4414b67c8dd67",
+    "src/data/domains.py": "be553aafd1eb61e16e8989a26cc1f3ba01dc73e8049ee58c0401279ae94e696f",
+    "src/data/features.py": "5e5b8950e318147885e8b52c0db0bb8b426dfcf26bfc40413b6f2e71488b4d90",
+    "src/data/gain_v2_panel.py": "495eb87552b120bec545daf6005ed44b0f01374412e626e28ff7c0f0ec1979a1",
+    "src/data/google_panel.py": "912437a143d435acf8381551e7be63149b8719a731de0d4279fcf628ab54addb",
+    "src/data/heterogeneous.py": "4557e1f8129aa3097e91aac5c047acf5114ffd2bb4df7001f8cfab435c1ea78a",
+    "src/data/loaders.py": "4b3ac1763240365fcfe7c9ed15487735947aa669ca8764a403607f996bfdbee9",
+    "src/data/m100_panel.py": "57a4153c2f06d4ac206123a2f58340e309251e0de4337df9a7a540ea2b2233c5",
+    "src/data/pipeline.py": "9bf9b14bedcb81d6db5e3b6510d9f0f8ab8f15702af1a5170e3930175f0db114",
+    "src/data/resampling.py": "2bba851c8c85ef5e3cbcefd3543e3d5722db2eb5b253ce50a2f7645a36fc05e6",
+    "src/data/robust_panel.py": "86063e5e38cb65d8ad31a83eef54a439e9712943a14a3d8f1afc16ed2699f84f",
+    "src/data/shape_features.py": "2e659c8cebf5c3aad4e9f3cfcd6d8b854e2d86899a7ab8e9ac2af8d7c44df188",
+    "src/data/splitting.py": "f639edb23c066cf03766f024a5081f02797be5db2407f4fb05527bdf87a4446c",
+    "src/data/synthetic.py": "697badeb55ce1cb9200158aed2d237f50930d4a6e88c75c4d4a2da16892442ae",
+    "src/data/transfer30.py": "2175ba341ae70cfecb06a0c69a62ebcb97f13f1059f3184e30dfef3a4550f092",
+    "src/data/__init__.py": "845e692e06c749da01aec95f9eafefa1300f2657b007b3336d716fbc12418928",
+    "src/evaluation/artifacts.py": "3e2174af77d864af14c91ea60e075b80d699705f42cf22c9503c702b8a978144",
+    "src/evaluation/backtest.py": "ca19153809123329a521e67f8893c6fd7db18a788852a687bfd401b76dd62cf5",
+    "src/evaluation/benefit_metrics.py": "70d1e1a9fa10df363341a0d19b9ee1e6e6f065464a40448509f9f49c740e3a77",
+    "src/evaluation/cross_domain.py": "0374cc672dfe22d03d32394016892978634d78ab733667725d2cd7ace09e7389",
+    "src/evaluation/gain_v2_audit.py": "a245b208e32e0e65558019840804228f1d184d63741eaad42e626347076f37bd",
+    "src/evaluation/gain_v2_diagnostics.py": "2211ea2a7cb4a78a680a3114ee745c372b4e76202935ff80b25d61e091ad6cfd",
+    "src/evaluation/metrics.py": "190a02fbd55fb4e8823d5d174eaa2b0efdfe81281026122f88ae8e15cb558528",
+    "src/evaluation/reporting.py": "b230bb6a8688e16ca7c7439e772e108901b1dd638145661b82345507fe0bba9a",
+    "src/evaluation/robust_audit.py": "9a4e7a1ce54b0c3580b1ee49cabbbfc43b1a0975cbb50b8b9464ab05c9ac97f3",
+    "src/evaluation/robust_report.py": "7f4d526b07fa871d8223c8e190f0c60adf73f78b8e0c25576dc98a20d98c6a1b",
+    "src/evaluation/statistics.py": "d25a55a0773833c7ed1d3f55c24b2ddb86bad345f6ec1ae071cd7e0d0446ea10",
+    "src/evaluation/transfer_audit.py": "2499b15c6d73efdc86fd15460e0f2202ea9c22fc2e54305c43e08329b8e920bb",
+    "src/evaluation/visualization.py": "9df9043d4a16d467a59654b46a3feb525d421972bce8b90ce628ec998ae88d30",
+    "src/evaluation/__init__.py": "061bfae3496d47c948ae7c44ce9e0ffba7188024835e282bc4f5cdda28cd5974",
+    "src/models/base.py": "928a7930f75a9cfdd8ef6635aa5c9da6064c1cd0cb81d2407b1bc578d4683c5f",
+    "src/models/__init__.py": "2fba4bf44dc563b51ade90c755541a6267b77c7b0c83c517f45b8d50fcf4ff2b",
+    "src/training/benefit_learning.py": "4448d630eb658e32bcaad33fd7e5f0aee5bccf9644b4aaea7e26a6c1d4e973ec",
+    "src/training/experiment.py": "0dfc61680d320c2277d88eb1d532606b9e6e2facad000f78765724a59873f6e8",
+    "src/training/gain_v2_experiment.py": "987346358c2b8b9d4bf3e46d8fc2bde413f6e1bf4d89d0fcdbbd22075b75caff",
+    "src/training/gain_v2_learning.py": "400a063aba966908f5c82cbdb0b9c2d566ac465741d3eccd2e7395c68d20ae8d",
+    "src/training/lifecycle.py": "3a253e4c2b83f6f48bed679814924a2c5ec7f4c3ffe22fb56c89ddda61b09bfe",
+    "src/training/predictor.py": "73aac5a6f02c323954de9fb1b5aa26e29c1d2471a1cd8f9b1c563af1a4d03056",
+    "src/training/robust_experiment.py": "dc698ca92efedf5646fbe0823ceb2ab1464f93b56e064e0e701c35e6f3e098b9",
+    "src/training/robust_final.py": "705037b3b2f96f4019e81cb5b798a52e7ee4fc777ec12293214ae9f65f354abc",
+    "src/training/trainer.py": "fcedddad3bf394de9eaaf957258552fa80dcb1ff12225edeb38378a1feb2d5d8",
+    "src/training/transfer_suite.py": "a30a3c344a71179244dae536d0d9619f0a4b12cbea3a8ebd26e470d79eb75633",
+    "src/training/__init__.py": "6a54f0f403202352c11a0d25e5e422d14bb185c30a4f1ae1f6f7d15c36b32ad4",
+    "src/models/deep/forecasters.py": "2441b10e9d47d1d72af8db8e4ee70fc138df5cab997e292d263d73c4b2e68fab",
+    "src/models/deep/__init__.py": "81612e6ea5a4179687fecdd7e83a20655508fe2b9bf2e6e7f0958122c7df25cf",
+    "src/models/ml/ablation.py": "4ab06c01edafd916070e517be0c31952fa3831e324aaf49fe1a419cb1d65c0cc",
+    "src/models/ml/benefit.py": "d86252f8d91daafeaeed27b9cbfc379e94c0ac40859635351ee96d591a9dd306",
+    "src/models/ml/gain_v2.py": "fccfc1f7e26156229a8c3ca9882c8d2699039a1529efb833f653ad973c0ff76f",
+    "src/models/ml/level_shape.py": "0c23b09274fd4e28ce2ddfb11a2621c1b0ff050debb087269b58415864549789",
+    "src/models/ml/normalized.py": "684a7af38d029e2fcde8f980f4b962e4b9d58fe494d6defdaf35d8356922d065",
+    "src/models/ml/robust_transfer.py": "f37272acc263235e34b2d47a6f9dbf930f788918eed1dc5753a054e178e13353",
+    "src/models/ml/sapf.py": "6c620c581988034b8b08d8ab6678a73c25ef466d63da1bef6bf0cd270b998abf",
+    "src/models/ml/tabular.py": "c0b1dcae61e82498167b8e18329b38909bc71891c9dbd3d633d331a9882db7ce",
+    "src/models/ml/__init__.py": "6ae30aed1eef987efc37bd52c3d69976723f10319484b871208fa41bdd5ef618",
+    "src/models/statistical/baselines.py": "f539c92705c1c94efb4488659b360b54fb897f2bfc79810c73f7cbacef9bab55",
+    "src/models/statistical/sarima.py": "9f1de05507e67bab14793ed69db6088eb1c73ec3c72b0d7c53cc6370fd24515a",
+    "src/models/statistical/__init__.py": "cc1c11d30f4bc0bcbb7e11b42ab0f33c013acd63d3c43d4c7206cbca3404c94d",
+    "scripts/audit_cross_domain.py": "26cb8e800c6e815ad7aa35328037144f93f844a30ee03308bbd6cc0ecf19b2d3",
+    "scripts/audit_datasets.py": "d2aec6d3929b5c2e542ce817b2f22436c839f2c2d57395481d8bad6a345ca4b6",
+    "scripts/audit_power_sources.py": "953138ca63b728bbf7726bbe8ea3f7909a9e85d86b6a7bd8124b856503c62682",
+    "scripts/inspect_data.py": "6736fb435fb323479557018152ea623e072ce3b896d3ece69af0c34f3c065726",
+    "scripts/plot_robust.py": "1a9460be005c41df4291abd8f0c25639fc22497490fe1bfafede5674aa9c6e69",
+    "scripts/prepare_data.py": "55eaf514f6800ce6cd2ce702a6e2742af675dd84b24659d5b842130f6dcce07c",
+    "scripts/register_robust.py": "2821293e553ba28c565a786fb275204386b78b41003c6591c4132ed1e864535c",
+    "scripts/run_experiment.py": "f9759aa6108e1719b3fb3cbd7349ee01151c7d49cedffa2c0773641197f393a6",
+    "scripts/__init__.py": "7d27e830002bbe144c804b6197ef02975307d875d7bb93abc9102ece148a6fad",
+    "configs/benefit_models.yaml": "e5a6e3e0cccd935733aebe726f9752865ad4d18428d111a751b566dbd3f38a57",
+    "configs/gain_v2_models.yaml": "5fd3c6c8ea7c3b4854a32d82390fcd59c589f3d9723299553833eff8d6d84fe9",
+    "configs/m100_models.yaml": "52040de64e1b74d73679e82106b9deb7746de7e9b9d151fcb094ca341e21f8c9",
+    "configs/models.yaml": "6ca76453f63038e6d77cbd527916cf72e822cdfdbda7866abc4f97c131778e9a",
+    "configs/sapf_gain_v2.yaml": "71fb8c132e8c5a980b4202d26ab1f48f4c765a040a72a121b731a3806193c477",
+    "configs/sapf_google.yaml": "ef24f483f48b2f87cb929190ac6da75371f1fefd3c6f14df096c89b7533b96c6",
+    "configs/sapf_m100.yaml": "732da6113ad0352377517735792c26133654726c1b6b02cea52a245f699798eb",
+    "configs/sapf_robust.yaml": "aac05f98a50a06f05f6962d277ac4ca9efb151fe118f13f269b79e97f15c3b28",
+    "configs/sapf_transfer_suite.yaml": "42a40cd0b60dba072637062d28314f81351b2d80bb94121d4f1d436f55c98f6a",
+    "configs/datasets/google_cross_domain.yaml": "5b41d60630af044b69ce98b52a6e104ff9623e041cb55a21b3451643f91e8ee4",
+    "configs/datasets/m100_nodes.yaml": "70bb5d37a5eb075f1e2a1efd77363e35216ffdcf4803843e16daf59e11f7f983",
+    "configs/datasets/nlr.yaml": "dd74f2a01d3c3b430b1adf27a43bd535c26f6c0e3efc8b22d7657ce3b6cc24f5",
+    "configs/datasets/other.yaml": "5057394f2e3f477f2db30b524fa6a32c08fb3716f7e4fdae8543d35e7bfb3fa4",
+    "configs/datasets/registry.yaml": "27ff13f7d00f586f0b073c035242900b3d17d5161ae320be9fe6ceec5eb4443d",
+    "configs/datasets/transfer30.yaml": "328cdace7ff4d8f506602ca6270df743ad5483ac0b27c87cb3ff00f6df7449d4",
+    "tests/test_data.py": "248f026e67fa472dda539297ee17749d253c7b332a88e98447748e81b3aa808c",
+    "tests/test_data_contracts.py": "cfdda04d59624db0db8fe96588072821f090f35acefaefaa8c88f43f17c8cad5",
+    "tests/test_forecasting.py": "d8d6e7fde1c1731776e52cb2f5764a4b10f5fb66d565fa767bd81e6a19d805eb",
+    "tests/test_gain_v2.py": "59cf95ac229262adeef659dd0f08ff386b60bd7f040a27f4b4d8ee17e60a80bf",
+    "tests/test_m100.py": "b27cc8bbfd68bee956436b31d7a089d9be0e61f6fd713cdaa069fe756f97ce43",
+    "tests/test_robust.py": "fbd1032be83dc63f94aabb120445f5e47b7b546b2f76c25cd78fe0076ca42503",
+    "tests/test_sapf.py": "2e0f81175d97c83b95abd4ede7238ba498ba083dd622ce79015467edd797d5c7",
+    "tests/test_transfer30.py": "70190caf6b01f92bf0993a09863917e0f6bae04164113ceac1b130f563dd129e"
+  },
+  "data_provenance": {
+    "M100/0.tar": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\M100\\0.tar",
+      "sha256": "d46ec4db0c12037c298eb074d256374730fab92e6efedaa073348533d3ab3840"
+    },
+    "M100/1.tar": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\M100\\1.tar",
+      "sha256": "1465e8c102e52cf8da5e39ff95829949afde719596af42680d5f610b7432ba8f"
+    },
+    "UCC/dataset1_combined.csv": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\UCC2023\\dataset1_combined.csv",
+      "sha256": "18592c5a1a9edf021cb16e5775cd12bfb1479d244c10e4d913bf18cefe7b0256"
+    },
+    "UCC/dataset2_combined.csv": {
+      "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\UCC2023\\dataset2_combined.csv",
+      "sha256": "2b5709f16e6ae94d274d1f2b111ef67a38edcca8e1d22c6c02182308042a08bb"
+    }
+  },
+  "completed_at_utc": "2026-10-26T09:51:53.865253+00:00"
+}

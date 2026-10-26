@@ -1,0 +1,16 @@
+{
+  "total_distinct_tests": 80,
+  "new_tests": 7,
+  "new_tests_passed": true,
+  "existing_tests": 73,
+  "initial_existing_passed": 72,
+  "initial_existing_failed": 1,
+  "initial_failure": "Concurrent source edits were correctly rejected by the legacy Gain-v2 computational-source freeze audit; model/data/role/replay checks passed.",
+  "affected_test": "test_global_v2_fixture_freezes_all_cadences_and_keeps_oracle_out_of_models",
+  "fixed_source_recheck_passed": true,
+  "computational_source_sha256": "102eae9af7f51e10407b2d7a0de90f4a3b9fbc31bde819117c81ff162785545f",
+  "logs": [
+    "robust-tests.log",
+    "core-recheck.log"
+  ]
+}

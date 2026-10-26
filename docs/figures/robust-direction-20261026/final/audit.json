@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "frozen_hash_checks": 586,
+  "metric_checks": 73290,
+  "saved_model_replays": 148,
+  "failures": [],
+  "scope": "Hashes, source roles/cutoff, global freeze chronology, identical node/origin/label grids, every saved curve/daily/nonoverlap metric, saved-model replay records."
+}

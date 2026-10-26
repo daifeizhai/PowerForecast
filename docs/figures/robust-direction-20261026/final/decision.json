@@ -1,0 +1,10 @@
+{
+  "H1_passed_comparisons": 0,
+  "H1_family_size": 8,
+  "H2_passed_comparisons": 0,
+  "H2_executed_comparisons": 4,
+  "H2_family_size": 16,
+  "automatic_success": false,
+  "no_post_test_parameter_changes": true,
+  "independence_scope": "New unscored dates at known centers; offline cross-dataset benchmark; not new-center prospective evidence."
+}

@@ -1,0 +1,16 @@
+{
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "pyarrow": "24.0.0",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "blas_threads": 1,
+  "nvidia_gpu_required": false
+}

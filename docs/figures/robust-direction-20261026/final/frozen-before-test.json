@@ -1,0 +1,2115 @@
+{
+  "global_domain_roles": {
+    "m100": {
+      "source": [
+        "m100_rack0_node2",
+        "m100_rack0_node5",
+        "m100_rack0_node8",
+        "m100_rack0_node11",
+        "m100_rack1_node20",
+        "m100_rack1_node23",
+        "m100_rack1_node26",
+        "m100_rack1_node29"
+      ],
+      "calibration": [
+        "m100_rack0_node16",
+        "m100_rack1_node33"
+      ],
+      "validation": [
+        "m100_rack0_node19",
+        "m100_rack1_node37"
+      ],
+      "test": [
+        "m100_rack0_node6",
+        "m100_rack0_node9",
+        "m100_rack0_node13",
+        "m100_rack0_node17",
+        "m100_rack1_node24",
+        "m100_rack1_node31",
+        "m100_rack1_node35",
+        "m100_rack1_node38"
+      ]
+    },
+    "ucc": {
+      "source": [
+        "ucc_d1_qh2_rcc120",
+        "ucc_d1_qh2_rcc121",
+        "ucc_d1_qh2_rcc122",
+        "ucc_d1_qh2_rcc123",
+        "ucc_d1_qh2_rcc124",
+        "ucc_d1_qh2_rcc125",
+        "ucc_d2_qh2_rcc202",
+        "ucc_d2_qh2_rcc203",
+        "ucc_d2_qh2_rcc207",
+        "ucc_d2_qh2_rcc209",
+        "ucc_d2_qh2_rcc210",
+        "ucc_d2_qh2_rcc213"
+      ],
+      "calibration": [
+        "ucc_d1_qh2_rcc126",
+        "ucc_d1_qh2_rcc128",
+        "ucc_d2_qh2_rcc218",
+        "ucc_d2_qh2_rcc220"
+      ],
+      "validation": [
+        "ucc_d1_qh2_rcc127",
+        "ucc_d1_qh2_rcc129",
+        "ucc_d2_qh2_rcc219",
+        "ucc_d2_qh2_rcc221"
+      ],
+      "test": [
+        "ucc_d1_qh2_rcc130",
+        "ucc_d1_qh2_rcc131",
+        "ucc_d1_qh2_rcc132",
+        "ucc_d1_qh2_rcc133",
+        "ucc_d1_qh2_rcc134",
+        "ucc_d1_qh2_rcc135",
+        "ucc_d1_qh2_rcc136",
+        "ucc_d1_qh2_rcc137",
+        "ucc_d1_qh2_rcc138",
+        "ucc_d1_qh2_rcc139",
+        "ucc_d1_qh2_rcc140",
+        "ucc_d1_qh2_rcc141",
+        "ucc_d1_qh2_rcc142",
+        "ucc_d1_qh2_rcc143",
+        "ucc_d1_qh2_rcc144",
+        "ucc_d1_qh2_rcc145",
+        "ucc_d1_qh2_rcc146",
+        "ucc_d1_qh2_rcc147",
+        "ucc_d1_qh2_rcc148",
+        "ucc_d1_qh2_rcc149",
+        "ucc_d1_qh2_rcc150",
+        "ucc_d1_qh2_rcc151",
+        "ucc_d1_qh2_rcc152",
+        "ucc_d1_qh2_rcc153",
+        "ucc_d1_qh2_rcc154",
+        "ucc_d1_qh2_rcc155",
+        "ucc_d1_qh2_rcc156",
+        "ucc_d1_qh2_rcc157",
+        "ucc_d1_qh2_rcc158",
+        "ucc_d1_qh2_rcc159",
+        "ucc_d1_qh2_rcc160",
+        "ucc_d1_qh2_rcc161",
+        "ucc_d1_qh2_rcc162",
+        "ucc_d1_qh2_rcc163",
+        "ucc_d1_qh2_rcc164",
+        "ucc_d1_qh2_rcc165",
+        "ucc_d1_qh2_rcc166",
+        "ucc_d1_qh2_rcc167",
+        "ucc_d1_qh2_rcc168",
+        "ucc_d1_qh2_rcc169",
+        "ucc_d1_qh2_rcc170",
+        "ucc_d1_qh2_rcc171",
+        "ucc_d1_qh2_rcc172",
+        "ucc_d1_qh2_rcc173",
+        "ucc_d1_qh2_rcc174",
+        "ucc_d1_qh2_rcc175",
+        "ucc_d1_qh2_rcc176",
+        "ucc_d1_qh2_rcc177",
+        "ucc_d1_qh2_rcc178",
+        "ucc_d1_qh2_rcc179",
+        "ucc_d1_qh2_rcc180",
+        "ucc_d1_qh2_rcc181",
+        "ucc_d1_qh2_rcc182",
+        "ucc_d1_qh2_rcc183",
+        "ucc_d1_qh2_rcc184",
+        "ucc_d1_qh2_rcc185",
+        "ucc_d1_qh2_rcc186",
+        "ucc_d1_qh2_rcc187",
+        "ucc_d1_qh2_rcc188",
+        "ucc_d1_qh2_rcc189",
+        "ucc_d1_qh2_rcc190",
+        "ucc_d1_qh2_rcc191",
+        "ucc_d1_qh2_rcc192",
+        "ucc_d1_qh2_rcc193",
+        "ucc_d1_qh2_rcc194",
+        "ucc_d1_qh2_rcc195",
+        "ucc_d2_qh2_rcc222",
+        "ucc_d2_qh2_rcc223",
+        "ucc_d2_qh2_rcc224",
+        "ucc_d2_qh2_rcc225",
+        "ucc_d2_qh2_rcc227",
+        "ucc_d2_qh2_rcc228",
+        "ucc_d2_qh2_rcc229",
+        "ucc_d2_qh2_rcc230",
+        "ucc_d2_qh2_rcc231",
+        "ucc_d2_qh2_rcc233",
+        "ucc_d2_qh2_rcc234",
+        "ucc_d2_qh2_rcc235",
+        "ucc_d2_qh2_rcc238",
+        "ucc_d2_qh2_rcc239",
+        "ucc_d2_qh2_rcc243",
+        "ucc_d2_qh2_rcc246",
+        "ucc_d2_qh2_rcc248",
+        "ucc_d2_qh2_rcc249",
+        "ucc_d2_qh2_rcc251",
+        "ucc_d2_qh2_rcc255",
+        "ucc_d2_qh2_rcc256",
+        "ucc_d2_qh2_rcc259",
+        "ucc_d2_qh2_rcc260",
+        "ucc_d2_qh2_rcc261"
+      ]
+    }
+  },
+  "group_training_records": {
+    "m100_15": [
+      {
+        "horizon": "4h",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "development_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "validation_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "cutoff_day": 72,
+        "last_training_label": "2000-03-14 23:45:00+00:00",
+        "training_windows": 2784,
+        "selected_alphas": {
+          "fixed": 0.5,
+          "bounded": 0.5
+        },
+        "local_kind": "seasonal_naive",
+        "dynamic_executed": true,
+        "dynamic_gate": true,
+        "model_names": [
+          "seasonal_naive",
+          "three_day_mean",
+          "ridge",
+          "external_mean",
+          "fixed_0",
+          "fixed_0.1",
+          "fixed_0.25",
+          "fixed_0.5",
+          "bounded_fixed_0",
+          "bounded_fixed_0.1",
+          "bounded_fixed_0.25",
+          "bounded_fixed_0.5",
+          "selected_fixed",
+          "selected_bounded",
+          "sapf",
+          "gain_v2_reference",
+          "dynamic"
+        ]
+      },
+      {
+        "horizon": "24h",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "development_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "validation_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "cutoff_day": 72,
+        "last_training_label": "2000-03-14 23:45:00+00:00",
+        "training_windows": 464,
+        "selected_alphas": {
+          "fixed": 0.5,
+          "bounded": 0.5
+        },
+        "local_kind": "seasonal_naive",
+        "dynamic_executed": true,
+        "dynamic_gate": true,
+        "model_names": [
+          "seasonal_naive",
+          "three_day_mean",
+          "ridge",
+          "external_mean",
+          "fixed_0",
+          "fixed_0.1",
+          "fixed_0.25",
+          "fixed_0.5",
+          "bounded_fixed_0",
+          "bounded_fixed_0.1",
+          "bounded_fixed_0.25",
+          "bounded_fixed_0.5",
+          "selected_fixed",
+          "selected_bounded",
+          "sapf",
+          "gain_v2_reference",
+          "dynamic"
+        ]
+      },
+      {
+        "horizon": "3d",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "development_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "validation_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "cutoff_day": 72,
+        "last_training_label": "2000-03-14 23:45:00+00:00",
+        "training_windows": 448,
+        "selected_alphas": {
+          "fixed": 0.25,
+          "bounded": 0.25
+        },
+        "local_kind": "seasonal_naive",
+        "dynamic_executed": false,
+        "dynamic_gate": false,
+        "model_names": [
+          "seasonal_naive",
+          "three_day_mean",
+          "ridge",
+          "external_mean",
+          "fixed_0",
+          "fixed_0.1",
+          "fixed_0.25",
+          "fixed_0.5",
+          "bounded_fixed_0",
+          "bounded_fixed_0.1",
+          "bounded_fixed_0.25",
+          "bounded_fixed_0.5",
+          "selected_fixed",
+          "selected_bounded",
+          "sapf",
+          "gain_v2_reference"
+        ]
+      }
+    ],
+    "m100_30": [
+      {
+        "horizon": "4h",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "development_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "validation_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "cutoff_day": 72,
+        "last_training_label": "2000-03-14 23:30:00+00:00",
+        "training_windows": 2784,
+        "selected_alphas": {
+          "fixed": 0.5,
+          "bounded": 0.5
+        },
+        "local_kind": "seasonal_naive",
+        "dynamic_executed": true,
+        "dynamic_gate": true,
+        "model_names": [
+          "seasonal_naive",
+          "three_day_mean",
+          "ridge",
+          "external_mean",
+          "fixed_0",
+          "fixed_0.1",
+          "fixed_0.25",
+          "fixed_0.5",
+          "bounded_fixed_0",
+          "bounded_fixed_0.1",
+          "bounded_fixed_0.25",
+          "bounded_fixed_0.5",
+          "selected_fixed",
+          "selected_bounded",
+          "sapf",
+          "gain_v2_reference",
+          "dynamic"
+        ]
+      },
+      {
+        "horizon": "24h",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "development_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "validation_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "cutoff_day": 72,
+        "last_training_label": "2000-03-14 23:30:00+00:00",
+        "training_windows": 464,
+        "selected_alphas": {
+          "fixed": 0.5,
+          "bounded": 0.5
+        },
+        "local_kind": "seasonal_naive",
+        "dynamic_executed": true,
+        "dynamic_gate": true,
+        "model_names": [
+          "seasonal_naive",
+          "three_day_mean",
+          "ridge",
+          "external_mean",
+          "fixed_0",
+          "fixed_0.1",
+          "fixed_0.25",
+          "fixed_0.5",
+          "bounded_fixed_0",
+          "bounded_fixed_0.1",
+          "bounded_fixed_0.25",
+          "bounded_fixed_0.5",
+          "selected_fixed",
+          "selected_bounded",
+          "sapf",
+          "gain_v2_reference",
+          "dynamic"
+        ]
+      },
+      {
+        "horizon": "3d",
+        "source_domains": [
+          "m100_rack0_node2",
+          "m100_rack0_node5",
+          "m100_rack0_node8",
+          "m100_rack0_node11",
+          "m100_rack1_node20",
+          "m100_rack1_node23",
+          "m100_rack1_node26",
+          "m100_rack1_node29"
+        ],
+        "development_domains": [
+          "m100_rack0_node16",
+          "m100_rack1_node33"
+        ],
+        "validation_domains": [
+          "m100_rack0_node19",
+          "m100_rack1_node37"
+        ],
+        "cutoff_day": 72,
+        "last_training_label": "2000-03-14 23:30:00+00:00",
+        "training_windows": 448,
+        "selected_alphas": {
+          "fixed": 0.25,
+          "bounded": 0.25
+        },
+        "local_kind": "seasonal_naive",
+        "dynamic_executed": false,
+        "dynamic_gate": false,
+        "model_names": [
+          "seasonal_naive",
+          "three_day_mean",
+          "ridge",
+          "external_mean",
+          "fixed_0",
+          "fixed_0.1",
+          "fixed_0.25",
+          "fixed_0.5",
+          "bounded_fixed_0",
+          "bounded_fixed_0.1",
+          "bounded_fixed_0.25",
+          "bounded_fixed_0.5",
+          "selected_fixed",
+          "selected_bounded",
+          "sapf",
+          "gain_v2_reference"
+        ]
+      }
+    ],
+    "ucc_30": [
+      {
+        "horizon": "4h",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "development_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "validation_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "cutoff_day": 72,
+        "last_training_label": "2000-03-14 23:30:00+00:00",
+        "training_windows": 4176,
+        "selected_alphas": {
+          "fixed": 0.5,
+          "bounded": 0.5
+        },
+        "local_kind": "three_day_mean",
+        "dynamic_executed": false,
+        "dynamic_gate": true,
+        "model_names": [
+          "seasonal_naive",
+          "three_day_mean",
+          "ridge",
+          "external_mean",
+          "fixed_0",
+          "fixed_0.1",
+          "fixed_0.25",
+          "fixed_0.5",
+          "bounded_fixed_0",
+          "bounded_fixed_0.1",
+          "bounded_fixed_0.25",
+          "bounded_fixed_0.5",
+          "selected_fixed",
+          "selected_bounded",
+          "sapf",
+          "gain_v2_reference"
+        ]
+      },
+      {
+        "horizon": "24h",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "development_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "validation_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "cutoff_day": 72,
+        "last_training_label": "2000-03-14 23:30:00+00:00",
+        "training_windows": 696,
+        "selected_alphas": {
+          "fixed": 0.5,
+          "bounded": 0.5
+        },
+        "local_kind": "three_day_mean",
+        "dynamic_executed": false,
+        "dynamic_gate": false,
+        "model_names": [
+          "seasonal_naive",
+          "three_day_mean",
+          "ridge",
+          "external_mean",
+          "fixed_0",
+          "fixed_0.1",
+          "fixed_0.25",
+          "fixed_0.5",
+          "bounded_fixed_0",
+          "bounded_fixed_0.1",
+          "bounded_fixed_0.25",
+          "bounded_fixed_0.5",
+          "selected_fixed",
+          "selected_bounded",
+          "sapf",
+          "gain_v2_reference"
+        ]
+      },
+      {
+        "horizon": "3d",
+        "source_domains": [
+          "ucc_d1_qh2_rcc120",
+          "ucc_d1_qh2_rcc121",
+          "ucc_d1_qh2_rcc122",
+          "ucc_d1_qh2_rcc123",
+          "ucc_d1_qh2_rcc124",
+          "ucc_d1_qh2_rcc125",
+          "ucc_d2_qh2_rcc202",
+          "ucc_d2_qh2_rcc203",
+          "ucc_d2_qh2_rcc207",
+          "ucc_d2_qh2_rcc209",
+          "ucc_d2_qh2_rcc210",
+          "ucc_d2_qh2_rcc213"
+        ],
+        "development_domains": [
+          "ucc_d1_qh2_rcc126",
+          "ucc_d1_qh2_rcc128",
+          "ucc_d2_qh2_rcc218",
+          "ucc_d2_qh2_rcc220"
+        ],
+        "validation_domains": [
+          "ucc_d1_qh2_rcc127",
+          "ucc_d1_qh2_rcc129",
+          "ucc_d2_qh2_rcc219",
+          "ucc_d2_qh2_rcc221"
+        ],
+        "cutoff_day": 72,
+        "last_training_label": "2000-03-14 23:30:00+00:00",
+        "training_windows": 672,
+        "selected_alphas": {
+          "fixed": 0.25,
+          "bounded": 0.25
+        },
+        "local_kind": "three_day_mean",
+        "dynamic_executed": false,
+        "dynamic_gate": false,
+        "model_names": [
+          "seasonal_naive",
+          "three_day_mean",
+          "ridge",
+          "external_mean",
+          "fixed_0",
+          "fixed_0.1",
+          "fixed_0.25",
+          "fixed_0.5",
+          "bounded_fixed_0",
+          "bounded_fixed_0.1",
+          "bounded_fixed_0.25",
+          "bounded_fixed_0.5",
+          "selected_fixed",
+          "selected_bounded",
+          "sapf",
+          "gain_v2_reference"
+        ]
+      }
+    ]
+  },
+  "source_h1_gates": {
+    "m100_15": {
+      "4h": {
+        "numerical": {
+          "development": {
+            "passed": true,
+            "negative_fraction": 0.00043402777777777775,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 7.948649883270263,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          },
+          "validation": {
+            "passed": true,
+            "negative_fraction": 0.0006009615384615385,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 7.783513545989989,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          }
+        },
+        "numerically_admitted": true,
+        "local_kind": "seasonal_naive",
+        "selected_alphas": {
+          "fixed": 0.5,
+          "bounded": 0.5
+        },
+        "candidates": [
+          {
+            "bounded": false,
+            "alpha": 0.0,
+            "mean_MAPE": 14.038599929337062
+          },
+          {
+            "bounded": false,
+            "alpha": 0.1,
+            "mean_MAPE": 13.171236223600426
+          },
+          {
+            "bounded": false,
+            "alpha": 0.25,
+            "mean_MAPE": 11.992780183623092
+          },
+          {
+            "bounded": false,
+            "alpha": 0.5,
+            "mean_MAPE": 10.39990630542373
+          },
+          {
+            "bounded": true,
+            "alpha": 0.0,
+            "mean_MAPE": 14.038599929337062
+          },
+          {
+            "bounded": true,
+            "alpha": 0.1,
+            "mean_MAPE": 13.189703934930835
+          },
+          {
+            "bounded": true,
+            "alpha": 0.25,
+            "mean_MAPE": 12.034676769886984
+          },
+          {
+            "bounded": true,
+            "alpha": 0.5,
+            "mean_MAPE": 10.394316630417881
+          }
+        ],
+        "source_signal": {
+          "development": {
+            "passed": true,
+            "relative_MAPE_gain": 0.2591920591959742,
+            "mean_MAPE": 10.39990630542373,
+            "strong_baseline": "seasonal_naive",
+            "strong_baseline_MAPE": 14.038599929337062,
+            "improved_domain_fraction": 1.0,
+            "worst_relative_increase": -0.2600982438729341,
+            "leave_one_domain_out_min_delta_pp": 0.06252905875203407,
+            "local_rule_selected_on_development": "seasonal_naive"
+          },
+          "validation": {
+            "passed": true,
+            "relative_MAPE_gain": 0.1853872019059415,
+            "mean_MAPE": 10.070269114962343,
+            "strong_baseline": "three_day_mean",
+            "strong_baseline_MAPE": 12.362031554775044,
+            "improved_domain_fraction": 1.0,
+            "worst_relative_increase": -0.18600816726612057,
+            "leave_one_domain_out_min_delta_pp": 0.004264606459644313,
+            "local_rule_selected_on_development": "seasonal_naive"
+          }
+        },
+        "stable_positive_signal": true,
+        "dynamic_allowed": false
+      },
+      "24h": {
+        "numerical": {
+          "development": {
+            "passed": true,
+            "negative_fraction": 0.00021701388888888888,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 8.050703048706055,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          },
+          "validation": {
+            "passed": true,
+            "negative_fraction": 0.000250400641025641,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 7.313572406768799,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          }
+        },
+        "numerically_admitted": true,
+        "local_kind": "seasonal_naive",
+        "selected_alphas": {
+          "fixed": 0.5,
+          "bounded": 0.5
+        },
+        "candidates": [
+          {
+            "bounded": false,
+            "alpha": 0.0,
+            "mean_MAPE": 14.038599929337062
+          },
+          {
+            "bounded": false,
+            "alpha": 0.1,
+            "mean_MAPE": 13.6877701085466
+          },
+          {
+            "bounded": false,
+            "alpha": 0.25,
+            "mean_MAPE": 13.330986468050817
+          },
+          {
+            "bounded": false,
+            "alpha": 0.5,
+            "mean_MAPE": 13.095711817507084
+          },
+          {
+            "bounded": true,
+            "alpha": 0.0,
+            "mean_MAPE": 14.038599929337062
+          },
+          {
+            "bounded": true,
+            "alpha": 0.1,
+            "mean_MAPE": 13.683225213890902
+          },
+          {
+            "bounded": true,
+            "alpha": 0.25,
+            "mean_MAPE": 13.305422331084012
+          },
+          {
+            "bounded": true,
+            "alpha": 0.5,
+            "mean_MAPE": 13.044583543573472
+          }
+        ],
+        "source_signal": {
+          "development": {
+            "passed": true,
+            "relative_MAPE_gain": 0.0671639705224154,
+            "mean_MAPE": 13.095711817507084,
+            "strong_baseline": "seasonal_naive",
+            "strong_baseline_MAPE": 14.038599929337062,
+            "improved_domain_fraction": 1.0,
+            "worst_relative_increase": -0.06590828537883964,
+            "leave_one_domain_out_min_delta_pp": 0.05754806874133361,
+            "local_rule_selected_on_development": "seasonal_naive"
+          },
+          "validation": {
+            "passed": true,
+            "relative_MAPE_gain": 0.0657207076742039,
+            "mean_MAPE": 11.549590092704388,
+            "strong_baseline": "three_day_mean",
+            "strong_baseline_MAPE": 12.362031554775044,
+            "improved_domain_fraction": 1.0,
+            "worst_relative_increase": -0.06585375099649926,
+            "leave_one_domain_out_min_delta_pp": 0.0036559091695602536,
+            "local_rule_selected_on_development": "seasonal_naive"
+          }
+        },
+        "stable_positive_signal": true,
+        "dynamic_allowed": true
+      },
+      "3d": {
+        "numerical": {
+          "development": {
+            "passed": true,
+            "negative_fraction": 7.233796296296296e-05,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 7.773894309997558,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          },
+          "validation": {
+            "passed": true,
+            "negative_fraction": 0.0001669337606837607,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 6.82861614227295,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          }
+        },
+        "numerically_admitted": true,
+        "local_kind": "seasonal_naive",
+        "selected_alphas": {
+          "fixed": 0.25,
+          "bounded": 0.25
+        },
+        "candidates": [
+          {
+            "bounded": false,
+            "alpha": 0.0,
+            "mean_MAPE": 13.041094694114458
+          },
+          {
+            "bounded": false,
+            "alpha": 0.1,
+            "mean_MAPE": 12.794947313738772
+          },
+          {
+            "bounded": false,
+            "alpha": 0.25,
+            "mean_MAPE": 12.686340021704167
+          },
+          {
+            "bounded": false,
+            "alpha": 0.5,
+            "mean_MAPE": 13.32005991517862
+          },
+          {
+            "bounded": true,
+            "alpha": 0.0,
+            "mean_MAPE": 13.041094694114458
+          },
+          {
+            "bounded": true,
+            "alpha": 0.1,
+            "mean_MAPE": 12.804178847908874
+          },
+          {
+            "bounded": true,
+            "alpha": 0.25,
+            "mean_MAPE": 12.685434689679155
+          },
+          {
+            "bounded": true,
+            "alpha": 0.5,
+            "mean_MAPE": 13.23468534466489
+          }
+        ],
+        "source_signal": {
+          "development": {
+            "passed": true,
+            "relative_MAPE_gain": 0.027202829266349426,
+            "mean_MAPE": 12.686340021704167,
+            "strong_baseline": "seasonal_naive",
+            "strong_baseline_MAPE": 13.041094694114458,
+            "improved_domain_fraction": 1.0,
+            "worst_relative_increase": -0.026028388008941694,
+            "leave_one_domain_out_min_delta_pp": 0.04040702818115449,
+            "local_rule_selected_on_development": "seasonal_naive"
+          },
+          "validation": {
+            "passed": false,
+            "relative_MAPE_gain": -0.18694883861978218,
+            "mean_MAPE": 15.745222359879703,
+            "strong_baseline": "three_day_mean",
+            "strong_baseline_MAPE": 13.265291516851471,
+            "improved_domain_fraction": 0.0,
+            "worst_relative_increase": 0.18662197011838577,
+            "leave_one_domain_out_min_delta_pp": -4.932403450224509,
+            "local_rule_selected_on_development": "seasonal_naive"
+          }
+        },
+        "stable_positive_signal": false,
+        "dynamic_allowed": false
+      }
+    },
+    "m100_30": {
+      "4h": {
+        "numerical": {
+          "development": {
+            "passed": true,
+            "negative_fraction": 0.0008680555555555555,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 8.30655288696289,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          },
+          "validation": {
+            "passed": true,
+            "negative_fraction": 0.0008012820512820513,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 6.170429229736328,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          }
+        },
+        "numerically_admitted": true,
+        "local_kind": "seasonal_naive",
+        "selected_alphas": {
+          "fixed": 0.5,
+          "bounded": 0.5
+        },
+        "candidates": [
+          {
+            "bounded": false,
+            "alpha": 0.0,
+            "mean_MAPE": 13.808539449873104
+          },
+          {
+            "bounded": false,
+            "alpha": 0.1,
+            "mean_MAPE": 12.857402455203433
+          },
+          {
+            "bounded": false,
+            "alpha": 0.25,
+            "mean_MAPE": 11.495371569952514
+          },
+          {
+            "bounded": false,
+            "alpha": 0.5,
+            "mean_MAPE": 9.978603801264155
+          },
+          {
+            "bounded": true,
+            "alpha": 0.0,
+            "mean_MAPE": 13.808539449873104
+          },
+          {
+            "bounded": true,
+            "alpha": 0.1,
+            "mean_MAPE": 12.897642492935066
+          },
+          {
+            "bounded": true,
+            "alpha": 0.25,
+            "mean_MAPE": 11.595971664281599
+          },
+          {
+            "bounded": true,
+            "alpha": 0.5,
+            "mean_MAPE": 9.970140765643233
+          }
+        ],
+        "source_signal": {
+          "development": {
+            "passed": true,
+            "relative_MAPE_gain": 0.27735993821157856,
+            "mean_MAPE": 9.978603801264155,
+            "strong_baseline": "seasonal_naive",
+            "strong_baseline_MAPE": 13.808539449873104,
+            "improved_domain_fraction": 1.0,
+            "worst_relative_increase": -0.27830639783358,
+            "leave_one_domain_out_min_delta_pp": 0.0445088517790716,
+            "local_rule_selected_on_development": "seasonal_naive"
+          },
+          "validation": {
+            "passed": true,
+            "relative_MAPE_gain": 0.19355024489586492,
+            "mean_MAPE": 9.83956314698064,
+            "strong_baseline": "three_day_mean",
+            "strong_baseline_MAPE": 12.201086409543366,
+            "improved_domain_fraction": 1.0,
+            "worst_relative_increase": -0.19410650687532738,
+            "leave_one_domain_out_min_delta_pp": 0.0035142487373915066,
+            "local_rule_selected_on_development": "seasonal_naive"
+          }
+        },
+        "stable_positive_signal": true,
+        "dynamic_allowed": false
+      },
+      "24h": {
+        "numerical": {
+          "development": {
+            "passed": true,
+            "negative_fraction": 0.0,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 6.808125495910645,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          },
+          "validation": {
+            "passed": true,
+            "negative_fraction": 0.00020032051282051281,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 7.584232330322265,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          }
+        },
+        "numerically_admitted": true,
+        "local_kind": "seasonal_naive",
+        "selected_alphas": {
+          "fixed": 0.5,
+          "bounded": 0.5
+        },
+        "candidates": [
+          {
+            "bounded": false,
+            "alpha": 0.0,
+            "mean_MAPE": 13.808539449873104
+          },
+          {
+            "bounded": false,
+            "alpha": 0.1,
+            "mean_MAPE": 13.392939224164026
+          },
+          {
+            "bounded": false,
+            "alpha": 0.25,
+            "mean_MAPE": 12.957427114042748
+          },
+          {
+            "bounded": false,
+            "alpha": 0.5,
+            "mean_MAPE": 12.916055727910933
+          },
+          {
+            "bounded": true,
+            "alpha": 0.0,
+            "mean_MAPE": 13.808539449873104
+          },
+          {
+            "bounded": true,
+            "alpha": 0.1,
+            "mean_MAPE": 13.389150583174699
+          },
+          {
+            "bounded": true,
+            "alpha": 0.25,
+            "mean_MAPE": 12.937132252890372
+          },
+          {
+            "bounded": true,
+            "alpha": 0.5,
+            "mean_MAPE": 12.868425099597872
+          }
+        ],
+        "source_signal": {
+          "development": {
+            "passed": true,
+            "relative_MAPE_gain": 0.06463273869057684,
+            "mean_MAPE": 12.916055727910933,
+            "strong_baseline": "seasonal_naive",
+            "strong_baseline_MAPE": 13.808539449873104,
+            "improved_domain_fraction": 1.0,
+            "worst_relative_increase": -0.06388298446970342,
+            "leave_one_domain_out_min_delta_pp": 0.036922538668368615,
+            "local_rule_selected_on_development": "seasonal_naive"
+          },
+          "validation": {
+            "passed": true,
+            "relative_MAPE_gain": 0.06437979103392166,
+            "mean_MAPE": 11.415583016110142,
+            "strong_baseline": "three_day_mean",
+            "strong_baseline_MAPE": 12.201086409543366,
+            "improved_domain_fraction": 1.0,
+            "worst_relative_increase": -0.06448005813338997,
+            "leave_one_domain_out_min_delta_pp": 0.0032297945198104805,
+            "local_rule_selected_on_development": "seasonal_naive"
+          }
+        },
+        "stable_positive_signal": true,
+        "dynamic_allowed": true
+      },
+      "3d": {
+        "numerical": {
+          "development": {
+            "passed": true,
+            "negative_fraction": 0.0,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 6.485317707061768,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          },
+          "validation": {
+            "passed": true,
+            "negative_fraction": 0.0001669337606837607,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 4.92037296295166,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          }
+        },
+        "numerically_admitted": true,
+        "local_kind": "seasonal_naive",
+        "selected_alphas": {
+          "fixed": 0.25,
+          "bounded": 0.25
+        },
+        "candidates": [
+          {
+            "bounded": false,
+            "alpha": 0.0,
+            "mean_MAPE": 12.81006482979398
+          },
+          {
+            "bounded": false,
+            "alpha": 0.1,
+            "mean_MAPE": 12.560847277757347
+          },
+          {
+            "bounded": false,
+            "alpha": 0.25,
+            "mean_MAPE": 12.449059915410832
+          },
+          {
+            "bounded": false,
+            "alpha": 0.5,
+            "mean_MAPE": 13.240816531176506
+          },
+          {
+            "bounded": true,
+            "alpha": 0.0,
+            "mean_MAPE": 12.81006482979398
+          },
+          {
+            "bounded": true,
+            "alpha": 0.1,
+            "mean_MAPE": 12.576559510483046
+          },
+          {
+            "bounded": true,
+            "alpha": 0.25,
+            "mean_MAPE": 12.475197894881955
+          },
+          {
+            "bounded": true,
+            "alpha": 0.5,
+            "mean_MAPE": 13.173644132074905
+          }
+        ],
+        "source_signal": {
+          "development": {
+            "passed": true,
+            "relative_MAPE_gain": 0.02818134952319007,
+            "mean_MAPE": 12.449059915410832,
+            "strong_baseline": "seasonal_naive",
+            "strong_baseline_MAPE": 12.81006482979398,
+            "improved_domain_fraction": 1.0,
+            "worst_relative_increase": -0.02750342588390009,
+            "leave_one_domain_out_min_delta_pp": 0.024945149441478298,
+            "local_rule_selected_on_development": "seasonal_naive"
+          },
+          "validation": {
+            "passed": false,
+            "relative_MAPE_gain": -0.18842541730276507,
+            "mean_MAPE": 15.539484380149553,
+            "strong_baseline": "three_day_mean",
+            "strong_baseline_MAPE": 13.075691712667812,
+            "improved_domain_fraction": 0.0,
+            "worst_relative_increase": 0.18804658416786313,
+            "leave_one_domain_out_min_delta_pp": -4.9020680504703655,
+            "local_rule_selected_on_development": "seasonal_naive"
+          }
+        },
+        "stable_positive_signal": false,
+        "dynamic_allowed": false
+      }
+    },
+    "ucc_30": {
+      "4h": {
+        "numerical": {
+          "development": {
+            "passed": true,
+            "negative_fraction": 0.0,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 6.253344535827637,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          },
+          "validation": {
+            "passed": true,
+            "negative_fraction": 0.0,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 12.89457798004151,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          }
+        },
+        "numerically_admitted": true,
+        "local_kind": "three_day_mean",
+        "selected_alphas": {
+          "fixed": 0.5,
+          "bounded": 0.5
+        },
+        "candidates": [
+          {
+            "bounded": false,
+            "alpha": 0.0,
+            "mean_MAPE": 8.093935523895237
+          },
+          {
+            "bounded": false,
+            "alpha": 0.1,
+            "mean_MAPE": 7.602577873773426
+          },
+          {
+            "bounded": false,
+            "alpha": 0.25,
+            "mean_MAPE": 6.87453248283108
+          },
+          {
+            "bounded": false,
+            "alpha": 0.5,
+            "mean_MAPE": 5.713565747965371
+          },
+          {
+            "bounded": true,
+            "alpha": 0.0,
+            "mean_MAPE": 8.093935523895237
+          },
+          {
+            "bounded": true,
+            "alpha": 0.1,
+            "mean_MAPE": 7.638666515893243
+          },
+          {
+            "bounded": true,
+            "alpha": 0.25,
+            "mean_MAPE": 6.964754088130623
+          },
+          {
+            "bounded": true,
+            "alpha": 0.5,
+            "mean_MAPE": 5.894008958564458
+          }
+        ],
+        "source_signal": {
+          "development": {
+            "passed": true,
+            "relative_MAPE_gain": 0.2940929994935645,
+            "mean_MAPE": 5.713565747965371,
+            "strong_baseline": "three_day_mean",
+            "strong_baseline_MAPE": 8.093935523895237,
+            "improved_domain_fraction": 1.0,
+            "worst_relative_increase": -0.30518543917491114,
+            "leave_one_domain_out_min_delta_pp": 1.6569792449736458,
+            "local_rule_selected_on_development": "three_day_mean"
+          },
+          "validation": {
+            "passed": true,
+            "relative_MAPE_gain": 0.1304487722329486,
+            "mean_MAPE": 2.662126898673824,
+            "strong_baseline": "seasonal_naive",
+            "strong_baseline_MAPE": 3.061495187017314,
+            "improved_domain_fraction": 0.75,
+            "worst_relative_increase": -0.1884458645187861,
+            "leave_one_domain_out_min_delta_pp": 0.2086979066604623,
+            "local_rule_selected_on_development": "three_day_mean"
+          }
+        },
+        "stable_positive_signal": true,
+        "dynamic_allowed": false
+      },
+      "24h": {
+        "numerical": {
+          "development": {
+            "passed": true,
+            "negative_fraction": 0.0,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 12.10830497741699,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          },
+          "validation": {
+            "passed": true,
+            "negative_fraction": 0.0011351495726495727,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 16.362354278564453,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          }
+        },
+        "numerically_admitted": true,
+        "local_kind": "three_day_mean",
+        "selected_alphas": {
+          "fixed": 0.5,
+          "bounded": 0.5
+        },
+        "candidates": [
+          {
+            "bounded": false,
+            "alpha": 0.0,
+            "mean_MAPE": 8.093935523895237
+          },
+          {
+            "bounded": false,
+            "alpha": 0.1,
+            "mean_MAPE": 7.960266025548341
+          },
+          {
+            "bounded": false,
+            "alpha": 0.25,
+            "mean_MAPE": 7.7720629257979965
+          },
+          {
+            "bounded": false,
+            "alpha": 0.5,
+            "mean_MAPE": 7.5161865402345205
+          },
+          {
+            "bounded": true,
+            "alpha": 0.0,
+            "mean_MAPE": 8.093935523895237
+          },
+          {
+            "bounded": true,
+            "alpha": 0.1,
+            "mean_MAPE": 7.961712668408394
+          },
+          {
+            "bounded": true,
+            "alpha": 0.25,
+            "mean_MAPE": 7.775679532948126
+          },
+          {
+            "bounded": true,
+            "alpha": 0.5,
+            "mean_MAPE": 7.52341975453478
+          }
+        ],
+        "source_signal": {
+          "development": {
+            "passed": true,
+            "relative_MAPE_gain": 0.0713804776372462,
+            "mean_MAPE": 7.5161865402345205,
+            "strong_baseline": "three_day_mean",
+            "strong_baseline_MAPE": 8.093935523895237,
+            "improved_domain_fraction": 0.75,
+            "worst_relative_increase": -0.13462724555274752,
+            "leave_one_domain_out_min_delta_pp": 0.10120126661431723,
+            "local_rule_selected_on_development": "three_day_mean"
+          },
+          "validation": {
+            "passed": false,
+            "relative_MAPE_gain": -0.2527059252178241,
+            "mean_MAPE": 3.8351531608024394,
+            "strong_baseline": "seasonal_naive",
+            "strong_baseline_MAPE": 3.061495187017314,
+            "improved_domain_fraction": 0.5,
+            "worst_relative_increase": 0.11413260736104158,
+            "leave_one_domain_out_min_delta_pp": -1.1280416112059297,
+            "local_rule_selected_on_development": "three_day_mean"
+          }
+        },
+        "stable_positive_signal": false,
+        "dynamic_allowed": false
+      },
+      "3d": {
+        "numerical": {
+          "development": {
+            "passed": true,
+            "negative_fraction": 0.0,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 13.618788719177246,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          },
+          "validation": {
+            "passed": true,
+            "negative_fraction": 0.00040064102564102563,
+            "nonfinite_fraction": 0.0,
+            "severe_z_fraction": 0.0,
+            "extreme_level_fraction": 0.0,
+            "max_abs_z": 16.852033615112305,
+            "restoration_max_difference_kw": 0.0,
+            "raw_predictions_audited_before_nonnegative_clip": true
+          }
+        },
+        "numerically_admitted": true,
+        "local_kind": "three_day_mean",
+        "selected_alphas": {
+          "fixed": 0.25,
+          "bounded": 0.25
+        },
+        "candidates": [
+          {
+            "bounded": false,
+            "alpha": 0.0,
+            "mean_MAPE": 7.14453675004397
+          },
+          {
+            "bounded": false,
+            "alpha": 0.1,
+            "mean_MAPE": 7.03444548871477
+          },
+          {
+            "bounded": false,
+            "alpha": 0.25,
+            "mean_MAPE": 6.914928332870059
+          },
+          {
+            "bounded": false,
+            "alpha": 0.5,
+            "mean_MAPE": 7.167609967461946
+          },
+          {
+            "bounded": true,
+            "alpha": 0.0,
+            "mean_MAPE": 7.14453675004397
+          },
+          {
+            "bounded": true,
+            "alpha": 0.1,
+            "mean_MAPE": 7.03385089062467
+          },
+          {
+            "bounded": true,
+            "alpha": 0.25,
+            "mean_MAPE": 6.913441837644812
+          },
+          {
+            "bounded": true,
+            "alpha": 0.5,
+            "mean_MAPE": 7.1643237842165
+          }
+        ],
+        "source_signal": {
+          "development": {
+            "passed": false,
+            "relative_MAPE_gain": 0.032137621403164784,
+            "mean_MAPE": 6.914928332870059,
+            "strong_baseline": "three_day_mean",
+            "strong_baseline_MAPE": 7.14453675004397,
+            "improved_domain_fraction": 0.5,
+            "worst_relative_increase": -0.14695275637136485,
+            "leave_one_domain_out_min_delta_pp": -0.2980784982682761,
+            "local_rule_selected_on_development": "three_day_mean"
+          },
+          "validation": {
+            "passed": false,
+            "relative_MAPE_gain": -0.06009019575232988,
+            "mean_MAPE": 3.9519702714311493,
+            "strong_baseline": "three_day_mean",
+            "strong_baseline_MAPE": 3.7279566279041907,
+            "improved_domain_fraction": 0.75,
+            "worst_relative_increase": -0.03983588581590369,
+            "leave_one_domain_out_min_delta_pp": -0.3877747487768934,
+            "local_rule_selected_on_development": "three_day_mean"
+          }
+        },
+        "stable_positive_signal": false,
+        "dynamic_allowed": false
+      }
+    }
+  },
+  "adapted_data_sha256": {
+    "adapted-data/m100_15/m100_rack0_node2.parquet": "0dc8ec615f6dc8b70b22c36da800051de8720f8bc7296d4209641cc1b5025647",
+    "adapted-data/m100_15/m100_rack0_node5.parquet": "76eac3a8b6e853a7c2a4a1b066eabfce00c576cf91be53b850608cb369e19324",
+    "adapted-data/m100_15/m100_rack0_node8.parquet": "86fb6a3c7a1a5f3e26314c3020e7e99d5a3d18c2cf902ee5f7ac75786e63e92f",
+    "adapted-data/m100_15/m100_rack0_node11.parquet": "858cfa093b8ff86848108050652ba6aef8f81f20751252cad2fa010eba17fbac",
+    "adapted-data/m100_15/m100_rack1_node20.parquet": "71c3dd2a0905f92c798f4c6b25d6b8fe5c550cc0202f3cc3e9e96c328e043274",
+    "adapted-data/m100_15/m100_rack1_node23.parquet": "80d55e298c59954acd71515f03647f947fd4c55ba1af24fb85f2b60ff01c6309",
+    "adapted-data/m100_15/m100_rack1_node26.parquet": "e45a698a54523dfed114c8a623f7a8156c6faae2ab360e87cf13fa0130a0d008",
+    "adapted-data/m100_15/m100_rack1_node29.parquet": "63daf69fa26ce833ad5ffac287a79e04913115ba0514fcb83e120222c1ada26b",
+    "adapted-data/m100_15/m100_rack0_node16.parquet": "c13a2576532ca3b3b03e17303703430e9dd95ebab1d6f2452a72c143bd307915",
+    "adapted-data/m100_15/m100_rack1_node33.parquet": "411622f1699a6c6950052399aabf1f25cf4119b31441754b94e022bdaeae43ee",
+    "adapted-data/m100_15/m100_rack0_node19.parquet": "81bd753356d89f26d6c81497aa7f89b1408ca77ec7e7cc662894784dcd969844",
+    "adapted-data/m100_15/m100_rack1_node37.parquet": "f3c8d37bf2bb25e8ef5afa4ad8b7d688dc128b597ad8f32daf30a1172bcde98a",
+    "adapted-data/m100_15/m100_rack0_node6.parquet": "eb46c4018aa67384b1f86a46883a9817c5f8e5033f073fab387c2d8ad3baea68",
+    "adapted-data/m100_15/m100_rack0_node9.parquet": "3ae56b721452d7fe137a227009a59b10e6c6f304a62057d35adde2eb91d3d0d7",
+    "adapted-data/m100_15/m100_rack0_node13.parquet": "98345f1474a80795e5e33bdf732afff670f4d1d4047f9f9cbaa87f4e9747b18c",
+    "adapted-data/m100_15/m100_rack0_node17.parquet": "2b7d38e4ea1d2edcdcc911c3b095cb6c26d402ab1112d01ee746ab3138fdd1a1",
+    "adapted-data/m100_15/m100_rack1_node24.parquet": "a995da8e9a372b77e315d430a2c723e5be0d49ff56454a0e3e851f44b2495f18",
+    "adapted-data/m100_15/m100_rack1_node31.parquet": "5b0a70c40ae67ff4f3e953dcd953518b3162bc9fb61f4d9ac86baac4ee3c2994",
+    "adapted-data/m100_15/m100_rack1_node35.parquet": "430770c64d29524e1f8cb87944160751f6c119dfa298c31e09055a08d4463029",
+    "adapted-data/m100_15/m100_rack1_node38.parquet": "b4ffcb4a6f98588437c64ad1f2505444d6ba5bc0bb054092c7a23a5becb8f33d",
+    "adapted-data/m100_30/m100_rack0_node2.parquet": "3be5b1db02df82db8aa7041ae0cc3bd7d954d66acdae7c717741b7638cd47f46",
+    "adapted-data/m100_30/m100_rack0_node5.parquet": "d11ebdcd6614b9f3d8f59a513e1e28b942e7ea9516cd8153241be8f78fc511c0",
+    "adapted-data/m100_30/m100_rack0_node8.parquet": "1d0a2749d20200ca64aa608cf8dbb1ed20df3fca01e2de8c4f1f4a3e70ea28b0",
+    "adapted-data/m100_30/m100_rack0_node11.parquet": "85bbabc029724f00c1ea2e49305256c00325414a51474b1f2ce1649b72a167b9",
+    "adapted-data/m100_30/m100_rack1_node20.parquet": "739933c6c9214b3176779cc69b6539139526eaac9c61ae179f1effeea9188c8d",
+    "adapted-data/m100_30/m100_rack1_node23.parquet": "4605b3f78b5d36a5e26d997491fbc3121833f811b413f146086673215ffef90a",
+    "adapted-data/m100_30/m100_rack1_node26.parquet": "c96ea8f11abfb80bd85868b89c2bc7cd05709c79e800a58ec2b0c706d0a93305",
+    "adapted-data/m100_30/m100_rack1_node29.parquet": "2fff77b88c70403c6f74f6e67aa9858d31ffa5bbacbb4d36de4a110cc5eb53c7",
+    "adapted-data/m100_30/m100_rack0_node16.parquet": "ba4ea1b60f89f938d4e388f866ba2a3e857e69020b25ddeac99876c5c8e8dc7e",
+    "adapted-data/m100_30/m100_rack1_node33.parquet": "8fada428b2212ba4b1a723196bfb09d2fb3fd39988574db32677b75eb8485546",
+    "adapted-data/m100_30/m100_rack0_node19.parquet": "fdedc99fc2f7b5ed026c11e33263943a3d0d81953bb82e8b898ced34c00414f8",
+    "adapted-data/m100_30/m100_rack1_node37.parquet": "d942a0e6d24d9c6dfa407fa14c87cb45c13eed607166c24b1c928202a0f3910a",
+    "adapted-data/m100_30/m100_rack0_node6.parquet": "8d265ad3801c04e7f570fdaa3f6bad10d73a818d23372334c7bd9f1b1d6baed6",
+    "adapted-data/m100_30/m100_rack0_node9.parquet": "79978fcd0f321ac2503a369a83c42449a1365b8b6740461b3830b007bb512d77",
+    "adapted-data/m100_30/m100_rack0_node13.parquet": "e9fefce55f118cf92fb0a5a6f64c6376028502e09c7e06930de51c92377ca68b",
+    "adapted-data/m100_30/m100_rack0_node17.parquet": "3fd01608e4e48aeb31a1e911d74a8063ffadc80f1558661b8b79e9a9156072a2",
+    "adapted-data/m100_30/m100_rack1_node24.parquet": "c5213ed2b99849f72f1052ea41e50bb1c3235c4fe087e1223a1b418a58bf14bd",
+    "adapted-data/m100_30/m100_rack1_node31.parquet": "5006f9e82ce97e9b1985bae45e1d4232a5f955271311a32e11031f4a9d6f30ab",
+    "adapted-data/m100_30/m100_rack1_node35.parquet": "393f28e0e6010124a09aef8b2590dc94569d5f501eb495ea6894c6115be0d7da",
+    "adapted-data/m100_30/m100_rack1_node38.parquet": "c9c5589fb66a03fa05bc23da149dff559804376759f8b355509f78b17deb5d33",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc120.parquet": "cc8685789aa74e563399312fa504973b8bb1e76051f7fad473c8da7e86473e91",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc121.parquet": "a2659321a219401c7c1593bd21534ff5fb6f5e9d6daf9a759431b36a789271a2",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc122.parquet": "262ed4e6d143f1103667ef15d7f133ff65ded6e543e02659671fdcca19ac9942",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc123.parquet": "03b44f126ee6eb7fc37cb6742cb302961fdef344a23c7620929c0af6c778941f",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc124.parquet": "dbe45b022d6c8e2f867e0cd29d44121a792bf5998dc83a5e46ade20ce82d0c99",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc125.parquet": "cfea6ef057cf6f5f40bad6f8334b87a1498a5f5b224a182acf78d3d2d24f2b1a",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc202.parquet": "b1dd289df797e66ec2a5c57b4fc029ab29a1072a04a78977cfdf5b475304ac6a",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc203.parquet": "6c08507f90f03ed1883ad463af5e6db9827ee7d7a3a58310aa352a6fe05446f0",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc207.parquet": "601a9a4147dc60c6fcbdf6576a2522a19685605c00c66003b6900561ec64e0e1",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc209.parquet": "d3008a1c88e8ec8e5276be2c24dc3fe70fd4611bd51da757d167ba772c80b959",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc210.parquet": "df5286c0e8115dbba01e991fbc796c5a53f17f1961bbeb2796f12e8bec307713",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc213.parquet": "c56ca0d91389c10b26eaa99aeb7b43ddd792c76f8a6a4d360b1da4ab9b978f10",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc126.parquet": "8f005d53ceebc3336a51d47a9d41de2608ac8e8052fe150004d99246a7b6744b",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc128.parquet": "53f01f11cfc0ab9671af4db0608fc4e9ced253bb47b362c4ec7bfd826bc1def2",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc218.parquet": "43dea7aead16ff7a41cc10618bd9d47f86959b11fba6a1a9b116e390685d67a4",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc220.parquet": "950a8ca8de5b1f14daf826657166f65f36c40f665c633d3fdac6a7c9a64c55b8",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc127.parquet": "62f2cb11095cd22d4bfdab0b5f4ddfaea95cb500ee9ff0f020033abc5c9c5989",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc129.parquet": "6b626e4d05562ce9a7df9d8da9f746e82fe4e3868af472f9fb9ce01ddcf4c1f9",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc219.parquet": "3b6595c0ab10f69417413ef243b110ee8690801530739a965fef822af6ca7714",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc221.parquet": "57c93bf89e71afa0546c88e39917f89bb02f498e830bae8683899d7facc91967",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc130.parquet": "66b1abe4f11a6a4689d705c43d58fce86cc5a8f5d764ee16d8ff125b0a7df293",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc131.parquet": "9cbf23ec69ea1c61cb7a3c84568addbe4741e50dd997ccfb8224f5d896571688",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc132.parquet": "42c521224a04383a8322b3baf8777762e80ab25f72f37e01bd93a044ebb5dd11",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc133.parquet": "553d94ea2cb0ab4600e541dcaf91e35140d3dd0ab9881636edfd07b1944456c2",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc134.parquet": "edf4cebc0f529465776b016718446f3a9ed7ebcae497412e82b2f9bf5c2dbba0",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc135.parquet": "d91af3a40e8dce54c7bf027648fbaa7d5f200ddfa2f2ab86ab7601ad445b7846",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc136.parquet": "e9253bdd8c56bcb12a1744c48bd51c09ad81f4cb297510ec708bfcb9f8f780f7",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc137.parquet": "1fbdd75538897436687d862a349d84622eca157ff6bbec2b2c808e5e19705fd7",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc138.parquet": "a58191d31cc18a729543283c7cc5e09a561c2c0abd7d7f05c855f86fcd2e9743",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc139.parquet": "b95b53e72238264ddf6f266ce75ce74fe2374c85a14df47f06588e4f0de06123",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc140.parquet": "379a1e26dda51eaa265793236925c83e33104da627b1227a5090487c08b87791",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc141.parquet": "bb3ce56d5703776b70a05b8db84ffe1f05fdf0c5b15c3c3cb7e648dd9a5aec9e",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc142.parquet": "7a63f194701344d9f34d36bb4fb6225873567c14928470ffb8226be88d4e0e69",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc143.parquet": "558a3eeb5e73ffaa6c8bbef08e5dfa7f65a305a500589bb39d8a894adea6ffd8",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc144.parquet": "d6064d70e9bce036e17c9204de03ce4a6d01eafcd5fbcf1c6368c180092a8492",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc145.parquet": "08e3ff3d807f6c7be4e1fed2c3f69f75f31d858aab14a3afe688c7f0e4a1162b",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc146.parquet": "6f1e64a4ef33f9a80f966f22ffd366767e1328ebf97e0592db2fd5ef81cdf67d",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc147.parquet": "b9f17f8ad21689b892ebd7d8bba787de139dc24f28ce7d2f6e1358e82683d439",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc148.parquet": "1231e2a3db3651c0f78ab2214df8be14917c21ffc0e789e6251e5bf4a946268c",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc149.parquet": "cad5c56b91ee87b06c0f510746ead5f07779e779909d07fb50556ccb1c811ecf",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc150.parquet": "905bbc9e9fac70453b9ec1306691255e3093060457ecd4a81c0342fa5b99bca0",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc151.parquet": "8d5afbfe461c2abea7e709c1652d19c707a6bc67b868b9a4bf31feac0943c45f",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc152.parquet": "e7cf2ce1f6f36b802040e8ecf3bd0ce111cdb7142e85ecdb42629d9f76757e35",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc153.parquet": "8fa8c30ba4be1422732087cd24eb68935ca18d36adc71fc90fb45ee7497e5ae5",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc154.parquet": "f6343ab3233c433c0fe49c2229dbfc2c22d978f743a0c0dfa35baabc3d3d59cd",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc155.parquet": "b3b9e456e98954911ebeff5deb79705908497addbe6840498a508333c9fac2d5",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc156.parquet": "6a15da88fd7eba19a72595e027ca71f7c106d70d719553943a692910873fc924",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc157.parquet": "f9cbde07c6baf09475ff9a7e5d7dab8f09531131ab73256914acba8e4be71b92",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc158.parquet": "e5a82224f2d2f54c10a2a914d3faf6a66cc4e26adbfd9c3792045953125d0c8c",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc159.parquet": "b927f6d09562053e6b1b4f64d098ba827dd742e57202d8a7e0467ecdc4822ef1",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc160.parquet": "d7b197cec7f353d6e1035bde1620e983d6d16a96c733eb07efcfe4cccb562295",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc161.parquet": "ec57cd0d31ea191a7d94fcc7540b1f38363d6edcf9ed0d1ddfcede932bfe0b0a",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc162.parquet": "ffee758dd19a0a1ca124aae479152802a3b08d7d6e55a70152dd2df1a47381ea",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc163.parquet": "28cee0ef33f33c2ce59b748f78b1a0a0979c960a466960b43bbf11d760f99035",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc164.parquet": "f25a1485bab586feb15dcea43730d139b58249139d37fe3fa2bd3ab333b7368f",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc165.parquet": "aa81c9c842442a2ec9575c58c9829e9ef1170beeea3be39bf63cafd9db5adfd1",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc166.parquet": "2d2a1010408bd59f5c7cc1668967a1f68e1d08207340d1683aefcc9bd909e0e2",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc167.parquet": "e62e5559abf4ad32ba4f1623e1c8b85bd7f79fb482f1ae50581aee3f35b9c0cc",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc168.parquet": "5583935685a41256e57096caf52c43f7a3a50913bc19168d3dfd7f4792847ab0",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc169.parquet": "f6277759e41f85fd20c49e8b9b0e381a899ad693233299ff2d88ec34d48e3f9b",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc170.parquet": "98db01e9e7140565c9f43bb47c99dfaf00e35b376f090c319323dd0e8fe0baa8",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc171.parquet": "a9d591389995622ff5d2963627d4899b51690acd753ed8d62845d1ee6cd5fa66",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc172.parquet": "6e26321e8ab598ffab9c051ba05df82bf0fc90535965e0aa0ba4c7b5a93dd32c",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc173.parquet": "6d88f1e4f388ac936a6630878218f24ef16eb498eb5d6eed87f6d43ca1597506",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc174.parquet": "fb39d8ebbe001c35390ce53f665a0680cb0002994e95b1952f70d9a0c59f23af",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc175.parquet": "07537aaf6d7ed1e711f3009b8a5d21f567c13baeb99629acfe7b3a0a0283591f",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc176.parquet": "b9f2643e5255ac0791cdca84ece63b1cac18d0e04c96e2153439c5bd748fe98e",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc177.parquet": "10586572f4a76129e2936da1c15b53b025ecc888ab64f789f579f4aec2c3f465",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc178.parquet": "6078e92c1a5cd52aa65313c17c9e66f0f0e32365bd82ebe1aa24fdf0e8f1a59b",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc179.parquet": "f935fe75811d533d1611e2031a857f5add1417b9f606fd07e73244d0e46d6723",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc180.parquet": "274e7402336c176c81cdcd1a661011b87928258ee28ac55f7341365e30d22982",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc181.parquet": "369a39a9857764db9522c69acd882f7d8e5e496bc0e4b30cf4b6b8156f0f56ad",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc182.parquet": "64083a2209d2330774d00b4242ec046689fb0b4322c53e59372dd12b1c681573",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc183.parquet": "3671b14b1fda1f7ab4335cd0ce8b330e8d1a4a0a0b3a0804a159924769dcda81",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc184.parquet": "13a5d597625d183b6aa3ef7aee50bbe825359cad494c67aadffa5186b90049d0",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc185.parquet": "b02efb3f2f9f775f21cfd4056ce5d94e357c8eaf555c44dcb20a26475959e855",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc186.parquet": "c4bcb6763cbe5621afe1847a331147d720dc0397fabd8b14148b437eec101c0e",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc187.parquet": "f419954738e171b9ec3c9ae4f67e12cd5a620625615e3ba27c5f0c1a69f63d2a",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc188.parquet": "399b3ef0d0f3aa79573f46e17063be22e3c77788b06573645984bacca445b3fe",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc189.parquet": "41580d179d665308879b2f24d14ace4a05a6871e7d4d2ee63c14a12e190ea4d7",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc190.parquet": "d3a15ef0e4ecf4454f90b78ece5d5634882e68ec22b133fbea9d47605abcae7c",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc191.parquet": "32b1b9b2c6f18551fa84b5861d3a18fda8b22eb27db852c0efaa90e9ba7cfe62",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc192.parquet": "78239919320e9741b7a6f2e00fad356c9feae282bfcf396fd2206a381b115758",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc193.parquet": "a4f7ffe4b87a5ecd88f2382f16de56750ca0511006950baf09be7eeacf946db5",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc194.parquet": "1515e7064c8cfc08754d139a935607cf26b8552b0ad8e776366144f16eaa8ac3",
+    "adapted-data/ucc_30/ucc_d1_qh2_rcc195.parquet": "9784f3935b7f52c11fa1f5677be617b17259741a33afafa042ce736d36934223",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc222.parquet": "d602ee52bcca2356dd626930ca8e8ff0e85c842c6b12d5a01ecf107042a60da6",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc223.parquet": "4d09630967bd29286557a81816eb2b660bdd25d1357f258d8765c7fab1569853",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc224.parquet": "b03cfa83b0d396feb8219ae2ea5a70da51e8e0bfed85f633a9cf3e0bf4d9a61d",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc225.parquet": "c7901e60e4598e0abc019622487f9b355b96cec5d4716a5eb60b4d20aafc44bf",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc227.parquet": "a6fc96aba1cb411d97daeb56fdd537a08b39bf2b022d21366064613e961a1d54",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc228.parquet": "afea2e9fe73cdbe0af2532a4f66c45b269e31ed37e04e03ce55ac9221c6e8f44",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc229.parquet": "9e107903d491caa1115953ea42d6186fddbc7d2ea13510513642191f4c60a509",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc230.parquet": "4715fe9113496a72fc7365c2f5b736302fdcf50cfd609be5dcb3015473ad76e6",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc231.parquet": "fb4ade471a8849e5229e5e34234d82a44be9d84847c047a64710b9d6055d6ec6",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc233.parquet": "67b22aa598a3dcd7287d40d83cd23eea7187ca7e74c6a833eedcfb82288b81cf",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc234.parquet": "aa3408b9044e921ee3a46594ae65b37ffb75d2626683da6de50b74db6d1045b1",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc235.parquet": "bf28fc9a05d1ac055ca986569bff948dc1410ed17f8fb69e59d2c31569f7f1ae",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc238.parquet": "de12201bb80fd90a56a0d54ba619287cd7a68c6c5c6db5ea74a8e73ab6671a7b",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc239.parquet": "6ea21be9126337faf134d0abe4e3ec133a5734504536d895ba31c5df4c615f67",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc243.parquet": "5b78e45fee775eea530c531e895975a0e4c498282936dc7c20f8568274066eee",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc246.parquet": "af8f74779593c8b7df9397b9f43fa9adb8cc353d50720f652505d7f7c26c08dc",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc248.parquet": "3e3b4de18d03435bd0f1017c5d215fe462062b307baf5b7b7a983114445ae7d9",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc249.parquet": "c03656000eb9debf79cff4cc900105ef1429a41f5a3f2cb0757f17d90559f23b",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc251.parquet": "d285eaefa13f58f13b66935a6be5367688854af133d44d033fd956f89b049a2c",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc255.parquet": "ae7a71bb481fd2c31e4f6c7d7fccee93456a35550f3f46e04a04167095a1b96c",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc256.parquet": "608978d7d2216c3123eca36c9cb285c15bebfc3b4c66283b1fd3b737ef9854fb",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc259.parquet": "6bc7ad94be529ff83f4b8cb117fa20359a7791fdfe3bc38d23ad2ca8f983ee9f",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc260.parquet": "40ba464f27628753b5102abc0c24dcb317383e7aebc43fe2c1b906840a7596c6",
+    "adapted-data/ucc_30/ucc_d2_qh2_rcc261.parquet": "6612bde804378e3022f5683f0f78a67f8949b702fd18e5a26b90f6c6749ae8d8"
+  },
+  "preregistration_sha256": "27c8bfed85dbd059187c76ff6cc5bfc482671494661793e24c868b953e73d9e1",
+  "training_artifact_sha256": {
+    "groups/m100_15/training-records.json": "f799d32c0cf8bacb547e33fcd4e9823e804ba4d54e3ec16e6882599da4078e79",
+    "groups/m100_30/training-records.json": "74b2ba8b718baee33238d683747d23409d5779a645a3c31e16444516dcaa297d",
+    "groups/ucc_30/training-records.json": "7b8695d98a25c4e45f01cadeff840e6cacbc3cc12e9d639adc8165ad623b0274",
+    "groups/ucc_30/24h/original-sapf-selection.json": "4d7dbb8a49290c13816a5a9e1254da7195430ed5fb98d613de96489b0640a3ad",
+    "groups/ucc_30/3d/original-sapf-selection.json": "26ae6c191a070e91cd8411bb8ed4474852c3b4929f35746e29c9111f7deda919",
+    "groups/ucc_30/4h/original-sapf-selection.json": "9312d4dc162386450bf958800b344f4863a0d239cb4c11f043bfd588179500ec",
+    "groups/ucc_30/gain-reference/calibration-data.parquet": "9833fdcf35c7b9299a66ec7190abbf56f39dcc213ec6cc23ad420ae5f768a309",
+    "groups/ucc_30/gain-reference/calibration.json": "7849d300ac40c7e5d40d2c397d72ef1be57ddef64595cf25bd74ca21e40a5155",
+    "groups/ucc_30/gain-reference/gain-training.parquet": "614ec5f858202ef6482352c5ac74b6b3de11e0d7aff1c9102eafbd2567f1fbc3",
+    "groups/ucc_30/gain-reference/learner.joblib": "2298096c087a85b3077278ac32de487ded1638f31e6f2ad2b2bd2dc06099335d",
+    "groups/ucc_30/gain-reference/24h/past-performance.csv": "860cca95af4d237c3496c02aedfe490cfcef92caa1d4b47de1cb9f99574354af",
+    "groups/ucc_30/gain-reference/24h/validation-selection.json": "e48b0fc1a145fbe327c4b093045f9331bcabbe7e781eaf94f830ce8d65c0aef9",
+    "groups/ucc_30/gain-reference/3d/past-performance.csv": "54d377643ab216a8860964610d615fc45a1664b02aafc2c5cd1ed828fa7dbca8",
+    "groups/ucc_30/gain-reference/3d/validation-selection.json": "c18957275730c73cc825f6d500c42751b10ac699086c6ecc78886bd65f7e45aa",
+    "groups/ucc_30/gain-reference/4h/past-performance.csv": "95e09aee9473548f3d074b80f03524de9f2e8d9e69bd09218a1ffc324f4bd9dd",
+    "groups/ucc_30/gain-reference/4h/validation-selection.json": "e48b0fc1a145fbe327c4b093045f9331bcabbe7e781eaf94f830ce8d65c0aef9",
+    "groups/ucc_30/gain-reference/4h/cutoff24/model.joblib": "1ef971489d861d2cca4424ea574c58f0b0e920877d4fc2df3129f50f94f46041",
+    "groups/ucc_30/gain-reference/4h/cutoff30/model.joblib": "cd238d1ecea5c95eacae142bcbf0f89c7cdc24812220b35e28fbb1dc7aac9e6a",
+    "groups/ucc_30/gain-reference/4h/cutoff36/model.joblib": "da3f6a977c46e32e85b923a484b4a526710b314c7951f985a4212ef00a648bb2",
+    "groups/ucc_30/gain-reference/4h/prior/model.joblib": "338a99c9ccab72910b607f7730d1e8afabab663fa3d235cd35ccb6a9ea634415",
+    "groups/ucc_30/gain-reference/3d/cutoff24/model.joblib": "fac472807f29dc4a6d9112539a37675bcfadff56b60f59b36423a17042c29a59",
+    "groups/ucc_30/gain-reference/3d/cutoff30/model.joblib": "01773dd7b17dce33960502bc94c4b153f022f9740f74e67da03d449027ab8973",
+    "groups/ucc_30/gain-reference/3d/cutoff36/model.joblib": "b46a0bf551fc4a35bbcdedc5dee4c18dffb1e5154c6b8eac2dbc292dd8e111ed",
+    "groups/ucc_30/gain-reference/3d/prior/model.joblib": "8ed29ad1a01c7ef0ab834338ddfc96a2b60ca0b4899bd98f1ed5ad59fbb4bd7a",
+    "groups/ucc_30/gain-reference/24h/cutoff24/model.joblib": "890f09e1520206c8c629eb10896325c7515c125d62aa8e6c832fbfef7d3ff7bb",
+    "groups/ucc_30/gain-reference/24h/cutoff30/model.joblib": "baa74a8fcbf8888c3ae5d24b7df8bfd7b8e5bbc1577ed17dbaf97801f1dd0011",
+    "groups/ucc_30/gain-reference/24h/cutoff36/model.joblib": "2d93eb02df476352c33d5ef72d14223d60dac7df7e04d663545a925e7d5ab265",
+    "groups/ucc_30/gain-reference/24h/prior/model.joblib": "3dbeb07a7ffcf4c3714a4dc1d833dc19e98db695d34ea3d645a70ab338bc589c",
+    "groups/ucc_30/4h/bounded_fixed_0/model.joblib": "be0e7ef36352b4a59d2ed282950f1bc9cc33fb24e4b89aa93bda7d8875a69768",
+    "groups/ucc_30/4h/bounded_fixed_0.1/model.joblib": "3b315de9ec4992b3e52e0c53d4f8fb4672bf60e9e6d3891510948f7b06a94691",
+    "groups/ucc_30/4h/bounded_fixed_0.25/model.joblib": "f83f8b12292f65aaa0d9bbdd73712e5bc4be31d6931e00c2cec459fa22f173f3",
+    "groups/ucc_30/4h/bounded_fixed_0.5/model.joblib": "12f911dfd1e985ffd0352d8dce445ed0d17da70f002d684398fcdcb83f4d04c5",
+    "groups/ucc_30/4h/expert-bank/model.joblib": "d7b6625cca13cb495833a0f2db2fa01f54ca3ca0b0a514c8b0b5cffae9fb8276",
+    "groups/ucc_30/4h/external_mean/model.joblib": "1231ae03acf577d8436434f00c92adfa5a2048b48e896744824a7abeee006701",
+    "groups/ucc_30/4h/fixed_0/model.joblib": "58c5609c2bb520c484c57b6fc04b54d010d53ccf0c57ead113930176c93cc2f5",
+    "groups/ucc_30/4h/fixed_0.1/model.joblib": "024735a5bf1c6627468f2eff1730144f6631f4f2d3e313d4f930003eb89fec01",
+    "groups/ucc_30/4h/fixed_0.25/model.joblib": "745ae0bd0d1873256207fc4f619804ec88a7ca99ad6b354fe07d716b42e2d021",
+    "groups/ucc_30/4h/fixed_0.5/model.joblib": "d2b6166594b82637d11a3e94c4ba237d802a12ab587ae4f6353c061a17f83061",
+    "groups/ucc_30/4h/gain_v2_reference/model.joblib": "364dc1e8dc7c0b5276c43161a077dc1828115e414e02156425ecc250d3f4e55d",
+    "groups/ucc_30/4h/ridge/model.joblib": "92073eac6bf810dd4180fbd49994fb69b4d11c0e497e00bcf68923c7e55bd9b9",
+    "groups/ucc_30/4h/sapf/model.joblib": "f9e6ec2d1614a2aeb7f7366b42e8bb9251a9eee8415f5a1713ef3e3ab20b0a3c",
+    "groups/ucc_30/4h/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/ucc_30/4h/selected_bounded/model.joblib": "12f911dfd1e985ffd0352d8dce445ed0d17da70f002d684398fcdcb83f4d04c5",
+    "groups/ucc_30/4h/selected_fixed/model.joblib": "d2b6166594b82637d11a3e94c4ba237d802a12ab587ae4f6353c061a17f83061",
+    "groups/ucc_30/4h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/ucc_30/3d/bounded_fixed_0/model.joblib": "94c844bd8045df82db9d21f60baeb27d157ddfa4e125a3bd8bcf04f6829199bc",
+    "groups/ucc_30/3d/bounded_fixed_0.1/model.joblib": "6fe9bc609f0ea4d0bee86bf45c7268e9a0fca9d579174af70f2edeb8e2324e19",
+    "groups/ucc_30/3d/bounded_fixed_0.25/model.joblib": "c0e3023e8678a15d262d2a3e96430c7d01b11b4e13c103f018702933be9e1f76",
+    "groups/ucc_30/3d/bounded_fixed_0.5/model.joblib": "9e7125a2e3e5fcfbeddb9026d96ba5837218ff784fb269bceb9a4616daa61ba7",
+    "groups/ucc_30/3d/expert-bank/model.joblib": "48a619d9d32740a92394860768351322e9d97788ad667991d44fa5d6ec9fc50d",
+    "groups/ucc_30/3d/external_mean/model.joblib": "afee1dc09a6be02fb6e4b63d163ddb813dad44fdd4926c714c822f7a54351254",
+    "groups/ucc_30/3d/fixed_0/model.joblib": "d319c55c4fbee926cae33a11e00744dd4003b6b1088285a936b5085e10337b70",
+    "groups/ucc_30/3d/fixed_0.1/model.joblib": "58d1f8279ce3009ff261f4502a8273e242c2ecf0bbe817b6acfaf3cc1437ef98",
+    "groups/ucc_30/3d/fixed_0.25/model.joblib": "b796ca171dbf947cdb8350929a1f7a6d3fe703b42bdc756cfe906e5de6da00fe",
+    "groups/ucc_30/3d/fixed_0.5/model.joblib": "9cc5fea678378424c47240a94c205a63f5dc9bd83dd33ef9f256f2777fc7511f",
+    "groups/ucc_30/3d/gain_v2_reference/model.joblib": "3ba74df07a24d28f81a9cd76da891319c14f5ab2b528b5e8cd608300acb4e085",
+    "groups/ucc_30/3d/ridge/model.joblib": "ede2b18b7fdc9b09f137bd2ad4d30c95e9cf3e825dff9add5ccc6abd58853718",
+    "groups/ucc_30/3d/sapf/model.joblib": "e176e103a07d5fd5bcaf6624c4acdbdb97f68a927bf6a48c20a3755bc4788db6",
+    "groups/ucc_30/3d/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/ucc_30/3d/selected_bounded/model.joblib": "c0e3023e8678a15d262d2a3e96430c7d01b11b4e13c103f018702933be9e1f76",
+    "groups/ucc_30/3d/selected_fixed/model.joblib": "b796ca171dbf947cdb8350929a1f7a6d3fe703b42bdc756cfe906e5de6da00fe",
+    "groups/ucc_30/3d/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/ucc_30/24h/bounded_fixed_0/model.joblib": "10bbd6b00afcddc48b82e7f11c42f6e8a54bc50d0887aa4805d4d1f4bb77f1cc",
+    "groups/ucc_30/24h/bounded_fixed_0.1/model.joblib": "a1d2c2ad4642c2e45add90fbae5e2c7d92535c6965a147f71209c5c10de794ac",
+    "groups/ucc_30/24h/bounded_fixed_0.25/model.joblib": "10a4bf3930a44a8288e9f6adcd95eaabc2b488905f0607026cefcaddc5a224ec",
+    "groups/ucc_30/24h/bounded_fixed_0.5/model.joblib": "51125ea62353f4b259de3b3a1b3eb06f388c0ecfcc14aff5c4b8f266a0f68bc3",
+    "groups/ucc_30/24h/expert-bank/model.joblib": "682d55b321a1691cbbb2b26e46a7fe8e9ed726b1640ccd367780f6c1bdf98194",
+    "groups/ucc_30/24h/external_mean/model.joblib": "1bb39f702203a75ff4b025b02670800505730b64cb8de6ce78042fe8aa646467",
+    "groups/ucc_30/24h/fixed_0/model.joblib": "ec8e889d5daa6e34adb0a1ea9bb5ab8db011aababf3c67a8615d6f6e219bfd7c",
+    "groups/ucc_30/24h/fixed_0.1/model.joblib": "dafe10eea05158b545e7a6519e41bda858ebcf8aeeaec7daeffa0013eca3a2ad",
+    "groups/ucc_30/24h/fixed_0.25/model.joblib": "66c90faa7db029c451bfde9d90b08fc8e1c4b54319081b98ffc7e5a10d4a2cd4",
+    "groups/ucc_30/24h/fixed_0.5/model.joblib": "94876dd759d82fd937677d00ff38f1a3fe27a794aa5886f6c61fbad9c4af1494",
+    "groups/ucc_30/24h/gain_v2_reference/model.joblib": "dada76b463823fe0cc02ebdc48d876bca94ee50792f0c1b0f650c3b135f7a1b5",
+    "groups/ucc_30/24h/ridge/model.joblib": "ca8a6b9202898c5bd435b41c6abe2c0cf3ac49bcc9d9bb4576433e6cf7d7ed98",
+    "groups/ucc_30/24h/sapf/model.joblib": "bb7539bb5ab01f95c15b050ab5035753d25d9d30e14e2981c277f57f8c24ceac",
+    "groups/ucc_30/24h/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/ucc_30/24h/selected_bounded/model.joblib": "51125ea62353f4b259de3b3a1b3eb06f388c0ecfcc14aff5c4b8f266a0f68bc3",
+    "groups/ucc_30/24h/selected_fixed/model.joblib": "94876dd759d82fd937677d00ff38f1a3fe27a794aa5886f6c61fbad9c4af1494",
+    "groups/ucc_30/24h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_30/24h/analog-training.parquet": "7cda6a3b3a8c78d4eca9c66f0b56f7fd00f074de76093f6c56fc9540ee5b9d63",
+    "groups/m100_30/24h/analog.joblib": "facd224ae10fabc545b29068fa43f90230a1cb754f6edce603de5ba12cf14def",
+    "groups/m100_30/24h/original-sapf-selection.json": "743721a0ba416a167d81d64349dee8a6ce1d292c1d9af2a89927fa9ded933621",
+    "groups/m100_30/3d/original-sapf-selection.json": "a358e4d236db8c90934c580b60d696aad4fc7a7933398092b43c0f33ed89f52c",
+    "groups/m100_30/4h/analog-training.parquet": "43d7bde95a63e9661190cc771bc76e4208ddb13edbc050f11a07984a322c4d36",
+    "groups/m100_30/4h/analog.joblib": "657465b3d3b0f26b0fa58a8e928b637cf2d1b374ae3dc8d26d01c70affda7115",
+    "groups/m100_30/4h/original-sapf-selection.json": "ec18408312f95fb310a40a4f2082d99b9923955d140c455cd898ea0fe09b14e3",
+    "groups/m100_30/gain-reference/calibration-data.parquet": "3c460d5b3a26ad0a63cccd69b426a03996590536ab4d801a6d248df348966c68",
+    "groups/m100_30/gain-reference/calibration.json": "fc7847320de6f43bbdec9869dda3373c4e5140b94801b2944f0e42672adc2f8a",
+    "groups/m100_30/gain-reference/gain-training.parquet": "df7cbac4670ace8dbe884913f25a3cdd813c2c96e33d396a9eee810fad551d3c",
+    "groups/m100_30/gain-reference/learner.joblib": "f4c5986275d3fd0975bafb124341f8e75d44d355db4c889ae6d5a19b083e9c45",
+    "groups/m100_30/gain-reference/24h/past-performance.csv": "2fec5287908fbe97ad29a80bc742351af9afd878fd9868f3a9a2422642e918b0",
+    "groups/m100_30/gain-reference/24h/validation-selection.json": "08767e22da6c7f45933016d013eae5272fe2745a747d7b73dc385ebf1c3386df",
+    "groups/m100_30/gain-reference/3d/past-performance.csv": "92770e7616a0b4f13d047600cdc17d271e6402d19c9359745659615bf107f680",
+    "groups/m100_30/gain-reference/3d/validation-selection.json": "2d3c414b4dc37af127706a010989e149a1097b3b34001f89ea6e6f3f50d2dbc6",
+    "groups/m100_30/gain-reference/4h/past-performance.csv": "72b49d26e2e68809eb491261f0acca28ce0ea179a3b3a0e756f0a0e5bee43efd",
+    "groups/m100_30/gain-reference/4h/validation-selection.json": "1239940ec90ee5fe854e77df7b1aee54743e5c6fbde2375fcba43d2a8bbcdb71",
+    "groups/m100_30/gain-reference/4h/cutoff24/model.joblib": "8d738ad0ad155666398ac2c8bec0585f93ae6e2ede8d69dc63b889c226173987",
+    "groups/m100_30/gain-reference/4h/cutoff30/model.joblib": "2745bcd01a62a141e77ac27ef31cf378fc17e7723c455fe20064a921025d2245",
+    "groups/m100_30/gain-reference/4h/cutoff36/model.joblib": "296da6e7c5c6327b7580e15dc813a587e01012fc701eaec59a6ec6e7c4da6d55",
+    "groups/m100_30/gain-reference/4h/prior/model.joblib": "c2924b0ab910796e58b6401d1bb9d012938ffeb5c9dc45be42c0068fe8f166fa",
+    "groups/m100_30/gain-reference/3d/cutoff24/model.joblib": "88e5cfa0c30c95770b4d4e5b0e541e370f829d31bceb8519a8e3c861f25e8b85",
+    "groups/m100_30/gain-reference/3d/cutoff30/model.joblib": "84ead7a9f44dd085e2ab0bdf8042fa29fb28fd5a865ef3bb2cd752b37e014448",
+    "groups/m100_30/gain-reference/3d/cutoff36/model.joblib": "0caa1794f65bd4ccc2716b28d6c9b1b7e9e901a1959edfc6728e2b6b91234175",
+    "groups/m100_30/gain-reference/3d/prior/model.joblib": "58d38ccdb081dfd4b5889df6fbd015744f9f2fe63f263b23a66051bec56341d7",
+    "groups/m100_30/gain-reference/24h/cutoff24/model.joblib": "538b8714cc044ac253d3fd60fce6dbacd5716d8814d602b5474c50df5b8eb7df",
+    "groups/m100_30/gain-reference/24h/cutoff30/model.joblib": "cf446f5c18aa1aaa5e5c4012a59c17eeb321a66af8a7ac1de3fd4e13704f8340",
+    "groups/m100_30/gain-reference/24h/cutoff36/model.joblib": "bc3e3a508e2f6c66c1fae0ae4a097dc7becfcb8ccebb565bf089b3822aa847a8",
+    "groups/m100_30/gain-reference/24h/prior/model.joblib": "7e0aad554cd2369e12ff15ef1da523e39f0b24b2c0ec3806cc118aaa7588b93a",
+    "groups/m100_30/4h/bounded_fixed_0/model.joblib": "7e26cd28057ec1dce559331d1bc60428a80387b24e878bf9f02a06a73116c492",
+    "groups/m100_30/4h/bounded_fixed_0.1/model.joblib": "394d2c1fcf63f25f86e2933ec895cc1ab75d458ed493d61bf8450ca5b877ab04",
+    "groups/m100_30/4h/bounded_fixed_0.25/model.joblib": "95740e8c9e2b293892eaeee4acc7f67801238eb4ab0d549e8ee0ed4fd95de7c4",
+    "groups/m100_30/4h/bounded_fixed_0.5/model.joblib": "3eb013b5799575f8ea5738fbc6343f0ef5747cacefc6efd3ee6e7f6509b6d835",
+    "groups/m100_30/4h/dynamic/model.joblib": "b1c1f6ca040bce0b1eac074a908ebf5bcac261cb282cff9c2d0b6fc9ea481aa1",
+    "groups/m100_30/4h/expert-bank/model.joblib": "97c690fdd508f1e5e315b8c0ac2efdf8016eb7483c5b5b6e3dddd81fd0b58171",
+    "groups/m100_30/4h/external_mean/model.joblib": "0ffd93e68aa1851259c384bbf65cf29c24bf7a2d8c7c287dd42e34ea512a7b15",
+    "groups/m100_30/4h/fixed_0/model.joblib": "a272337307bed323a124a56c2557a31508c3573bb572e9ecf2cb46ad245a20d1",
+    "groups/m100_30/4h/fixed_0.1/model.joblib": "208587ef0928c84133d1306b8d3a13749e9ea2c1316adb6b729b6d5af9811ec6",
+    "groups/m100_30/4h/fixed_0.25/model.joblib": "fda009ee71df701de7fcc6030ff6179af95b90e9fe0f56158ecdde7adf6197a7",
+    "groups/m100_30/4h/fixed_0.5/model.joblib": "2b0b24778c041979ff2fd6a5888c52f94f805bc6dcafb0cfb1a378b765085af0",
+    "groups/m100_30/4h/gain_v2_reference/model.joblib": "408565a20268135acaeffdf3dbbcea08ea03c75b16b67c1f39ebdc7086cfc6b0",
+    "groups/m100_30/4h/ridge/model.joblib": "8a0f1251eb27a279ee1677d60f6035685708e3568f8b2be6c2ff3cd9b46c8e1b",
+    "groups/m100_30/4h/sapf/model.joblib": "38d69cfe216ee059f8b77b1ff958d4a029d19270bf43a24a54d25896572fb6ce",
+    "groups/m100_30/4h/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/m100_30/4h/selected_bounded/model.joblib": "3eb013b5799575f8ea5738fbc6343f0ef5747cacefc6efd3ee6e7f6509b6d835",
+    "groups/m100_30/4h/selected_fixed/model.joblib": "2b0b24778c041979ff2fd6a5888c52f94f805bc6dcafb0cfb1a378b765085af0",
+    "groups/m100_30/4h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_30/3d/bounded_fixed_0/model.joblib": "ac5481825b284377d1110872906f30e3f60edb1d77cf56380236cebd55422667",
+    "groups/m100_30/3d/bounded_fixed_0.1/model.joblib": "50fdd895676dd44d1707629cb55be98944ebbb87c13c51d291f4c8f5123dde8b",
+    "groups/m100_30/3d/bounded_fixed_0.25/model.joblib": "61b393df7139e85c2040f3a41c17bc232c3afe2852a8b6c92a1193d035fc1786",
+    "groups/m100_30/3d/bounded_fixed_0.5/model.joblib": "0072b78752b993ee4136347499cfd2d6a3ef531c5d1eced0c46b3e9ae1ac8367",
+    "groups/m100_30/3d/expert-bank/model.joblib": "afc0bc8a7a4e563999bf5367471e8fbe589c8e828d587661bf0019740aa1f8df",
+    "groups/m100_30/3d/external_mean/model.joblib": "c7f9a357312ef46f33f7385a01a975f30bf432ea9d1952fa5b478109e7d2566e",
+    "groups/m100_30/3d/fixed_0/model.joblib": "87b7a5ab4baacdc97b9dce00df51c89724e3ca9860d254d1da5a0e9b14523343",
+    "groups/m100_30/3d/fixed_0.1/model.joblib": "9a153c90ce0f480e6630e78ad9d281b2aaf45cb6e73c871ff84c3aed2a7b44d1",
+    "groups/m100_30/3d/fixed_0.25/model.joblib": "165162ac210bd29a5b667b175429026c49e18aa7fd21d8181a367738ec7af5c5",
+    "groups/m100_30/3d/fixed_0.5/model.joblib": "7ed199cd98060be8f590b097116e99b887ecf66b879a83e215619cca095f18b0",
+    "groups/m100_30/3d/gain_v2_reference/model.joblib": "c1dd1aa28e19a3046ed88b8f16d6d396116a72a6357e683729569a50eaf6146a",
+    "groups/m100_30/3d/ridge/model.joblib": "f2aa5d7ec057f2095719c0d60eca6cae3e2d1be8563a8737a32e3af44173b4ac",
+    "groups/m100_30/3d/sapf/model.joblib": "e077ede1fec9ac8960b8bdfed63a33a2fb9d9da9813c6242934f147b8657f9ed",
+    "groups/m100_30/3d/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/m100_30/3d/selected_bounded/model.joblib": "61b393df7139e85c2040f3a41c17bc232c3afe2852a8b6c92a1193d035fc1786",
+    "groups/m100_30/3d/selected_fixed/model.joblib": "165162ac210bd29a5b667b175429026c49e18aa7fd21d8181a367738ec7af5c5",
+    "groups/m100_30/3d/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_30/24h/bounded_fixed_0/model.joblib": "a162381ce276197e5bac886d9f03079660ca431b8310c7a81342ae1bad7100aa",
+    "groups/m100_30/24h/bounded_fixed_0.1/model.joblib": "df5987c04aed36a96e2593e00886ee6c7f1f4f4e1e59bd9b57218b50caa07abc",
+    "groups/m100_30/24h/bounded_fixed_0.25/model.joblib": "cb7d18a0f861fd2c52fa9460d39b6f7d517a1a2a0f09066681a6556585637187",
+    "groups/m100_30/24h/bounded_fixed_0.5/model.joblib": "864eac177f1ccf81869b7f4052da59ff63658ee340b56e2aab21f69c3446a2ea",
+    "groups/m100_30/24h/dynamic/model.joblib": "d62aed78017757863109b9160ba732986192924a320365410d0179ecea1826b1",
+    "groups/m100_30/24h/expert-bank/model.joblib": "7791980d6085300e32ac35ce660ac846a2cc8e0d415aaeba194272e47f309794",
+    "groups/m100_30/24h/external_mean/model.joblib": "804b4f1e1579266c4245c288323c578e91d727279376fd88f5ecee9026937026",
+    "groups/m100_30/24h/fixed_0/model.joblib": "b5380e829ac544d9b17162e71f3228728c0e5dbd87989be653db2c9960997f95",
+    "groups/m100_30/24h/fixed_0.1/model.joblib": "0af103fd9f36865fcad3d92d9195491bb502cee2b57cea4f9ca2b711164f78e8",
+    "groups/m100_30/24h/fixed_0.25/model.joblib": "47430646413aa91cfc2038493c917de4273e20f57d54282d101cb3d8de42a57e",
+    "groups/m100_30/24h/fixed_0.5/model.joblib": "1aad3e8ab2ae0d6d21ddf4d35c04997cb46e305ac0cd57002246fccfd9e46f43",
+    "groups/m100_30/24h/gain_v2_reference/model.joblib": "bf3011feb2abcdb208f14ac1895cc2e888a676bab1f5f16e1b3a9657dac571eb",
+    "groups/m100_30/24h/ridge/model.joblib": "91010819a72f7381bba8aee0921ee446150ae430341f1240605f7cb9242f9aec",
+    "groups/m100_30/24h/sapf/model.joblib": "8d4ed65ad605306cc2d0d47fe51d039ecacbcba6deaad4b41b35231cf198a168",
+    "groups/m100_30/24h/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/m100_30/24h/selected_bounded/model.joblib": "864eac177f1ccf81869b7f4052da59ff63658ee340b56e2aab21f69c3446a2ea",
+    "groups/m100_30/24h/selected_fixed/model.joblib": "1aad3e8ab2ae0d6d21ddf4d35c04997cb46e305ac0cd57002246fccfd9e46f43",
+    "groups/m100_30/24h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_15/24h/analog-training.parquet": "57f65292b111076597e65a1c6380fee033279aa85561e1b3012911a8b290b04f",
+    "groups/m100_15/24h/analog.joblib": "8fa489c83e60d85ac3b3b4af79fe149d21fe89051d426c29bf2e898990443994",
+    "groups/m100_15/24h/original-sapf-selection.json": "a7c7f4bbf6599766e203f719418b75529f2a9c0be2986692b71bef2d11a2f17e",
+    "groups/m100_15/3d/original-sapf-selection.json": "9f18fc4496041b1cde72cc3a55f2c605ddf5ddc2c951fa4cf712dc519cd4a65b",
+    "groups/m100_15/4h/analog-training.parquet": "3fb7a21b9710a9ab05c498f09aa35990c3ab37698caae60c1b11aa4f863554fa",
+    "groups/m100_15/4h/analog.joblib": "e925a00da9f998ab90200da33c0a5a38b206fb90ec3b7f5fe2c7cb7e153eb336",
+    "groups/m100_15/4h/original-sapf-selection.json": "882c000c9619fda2559e009fe08a2bac3104384151c68da30e0b895673237258",
+    "groups/m100_15/gain-reference/calibration-data.parquet": "fa8ab55162be292c4d68f9f22a206e797e47204e20ff626290d2453564d97337",
+    "groups/m100_15/gain-reference/calibration.json": "75212505afb52d158e28b853ca6af410d33c5c56e03b73b6becbf24060eb5673",
+    "groups/m100_15/gain-reference/gain-training.parquet": "bfbb83aec2d4008a77c67a85fe78f143b4ebd00efb8b05d3d6b539e04405619a",
+    "groups/m100_15/gain-reference/learner.joblib": "6e3ce565d867a2577dcaf83760f02793f4aca29882d1c5bde54d31c0da53e4dc",
+    "groups/m100_15/gain-reference/24h/past-performance.csv": "727213ba80a6585252c339c448463e51cde93a4267d4ccbc2adbd3b1ba6c6ea8",
+    "groups/m100_15/gain-reference/24h/validation-selection.json": "5f59d1fdf2c3e6c9f1f030f5ef50358ecbc524e2ad18cf1d44f6deded8dc1b8d",
+    "groups/m100_15/gain-reference/3d/past-performance.csv": "68d336b56573275783fb978db9ff61d5dd98bfd0e08a3bed4550958e0a2e8ee1",
+    "groups/m100_15/gain-reference/3d/validation-selection.json": "146f91ab35723187a5358c021d763bd49cd5d6cb35945efe21d3fe5111eddd34",
+    "groups/m100_15/gain-reference/4h/past-performance.csv": "5876ded9835daab74a181a987a834c18257f3c3374c08f795a084e7478cc7a27",
+    "groups/m100_15/gain-reference/4h/validation-selection.json": "c9f434e130cf93f2a13a2413ecbd9676a7f82dea93ecba2da1c698bb4ecbef80",
+    "groups/m100_15/gain-reference/4h/cutoff24/model.joblib": "2a2038d7f6fac8c1f52f7d8ab63f07b4fc023b2a0ab0f6b77f283e2f856d1fa0",
+    "groups/m100_15/gain-reference/4h/cutoff30/model.joblib": "cecb119e17bec452c6e5ad9322ef4dd63e72b3a06b7b00ff6ba2c37c7eabf523",
+    "groups/m100_15/gain-reference/4h/cutoff36/model.joblib": "b2f7e6f9bba8926d44342dc2739f8d94f30bbaef6bcf3154a8da32bcd8c0080a",
+    "groups/m100_15/gain-reference/4h/prior/model.joblib": "9619558273d3fcd2504deb790e6bc8980d79a51bd874b5c3d4a53ef6c86a24a6",
+    "groups/m100_15/gain-reference/3d/cutoff24/model.joblib": "e82456778edb990373271037a178cf37b9930a29251907a0ad026bae6315a79a",
+    "groups/m100_15/gain-reference/3d/cutoff30/model.joblib": "5b7b0b513e51abb405c02ac07c03f302b4a6d17462647fa45ca0e27e9a55bf56",
+    "groups/m100_15/gain-reference/3d/cutoff36/model.joblib": "dfc0ad796b1c839c21968a98aa4bf16ef1503033da52a9a8103d33adf5edf69d",
+    "groups/m100_15/gain-reference/3d/prior/model.joblib": "159b1ae14e6bfef176f63974b5742468b27bf97c34352c139728be91a88be827",
+    "groups/m100_15/gain-reference/24h/cutoff24/model.joblib": "47aca7fe5335b35c2e70306c31f490a571dee2b847ea524c1a8c0b97b0414c01",
+    "groups/m100_15/gain-reference/24h/cutoff30/model.joblib": "2e5c1b3b1cc39bd71bb4aa3fecd99b6892f2f810c2b62ea8880924ca58e9f8bc",
+    "groups/m100_15/gain-reference/24h/cutoff36/model.joblib": "a28026f7240b6c928ef83544a66e208d6a25e8823a9317d17dd04d099adb0f53",
+    "groups/m100_15/gain-reference/24h/prior/model.joblib": "5c98587fd126857883db6b60b5ad839b1e2a4d8a3ed8609f77fd27503a4327ad",
+    "groups/m100_15/4h/bounded_fixed_0/model.joblib": "185645319fbac25a8b78465df682dec36957001c8606585b33598bb50ae555a1",
+    "groups/m100_15/4h/bounded_fixed_0.1/model.joblib": "40478b92b5cabe2507a40fa3eeda5b2d8ab009ff58c7dae9c68097ff8b3cec67",
+    "groups/m100_15/4h/bounded_fixed_0.25/model.joblib": "d2a8c1922f28c0f0dc8fd43bec72665e37d4be457a2659b05eb57a5d50045365",
+    "groups/m100_15/4h/bounded_fixed_0.5/model.joblib": "b72533719a65cc2d016f37d47746c3349edbb79006d4d1792dbeb585db1fc53a",
+    "groups/m100_15/4h/dynamic/model.joblib": "588e50bc4e97323bec1ecd1b009d8b6878d5df8c7c2171490fb47de86990f891",
+    "groups/m100_15/4h/expert-bank/model.joblib": "0072cd26b467f723642129eabfc2ed449a8b50b94e0f138662798c6bf42a8348",
+    "groups/m100_15/4h/external_mean/model.joblib": "150791581ada6da0dad776bc0a206a02e3af82f8cdf31eebdd26fed9377d7d60",
+    "groups/m100_15/4h/fixed_0/model.joblib": "623db7d724771cfd99a2a11d29d0c1c986eac6df7641cd2697abdab59693e171",
+    "groups/m100_15/4h/fixed_0.1/model.joblib": "8dcd30a2260586ed9a47047d4a0b40b9ef916cb5ece26bcc6b18708e83ea17c4",
+    "groups/m100_15/4h/fixed_0.25/model.joblib": "4b4855112f659af4bfdff808066d920375cf4ebfff2a04f8263bae37d760298f",
+    "groups/m100_15/4h/fixed_0.5/model.joblib": "498f81a4d397d4a5d74cbb7b859035f721fa03899209ab70f43c535b95120dad",
+    "groups/m100_15/4h/gain_v2_reference/model.joblib": "0762173864a5f2bb8b7f4e17d34dee6326cca4025baae10f0f9bfb6a4665cbd6",
+    "groups/m100_15/4h/ridge/model.joblib": "4f498e73bd521f5bde39f1ce5c683a03da72eb2c3e36e485bcfa672c26d4287c",
+    "groups/m100_15/4h/sapf/model.joblib": "52d9a5a941685e1933e2827584eb5c6024db0ff4f6757001f049fb7dcc935ced",
+    "groups/m100_15/4h/seasonal_naive/model.joblib": "a94033cb0109ef95ba988447bfc9b68c96ba0f4065d7befaacb607b0525afec6",
+    "groups/m100_15/4h/selected_bounded/model.joblib": "b72533719a65cc2d016f37d47746c3349edbb79006d4d1792dbeb585db1fc53a",
+    "groups/m100_15/4h/selected_fixed/model.joblib": "498f81a4d397d4a5d74cbb7b859035f721fa03899209ab70f43c535b95120dad",
+    "groups/m100_15/4h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_15/3d/bounded_fixed_0/model.joblib": "9a35e62121d46a9cce7a79510b6d983fb500db6dceacc19290d699bfd0875663",
+    "groups/m100_15/3d/bounded_fixed_0.1/model.joblib": "75f9dff2b8aed5706b6a0f44736d591a24ae2281a993c252c8bd3aa1e2f1341f",
+    "groups/m100_15/3d/bounded_fixed_0.25/model.joblib": "3e9603eefe674f5bb9419a3f984b1907c18b90f29c85594b4288a5dd0a25fdc1",
+    "groups/m100_15/3d/bounded_fixed_0.5/model.joblib": "f77ff2d63a749d69181e9f0dccb86a6e3069d577862e4de7d45ced5d5a2d3aa1",
+    "groups/m100_15/3d/expert-bank/model.joblib": "545d5a19fd14da610f44ee7c0d68ca22b4b14abbe72964750d68abec781b90a1",
+    "groups/m100_15/3d/external_mean/model.joblib": "e7e123dc9214e2d90fec47311adfd7f9a6e06ca76b85fa654d41a95190c86f0a",
+    "groups/m100_15/3d/fixed_0/model.joblib": "ed37f5ba1c0d1d7315ece0e69634d374b619bb82bc3503a30ed67cbf0ce2003b",
+    "groups/m100_15/3d/fixed_0.1/model.joblib": "e5793f38a8d28e17fa848944545324e6cf64d59a0c084de5f7c92988a56038de",
+    "groups/m100_15/3d/fixed_0.25/model.joblib": "c87146cd9bc18bb3a4b2406f080a980a89c34a0e7c28eeeb3aa0be8c97d8f3ba",
+    "groups/m100_15/3d/fixed_0.5/model.joblib": "6fe16a2ee23ade28c2e22159218eb6f7ea7b2441a5e65e108e1913c1a1c1953a",
+    "groups/m100_15/3d/gain_v2_reference/model.joblib": "1f54069ffd6d95fffddf3f9076d3bfcec1d23e8ef07c855c386505411937de17",
+    "groups/m100_15/3d/ridge/model.joblib": "f57421b89658fb51fd28f7fac83ecdc2db4ebca44abfe664fa52857055ac5826",
+    "groups/m100_15/3d/sapf/model.joblib": "a7a6dc685fb7704bdd0048750fc4d5a06ed809c34f4130c29bea1eb8f1837d7a",
+    "groups/m100_15/3d/seasonal_naive/model.joblib": "a94033cb0109ef95ba988447bfc9b68c96ba0f4065d7befaacb607b0525afec6",
+    "groups/m100_15/3d/selected_bounded/model.joblib": "3e9603eefe674f5bb9419a3f984b1907c18b90f29c85594b4288a5dd0a25fdc1",
+    "groups/m100_15/3d/selected_fixed/model.joblib": "c87146cd9bc18bb3a4b2406f080a980a89c34a0e7c28eeeb3aa0be8c97d8f3ba",
+    "groups/m100_15/3d/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_15/24h/bounded_fixed_0/model.joblib": "d3cd0268f80e85ad28348c6694683af01566eb079bd1820ae78767c522968789",
+    "groups/m100_15/24h/bounded_fixed_0.1/model.joblib": "cf78993618e4a0f6f03a6d5514fda0bb9db5d126be09e223d2326a4cf6bedff9",
+    "groups/m100_15/24h/bounded_fixed_0.25/model.joblib": "24e6974448535628f970c533e22687d4312f539915b6d3629d9b48ecda48ac4a",
+    "groups/m100_15/24h/bounded_fixed_0.5/model.joblib": "5b53152bbcedc590350223660a04c84de26ecfcb533b92f30ae23a70b3c4a7e6",
+    "groups/m100_15/24h/dynamic/model.joblib": "3d675091298755830b21adfbbd180110775ba4a1329d34b5782fc79afc747de8",
+    "groups/m100_15/24h/expert-bank/model.joblib": "4e2e68130e21212aab604f8d1b7cfa43397b145650eb937d15751f83b79bd2f1",
+    "groups/m100_15/24h/external_mean/model.joblib": "7fca341ac17d7b2da1cd3376a48996770b561f4e17a372df3582f2d6d022c6e8",
+    "groups/m100_15/24h/fixed_0/model.joblib": "f577530257bb7f884457dfed1c6f9a8fd47b40deb276ad75350312c6ab6d8f66",
+    "groups/m100_15/24h/fixed_0.1/model.joblib": "dc3580af52caf0c7fed4e5c191ee7c7c2a3125b1315c5dab4919c2f1881bb48d",
+    "groups/m100_15/24h/fixed_0.25/model.joblib": "bcb60ad9e51284951dafd01a2bc6367b03969434259375ed054ce9e427577915",
+    "groups/m100_15/24h/fixed_0.5/model.joblib": "b635308c6ea1aad571870f197ffe3edae16252bcf8b586595c7f095291d6e4fb",
+    "groups/m100_15/24h/gain_v2_reference/model.joblib": "4e0dece1c7335a67576075d171071c7f708a1865664498c0e75f51e0a0448bac",
+    "groups/m100_15/24h/ridge/model.joblib": "e38d679d7de63ea2b65b8be59872781e2330da47fa1d294460a657543403f9f7",
+    "groups/m100_15/24h/sapf/model.joblib": "75377bd53ca16baccc88f7690530ca1a49bc95e16b94189e115ae6a6c5bd97f0",
+    "groups/m100_15/24h/seasonal_naive/model.joblib": "a94033cb0109ef95ba988447bfc9b68c96ba0f4065d7befaacb607b0525afec6",
+    "groups/m100_15/24h/selected_bounded/model.joblib": "5b53152bbcedc590350223660a04c84de26ecfcb533b92f30ae23a70b3c4a7e6",
+    "groups/m100_15/24h/selected_fixed/model.joblib": "b635308c6ea1aad571870f197ffe3edae16252bcf8b586595c7f095291d6e4fb",
+    "groups/m100_15/24h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c"
+  },
+  "model_sha256": {
+    "groups/ucc_30/gain-reference/4h/cutoff24/model.joblib": "1ef971489d861d2cca4424ea574c58f0b0e920877d4fc2df3129f50f94f46041",
+    "groups/ucc_30/gain-reference/4h/cutoff30/model.joblib": "cd238d1ecea5c95eacae142bcbf0f89c7cdc24812220b35e28fbb1dc7aac9e6a",
+    "groups/ucc_30/gain-reference/4h/cutoff36/model.joblib": "da3f6a977c46e32e85b923a484b4a526710b314c7951f985a4212ef00a648bb2",
+    "groups/ucc_30/gain-reference/4h/prior/model.joblib": "338a99c9ccab72910b607f7730d1e8afabab663fa3d235cd35ccb6a9ea634415",
+    "groups/ucc_30/gain-reference/3d/cutoff24/model.joblib": "fac472807f29dc4a6d9112539a37675bcfadff56b60f59b36423a17042c29a59",
+    "groups/ucc_30/gain-reference/3d/cutoff30/model.joblib": "01773dd7b17dce33960502bc94c4b153f022f9740f74e67da03d449027ab8973",
+    "groups/ucc_30/gain-reference/3d/cutoff36/model.joblib": "b46a0bf551fc4a35bbcdedc5dee4c18dffb1e5154c6b8eac2dbc292dd8e111ed",
+    "groups/ucc_30/gain-reference/3d/prior/model.joblib": "8ed29ad1a01c7ef0ab834338ddfc96a2b60ca0b4899bd98f1ed5ad59fbb4bd7a",
+    "groups/ucc_30/gain-reference/24h/cutoff24/model.joblib": "890f09e1520206c8c629eb10896325c7515c125d62aa8e6c832fbfef7d3ff7bb",
+    "groups/ucc_30/gain-reference/24h/cutoff30/model.joblib": "baa74a8fcbf8888c3ae5d24b7df8bfd7b8e5bbc1577ed17dbaf97801f1dd0011",
+    "groups/ucc_30/gain-reference/24h/cutoff36/model.joblib": "2d93eb02df476352c33d5ef72d14223d60dac7df7e04d663545a925e7d5ab265",
+    "groups/ucc_30/gain-reference/24h/prior/model.joblib": "3dbeb07a7ffcf4c3714a4dc1d833dc19e98db695d34ea3d645a70ab338bc589c",
+    "groups/ucc_30/4h/bounded_fixed_0/model.joblib": "be0e7ef36352b4a59d2ed282950f1bc9cc33fb24e4b89aa93bda7d8875a69768",
+    "groups/ucc_30/4h/bounded_fixed_0.1/model.joblib": "3b315de9ec4992b3e52e0c53d4f8fb4672bf60e9e6d3891510948f7b06a94691",
+    "groups/ucc_30/4h/bounded_fixed_0.25/model.joblib": "f83f8b12292f65aaa0d9bbdd73712e5bc4be31d6931e00c2cec459fa22f173f3",
+    "groups/ucc_30/4h/bounded_fixed_0.5/model.joblib": "12f911dfd1e985ffd0352d8dce445ed0d17da70f002d684398fcdcb83f4d04c5",
+    "groups/ucc_30/4h/expert-bank/model.joblib": "d7b6625cca13cb495833a0f2db2fa01f54ca3ca0b0a514c8b0b5cffae9fb8276",
+    "groups/ucc_30/4h/external_mean/model.joblib": "1231ae03acf577d8436434f00c92adfa5a2048b48e896744824a7abeee006701",
+    "groups/ucc_30/4h/fixed_0/model.joblib": "58c5609c2bb520c484c57b6fc04b54d010d53ccf0c57ead113930176c93cc2f5",
+    "groups/ucc_30/4h/fixed_0.1/model.joblib": "024735a5bf1c6627468f2eff1730144f6631f4f2d3e313d4f930003eb89fec01",
+    "groups/ucc_30/4h/fixed_0.25/model.joblib": "745ae0bd0d1873256207fc4f619804ec88a7ca99ad6b354fe07d716b42e2d021",
+    "groups/ucc_30/4h/fixed_0.5/model.joblib": "d2b6166594b82637d11a3e94c4ba237d802a12ab587ae4f6353c061a17f83061",
+    "groups/ucc_30/4h/gain_v2_reference/model.joblib": "364dc1e8dc7c0b5276c43161a077dc1828115e414e02156425ecc250d3f4e55d",
+    "groups/ucc_30/4h/ridge/model.joblib": "92073eac6bf810dd4180fbd49994fb69b4d11c0e497e00bcf68923c7e55bd9b9",
+    "groups/ucc_30/4h/sapf/model.joblib": "f9e6ec2d1614a2aeb7f7366b42e8bb9251a9eee8415f5a1713ef3e3ab20b0a3c",
+    "groups/ucc_30/4h/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/ucc_30/4h/selected_bounded/model.joblib": "12f911dfd1e985ffd0352d8dce445ed0d17da70f002d684398fcdcb83f4d04c5",
+    "groups/ucc_30/4h/selected_fixed/model.joblib": "d2b6166594b82637d11a3e94c4ba237d802a12ab587ae4f6353c061a17f83061",
+    "groups/ucc_30/4h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/ucc_30/3d/bounded_fixed_0/model.joblib": "94c844bd8045df82db9d21f60baeb27d157ddfa4e125a3bd8bcf04f6829199bc",
+    "groups/ucc_30/3d/bounded_fixed_0.1/model.joblib": "6fe9bc609f0ea4d0bee86bf45c7268e9a0fca9d579174af70f2edeb8e2324e19",
+    "groups/ucc_30/3d/bounded_fixed_0.25/model.joblib": "c0e3023e8678a15d262d2a3e96430c7d01b11b4e13c103f018702933be9e1f76",
+    "groups/ucc_30/3d/bounded_fixed_0.5/model.joblib": "9e7125a2e3e5fcfbeddb9026d96ba5837218ff784fb269bceb9a4616daa61ba7",
+    "groups/ucc_30/3d/expert-bank/model.joblib": "48a619d9d32740a92394860768351322e9d97788ad667991d44fa5d6ec9fc50d",
+    "groups/ucc_30/3d/external_mean/model.joblib": "afee1dc09a6be02fb6e4b63d163ddb813dad44fdd4926c714c822f7a54351254",
+    "groups/ucc_30/3d/fixed_0/model.joblib": "d319c55c4fbee926cae33a11e00744dd4003b6b1088285a936b5085e10337b70",
+    "groups/ucc_30/3d/fixed_0.1/model.joblib": "58d1f8279ce3009ff261f4502a8273e242c2ecf0bbe817b6acfaf3cc1437ef98",
+    "groups/ucc_30/3d/fixed_0.25/model.joblib": "b796ca171dbf947cdb8350929a1f7a6d3fe703b42bdc756cfe906e5de6da00fe",
+    "groups/ucc_30/3d/fixed_0.5/model.joblib": "9cc5fea678378424c47240a94c205a63f5dc9bd83dd33ef9f256f2777fc7511f",
+    "groups/ucc_30/3d/gain_v2_reference/model.joblib": "3ba74df07a24d28f81a9cd76da891319c14f5ab2b528b5e8cd608300acb4e085",
+    "groups/ucc_30/3d/ridge/model.joblib": "ede2b18b7fdc9b09f137bd2ad4d30c95e9cf3e825dff9add5ccc6abd58853718",
+    "groups/ucc_30/3d/sapf/model.joblib": "e176e103a07d5fd5bcaf6624c4acdbdb97f68a927bf6a48c20a3755bc4788db6",
+    "groups/ucc_30/3d/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/ucc_30/3d/selected_bounded/model.joblib": "c0e3023e8678a15d262d2a3e96430c7d01b11b4e13c103f018702933be9e1f76",
+    "groups/ucc_30/3d/selected_fixed/model.joblib": "b796ca171dbf947cdb8350929a1f7a6d3fe703b42bdc756cfe906e5de6da00fe",
+    "groups/ucc_30/3d/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/ucc_30/24h/bounded_fixed_0/model.joblib": "10bbd6b00afcddc48b82e7f11c42f6e8a54bc50d0887aa4805d4d1f4bb77f1cc",
+    "groups/ucc_30/24h/bounded_fixed_0.1/model.joblib": "a1d2c2ad4642c2e45add90fbae5e2c7d92535c6965a147f71209c5c10de794ac",
+    "groups/ucc_30/24h/bounded_fixed_0.25/model.joblib": "10a4bf3930a44a8288e9f6adcd95eaabc2b488905f0607026cefcaddc5a224ec",
+    "groups/ucc_30/24h/bounded_fixed_0.5/model.joblib": "51125ea62353f4b259de3b3a1b3eb06f388c0ecfcc14aff5c4b8f266a0f68bc3",
+    "groups/ucc_30/24h/expert-bank/model.joblib": "682d55b321a1691cbbb2b26e46a7fe8e9ed726b1640ccd367780f6c1bdf98194",
+    "groups/ucc_30/24h/external_mean/model.joblib": "1bb39f702203a75ff4b025b02670800505730b64cb8de6ce78042fe8aa646467",
+    "groups/ucc_30/24h/fixed_0/model.joblib": "ec8e889d5daa6e34adb0a1ea9bb5ab8db011aababf3c67a8615d6f6e219bfd7c",
+    "groups/ucc_30/24h/fixed_0.1/model.joblib": "dafe10eea05158b545e7a6519e41bda858ebcf8aeeaec7daeffa0013eca3a2ad",
+    "groups/ucc_30/24h/fixed_0.25/model.joblib": "66c90faa7db029c451bfde9d90b08fc8e1c4b54319081b98ffc7e5a10d4a2cd4",
+    "groups/ucc_30/24h/fixed_0.5/model.joblib": "94876dd759d82fd937677d00ff38f1a3fe27a794aa5886f6c61fbad9c4af1494",
+    "groups/ucc_30/24h/gain_v2_reference/model.joblib": "dada76b463823fe0cc02ebdc48d876bca94ee50792f0c1b0f650c3b135f7a1b5",
+    "groups/ucc_30/24h/ridge/model.joblib": "ca8a6b9202898c5bd435b41c6abe2c0cf3ac49bcc9d9bb4576433e6cf7d7ed98",
+    "groups/ucc_30/24h/sapf/model.joblib": "bb7539bb5ab01f95c15b050ab5035753d25d9d30e14e2981c277f57f8c24ceac",
+    "groups/ucc_30/24h/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/ucc_30/24h/selected_bounded/model.joblib": "51125ea62353f4b259de3b3a1b3eb06f388c0ecfcc14aff5c4b8f266a0f68bc3",
+    "groups/ucc_30/24h/selected_fixed/model.joblib": "94876dd759d82fd937677d00ff38f1a3fe27a794aa5886f6c61fbad9c4af1494",
+    "groups/ucc_30/24h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_30/gain-reference/4h/cutoff24/model.joblib": "8d738ad0ad155666398ac2c8bec0585f93ae6e2ede8d69dc63b889c226173987",
+    "groups/m100_30/gain-reference/4h/cutoff30/model.joblib": "2745bcd01a62a141e77ac27ef31cf378fc17e7723c455fe20064a921025d2245",
+    "groups/m100_30/gain-reference/4h/cutoff36/model.joblib": "296da6e7c5c6327b7580e15dc813a587e01012fc701eaec59a6ec6e7c4da6d55",
+    "groups/m100_30/gain-reference/4h/prior/model.joblib": "c2924b0ab910796e58b6401d1bb9d012938ffeb5c9dc45be42c0068fe8f166fa",
+    "groups/m100_30/gain-reference/3d/cutoff24/model.joblib": "88e5cfa0c30c95770b4d4e5b0e541e370f829d31bceb8519a8e3c861f25e8b85",
+    "groups/m100_30/gain-reference/3d/cutoff30/model.joblib": "84ead7a9f44dd085e2ab0bdf8042fa29fb28fd5a865ef3bb2cd752b37e014448",
+    "groups/m100_30/gain-reference/3d/cutoff36/model.joblib": "0caa1794f65bd4ccc2716b28d6c9b1b7e9e901a1959edfc6728e2b6b91234175",
+    "groups/m100_30/gain-reference/3d/prior/model.joblib": "58d38ccdb081dfd4b5889df6fbd015744f9f2fe63f263b23a66051bec56341d7",
+    "groups/m100_30/gain-reference/24h/cutoff24/model.joblib": "538b8714cc044ac253d3fd60fce6dbacd5716d8814d602b5474c50df5b8eb7df",
+    "groups/m100_30/gain-reference/24h/cutoff30/model.joblib": "cf446f5c18aa1aaa5e5c4012a59c17eeb321a66af8a7ac1de3fd4e13704f8340",
+    "groups/m100_30/gain-reference/24h/cutoff36/model.joblib": "bc3e3a508e2f6c66c1fae0ae4a097dc7becfcb8ccebb565bf089b3822aa847a8",
+    "groups/m100_30/gain-reference/24h/prior/model.joblib": "7e0aad554cd2369e12ff15ef1da523e39f0b24b2c0ec3806cc118aaa7588b93a",
+    "groups/m100_30/4h/bounded_fixed_0/model.joblib": "7e26cd28057ec1dce559331d1bc60428a80387b24e878bf9f02a06a73116c492",
+    "groups/m100_30/4h/bounded_fixed_0.1/model.joblib": "394d2c1fcf63f25f86e2933ec895cc1ab75d458ed493d61bf8450ca5b877ab04",
+    "groups/m100_30/4h/bounded_fixed_0.25/model.joblib": "95740e8c9e2b293892eaeee4acc7f67801238eb4ab0d549e8ee0ed4fd95de7c4",
+    "groups/m100_30/4h/bounded_fixed_0.5/model.joblib": "3eb013b5799575f8ea5738fbc6343f0ef5747cacefc6efd3ee6e7f6509b6d835",
+    "groups/m100_30/4h/dynamic/model.joblib": "b1c1f6ca040bce0b1eac074a908ebf5bcac261cb282cff9c2d0b6fc9ea481aa1",
+    "groups/m100_30/4h/expert-bank/model.joblib": "97c690fdd508f1e5e315b8c0ac2efdf8016eb7483c5b5b6e3dddd81fd0b58171",
+    "groups/m100_30/4h/external_mean/model.joblib": "0ffd93e68aa1851259c384bbf65cf29c24bf7a2d8c7c287dd42e34ea512a7b15",
+    "groups/m100_30/4h/fixed_0/model.joblib": "a272337307bed323a124a56c2557a31508c3573bb572e9ecf2cb46ad245a20d1",
+    "groups/m100_30/4h/fixed_0.1/model.joblib": "208587ef0928c84133d1306b8d3a13749e9ea2c1316adb6b729b6d5af9811ec6",
+    "groups/m100_30/4h/fixed_0.25/model.joblib": "fda009ee71df701de7fcc6030ff6179af95b90e9fe0f56158ecdde7adf6197a7",
+    "groups/m100_30/4h/fixed_0.5/model.joblib": "2b0b24778c041979ff2fd6a5888c52f94f805bc6dcafb0cfb1a378b765085af0",
+    "groups/m100_30/4h/gain_v2_reference/model.joblib": "408565a20268135acaeffdf3dbbcea08ea03c75b16b67c1f39ebdc7086cfc6b0",
+    "groups/m100_30/4h/ridge/model.joblib": "8a0f1251eb27a279ee1677d60f6035685708e3568f8b2be6c2ff3cd9b46c8e1b",
+    "groups/m100_30/4h/sapf/model.joblib": "38d69cfe216ee059f8b77b1ff958d4a029d19270bf43a24a54d25896572fb6ce",
+    "groups/m100_30/4h/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/m100_30/4h/selected_bounded/model.joblib": "3eb013b5799575f8ea5738fbc6343f0ef5747cacefc6efd3ee6e7f6509b6d835",
+    "groups/m100_30/4h/selected_fixed/model.joblib": "2b0b24778c041979ff2fd6a5888c52f94f805bc6dcafb0cfb1a378b765085af0",
+    "groups/m100_30/4h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_30/3d/bounded_fixed_0/model.joblib": "ac5481825b284377d1110872906f30e3f60edb1d77cf56380236cebd55422667",
+    "groups/m100_30/3d/bounded_fixed_0.1/model.joblib": "50fdd895676dd44d1707629cb55be98944ebbb87c13c51d291f4c8f5123dde8b",
+    "groups/m100_30/3d/bounded_fixed_0.25/model.joblib": "61b393df7139e85c2040f3a41c17bc232c3afe2852a8b6c92a1193d035fc1786",
+    "groups/m100_30/3d/bounded_fixed_0.5/model.joblib": "0072b78752b993ee4136347499cfd2d6a3ef531c5d1eced0c46b3e9ae1ac8367",
+    "groups/m100_30/3d/expert-bank/model.joblib": "afc0bc8a7a4e563999bf5367471e8fbe589c8e828d587661bf0019740aa1f8df",
+    "groups/m100_30/3d/external_mean/model.joblib": "c7f9a357312ef46f33f7385a01a975f30bf432ea9d1952fa5b478109e7d2566e",
+    "groups/m100_30/3d/fixed_0/model.joblib": "87b7a5ab4baacdc97b9dce00df51c89724e3ca9860d254d1da5a0e9b14523343",
+    "groups/m100_30/3d/fixed_0.1/model.joblib": "9a153c90ce0f480e6630e78ad9d281b2aaf45cb6e73c871ff84c3aed2a7b44d1",
+    "groups/m100_30/3d/fixed_0.25/model.joblib": "165162ac210bd29a5b667b175429026c49e18aa7fd21d8181a367738ec7af5c5",
+    "groups/m100_30/3d/fixed_0.5/model.joblib": "7ed199cd98060be8f590b097116e99b887ecf66b879a83e215619cca095f18b0",
+    "groups/m100_30/3d/gain_v2_reference/model.joblib": "c1dd1aa28e19a3046ed88b8f16d6d396116a72a6357e683729569a50eaf6146a",
+    "groups/m100_30/3d/ridge/model.joblib": "f2aa5d7ec057f2095719c0d60eca6cae3e2d1be8563a8737a32e3af44173b4ac",
+    "groups/m100_30/3d/sapf/model.joblib": "e077ede1fec9ac8960b8bdfed63a33a2fb9d9da9813c6242934f147b8657f9ed",
+    "groups/m100_30/3d/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/m100_30/3d/selected_bounded/model.joblib": "61b393df7139e85c2040f3a41c17bc232c3afe2852a8b6c92a1193d035fc1786",
+    "groups/m100_30/3d/selected_fixed/model.joblib": "165162ac210bd29a5b667b175429026c49e18aa7fd21d8181a367738ec7af5c5",
+    "groups/m100_30/3d/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_30/24h/bounded_fixed_0/model.joblib": "a162381ce276197e5bac886d9f03079660ca431b8310c7a81342ae1bad7100aa",
+    "groups/m100_30/24h/bounded_fixed_0.1/model.joblib": "df5987c04aed36a96e2593e00886ee6c7f1f4f4e1e59bd9b57218b50caa07abc",
+    "groups/m100_30/24h/bounded_fixed_0.25/model.joblib": "cb7d18a0f861fd2c52fa9460d39b6f7d517a1a2a0f09066681a6556585637187",
+    "groups/m100_30/24h/bounded_fixed_0.5/model.joblib": "864eac177f1ccf81869b7f4052da59ff63658ee340b56e2aab21f69c3446a2ea",
+    "groups/m100_30/24h/dynamic/model.joblib": "d62aed78017757863109b9160ba732986192924a320365410d0179ecea1826b1",
+    "groups/m100_30/24h/expert-bank/model.joblib": "7791980d6085300e32ac35ce660ac846a2cc8e0d415aaeba194272e47f309794",
+    "groups/m100_30/24h/external_mean/model.joblib": "804b4f1e1579266c4245c288323c578e91d727279376fd88f5ecee9026937026",
+    "groups/m100_30/24h/fixed_0/model.joblib": "b5380e829ac544d9b17162e71f3228728c0e5dbd87989be653db2c9960997f95",
+    "groups/m100_30/24h/fixed_0.1/model.joblib": "0af103fd9f36865fcad3d92d9195491bb502cee2b57cea4f9ca2b711164f78e8",
+    "groups/m100_30/24h/fixed_0.25/model.joblib": "47430646413aa91cfc2038493c917de4273e20f57d54282d101cb3d8de42a57e",
+    "groups/m100_30/24h/fixed_0.5/model.joblib": "1aad3e8ab2ae0d6d21ddf4d35c04997cb46e305ac0cd57002246fccfd9e46f43",
+    "groups/m100_30/24h/gain_v2_reference/model.joblib": "bf3011feb2abcdb208f14ac1895cc2e888a676bab1f5f16e1b3a9657dac571eb",
+    "groups/m100_30/24h/ridge/model.joblib": "91010819a72f7381bba8aee0921ee446150ae430341f1240605f7cb9242f9aec",
+    "groups/m100_30/24h/sapf/model.joblib": "8d4ed65ad605306cc2d0d47fe51d039ecacbcba6deaad4b41b35231cf198a168",
+    "groups/m100_30/24h/seasonal_naive/model.joblib": "f8d8cd687d25cf22590da09599b8f445ce5047e2f09a5a33e24dab0b5f43da38",
+    "groups/m100_30/24h/selected_bounded/model.joblib": "864eac177f1ccf81869b7f4052da59ff63658ee340b56e2aab21f69c3446a2ea",
+    "groups/m100_30/24h/selected_fixed/model.joblib": "1aad3e8ab2ae0d6d21ddf4d35c04997cb46e305ac0cd57002246fccfd9e46f43",
+    "groups/m100_30/24h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_15/gain-reference/4h/cutoff24/model.joblib": "2a2038d7f6fac8c1f52f7d8ab63f07b4fc023b2a0ab0f6b77f283e2f856d1fa0",
+    "groups/m100_15/gain-reference/4h/cutoff30/model.joblib": "cecb119e17bec452c6e5ad9322ef4dd63e72b3a06b7b00ff6ba2c37c7eabf523",
+    "groups/m100_15/gain-reference/4h/cutoff36/model.joblib": "b2f7e6f9bba8926d44342dc2739f8d94f30bbaef6bcf3154a8da32bcd8c0080a",
+    "groups/m100_15/gain-reference/4h/prior/model.joblib": "9619558273d3fcd2504deb790e6bc8980d79a51bd874b5c3d4a53ef6c86a24a6",
+    "groups/m100_15/gain-reference/3d/cutoff24/model.joblib": "e82456778edb990373271037a178cf37b9930a29251907a0ad026bae6315a79a",
+    "groups/m100_15/gain-reference/3d/cutoff30/model.joblib": "5b7b0b513e51abb405c02ac07c03f302b4a6d17462647fa45ca0e27e9a55bf56",
+    "groups/m100_15/gain-reference/3d/cutoff36/model.joblib": "dfc0ad796b1c839c21968a98aa4bf16ef1503033da52a9a8103d33adf5edf69d",
+    "groups/m100_15/gain-reference/3d/prior/model.joblib": "159b1ae14e6bfef176f63974b5742468b27bf97c34352c139728be91a88be827",
+    "groups/m100_15/gain-reference/24h/cutoff24/model.joblib": "47aca7fe5335b35c2e70306c31f490a571dee2b847ea524c1a8c0b97b0414c01",
+    "groups/m100_15/gain-reference/24h/cutoff30/model.joblib": "2e5c1b3b1cc39bd71bb4aa3fecd99b6892f2f810c2b62ea8880924ca58e9f8bc",
+    "groups/m100_15/gain-reference/24h/cutoff36/model.joblib": "a28026f7240b6c928ef83544a66e208d6a25e8823a9317d17dd04d099adb0f53",
+    "groups/m100_15/gain-reference/24h/prior/model.joblib": "5c98587fd126857883db6b60b5ad839b1e2a4d8a3ed8609f77fd27503a4327ad",
+    "groups/m100_15/4h/bounded_fixed_0/model.joblib": "185645319fbac25a8b78465df682dec36957001c8606585b33598bb50ae555a1",
+    "groups/m100_15/4h/bounded_fixed_0.1/model.joblib": "40478b92b5cabe2507a40fa3eeda5b2d8ab009ff58c7dae9c68097ff8b3cec67",
+    "groups/m100_15/4h/bounded_fixed_0.25/model.joblib": "d2a8c1922f28c0f0dc8fd43bec72665e37d4be457a2659b05eb57a5d50045365",
+    "groups/m100_15/4h/bounded_fixed_0.5/model.joblib": "b72533719a65cc2d016f37d47746c3349edbb79006d4d1792dbeb585db1fc53a",
+    "groups/m100_15/4h/dynamic/model.joblib": "588e50bc4e97323bec1ecd1b009d8b6878d5df8c7c2171490fb47de86990f891",
+    "groups/m100_15/4h/expert-bank/model.joblib": "0072cd26b467f723642129eabfc2ed449a8b50b94e0f138662798c6bf42a8348",
+    "groups/m100_15/4h/external_mean/model.joblib": "150791581ada6da0dad776bc0a206a02e3af82f8cdf31eebdd26fed9377d7d60",
+    "groups/m100_15/4h/fixed_0/model.joblib": "623db7d724771cfd99a2a11d29d0c1c986eac6df7641cd2697abdab59693e171",
+    "groups/m100_15/4h/fixed_0.1/model.joblib": "8dcd30a2260586ed9a47047d4a0b40b9ef916cb5ece26bcc6b18708e83ea17c4",
+    "groups/m100_15/4h/fixed_0.25/model.joblib": "4b4855112f659af4bfdff808066d920375cf4ebfff2a04f8263bae37d760298f",
+    "groups/m100_15/4h/fixed_0.5/model.joblib": "498f81a4d397d4a5d74cbb7b859035f721fa03899209ab70f43c535b95120dad",
+    "groups/m100_15/4h/gain_v2_reference/model.joblib": "0762173864a5f2bb8b7f4e17d34dee6326cca4025baae10f0f9bfb6a4665cbd6",
+    "groups/m100_15/4h/ridge/model.joblib": "4f498e73bd521f5bde39f1ce5c683a03da72eb2c3e36e485bcfa672c26d4287c",
+    "groups/m100_15/4h/sapf/model.joblib": "52d9a5a941685e1933e2827584eb5c6024db0ff4f6757001f049fb7dcc935ced",
+    "groups/m100_15/4h/seasonal_naive/model.joblib": "a94033cb0109ef95ba988447bfc9b68c96ba0f4065d7befaacb607b0525afec6",
+    "groups/m100_15/4h/selected_bounded/model.joblib": "b72533719a65cc2d016f37d47746c3349edbb79006d4d1792dbeb585db1fc53a",
+    "groups/m100_15/4h/selected_fixed/model.joblib": "498f81a4d397d4a5d74cbb7b859035f721fa03899209ab70f43c535b95120dad",
+    "groups/m100_15/4h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_15/3d/bounded_fixed_0/model.joblib": "9a35e62121d46a9cce7a79510b6d983fb500db6dceacc19290d699bfd0875663",
+    "groups/m100_15/3d/bounded_fixed_0.1/model.joblib": "75f9dff2b8aed5706b6a0f44736d591a24ae2281a993c252c8bd3aa1e2f1341f",
+    "groups/m100_15/3d/bounded_fixed_0.25/model.joblib": "3e9603eefe674f5bb9419a3f984b1907c18b90f29c85594b4288a5dd0a25fdc1",
+    "groups/m100_15/3d/bounded_fixed_0.5/model.joblib": "f77ff2d63a749d69181e9f0dccb86a6e3069d577862e4de7d45ced5d5a2d3aa1",
+    "groups/m100_15/3d/expert-bank/model.joblib": "545d5a19fd14da610f44ee7c0d68ca22b4b14abbe72964750d68abec781b90a1",
+    "groups/m100_15/3d/external_mean/model.joblib": "e7e123dc9214e2d90fec47311adfd7f9a6e06ca76b85fa654d41a95190c86f0a",
+    "groups/m100_15/3d/fixed_0/model.joblib": "ed37f5ba1c0d1d7315ece0e69634d374b619bb82bc3503a30ed67cbf0ce2003b",
+    "groups/m100_15/3d/fixed_0.1/model.joblib": "e5793f38a8d28e17fa848944545324e6cf64d59a0c084de5f7c92988a56038de",
+    "groups/m100_15/3d/fixed_0.25/model.joblib": "c87146cd9bc18bb3a4b2406f080a980a89c34a0e7c28eeeb3aa0be8c97d8f3ba",
+    "groups/m100_15/3d/fixed_0.5/model.joblib": "6fe16a2ee23ade28c2e22159218eb6f7ea7b2441a5e65e108e1913c1a1c1953a",
+    "groups/m100_15/3d/gain_v2_reference/model.joblib": "1f54069ffd6d95fffddf3f9076d3bfcec1d23e8ef07c855c386505411937de17",
+    "groups/m100_15/3d/ridge/model.joblib": "f57421b89658fb51fd28f7fac83ecdc2db4ebca44abfe664fa52857055ac5826",
+    "groups/m100_15/3d/sapf/model.joblib": "a7a6dc685fb7704bdd0048750fc4d5a06ed809c34f4130c29bea1eb8f1837d7a",
+    "groups/m100_15/3d/seasonal_naive/model.joblib": "a94033cb0109ef95ba988447bfc9b68c96ba0f4065d7befaacb607b0525afec6",
+    "groups/m100_15/3d/selected_bounded/model.joblib": "3e9603eefe674f5bb9419a3f984b1907c18b90f29c85594b4288a5dd0a25fdc1",
+    "groups/m100_15/3d/selected_fixed/model.joblib": "c87146cd9bc18bb3a4b2406f080a980a89c34a0e7c28eeeb3aa0be8c97d8f3ba",
+    "groups/m100_15/3d/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c",
+    "groups/m100_15/24h/bounded_fixed_0/model.joblib": "d3cd0268f80e85ad28348c6694683af01566eb079bd1820ae78767c522968789",
+    "groups/m100_15/24h/bounded_fixed_0.1/model.joblib": "cf78993618e4a0f6f03a6d5514fda0bb9db5d126be09e223d2326a4cf6bedff9",
+    "groups/m100_15/24h/bounded_fixed_0.25/model.joblib": "24e6974448535628f970c533e22687d4312f539915b6d3629d9b48ecda48ac4a",
+    "groups/m100_15/24h/bounded_fixed_0.5/model.joblib": "5b53152bbcedc590350223660a04c84de26ecfcb533b92f30ae23a70b3c4a7e6",
+    "groups/m100_15/24h/dynamic/model.joblib": "3d675091298755830b21adfbbd180110775ba4a1329d34b5782fc79afc747de8",
+    "groups/m100_15/24h/expert-bank/model.joblib": "4e2e68130e21212aab604f8d1b7cfa43397b145650eb937d15751f83b79bd2f1",
+    "groups/m100_15/24h/external_mean/model.joblib": "7fca341ac17d7b2da1cd3376a48996770b561f4e17a372df3582f2d6d022c6e8",
+    "groups/m100_15/24h/fixed_0/model.joblib": "f577530257bb7f884457dfed1c6f9a8fd47b40deb276ad75350312c6ab6d8f66",
+    "groups/m100_15/24h/fixed_0.1/model.joblib": "dc3580af52caf0c7fed4e5c191ee7c7c2a3125b1315c5dab4919c2f1881bb48d",
+    "groups/m100_15/24h/fixed_0.25/model.joblib": "bcb60ad9e51284951dafd01a2bc6367b03969434259375ed054ce9e427577915",
+    "groups/m100_15/24h/fixed_0.5/model.joblib": "b635308c6ea1aad571870f197ffe3edae16252bcf8b586595c7f095291d6e4fb",
+    "groups/m100_15/24h/gain_v2_reference/model.joblib": "4e0dece1c7335a67576075d171071c7f708a1865664498c0e75f51e0a0448bac",
+    "groups/m100_15/24h/ridge/model.joblib": "e38d679d7de63ea2b65b8be59872781e2330da47fa1d294460a657543403f9f7",
+    "groups/m100_15/24h/sapf/model.joblib": "75377bd53ca16baccc88f7690530ca1a49bc95e16b94189e115ae6a6c5bd97f0",
+    "groups/m100_15/24h/seasonal_naive/model.joblib": "a94033cb0109ef95ba988447bfc9b68c96ba0f4065d7befaacb607b0525afec6",
+    "groups/m100_15/24h/selected_bounded/model.joblib": "5b53152bbcedc590350223660a04c84de26ecfcb533b92f30ae23a70b3c4a7e6",
+    "groups/m100_15/24h/selected_fixed/model.joblib": "b635308c6ea1aad571870f197ffe3edae16252bcf8b586595c7f095291d6e4fb",
+    "groups/m100_15/24h/three_day_mean/model.joblib": "f5f2b8dd80a114b2ce063e5198ee7506222bc2d5fd83476e1ee6eb1183a5308c"
+  },
+  "frozen_at_utc": "2026-10-26T09:10:55.409368+00:00"
+}

@@ -1,0 +1,1 @@
+Post-test descriptive analysis only. No model fitting or parameter selection. D1/D2 are published dataset groups, not verified hardware types. History CV is a statistical proxy, not observed job state. Opportunity utilization is interpreted only for the identical-pool fixed/bounded/dynamic family.

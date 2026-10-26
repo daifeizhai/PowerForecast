@@ -1,0 +1,32 @@
+{
+  "4h": {
+    "passed": true,
+    "negative_fraction": 0.00036972736625514403,
+    "nonfinite_fraction": 0.0,
+    "severe_z_fraction": 0.0,
+    "extreme_level_fraction": 0.0,
+    "max_abs_z": 6.766972541809083,
+    "restoration_max_difference_kw": 0.0,
+    "raw_predictions_audited_before_nonnegative_clip": true
+  },
+  "24h": {
+    "passed": true,
+    "negative_fraction": 0.0013744212962962963,
+    "nonfinite_fraction": 0.0,
+    "severe_z_fraction": 0.0,
+    "extreme_level_fraction": 0.0,
+    "max_abs_z": 8.135736465454102,
+    "restoration_max_difference_kw": 0.0,
+    "raw_predictions_audited_before_nonnegative_clip": true
+  },
+  "3d": {
+    "passed": true,
+    "negative_fraction": 0.0024855324074074072,
+    "nonfinite_fraction": 0.0,
+    "severe_z_fraction": 0.0,
+    "extreme_level_fraction": 0.0,
+    "max_abs_z": 9.366068840026855,
+    "restoration_max_difference_kw": 0.0,
+    "raw_predictions_audited_before_nonnegative_clip": true
+  }
+}
