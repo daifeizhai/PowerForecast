@@ -1,0 +1,40 @@
+# Base experiment configuration for the rebuilt skeleton.
+#
+# Nothing dataset-specific is hard-coded in Python: history length, horizon,
+# origins and cutoffs all come from configuration. The generic protocol file
+# deliberately declares no origins, so real experiments must state them.
+
+experiment_id: base_cpu
+
+# --- data ------------------------------------------------------------------
+dataset_config: configs/datasets/synthetic.yaml
+# Inline overrides for the dataset config (same keys as the dataset YAML).
+dataset: {}
+
+# --- time / protocol -------------------------------------------------------
+protocol_config: configs/protocols/default.yaml
+protocol_type: configurable
+horizon: 24h
+context_points: 1344
+# Demo/smoke origin days (trace day numbers). Filtered per horizon so that every
+# selected origin has a complete label window inside the available data.
+demo_origins: [14, 16, 18, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+
+# --- model -----------------------------------------------------------------
+model_config: configs/models/baselines.yaml
+model: seasonal_naive
+
+# --- evaluation ------------------------------------------------------------
+seed: 7
+output_root: results/runs
+evaluation:
+  mape_relative_threshold: 0.0
+  prediction_batch_size: 64
+  clip_min: null            # null = no clipping; a number must be recorded in the run
+  standardise_within_window: false
+
+# --- honesty / safety policy ----------------------------------------------
+policy:
+  demo_only: false          # true only for configs that must never produce research results
+  require_real_facility_kw: true
+  research_result: true

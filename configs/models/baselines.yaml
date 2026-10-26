@@ -1,0 +1,24 @@
+# Model registry visible to the experiment configuration.
+#
+# Status semantics: only `implemented` models can be selected and run.  A
+# `planned` entry is registered for future work; it is never reported as
+# supported and build_forecaster() refuses to build it.
+#
+# Validated against src/models/interfaces.py::MODEL_REGISTRY by
+# src.models.load_model_config().
+
+default_model: seasonal_naive
+
+models:
+  seasonal_naive:
+    status: implemented
+    requires_fit: false
+    description: "previous-day same-slot profile (96 points)"
+  three_day_mean:
+    status: implemented
+    requires_fit: false
+    description: "slot-wise mean over the previous three trace days"
+  lightgbm:
+    status: planned
+    requires_fit: true
+    description: "planned gradient boosting baseline; NOT implemented"
