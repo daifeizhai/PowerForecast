@@ -1,0 +1,151 @@
+# Dataset-source registry: roles, declared label semantics, audit status.
+#
+# This file records what is *known* about each source. It is metadata, not a data
+# adapter: no source may be used for a formal facility-kW result unless its label
+# is a verified real measurement at facility scope in kW.
+#
+# Labels carry the seven mandatory attributes from the task book §1.4:
+# target_kind, target_scope, target_unit, label_origin, measurement_boundary,
+# sampling_semantics, synthetic.
+#
+# can_produce_facility_kw is re-checked by src/data/registry.py and must stay
+# consistent with the label + audit_status (a false claim raises an error).
+
+sources:
+  google_power2019:
+    display_name: "Google Data Center PowerData 2019"
+    site_id: google
+    domain_id: google_power2019
+    candidate_role: candidate
+    native_frequency: null          # not audited in this round
+    timezone: null
+    timezone_verified: false
+    audit_status: unverified
+    label:
+      target_kind: power_utilization
+      target_scope: facility
+      target_unit: ratio
+      label_origin: power_utilization
+      measurement_boundary: "relative power / utilisation panel from a public dataset; no verified facility total-meter boundary"
+      sampling_semantics: "reported utilisation intervals; native frequency and timezone not audited"
+      synthetic: false
+    can_produce_facility_kw: false
+    notes: >-
+      The historical project used the `power_utilization` column; it cannot be renamed to
+      facility kW. Usable, at most, for a separately declared shape/proxy task.
+
+  alibaba_gpu_v2020:
+    display_name: "Alibaba Cluster Trace GPU v2020"
+    site_id: alibaba
+    domain_id: alibaba_gpu_v2020
+    candidate_role: unlabeled_pretrain
+    native_frequency: null
+    timezone: null
+    timezone_verified: false
+    audit_status: partial
+    label: null
+    can_produce_facility_kw: false
+    notes: >-
+      Unlabelled operational metrics only (machine stats, task lifecycle). No kW is expected
+      or fabricated. Lifecycle means/maxima are post-hoc summaries, not 15-minute observations.
+
+  m100_exadata:
+    display_name: "M100 ExaData"
+    site_id: m100
+    domain_id: m100_exadata
+    candidate_role: candidate
+    native_frequency: null
+    timezone: null
+    timezone_verified: false
+    audit_status: partial
+    label:
+      target_kind: active_power
+      target_scope: node
+      target_unit: W
+      label_origin: measured
+      measurement_boundary: "node-level power measurement (not facility total)"
+      sampling_semantics: "per-node samples; frequency/availability pending audit"
+      synthetic: false
+    can_produce_facility_kw: false
+    notes: >-
+      Node power may be converted W->kW after audit, but it is a node-level auxiliary task.
+      It must never be reported as a facility-level score.
+
+  nlr_esif_components:
+    display_name: "NLR ESIF five-component power"
+    site_id: nlr_esif
+    domain_id: nlr_esif_components
+    candidate_role: candidate
+    native_frequency: null
+    timezone: null
+    timezone_verified: false
+    audit_status: partial
+    label:
+      target_kind: active_power
+      target_scope: facility
+      target_unit: kW
+      label_origin: component_sum
+      measurement_boundary: "sum of audited facility sub-meters; not an independent facility total meter"
+      sampling_semantics: "component interval averages; coverage/timezone pending audit"
+      synthetic: false
+    can_produce_facility_kw: false
+    notes: >-
+      Component-sum facility power is a *different* quantity from an independent facility total
+      meter and stays blocked until component coverage/units/timezone are verified.
+
+  ucc2023:
+    display_name: "UCC 2023 public dataset"
+    site_id: ucc
+    domain_id: ucc2023
+    candidate_role: candidate
+    native_frequency: null
+    timezone: null
+    timezone_verified: false
+    audit_status: unverified
+    label: null
+    can_produce_facility_kw: false
+    notes: "Metadata candidate only; frequency/power level must not be guessed from the name."
+
+  nlr_eagle:
+    display_name: "NLR Eagle"
+    site_id: nlr_eagle
+    domain_id: nlr_eagle
+    candidate_role: candidate
+    native_frequency: null
+    timezone: null
+    timezone_verified: false
+    audit_status: unverified
+    label: null
+    can_produce_facility_kw: false
+    notes: >-
+      Metadata candidate. If a final-holdout split is later reserved for this source, its
+      holdout-only qualification must be recorded explicitly before any evaluation.
+
+  synthetic_facility:
+    display_name: "Synthetic facility power (engineering validation only)"
+    site_id: synthetic_site
+    domain_id: synthetic_facility
+    candidate_role: demo
+    native_frequency: "15min"
+    timezone: UTC
+    timezone_verified: true
+    audit_status: verified
+    label:
+      target_kind: active_power
+      target_scope: facility
+      target_unit: kW
+      label_origin: synthetic_simulated
+      measurement_boundary: "simulated facility total active power; no physical meter exists"
+      sampling_semantics: "16 samples per hour on an exact 15-minute UTC grid"
+      synthetic: true
+    can_produce_facility_kw: false
+    notes: >-
+      Synthetic labels are always tagged synthetic_simulated and always reported with
+      synthetic=true / research_result=false. They are used to validate the pipeline only and
+      can never enter a real research leaderboard.
+
+# The global fusion weight is a research decision that this round does not take.
+fusion:
+  target_only_local_weight: 1.0
+  global_fusion_weight: null
+  status: unresolved

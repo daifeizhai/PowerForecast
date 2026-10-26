@@ -1,0 +1,35 @@
+# OPTIONAL historical preset B (task book §6.3): fixed 7d-ahead origins.
+#
+# Only applied when a run explicitly selects this file. Configuration data, not an engine
+# default.
+#
+# The three configured test origins are spaced one trace day apart while each label window is
+# seven trace days long, so the three 672-point curves overlap heavily. The time engine
+# reports `overlap: true` and states in the split audit that errors from these windows are
+# NOT independent observations (task book §6.3 / §9.1). Label coverage reaches the end of the
+# last trace day of the configured evaluation grid.
+
+protocol_id: fixed_7d
+frequency: 15min
+points_per_day: 96
+trace_anchor_policy: dataset_explicit
+context_points: 1344
+
+horizons:
+  7d: 672
+
+origin_mode: explicit
+development_origins: [14, 15]
+test_origins: [22, 23, 24]
+smoke_origins: []
+
+# LightGBM-style per-stage fitting cutoffs recorded as configuration data only; other models
+# do not inherit them and no code rewrites them.
+train_cutoffs:
+  development: 14
+  final: 22
+
+availability_policy: strict
+protocol_type: fixed_7d
+default_horizon: 7d
+overlap_warning: true

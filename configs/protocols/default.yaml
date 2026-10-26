@@ -1,0 +1,46 @@
+# Generic, dataset-independent time protocol (task book §6.1).
+#
+# Nothing here is tied to a specific dataset, model or stage: trace-day numbers come from
+# the dataset's own explicit anchor, horizons and history length are configuration data, and
+# the explicit development/test origin lists are intentionally empty until a concrete
+# experiment declares them. No code may infer origins from the data.
+#
+# A trace day is `points_per_day` consecutive slots of `frequency` counted from the anchor
+# (15 min x 96 = 24 h). The origin of trace day k is the first slot of day k+1.
+
+protocol_id: configurable_v1
+frequency: 15min
+points_per_day: 96
+trace_anchor_policy: dataset_explicit
+
+# History length in slots; e.g. 96 / 672 / 1344 are all legal and never hard-coded in code.
+context_points: 1344
+
+# Forecast horizons: name -> number of 15-minute points.
+horizons:
+  4h: 16
+  8h: 32
+  24h: 96
+  3d: 288
+  7d: 672
+
+# Explicit origins only: dev/test origins are stated, never derived from the test range.
+origin_mode: explicit
+development_origins: []
+test_origins: []
+smoke_origins: []
+
+# Per stage / per model trace-day cutoffs are configuration data. The generic protocol
+# deliberately declares none; a concrete experiment (or a historical preset) may state them,
+# and lower-level code must never rewrite them.
+train_cutoffs: {}
+
+# Strict availability: a value enters the inputs only if available_at <= origin.
+availability_policy: strict
+protocol_type: configurable
+
+# Horizon used when the caller does not select one.
+default_horizon: 24h
+
+# Overlapping label windows must be flagged in the split audit.
+overlap_warning: false

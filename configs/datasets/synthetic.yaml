@@ -1,0 +1,28 @@
+# Synthetic facility dataset (engineering validation only).
+#
+# This dataset exists to exercise the whole pipeline on CPU. Every label is
+# `synthetic_simulated`: it can never produce a real facility-kW research
+# result and must always be reported with synthetic=true / research_result=false.
+#
+# Keys are consumed by scripts/prepare_data.py and scripts/inspect_data.py and
+# map onto src.data.synthetic.build_synthetic_dataset:
+#   days              -> build_synthetic_dataset(days=...)
+#   seed              -> build_synthetic_dataset(seed=...)
+#   anchor_timestamp  -> build_synthetic_dataset(anchor=...)
+#   covariates        -> build_synthetic_dataset(covariates=...)
+#   noise             -> build_synthetic_dataset(noise=...)
+#   missing_days      -> build_synthetic_dataset(missing_days=...)
+# frequency / points_per_day are validated; only the 15-minute UTC trace grid
+# (96 points per day, 24h = 96 slots) is supported by this generator.
+
+dataset_id: synthetic_facility
+site_id: synthetic_site
+domain_id: synthetic_facility
+days: 31
+seed: 7
+frequency: 15min
+points_per_day: 96
+anchor_timestamp: "2024-01-01T00:00:00Z"
+covariates: true
+noise: 1.0
+missing_days: []
