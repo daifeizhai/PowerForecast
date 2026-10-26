@@ -48,6 +48,50 @@ POINTS_PER_DAY = 96
 BASELINE_VERSION = "1.0.0"
 
 
+def _as_context_matrix(context_kw: Any, *, model_name: str) -> np.ndarray:
+    """Validate a raw ``[B, L]`` kW context used by :meth:`predict_from_context`."""
+    if context_kw is None:
+        raise ContractError(
+            f"{model_name}.predict_from_context needs a [B, L] kW context array; got None."
+        )
+    try:
+        array = np.asarray(context_kw, dtype=np.float64)
+    except (TypeError, ValueError) as exc:
+        raise ContractError(
+            f"{model_name}.predict_from_context needs a dense numeric [B, L] kW context; the "
+            f"input is ragged or non-numeric ({type(exc).__name__}: {exc})."
+        ) from exc
+    if array.ndim != 2:
+        raise ContractError(
+            f"{model_name}.predict_from_context needs a 2-D [B, L] context, got shape "
+            f"{array.shape}."
+        )
+    if array.shape[0] < 1 or array.shape[1] < 1:
+        raise ContractError(
+            f"{model_name}.predict_from_context needs B >= 1 and L >= 1, got {array.shape}."
+        )
+    non_finite = int((~np.isfinite(array)).sum())
+    if non_finite:
+        raise ContractError(
+            f"{model_name}.predict_from_context received {non_finite} non-finite context value(s); "
+            "missing power is never treated as 0 kW and the window is rejected."
+        )
+    return array
+
+
+def _validate_horizon(horizon: Any, *, model_name: str) -> int:
+    if isinstance(horizon, bool) or not isinstance(horizon, (int, np.integer)):
+        raise ContractError(
+            f"{model_name}.predict_from_context needs an integer horizon, got {horizon!r}."
+        )
+    horizon = int(horizon)
+    if horizon < 1:
+        raise ContractError(
+            f"{model_name}.predict_from_context needs horizon >= 1, got {horizon}."
+        )
+    return horizon
+
+
 class _ProfileForecaster:
     """Shared profile -> tile/truncate logic and output validation."""
 
@@ -139,6 +183,37 @@ class _ProfileForecaster:
         self._validate_output(output, batch_size=batch_size, horizon=horizon)
         return output
 
+    def predict_from_context(self, context_kw: np.ndarray, horizon: int) -> np.ndarray:
+        """Predict from a raw ``[B, L]`` kW context (no mask, no labels).
+
+        This is a thin Stage-2 entry point factored out of :meth:`predict`: the
+        profile rule, tiling/truncation and output validation are exactly the same
+        as for :class:`ForecastInputs`, but the input is a plain context matrix so
+        the Stage-2 runner can reuse B0/B1 without rebuilding data contracts.  The
+        behaviour of :meth:`predict` itself is unchanged.
+
+        Every context value must be finite (there is no validity mask here), and at
+        least ``required_context_points`` trailing points are required; otherwise
+        the window is rejected with :class:`InsufficientDataError` instead of being
+        padded or truncated.
+        """
+        context = _as_context_matrix(context_kw, model_name=self.name)
+        horizon = _validate_horizon(horizon, model_name=self.name)
+        required = self.required_context_points
+        if context.shape[1] < required:
+            raise InsufficientDataError(
+                f"{self.name} cannot forecast from a raw context ({context.shape[1]} points < "
+                f"required {required}).  It needs at least {required} trailing context points so "
+                "that the last complete trace day(s) can be read without borrowing future values "
+                "or treating missing points as 0 kW."
+            )
+        batch_size = context.shape[0]
+        output = np.empty((batch_size, horizon), dtype=np.float64)
+        for sample in range(batch_size):
+            output[sample] = self._tile(self._profile_from_context(context[sample]), horizon)
+        self._validate_output(output, batch_size=batch_size, horizon=horizon)
+        return output
+
     # -- persistence ---------------------------------------------------------
     def save(self, path: str | Path) -> Path:
         destination = resolve_path(path)
@@ -189,6 +264,11 @@ class _ProfileForecaster:
 
     # -- hooks implemented by concrete baselines -----------------------------
     def _profile(self, inputs: ForecastInputs, sample: int) -> np.ndarray:
+        """Profile for one :class:`ForecastInputs` sample (kept for ``predict``)."""
+        return self._profile_from_context(inputs.past_power_kw[sample])
+
+    def _profile_from_context(self, context_row: np.ndarray) -> np.ndarray:
+        """Profile for one raw ``[L]`` kW context row; implemented by subclasses."""
         raise NotImplementedError
 
     def _require_context(self, inputs: ForecastInputs) -> None:
@@ -250,8 +330,8 @@ class SeasonalNaiveForecaster(_ProfileForecaster):
     name = "seasonal_naive"
     season_days = 1
 
-    def _profile(self, inputs: ForecastInputs, sample: int) -> np.ndarray:
-        window = inputs.past_power_kw[sample, -self._season_length :]
+    def _profile_from_context(self, context_row: np.ndarray) -> np.ndarray:
+        window = context_row[-self._season_length :]
         return np.asarray(window, dtype=np.float64)
 
 
@@ -261,10 +341,8 @@ class ThreeDayMeanForecaster(_ProfileForecaster):
     name = "three_day_mean"
     season_days = 3
 
-    def _profile(self, inputs: ForecastInputs, sample: int) -> np.ndarray:
-        window = np.asarray(
-            inputs.past_power_kw[sample, -self.required_context_points :], dtype=np.float64
-        )
+    def _profile_from_context(self, context_row: np.ndarray) -> np.ndarray:
+        window = np.asarray(context_row[-self.required_context_points :], dtype=np.float64)
         recent_days = window.reshape(self.season_days, self._season_length)
         return np.mean(recent_days, axis=0)
 

@@ -1,0 +1,74 @@
+# Stage-2 foundation models (A1 Chronos-2, A2 TiRex-2) and the fixed A3 ensemble.
+#
+# Offline policy
+# --------------
+# Experiment runs NEVER download weights.  The checkpoints below are prepared
+# separately, once, into a local Hugging-Face `HF_HUB_CACHE` layout:
+#
+#   <weights_cache>/models--amazon--chronos-2/snapshots/<revision>/config.json
+#   <weights_cache>/models--amazon--chronos-2/snapshots/<revision>/model.safetensors
+#   <weights_cache>/models--NX-AI--TiRex-2/snapshots/<revision>/model-config.yaml
+#   <weights_cache>/models--NX-AI--TiRex-2/snapshots/<revision>/model.ckpt
+#
+# `scripts.probe_foundation_models --allow-download` is the explicit,
+# separate weight-preparation step (`allow_download: true` below is only honoured
+# when that flag is passed).  Inference resolves the snapshot with
+# `try_to_load_from_cache` + `local_files_only=True` + `HF_HUB_OFFLINE=1`, records
+# the snapshot path/revision/file SHA256 in the run manifest, and raises a clear
+# FileNotFoundError when the cache is incomplete instead of creating random or
+# partial weights.
+
+weights_cache: D:/AAA_Project/PowerData_Prediction/.model-cache
+
+# CPU-only zero-shot inference; float32 is the verified dtype for both checkpoints.
+device: cpu
+dtype: float32
+jobs: 4
+# Independent series per batch row.  batch_size=1 keeps rows individually
+# processed so alone-vs-batched predictions are bit-identical; larger values only
+# change grouped-kernel float rounding (never information sharing).
+batch_size: 1
+allow_download: false
+
+# Canonical Stage-2 model set (B0, B1, A1, A2, A3).
+members: [seasonal_naive, three_day_mean, chronos2, tirex2, power_ensemble]
+
+models:
+  chronos2:
+    model_id: amazon/chronos-2
+    checkpoint_filenames: [config.json, model.safetensors]
+    # Chronos-2 returns the full requested horizon natively (verified H=16/32/96/288/672).
+    native_horizon: null
+    point_policy:
+      quantile: 0.5
+      selection: "predict_quantiles(quantile_levels=[0.5])"
+      cross_learning: false
+    max_context_points: 8192        # read from the checkpoint's chronos_config
+
+  tirex2:
+    model_id: NX-AI/TiRex-2
+    checkpoint_filenames: [model-config.yaml, model.ckpt]
+    # The checkpoint's native forecast length; longer horizons roll out recursively.
+    native_horizon: 320
+    point_policy:
+      quantile: 0.5
+      median_index: 4               # quantile grid [0.1 ... 0.9]; index 4 == 0.5
+    max_context_points: 2048        # read from the checkpoint's context_len
+    recursion:
+      block_size: 320
+      context_update: predicted_median_only
+      # Never append true future values: only the model's own predicted medians.
+      truth_values_consumed: false
+      # Refuse to start a longer rollout unless the limit is raised explicitly.
+      max_horizon: 672
+
+recursion:
+  max_horizon: 672
+
+# Model A3: frozen 0.5/0.5 equal weights of A1 and A2 on the main power path.
+# These are INTERNAL main-path coefficients -- NOT a main/auxiliary fusion weight.
+# The values are fixed a priori and are never searched, tuned or data-dependent.
+ensemble:
+  method: fixed_weighted_mean
+  chronos2_weight: 0.5
+  tirex2_weight: 0.5

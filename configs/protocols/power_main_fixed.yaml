@@ -1,0 +1,21 @@
+# Fixed D14/D22 time protocol for the Stage-2 main power model (task book §5).
+#
+# This file defines only the protocol *engine parameters*.  The concrete origin
+# day numbers live in configs/experiments/power_main_v1.yaml so that the 3d
+# protocol can legitimately differ from the 4h/8h/24h protocols and the 7d
+# preset stays optional.  Nothing here may be overwritten by model code.
+
+protocol_id: fixed_d14_d22
+frequency: 15min
+points_per_day: 96
+trace_anchor_policy: dataset_explicit
+context_points: 1344          # 14 trace days of history (inference input, not a training window)
+horizons: {4h: 16, 8h: 32, 24h: 96, 3d: 288, 7d: 672}
+origin_mode: explicit
+development_origins: []       # filled by the experiment config per horizon
+test_origins: []              # filled by the experiment config per horizon
+train_cutoffs: {development: 14, final: 22}   # configuration data; zero-shot models do not train
+availability_policy: strict
+protocol_type: fixed_d14_d22
+default_horizon: 24h
+overlap_warning: true         # 3d/7d development and test windows overlap in ground truth

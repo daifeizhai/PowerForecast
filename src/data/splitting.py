@@ -41,7 +41,16 @@ SUPPORTED_ANCHOR_POLICIES: tuple[str, ...] = ("dataset_explicit",)
 SUPPORTED_ORIGIN_MODES: tuple[str, ...] = ("explicit",)
 #: Strict availability: a value is usable only once it is actually available at the origin.
 SUPPORTED_AVAILABILITY_POLICIES: tuple[str, ...] = ("strict",)
-SUPPORTED_PROTOCOL_TYPES: tuple[str, ...] = ("configurable", "fixed_24h", "fixed_7d", "demo")
+SUPPORTED_PROTOCOL_TYPES: tuple[str, ...] = (
+    "configurable",
+    "fixed_24h",
+    "fixed_7d",
+    "demo",
+    # Stage-2 main-model protocol (task book V2.0 §5): anchored D14/D22 day numbers
+    # with per-horizon origin lists from the experiment config.  A configuration
+    # instance of the same generic engine, not a new hard-coded execution path.
+    "fixed_d14_d22",
+)
 
 TRACE_DAY = pd.Timedelta(24 * 60 * 60 * 1_000_000_000)
 

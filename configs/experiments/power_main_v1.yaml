@@ -1,0 +1,79 @@
+# Stage-2 main experiment: zero-shot main model A on the real NLR ESIF facility power.
+#
+# Model A = Chronos-2 and TiRex-2 (both frozen pretrained weights, P50 medians)
+# fused with a FIXED 0.5/0.5 equal-weight mean.  The main path sees only the
+# historical kW context; it never receives CPU/GPU/task features.
+#
+# The origin day numbers below are the pre-declared fixed D14/D22 protocol from
+# the task book §5.3-5.5.  They are per-horizon because the 3d protocol uses
+# D14/D16/D18 development and D22..D28 test, while 7d is an optional preset.
+
+experiment:
+  name: power_main_v1
+  seed: 42
+  frequency: 15min
+
+data:
+  target_dataset: nlr_esif
+  target_config: configs/datasets/nlr_target.yaml
+  target_power: data/processed/processed_target_power.parquet
+  target_metadata: data/processed/target_metadata.json
+  target_quality: data/processed/target_quality.json
+  source_config: configs/datasets/sources.yaml
+  source_quality: data/processed/source_quality.json
+  source_datasets: [m100_exadata]
+  target_field: power_kw
+  target_unit: kW
+
+protocol:
+  config: configs/protocols/power_main_fixed.yaml
+  context_points: 1344
+  horizons: ["4h", "8h", "24h", "3d"]
+  optional_horizons: ["7d"]
+  origins:
+    "4h":
+      development: [14, 16, 18, 20]
+      test: [22, 23, 24, 25, 26, 27, 28, 29, 30]
+    "8h":
+      development: [14, 16, 18, 20]
+      test: [22, 23, 24, 25, 26, 27, 28, 29, 30]
+    "24h":
+      development: [14, 16, 18, 20]
+      test: [22, 23, 24, 25, 26, 27, 28, 29, 30]
+    "3d":
+      development: [14, 16, 18]
+      test: [22, 23, 24, 25, 26, 27, 28]
+    "7d":
+      development: [14, 15]
+      test: [22, 23, 24]
+
+models:
+  config: configs/models/foundation.yaml
+  baselines_config: configs/models/baselines.yaml
+  members: [seasonal_naive, three_day_mean, chronos2, tirex2, power_ensemble]
+  weights_cache: D:/AAA_Project/PowerData_Prediction/.model-cache
+  allow_download: false
+
+ensemble:
+  method: fixed_weighted_mean
+  chronos2_weight: 0.5
+  tirex2_weight: 0.5
+
+evaluation:
+  split: [development, test]
+  mape_relative_threshold: 0.0
+  improvement_baselines: [seasonal_naive, three_day_mean]
+
+runtime:
+  device: cpu
+  jobs: 4
+  batch_size: 1
+  offline: true
+
+postprocess:
+  clip_negative: false          # no silent non-negative clipping; negatives are recorded
+  record_negative: true
+
+output:
+  root: results/runs
+  figures: true
