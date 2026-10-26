@@ -38,3 +38,12 @@ def trace_calendar_features(index: pd.DatetimeIndex, anchor: pd.Timestamp) -> pd
     return pd.DataFrame({"day_sin": np.sin(2*np.pi*days), "day_cos": np.cos(2*np.pi*days),
                          "week_sin": np.sin(2*np.pi*days/7), "week_cos": np.cos(2*np.pi*days/7)},
                         index=index, dtype=np.float32)
+
+
+def source_clock_calendar_features(source_clock, protocol_index):
+    """Published-clock hour/weekday, preserving naive clocks without localization."""
+    clock=pd.DatetimeIndex(pd.to_datetime(source_clock))
+    fraction=(clock.hour.to_numpy()*60+clock.minute.to_numpy())/1440.
+    week=(clock.dayofweek.to_numpy()+fraction)/7
+    return pd.DataFrame({'day_sin':np.sin(2*np.pi*fraction),'day_cos':np.cos(2*np.pi*fraction),
+        'week_sin':np.sin(2*np.pi*week),'week_cos':np.cos(2*np.pi*week)},index=protocol_index,dtype=np.float32)

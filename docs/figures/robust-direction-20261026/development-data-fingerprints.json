@@ -1,0 +1,18 @@
+{
+  "M100/0.tar": {
+    "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\M100\\0.tar",
+    "sha256": "d46ec4db0c12037c298eb074d256374730fab92e6efedaa073348533d3ab3840"
+  },
+  "M100/1.tar": {
+    "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\M100\\1.tar",
+    "sha256": "1465e8c102e52cf8da5e39ff95829949afde719596af42680d5f610b7432ba8f"
+  },
+  "UCC/dataset1_combined.csv": {
+    "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\UCC2023\\dataset1_combined.csv",
+    "sha256": "18592c5a1a9edf021cb16e5775cd12bfb1479d244c10e4d913bf18cefe7b0256"
+  },
+  "UCC/dataset2_combined.csv": {
+    "path": "D:\\AAA_Project\\PowerForecast\\data\\raw\\UCC2023\\dataset2_combined.csv",
+    "sha256": "2b5709f16e6ae94d274d1f2b111ef67a38edcca8e1d22c6c02182308042a08bb"
+  }
+}

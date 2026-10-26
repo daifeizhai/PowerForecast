@@ -137,11 +137,17 @@ def domain_windows(panel: DomainPanel, domains: list[str], origins: list[int], c
         expected = pd.date_range(frame.index[0], periods=len(frame), freq=panel.frequency, name=frame.index.name)
         if not frame.index.equals(expected) or frame.index[0] != panel.anchor:
             raise ValueError(f"{domain}: preserve the complete declared grid and trace anchor.")
-        known = trace_calendar_features(frame.index, panel.anchor)
+        if panel.audit.get(domain,{}).get('source_clock_calendar',False):
+            from src.data.features import source_clock_calendar_features
+            known=source_clock_calendar_features(frame.source_clock_timestamp,frame.index)
+        else:
+            known = trace_calendar_features(frame.index, panel.anchor)
         history = pd.concat([frame[[target_field]].astype(np.float32), known], axis=1)
         parts = {}
         for day in origins:
-            position = int(day)*period
+            position = int(round(float(day)*period))
+            if abs(float(day)*period-position)>1e-7:
+                raise ValueError('A forecast issue must align to the declared sampling grid.')
             if position < context or position+horizon > len(frame):
                 raise ValueError(f"{domain}: insufficient full history/horizon at D{day}.")
             latency = panel.audit.get(domain, {}).get("history_availability_upper_bound_minutes", 0)

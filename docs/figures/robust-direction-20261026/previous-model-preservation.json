@@ -1,0 +1,4563 @@
+{
+  "checked_at_utc": "2026-10-26T08:48:56.955619+00:00",
+  "passed": true,
+  "checked_models": 911,
+  "failures": [],
+  "checks": [
+    {
+      "run": "20261012T133504Z_69cad4",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T133504Z_69cad4",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T133504Z_69cad4",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T133504Z_69cad4",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T140014Z_3350ee",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T140014Z_3350ee",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T140014Z_3350ee",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T140014Z_3350ee",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T143252Z_18d8be",
+      "path": "7d\\dlinear\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261012T143252Z_18d8be",
+      "path": "7d\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T143252Z_18d8be",
+      "path": "7d\\seasonal_ar\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T143252Z_18d8be",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T143252Z_18d8be",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T143252Z_18d8be",
+      "path": "24h\\dlinear\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261012T143252Z_18d8be",
+      "path": "24h\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T143252Z_18d8be",
+      "path": "24h\\seasonal_ar\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T143252Z_18d8be",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261012T143252Z_18d8be",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T045957Z_5f0630",
+      "path": "7d\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T045957Z_5f0630",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T045957Z_5f0630",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T045957Z_5f0630",
+      "path": "24h\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T045957Z_5f0630",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T045957Z_5f0630",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T045957Z_734d41",
+      "path": "7d\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T045957Z_734d41",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T045957Z_734d41",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T045957Z_734d41",
+      "path": "24h\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T045957Z_734d41",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T045957Z_734d41",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T050238Z_d00753",
+      "path": "7d\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T050238Z_d00753",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T050238Z_d00753",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T050238Z_d00753",
+      "path": "24h\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T050238Z_d00753",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T050238Z_d00753",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T051727Z_c0644a",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T051727Z_c0644a",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T051727Z_c0644a",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T051727Z_c0644a",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T053219Z_76841d",
+      "path": "7d\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T053219Z_76841d",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T053219Z_76841d",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T053219Z_76841d",
+      "path": "24h\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T053219Z_76841d",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T053219Z_76841d",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T054317Z_c6e9b1",
+      "path": "7d\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T054317Z_c6e9b1",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T054317Z_c6e9b1",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T054317Z_c6e9b1",
+      "path": "24h\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T054317Z_c6e9b1",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T054317Z_c6e9b1",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T061831Z_7a7f9e",
+      "path": "7d\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T061831Z_7a7f9e",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T061831Z_7a7f9e",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T061831Z_7a7f9e",
+      "path": "24h\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T061831Z_7a7f9e",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T061831Z_7a7f9e",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T065836Z_426e02",
+      "path": "7d\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T065836Z_426e02",
+      "path": "7d\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T065836Z_426e02",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T065836Z_426e02",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T065836Z_426e02",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T065836Z_426e02",
+      "path": "24h\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T065836Z_426e02",
+      "path": "24h\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T065836Z_426e02",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T065836Z_426e02",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T065836Z_426e02",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T071414Z_ebace2",
+      "path": "7d\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T071414Z_ebace2",
+      "path": "7d\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T071414Z_ebace2",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T071414Z_ebace2",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T071414Z_ebace2",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T071414Z_ebace2",
+      "path": "24h\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T071414Z_ebace2",
+      "path": "24h\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T071414Z_ebace2",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T071414Z_ebace2",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T071414Z_ebace2",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T091611Z_c5ab12",
+      "path": "7d\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T091611Z_c5ab12",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T091611Z_c5ab12",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T091611Z_c5ab12",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T091611Z_c5ab12",
+      "path": "24h\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T091611Z_c5ab12",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T091611Z_c5ab12",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T091611Z_c5ab12",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110256Z_5670cc",
+      "path": "7d\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110256Z_5670cc",
+      "path": "7d\\lsp\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261013T110256Z_5670cc",
+      "path": "7d\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110256Z_5670cc",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110256Z_5670cc",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110256Z_5670cc",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110256Z_5670cc",
+      "path": "24h\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110256Z_5670cc",
+      "path": "24h\\lsp\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261013T110256Z_5670cc",
+      "path": "24h\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110256Z_5670cc",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110256Z_5670cc",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110256Z_5670cc",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110352Z_938784",
+      "path": "7d\\lsp\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261013T110352Z_938784",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110352Z_938784",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110352Z_938784",
+      "path": "24h\\lsp\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261013T110352Z_938784",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T110352Z_938784",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120519Z_abc86d",
+      "path": "7d\\dlinear\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261013T120519Z_abc86d",
+      "path": "7d\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120519Z_abc86d",
+      "path": "7d\\seasonal_ar\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120519Z_abc86d",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120519Z_abc86d",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120519Z_abc86d",
+      "path": "24h\\dlinear\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261013T120519Z_abc86d",
+      "path": "24h\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120519Z_abc86d",
+      "path": "24h\\seasonal_ar\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120519Z_abc86d",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120519Z_abc86d",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120651Z_416998",
+      "path": "7d\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120651Z_416998",
+      "path": "7d\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120651Z_416998",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120651Z_416998",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120651Z_416998",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120651Z_416998",
+      "path": "24h\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120651Z_416998",
+      "path": "24h\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120651Z_416998",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120651Z_416998",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T120651Z_416998",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T122212Z_b06548",
+      "path": "7d\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T122212Z_b06548",
+      "path": "7d\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T122212Z_b06548",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T122212Z_b06548",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T122212Z_b06548",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T122212Z_b06548",
+      "path": "24h\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T122212Z_b06548",
+      "path": "24h\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T122212Z_b06548",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T122212Z_b06548",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T122212Z_b06548",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T123054Z_fdc898",
+      "path": "7d\\dlinear\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261013T123054Z_fdc898",
+      "path": "7d\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T123054Z_fdc898",
+      "path": "7d\\seasonal_ar\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T123054Z_fdc898",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T123054Z_fdc898",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T123054Z_fdc898",
+      "path": "24h\\dlinear\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261013T123054Z_fdc898",
+      "path": "24h\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T123054Z_fdc898",
+      "path": "24h\\seasonal_ar\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T123054Z_fdc898",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261013T123054Z_fdc898",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\chronos2\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\dlinear\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\extra_trees\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\lightgbm\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\lstm\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\patchtstfm\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\sarima\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\seasonal_ar\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\tcn\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\timesfm25\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\timesfm30\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\tirex2\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\toto2\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "7d\\xgboost\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\chronos2\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\dlinear\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\extra_trees\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\hdsf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\lightgbm\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\lstm\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\patchtstfm\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\sarima\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\seasonal_ar\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\tcn\\model.pt",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\timesfm25\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\timesfm30\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\tirex2\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\toto2\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261014T191440Z_3bac9d",
+      "path": "24h\\xgboost\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164347Z_1cb905",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164347Z_1cb905",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164347Z_1cb905",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164347Z_1cb905",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\7d\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\7d\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\7d\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\7d\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\7d\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\24h\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\24h\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\24h\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\24h\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\24h\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellc_pdu40\\24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\7d\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\7d\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\7d\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\7d\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\7d\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\24h\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\24h\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\24h\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\24h\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\24h\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cellb_pdu11\\24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\7d\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\7d\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\7d\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\7d\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\7d\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\24h\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\24h\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\24h\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\24h\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\24h\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T164634Z_cross_domain_google_5af4e4",
+      "path": "cella_pdu10\\24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165009Z_efa09c",
+      "path": "7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165009Z_efa09c",
+      "path": "7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165009Z_efa09c",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165009Z_efa09c",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\7d\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\7d\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\7d\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\7d\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\7d\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\24h\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\24h\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\24h\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\24h\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\24h\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellc_pdu40\\24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\7d\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\7d\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\7d\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\7d\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\7d\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\24h\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\24h\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\24h\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\24h\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\24h\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cellb_pdu11\\24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\7d\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\7d\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\7d\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\7d\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\7d\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\24h\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\24h\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\24h\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\24h\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\24h\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261024T165116Z_cross_domain_google_d531e9",
+      "path": "cella_pdu10\\24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\7d\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\7d\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\7d\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\7d\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\7d\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\24h\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\24h\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\24h\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\24h\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\24h\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellc_pdu40\\24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\7d\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\7d\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\7d\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\7d\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\7d\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\24h\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\24h\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\24h\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\24h\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\24h\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cellb_pdu11\\24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\7d\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\7d\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\7d\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\7d\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\7d\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\7d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\7d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\24h\\ridge_multi\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\24h\\ridge_single__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\24h\\ridge_single__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\24h\\ridge_single__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\24h\\ridge_target_reference\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T054942Z_cross_domain_google_0b83ff",
+      "path": "cella_pdu10\\24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\normalized_ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\sapf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\sapf_similarity\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\single_normalized_ridge__demo_cell0_pdu0\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\single_normalized_ridge__demo_cell0_pdu3\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\single_normalized_ridge__demo_cell1_pdu0\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\single_normalized_ridge__demo_cell1_pdu3\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\single_normalized_ridge__demo_cell2_pdu0\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\single_normalized_ridge__demo_cell2_pdu3\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\single_ridge__demo_cell0_pdu0\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\single_ridge__demo_cell0_pdu3\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\single_ridge__demo_cell1_pdu0\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\single_ridge__demo_cell1_pdu3\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\single_ridge__demo_cell2_pdu0\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\single_ridge__demo_cell2_pdu3\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "3d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\normalized_ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\sapf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\sapf_similarity\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\single_normalized_ridge__demo_cell0_pdu0\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\single_normalized_ridge__demo_cell0_pdu3\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\single_normalized_ridge__demo_cell1_pdu0\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\single_normalized_ridge__demo_cell1_pdu3\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\single_normalized_ridge__demo_cell2_pdu0\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\single_normalized_ridge__demo_cell2_pdu3\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\single_ridge__demo_cell0_pdu0\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\single_ridge__demo_cell0_pdu3\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\single_ridge__demo_cell1_pdu0\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\single_ridge__demo_cell1_pdu3\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\single_ridge__demo_cell2_pdu0\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\single_ridge__demo_cell2_pdu3\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T081908Z_sapf_2166e7",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\normalized_ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\sapf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\sapf_similarity\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__cella_pdu9\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__celld_pdu36\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__celle_pdu26\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__celle_pdu29\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__cellf_pdu16\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__cellf_pdu19\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__cellf_pdu22\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__cellf_pdu25\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__cellg_pdu1\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__cellg_pdu4\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_normalized_ridge__cellh_pdu45\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__cella_pdu9\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__celld_pdu36\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__celle_pdu26\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__celle_pdu29\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__cellf_pdu16\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__cellf_pdu19\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__cellf_pdu22\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__cellf_pdu25\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__cellg_pdu1\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__cellg_pdu4\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\single_ridge__cellh_pdu45\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "3d\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\normalized_ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\ridge\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\sapf\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\sapf_similarity\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\seasonal_naive\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__cella_pdu9\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__celld_pdu36\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__celle_pdu26\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__celle_pdu29\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__cellf_pdu16\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__cellf_pdu19\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__cellf_pdu22\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__cellf_pdu25\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__cellg_pdu1\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__cellg_pdu4\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_normalized_ridge__cellh_pdu45\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__cella_pdu6\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__cella_pdu9\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__cellb_pdu12\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__celld_pdu32\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__celld_pdu36\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__celle_pdu26\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__celle_pdu29\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__cellf_pdu16\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__cellf_pdu19\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__cellf_pdu22\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__cellf_pdu25\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__cellg_pdu1\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__cellg_pdu4\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\single_ridge__cellh_pdu45\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T082346Z_sapf_5644ac",
+      "path": "24h\\three_day_mean\\model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__cella_pdu6/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__cella_pdu9/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__cellb_pdu12/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__celld_pdu32/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__celld_pdu36/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__celle_pdu26/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__celle_pdu29/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__cellf_pdu16/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__cellf_pdu19/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__cellf_pdu22/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__cellf_pdu25/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__cellg_pdu1/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__cellg_pdu4/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_normalized_ridge__cellh_pdu45/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__cella_pdu6/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__cella_pdu9/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__cellb_pdu12/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__celld_pdu32/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__celld_pdu36/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__celle_pdu26/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__celle_pdu29/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__cellf_pdu16/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__cellf_pdu19/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__cellf_pdu22/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__cellf_pdu25/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__cellg_pdu1/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__cellg_pdu4/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/single_ridge__cellh_pdu45/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "3d/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__cella_pdu6/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__cella_pdu9/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__cellb_pdu12/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__celld_pdu32/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__celld_pdu36/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__celle_pdu26/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__celle_pdu29/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__cellf_pdu16/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__cellf_pdu19/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__cellf_pdu22/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__cellf_pdu25/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__cellg_pdu1/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__cellg_pdu4/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_normalized_ridge__cellh_pdu45/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__cella_pdu6/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__cella_pdu9/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__cellb_pdu12/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__celld_pdu32/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__celld_pdu36/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__celle_pdu26/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__celle_pdu29/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__cellf_pdu16/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__cellf_pdu19/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__cellf_pdu22/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__cellf_pdu25/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__cellg_pdu1/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__cellg_pdu4/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/single_ridge__cellh_pdu45/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T112655Z_sapf_5b2026",
+      "path": "24h/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/sapf_no_fallback/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/sapf_no_normalization/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/sapf_no_reliability/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/sapf_no_selection/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_normalized_ridge__m100_rack0_node11/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_normalized_ridge__m100_rack0_node16/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_normalized_ridge__m100_rack0_node19/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_normalized_ridge__m100_rack0_node2/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_normalized_ridge__m100_rack0_node5/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_normalized_ridge__m100_rack0_node8/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_normalized_ridge__m100_rack1_node20/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_normalized_ridge__m100_rack1_node23/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_normalized_ridge__m100_rack1_node26/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_normalized_ridge__m100_rack1_node29/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_normalized_ridge__m100_rack1_node33/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_normalized_ridge__m100_rack1_node37/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_ridge__m100_rack0_node11/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_ridge__m100_rack0_node16/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_ridge__m100_rack0_node19/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_ridge__m100_rack0_node2/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_ridge__m100_rack0_node5/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_ridge__m100_rack0_node8/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_ridge__m100_rack1_node20/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_ridge__m100_rack1_node23/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_ridge__m100_rack1_node26/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_ridge__m100_rack1_node29/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_ridge__m100_rack1_node33/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/single_ridge__m100_rack1_node37/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "3d/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/sapf_no_fallback/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/sapf_no_normalization/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/sapf_no_reliability/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/sapf_no_selection/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_normalized_ridge__m100_rack0_node11/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_normalized_ridge__m100_rack0_node16/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_normalized_ridge__m100_rack0_node19/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_normalized_ridge__m100_rack0_node2/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_normalized_ridge__m100_rack0_node5/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_normalized_ridge__m100_rack0_node8/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_normalized_ridge__m100_rack1_node20/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_normalized_ridge__m100_rack1_node23/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_normalized_ridge__m100_rack1_node26/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_normalized_ridge__m100_rack1_node29/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_normalized_ridge__m100_rack1_node33/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_normalized_ridge__m100_rack1_node37/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_ridge__m100_rack0_node11/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_ridge__m100_rack0_node16/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_ridge__m100_rack0_node19/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_ridge__m100_rack0_node2/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_ridge__m100_rack0_node5/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_ridge__m100_rack0_node8/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_ridge__m100_rack1_node20/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_ridge__m100_rack1_node23/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_ridge__m100_rack1_node26/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_ridge__m100_rack1_node29/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_ridge__m100_rack1_node33/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/single_ridge__m100_rack1_node37/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T121710Z_sapf_4355ef",
+      "path": "24h/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/3d/fixed_blend/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/3d/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/3d/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/3d/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/3d/sapf_gain/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/3d/sapf_gain_no_veto/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/3d/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/3d/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/3d/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/3d/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/24h/fixed_blend/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/24h/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/24h/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/24h/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/24h/sapf_gain/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/24h/sapf_gain_no_veto/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/24h/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/24h/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/24h/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/ucc_to_m100/24h/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/3d/fixed_blend/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/3d/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/3d/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/3d/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/3d/sapf_gain/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/3d/sapf_gain_no_veto/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/3d/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/3d/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/3d/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/3d/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/24h/fixed_blend/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/24h/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/24h/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/24h/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/24h/sapf_gain/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/24h/sapf_gain_no_veto/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/24h/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/24h/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/24h/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_to_ucc/24h/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/3d/fixed_blend/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/3d/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/3d/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/3d/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/3d/sapf_gain/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/3d/sapf_gain_no_veto/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/3d/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/3d/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/3d/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/3d/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/24h/fixed_blend/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/24h/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/24h/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/24h/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/24h/sapf_gain/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/24h/sapf_gain_no_veto/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/24h/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/24h/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/24h/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "studies/m100_gain/24h/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/joint_predictor/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/benefit/3d/cutoff24/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/benefit/3d/cutoff32/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/benefit/3d/cutoff40/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/benefit/3d/prior/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/benefit/24h/cutoff24/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/benefit/24h/cutoff32/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/benefit/24h/cutoff40/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/benefit/24h/prior/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/3d/fixed_blend/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/3d/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/3d/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/3d/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/3d/sapf_gain/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/3d/sapf_gain_no_veto/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/3d/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/3d/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/3d/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/3d/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/24h/fixed_blend/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/24h/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/24h/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/24h/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/24h/sapf_gain/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/24h/sapf_gain_no_veto/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/24h/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/24h/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/24h/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/ucc/24h/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/joint_predictor/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/benefit/3d/cutoff24/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/benefit/3d/cutoff32/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/benefit/3d/cutoff40/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/benefit/3d/prior/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/benefit/24h/cutoff24/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/benefit/24h/cutoff32/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/benefit/24h/cutoff40/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/benefit/24h/prior/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/3d/fixed_blend/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/3d/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/3d/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/3d/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/3d/sapf_gain/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/3d/sapf_gain_no_veto/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/3d/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/3d/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/3d/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/3d/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/24h/fixed_blend/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/24h/normalized_ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/24h/ridge/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/24h/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/24h/sapf_gain/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/24h/sapf_gain_no_veto/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/24h/sapf_similarity/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/24h/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/24h/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T143438Z_sapf_transfer_771b85",
+      "path": "groups/m100/24h/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/learners/fixed/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/learners/marginal/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/learners/rank/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/learners/single/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/cutoff24/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/cutoff30/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/cutoff36/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/fixed_blend_25/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/fixed_blend_50/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/fixed_blend_75/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/gain_v2_fixed/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/gain_v2_forced/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/gain_v2_marginal/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/gain_v2_rank/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/gain_v2_single/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/gain_v2_uncalibrated/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/prior/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/ridge_level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/ridge_raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/ridge_scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/ridge_zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/expert-banks/level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/expert-banks/raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/expert-banks/scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/4h/expert-banks/zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/cutoff24/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/cutoff30/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/cutoff36/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/fixed_blend_25/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/fixed_blend_50/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/fixed_blend_75/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/gain_v2_fixed/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/gain_v2_forced/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/gain_v2_marginal/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/gain_v2_rank/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/gain_v2_single/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/gain_v2_uncalibrated/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/prior/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/ridge_level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/ridge_raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/ridge_scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/ridge_zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/expert-banks/level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/expert-banks/raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/expert-banks/scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/3d/expert-banks/zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/cutoff24/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/cutoff30/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/cutoff36/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/fixed_blend_25/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/fixed_blend_50/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/fixed_blend_75/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/gain_v2_fixed/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/gain_v2_forced/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/gain_v2_marginal/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/gain_v2_rank/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/gain_v2_single/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/gain_v2_uncalibrated/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/prior/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/ridge_level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/ridge_raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/ridge_scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/ridge_zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/expert-banks/level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/expert-banks/raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/expert-banks/scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/ucc_30/24h/expert-banks/zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/learners/fixed/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/learners/marginal/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/learners/rank/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/learners/single/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/cutoff24/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/cutoff30/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/cutoff36/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/fixed_blend_25/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/fixed_blend_50/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/fixed_blend_75/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/gain_v2_fixed/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/gain_v2_forced/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/gain_v2_marginal/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/gain_v2_rank/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/gain_v2_single/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/gain_v2_uncalibrated/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/prior/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/ridge_level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/ridge_raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/ridge_scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/ridge_zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/expert-banks/level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/expert-banks/raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/expert-banks/scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/4h/expert-banks/zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/cutoff24/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/cutoff30/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/cutoff36/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/fixed_blend_25/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/fixed_blend_50/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/fixed_blend_75/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/gain_v2_fixed/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/gain_v2_forced/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/gain_v2_marginal/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/gain_v2_rank/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/gain_v2_single/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/gain_v2_uncalibrated/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/prior/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/ridge_level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/ridge_raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/ridge_scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/ridge_zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/expert-banks/level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/expert-banks/raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/expert-banks/scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/3d/expert-banks/zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/cutoff24/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/cutoff30/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/cutoff36/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/fixed_blend_25/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/fixed_blend_50/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/fixed_blend_75/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/gain_v2_fixed/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/gain_v2_forced/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/gain_v2_marginal/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/gain_v2_rank/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/gain_v2_single/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/gain_v2_uncalibrated/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/prior/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/ridge_level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/ridge_raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/ridge_scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/ridge_zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/expert-banks/level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/expert-banks/raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/expert-banks/scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_30/24h/expert-banks/zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/learners/fixed/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/learners/marginal/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/learners/rank/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/learners/single/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/cutoff24/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/cutoff30/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/cutoff36/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/fixed_blend_25/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/fixed_blend_50/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/fixed_blend_75/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/gain_v2_fixed/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/gain_v2_forced/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/gain_v2_marginal/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/gain_v2_rank/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/gain_v2_single/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/gain_v2_uncalibrated/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/prior/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/ridge_level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/ridge_raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/ridge_scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/ridge_zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/expert-banks/level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/expert-banks/raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/expert-banks/scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/4h/expert-banks/zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/cutoff24/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/cutoff30/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/cutoff36/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/fixed_blend_25/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/fixed_blend_50/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/fixed_blend_75/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/gain_v2_fixed/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/gain_v2_forced/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/gain_v2_marginal/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/gain_v2_rank/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/gain_v2_single/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/gain_v2_uncalibrated/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/prior/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/ridge_level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/ridge_raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/ridge_scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/ridge_zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/expert-banks/level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/expert-banks/raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/expert-banks/scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/3d/expert-banks/zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/cutoff24/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/cutoff30/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/cutoff36/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/fixed_blend_25/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/fixed_blend_50/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/fixed_blend_75/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/gain_v2_fixed/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/gain_v2_forced/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/gain_v2_marginal/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/gain_v2_rank/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/gain_v2_single/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/gain_v2_uncalibrated/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/prior/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/ridge_level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/ridge_raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/ridge_scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/ridge_zscore/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/sapf/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/seasonal_naive/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/three_day_mean/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/uniform_transfer/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/expert-banks/level_shape/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/expert-banks/raw/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/expert-banks/scale_metadata/model.joblib",
+      "passed": true
+    },
+    {
+      "run": "20261025T175359Z_sapf_gain_v2_42a876",
+      "path": "groups/m100_15/24h/expert-banks/zscore/model.joblib",
+      "passed": true
+    }
+  ]
+}

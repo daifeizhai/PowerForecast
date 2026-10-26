@@ -135,6 +135,9 @@ def plot_sapf_results(metrics, profiles, folder):
 
 def audit_cross_domain_run(folder):
     import json
+    if json.loads((folder/'manifest.json').read_text(encoding='utf-8')).get('protocol')=='sapf_robust_direction_v1':
+        from src.evaluation.robust_audit import audit_robust
+        return audit_robust(folder)
     if json.loads((folder/'manifest.json').read_text(encoding='utf-8')).get('protocol') == 'sapf_gain_v2_suite':
         from src.evaluation.gain_v2_audit import audit_gain_v2
         return audit_gain_v2(folder)

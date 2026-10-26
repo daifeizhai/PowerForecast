@@ -15,6 +15,10 @@ from src.utils import load_config
 
 def run_experiment(args):
     config = load_config(args.config)
+    if config.get('protocol')=='sapf_robust_direction_v1':
+        from src.training.robust_experiment import run_development
+        from src.training.robust_final import run_final
+        return run_development(args,config) if args.phase=='development' else run_final(args,config)
     if config.get("protocol") == "sapf_gain_v2_suite":
         from src.training.gain_v2_experiment import run_gain_v2
         return run_gain_v2(args, config)
@@ -34,8 +38,10 @@ def main(argv=None):
         legacy.add_argument("--legacy-config", required=True)
         selected, remaining = legacy.parse_known_args(arguments)
         return run_legacy(selected.legacy_config, remaining)
-    parser = argparse.ArgumentParser(description="SAPF 24h/3d cross-domain forecasting; 14-day observed history.")
+    parser = argparse.ArgumentParser(description="SAPF 4h/24h/3d forecasting; 14-day observed history.")
     parser.add_argument("--config", default="configs/sapf_google.yaml")
+    parser.add_argument('--phase',choices=['development','final'],default='development',help='Robust verification stage; original protocols ignore this flag.')
+    parser.add_argument('--development-run',help='Completed source-only robust development run required for final freezing.')
     parser.add_argument("--models", nargs="+", choices=MODEL_NAMES)
     parser.add_argument("--horizons", nargs="+", choices=["4h", "24h", "3d"])
     parser.add_argument("--demo", action="store_true", help="Synthetic domain data; program verification only.")

@@ -13,10 +13,17 @@ MODEL_NAMES = (*MODEL_NAMES, "uniform_transfer", "fixed_blend", "sapf_gain", "sa
 MODEL_NAMES = (*MODEL_NAMES, "ridge_raw", "ridge_zscore", "ridge_level_shape", "ridge_scale_metadata",
                "fixed_blend_25", "fixed_blend_50", "fixed_blend_75", "gain_v2_single", "gain_v2_fixed",
                "gain_v2_marginal", "gain_v2_rank", "gain_v2_forced", "gain_v2_uncalibrated")
+MODEL_NAMES=(*MODEL_NAMES,'robust_fixed','robust_bounded_fixed','robust_dynamic','robust_external')
 
 
 def create_model(name: str, params: dict | None = None, seed: int = 42) -> BaseForecaster:
     params = dict(params or {})
+    if name in {'robust_fixed','robust_bounded_fixed','robust_dynamic','robust_external'}:
+        from src.models.ml.robust_transfer import RobustFixedFusion,RobustDynamicFusion
+        if name=='robust_dynamic':return RobustDynamicFusion(name=name,**params)
+        params.setdefault('bounded',name=='robust_bounded_fixed')
+        if name=='robust_external':params.setdefault('alpha',1.)
+        return RobustFixedFusion(name=name,**params)
     if name in {"ridge_raw", "ridge_zscore", "ridge_level_shape", "ridge_scale_metadata"}:
         from src.models.ml.level_shape import RepresentationRidge
         return RepresentationRidge(representation=name[6:], name=name, seed=seed, **params)

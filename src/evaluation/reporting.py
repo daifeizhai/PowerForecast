@@ -107,6 +107,10 @@ def print_saved_results(run_dir, *, results_dir="results/runs", detailed=False):
     manifest = json.loads((folder/"manifest.json").read_text(encoding="utf-8"))
     if manifest.get("status") != "complete":
         raise ValueError("Display requires a completed experiment.")
+    if manifest.get('protocol')=='sapf_robust_direction_v1':
+        from src.evaluation.robust_report import print_robust_results
+        print_robust_results(folder)
+        return folder
     if manifest.get("protocol") in {"sapf_transfer_suite_v1", "sapf_gain_v2_suite"}:
         for spec in manifest["studies"]:
             child = folder/"studies"/spec["name"]

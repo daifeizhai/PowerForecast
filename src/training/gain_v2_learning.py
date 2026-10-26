@@ -29,7 +29,10 @@ def source_batch(panel, sources, cutoff, horizon):
     for domain in sources:
         assert_data_usage(panel.metadata[domain],'training')
     # Daily origins: even a 4h label must finish before the fitting cutoff.
-    origins = list(range(14,cutoff-ceil(horizon/panel.points_per_day)+1))
+    if horizon*6==panel.points_per_day and all(panel.audit.get(d,{}).get('all_4h_origins',False) for d in sources):
+        origins=(np.arange(14*panel.points_per_day,cutoff*panel.points_per_day-horizon+1,horizon)/panel.points_per_day).tolist()
+    else:
+        origins = list(range(14,cutoff-ceil(horizon/panel.points_per_day)+1))
     batch = domain_windows(panel,sources,origins,14*panel.points_per_day,horizon)
     if batch.skipped_windows:
         raise ValueError('Assigned source training windows must be complete; no silent deletion.')

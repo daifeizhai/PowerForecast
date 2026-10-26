@@ -2,7 +2,7 @@
 
 **选择性自适应功率预测（Selective Adaptive Power Forecasting）研究框架。**
 
-当前开发阶段为[Gain-v2四周协议](docs/SAPF_GAIN_V2_PROTOCOL.md)：四种迁移价值目标、独立校准、Level–Shape表示、4h/24h/3d和配对统计。正式入口为 `scripts/run_experiment.py --config configs/sapf_gain_v2.yaml`，测试日期与旧报告分开；最终结果和建议门槛须以本轮冻结测试报告为准。基线提交f89dc7d已打本地冻结标签，开发分支为research/sapf-gain-v2。
+当前阶段为[最终方向验证协议](docs/SAPF_ROBUST_PROTOCOL.md)：先审计z-score源专家，在源侧独立开发数据选固定权重，只有24h/3d源侧存在稳定收益才开展受限动态融合。新日期测试前统一冻结所有模型，随后一次性评价。使用CPU与传统机器学习，Eagle继续封存。开发分支为`research/sapf-robust-check`。此前[Gain-v2四周协议](docs/SAPF_GAIN_V2_PROTOCOL.md)与结果作为已查看的开发证据保留。
 
 [四周执行结果](docs/SAPF_GAIN_V2_RESULTS.md)已完成：M100内部及正向4h有所改善，正向24h/3d恶化，反向仍全回退；简单z-score固定混合仍是强对照。73项完整测试、237状态冻结、204项恢复及14,616条指标复算通过。唯一审计器浮点比较修订有独立记录，模型和375个已有结果文件未改。工程交付完成，不代表科学门槛全部达到；[当前版本复现说明](docs/figures/gain-v2-20261025T175359Z_42a876/README.md)区分原预注册与仅用于重放的副本。
 
@@ -21,6 +21,9 @@ Google 10 个测试电力域的 SAPF 平均曲线 MAPE 为 **24h 3.0232%、3d 3.
 Python 3.11+；优先使用已有 .venv，无需升级本机环境。首次安装只需 requirements.txt，其他基础模型的依赖见 requirements-optional.txt。
 
 ```powershell
+# 最终方向验证：先源侧开发；final需预注册JSON和完整development运行路径
+.\.venv\Scripts\python.exe scripts/run_experiment.py --config configs/sapf_robust.yaml --phase development
+.\.venv\Scripts\python.exe scripts/run_experiment.py --config configs/sapf_robust.yaml --phase final --development-run results/runs/20261026T080606Z_sapf_robust_dev_8b8652
 # Gain-v2：完整联合冻结；需先具备该版本的预注册JSON
 .\.venv\Scripts\python.exe scripts/run_experiment.py --config configs/sapf_gain_v2.yaml
 # 最新：收益预测、M100新留节点及M100↔UCC；完整联合30min协议
