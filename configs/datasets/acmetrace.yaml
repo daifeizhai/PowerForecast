@@ -1,0 +1,195 @@
+# AcmeTrace admission audit: power-label completeness, hierarchy and 15-minute adaptation.
+#
+# Source of truth for `src/data/acmetrace_power.py` and
+# `scripts/audit_acmetrace_power.py`.  Raw data (moved to `E:/Data/AcmeTrace`) is READ-ONLY;
+# the `ACMETRACE_RAW_ROOT` environment variable overrides `raw_root` if the tree moves again,
+# and every path below is resolved relative to `raw_root` unless given as an absolute path.
+#
+# Honesty rules encoded here (do not relax without a new audit):
+#   * Two independent GPU clusters: `seren` and `kalos`.  Their IPMI/DCGM series are kept
+#     separate; server power (IPMI) exists for Seren only.  Kalos is GPU-level only.
+#   * Power values are inferred to be watts from magnitude evidence; the README documents
+#     no power units, so every field stays `unit_verified: false`.
+#   * Zero (and negative) power is treated as an invalid/offline observation, NEVER as a
+#     real 0 kW measurement.  Missing nodes/GPUs are never zero-filled.
+#   * GPU power sums are `cluster_gpu_sum`, a GPU-level aggregate, and are NEVER called
+#     facility power or cluster IT power.  Seren `cluster_it` is the sum of reporting
+#     server (IPMI) nodes only, with explicit online counts; Kalos has no server power, so
+#     Kalos has no server/cluster_it level at all.
+#   * Nothing here is a facility-level kW label; no facility total is claimed or derived.
+#   * Native sampling is preserved for the audit; the 15-minute product is an explicit
+#     interval-mean adaptation with coverage and validity flags, not interpolation.
+
+schema_version: 1
+
+raw_root: E:/Data/AcmeTrace
+readme: README.md
+hf_tree: .cache/huggingface/trees/a484f7763a7812fc72eb49b8ba865b12fe7638e1.json
+source:
+  dataset_id: acmetrace
+  repository: Qinghao/AcmeTrace
+  revision: a484f7763a7812fc72eb49b8ba865b12fe7638e1
+  display_name: "AcmeTrace (Shanghai AI Lab) public releases"
+  clusters:
+    - seren
+    - kalos
+  timezone: "+08:00"
+  timezone_verified: false
+  timestamp_semantics: >-
+    Monitor timestamps are sample instants written with an explicit +08:00 offset (or, in
+    the CPU_D IPMI file, a mixed Chinese-locale CST spelling of the same +08:00 zone).  The
+    project convention converts them to UTC and keeps UTC-naive timestamps.  15-minute bin
+    labels are interval starts in that UTC-naive axis.
+  units:
+    power_unit_inferred: W
+    power_unit_verified: false
+    unit_evidence: >-
+      IPMI `Sys_Total_Power` observed in the ~0.47-0.96 kW range for 8-node CPU servers and
+      up to ~6.5 kW for 8-GPU servers; DCGM `POWER_USAGE` per GPU is ~90-420 W.  These are
+      plausible W magnitudes for server/GPU power (kW would be implausible for one node),
+      but the README does not document units, so the unit stays inferred/unverified.
+    conversion: "power_kw = power_w * 0.001"
+    zero_policy: "zero and negative readings are invalid/offline, never real 0 kW"
+    plausible_ranges_w:
+      gpu: [0, 2000]
+      server: [0, 12000]
+
+# ---------------------------------------------------------------------------
+# Utilization / power files
+# ---------------------------------------------------------------------------
+clusters:
+  seren:
+    display_name: Seren
+    native_interval_seconds: 15
+    expected_samples_15min: 60
+    gpu_power_file: data/utilization/seren/POWER_USAGE.csv
+    node_inventory_file: data/utilization/seren/NODE_CPU_UTILIZATION.csv
+    node_inventory_kind: server_ip_columns
+    has_ipmi_server_power: true
+  kalos:
+    display_name: Kalos
+    native_interval_seconds: 15
+    expected_samples_15min: 60
+    gpu_power_file: data/utilization/kalos/POWER_USAGE.csv
+    node_inventory_file: data/utilization/kalos/NODE_CPU_UTILIZATION.csv
+    node_inventory_kind: server_ip_columns
+    has_ipmi_server_power: false
+
+ipmi:
+  cluster: seren
+  native_interval_seconds: 300
+  expected_samples_15min: 3
+  timezone: "+08:00"
+  node_column: node
+  node_id_pattern: "(\\d+)-(\\d+)-(\\d+)-(\\d+)$"
+  node_id_rule: "last four numeric groups of the node id are the IPv4 address"
+  total_power_column: Sys_Total_Power
+  meter_columns: [Sys_Total_Power, PSU_IN_SUM, PSU_OUT_SUM]
+  files:
+    cpu_d:
+      path: data/utilization/ipmi/CPU_D_Power.csv
+      server_model: CPU_D
+      total_power_column: Sys_Total_Power
+      meter_columns: [Sys_Total_Power, PSU_IN_SUM, PSU_OUT_SUM]
+    gpu_ab:
+      path: data/utilization/ipmi/GPU_AB_Power.csv
+      server_model: GPU_AB
+      total_power_column: Sys_Total_Power
+      meter_columns: [Sys_Total_Power, PSU_IN_SUM]
+    gpu_c:
+      path: data/utilization/ipmi/GPU_C_Power.csv
+      server_model: GPU_C
+      total_power_column: Sys_Total_Power
+      meter_columns: [Sys_Total_Power, PSU_IN_SUM, PSU_OUT_SUM]
+  timestamp_formats:
+    iso: "%Y-%m-%d %H:%M:%S%z"
+    chinese_locale: "(?P<year>\\d{4})年\\s*(?P<month>\\d{1,2})月\\s*(?P<day>\\d{1,2})日\\s*星期[一二三四五六日天]\\s*(?P<hour>\\d{1,2}):(?P<minute>\\d{2}):(?P<second>\\d{2})\\s*CST"
+  meter_semantics: >-
+    Sys_Total_Power, PSU_IN_SUM and PSU_OUT_SUM are three meters on the SAME server, not
+    independent observations: the PSU input sum is the AC-side PSU total, the PSU output
+    sum is the DC-side PSU total (input > output by PSU losses), and Sys_Total_Power is the
+    BMC/system sensor total.  Their ratios and correlation are reported, and they are
+    never summed or treated as independent evidence.
+
+# ---------------------------------------------------------------------------
+# Levels available per cluster (Kalos has no IPMI -> no server / cluster_it level)
+# ---------------------------------------------------------------------------
+levels:
+  seren: [gpu, server, cluster_it, cluster_gpu_sum]
+  kalos: [gpu, cluster_gpu_sum]
+cluster_it:
+  scope: seren_ipmi_nodes_intersect_seren_node_inventory
+  rule: >-
+    Sum of Sys_Total_Power over nodes that report a valid (>0, finite) server power in the
+    native slot.  Nodes that are offline/missing in a slot are NOT zero-filled: they are
+    excluded from the sum and reduce coverage_ratio.  The expected node count is the number
+    of Seren node-inventory IPs covered by IPMI (248).
+  never_facility_power: true
+cluster_gpu_sum:
+  definition: >-
+    Per-native-timestamp sum of valid per-GPU DCGM POWER_USAGE values, then aggregated to
+    the 15-minute interval mean.  This is a GPU-level aggregate: it excludes CPU/memory/
+    fan/PSU losses, so it is NOT cluster IT power and NOT facility power.
+  never_facility_power: true
+  never_cluster_it: true
+
+# ---------------------------------------------------------------------------
+# 15-minute adaptation
+# ---------------------------------------------------------------------------
+aggregation_15min:
+  frequency: 15min
+  step_seconds: 900
+  label: interval_start
+  timezone_handling: convert +08:00 -> UTC, then drop tz (UTC-naive)
+  expected_samples:
+    seren_gpu: 60
+    kalos_gpu: 60
+    server: 3
+  validity_threshold: 0.5
+  strict_coverage_threshold: 0.9
+  coverage_bands: [0.0, 0.25, 0.5, 0.75, 0.9, 1.000001]
+  missing_policy: keep_full_grid_invalid_rows
+  interpolation: false
+  zero_fill: false
+  mean_rule: >-
+    Interval mean of the valid native samples only.  power_kw = NaN where no valid native
+    sample exists; valid = coverage_ratio >= validity_threshold.  The full 15-minute grid
+    from the first to the last native sample is kept, so missing bins stay visible as
+    invalid rows instead of being compressed away.
+  strict_coverage_note: >-
+    A second, stricter coverage threshold (0.9) is reported in the audit so downstream
+    protocol work can choose a stricter subset without recomputing.
+
+# ---------------------------------------------------------------------------
+# Streaming / inventory settings
+# ---------------------------------------------------------------------------
+streaming:
+  csv_chunksize: 20000
+  hash_chunk_bytes: 8388608
+  tail_scan_bytes: 2097152
+  inventory_hash_contents: true
+  progress_every_chunks: 10
+
+outputs:
+  processed_dir: data/processed
+  results_dir: results/analysis/acmetrace
+  inventory_json: data/processed/acmetrace_inventory.json
+  power_audit_json: data/processed/acmetrace_power_audit.json
+  metadata_json: data/processed/acmetrace_power_metadata.json
+  power_15min_parquet: data/processed/acmetrace_power_15min.parquet
+
+readiness:
+  ready_for_training: false
+  reasons:
+    - "Power units are inferred from magnitude only (README documents no units); unit_verified=false."
+    - "The IPMI CPU_D file mixes Chinese-locale CST and ISO timestamps; the parser is explicit but the original timezone documentation is absent (timezone_verified=false)."
+    - "Server power exists for Seren only; Kalos has no server power, so no Kalos cluster-IT series can be produced."
+    - "GPU-level sums are NOT cluster IT or facility power; facility-level power is not available in AcmeTrace at all."
+    - "Native sampling differs (15 s GPU, 300 s IPMI) and server/GPU coverage is intermittent; 15-minute rows keep explicit coverage/validity masks and are not approved for training."
+  ready_for_15min_analysis: true
+  ready_for_15min_analysis_note: >-
+    The native per-device series are aggregated to 15-minute interval means with explicit
+    coverage/validity flags; Seren cluster_it and Kalos cluster_gpu_sum are available for
+    V3.2 window analysis.  This is a data-readiness statement, not a training approval.
+
+
