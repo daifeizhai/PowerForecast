@@ -121,6 +121,52 @@ sources:
       Metadata candidate. If a final-holdout split is later reserved for this source, its
       holdout-only qualification must be recorded explicitly before any evaluation.
 
+  acmetrace_seren:
+    display_name: "AcmeTrace Seren (cluster IT power + runtime metrics)"
+    site_id: acmetrace
+    domain_id: acmetrace_seren
+    candidate_role: target_supervised
+    native_frequency: "15min_adapted"   # 300 s IPMI power + 15 s runtime metrics -> 15 min
+    timezone: "+08:00"
+    timezone_verified: false
+    audit_status: partial
+    label:
+      target_kind: active_power
+      target_scope: it
+      target_unit: kW
+      label_origin: component_sum
+      measurement_boundary: >-
+        Sum of measured IPMI `Sys_Total_Power` over the Seren server nodes that report in each
+        native 300 s slot; a cluster IT-side aggregate that excludes cooling, PDU/transformer
+        losses and lighting. Not a facility total-meter measurement.
+      sampling_semantics: >-
+        300 s per-node IPMI samples -> 15-minute interval mean per node -> sum over reporting
+        nodes; interval-start labels on a UTC-naive axis after converting explicit +08:00
+        offsets. Invalid slots keep NaN, never 0 kW.
+      synthetic: false
+    can_produce_facility_kw: false
+    notes: >-
+      v2 target-domain candidate (`configs/datasets/acmetrace_target.yaml`): cluster-IT power
+      label + NODE_* runtime metrics + cluster-level job activity. Power units are inferred as
+      W from magnitude evidence (unit_verified=false), the site timezone is unverified, and
+      AcmeTrace contains no facility power meter. Blocked from formal facility-kW claims.
+
+  acmetrace_kalos:
+    display_name: "AcmeTrace Kalos (GPU-level power only)"
+    site_id: acmetrace
+    domain_id: acmetrace_kalos
+    candidate_role: candidate
+    native_frequency: "15min_adapted"   # 15 s DCGM GPU power -> 15 min
+    timezone: "+08:00"
+    timezone_verified: false
+    audit_status: partial
+    label: null
+    can_produce_facility_kw: false
+    notes: >-
+      GPU-level DCGM aggregate only (no IPMI server power, no facility meter); utilisation
+      coverage is about 16 days in August 2023. Registered as a short-history / cross-cluster
+      auxiliary candidate, not as a 14-day-protocol target domain.
+
   synthetic_facility:
     display_name: "Synthetic facility power (engineering validation only)"
     site_id: synthetic_site

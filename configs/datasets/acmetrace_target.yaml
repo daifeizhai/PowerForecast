@@ -1,0 +1,140 @@
+# AcmeTrace Seren target-domain assembly (power-transfer-v2).
+#
+# Purpose: turn the complete AcmeTrace snapshot at `E:/Data/AcmeTrace` into a 15-minute
+# target-domain dataset for the v2 research line ("power-dominated forecasting + runtime
+# feature transfer / power mapping"):
+#   * label   : Seren `cluster_it` power (sum of MEASURED IPMI server power over reporting
+#               nodes) -- an IT-side aggregate, NEVER facility power;
+#   * features: cluster-level runtime metrics (node CPU / memory utilisation, IB receive /
+#               send, GPU utilisation) and job-trace activity (active jobs / GPUs,
+#               submissions) that can feed the auxiliary path.
+#
+# Honesty rules (do not relax without a new audit):
+#   * AcmeTrace contains NO facility power; the label is `cluster_it` and must never be
+#     reported as facility kW;
+#   * power units are inferred as W from magnitude evidence (the README documents no
+#     power units), so every kW value keeps `unit_verified=false` semantics;
+#   * monitor timestamps carry explicit +08:00 offsets and are converted to UTC-naive, but
+#     the site timezone itself is not documented (`timezone_verified=false`);
+#   * missing observations stay NaN with explicit masks; no interpolation, no zero-fill;
+#   * runtime features are cluster-level means / sums over REPORTING devices, not
+#     complete-cluster quantities; coverage is reported for every 15-minute bin;
+#   * the job trace has no node IDs, so job activity is a cluster-level feature only.
+schema_version: 1
+
+dataset:
+  dataset_id: acmetrace_seren_target
+  site_id: acmetrace
+  domain_id: acmetrace_seren
+  display_name: "AcmeTrace Seren cluster IT power + runtime metrics (v2 target domain)"
+  frequency: 15min
+  points_per_day: 96
+
+source:
+  raw_root: E:/Data/AcmeTrace
+  cluster: seren
+  timezone: "+08:00"
+  timezone_verified: false
+  power_parquet: data/processed/acmetrace_power_15min.parquet
+  label:
+    cluster_id: seren
+    level: cluster_it
+    device_id: seren_cluster_it
+    label_type: acmetrace_seren_cluster_it_derived_kw
+    target_kind: active_power
+    target_scope: it
+    target_unit: kW
+    label_origin: component_sum
+    unit_inferred: W
+    unit_verified: false
+    measurement_boundary: >-
+      Sum of measured IPMI `Sys_Total_Power` over Seren server nodes that report a valid
+      reading in each 300 s native slot. Offline/missing nodes are excluded from the sum and
+      reduce coverage_ratio; nodes are never zero-filled. This is a Seren cluster IT-side
+      aggregate: it excludes cooling, PDU/transformer losses, lighting and other facility
+      loads, and it is NOT a facility total-meter measurement.
+    sampling_semantics: >-
+      300 s IPMI per-node samples -> 15-minute interval mean per node -> sum over reporting
+      nodes; interval-start labels on a UTC-naive axis after converting the explicit +08:00
+      offsets. A slot is `power_valid` when reporting-node coverage >= the 15-minute validity
+      threshold; invalid slots keep NaN, never 0 kW.
+
+features:
+  # Cluster-level runtime metrics: 15-minute interval mean over REPORTING devices.
+  node_metrics:
+    - metric: NODE_CPU_UTILIZATION
+      path: data/utilization/seren/NODE_CPU_UTILIZATION.csv
+      feature_name: node_cpu_utilization
+      unit: percent
+      semantic: node CPU utilisation (cluster mean over reporting nodes)
+    - metric: NODE_MEMORY_UTILIZATION
+      path: data/utilization/seren/NODE_MEMORY_UTILIZATION.csv
+      feature_name: node_memory_utilization
+      unit: percent
+      semantic: node memory utilisation (cluster mean over reporting nodes)
+    - metric: NODE_IB_RECEIVE
+      path: data/utilization/seren/NODE_IB_RECEIVE.csv
+      feature_name: node_ib_receive_rate
+      unit: unverified_rate
+      semantic: node InfiniBand receive rate (cluster mean over reporting nodes; unit unverified)
+    - metric: NODE_IB_SEND
+      path: data/utilization/seren/NODE_IB_SEND.csv
+      feature_name: node_ib_send_rate
+      unit: unverified_rate
+      semantic: node InfiniBand send rate (cluster mean over reporting nodes; unit unverified)
+  gpu_metrics:
+    - metric: GPU_UTIL
+      path: data/utilization/seren/GPU_UTIL.csv
+      feature_name: gpu_utilization
+      unit: percent
+      semantic: per-GPU DCGM utilisation (cluster mean over reporting GPUs)
+  job_trace:
+    path: data/job_trace/trace_seren.csv
+    features:
+      - feature_name: job_active_count
+        unit: count
+        semantic: jobs recorded as started and not yet ended in the 15-minute bin
+      - feature_name: job_active_gpu_num
+        unit: gpu_count
+        semantic: sum of gpu_num over the active jobs in the 15-minute bin
+      - feature_name: job_submitted_count
+        unit: count
+        semantic: jobs whose submit_time falls in the 15-minute bin
+
+aggregation_15min:
+  step_seconds: 900
+  label: interval_start
+  timezone_handling: "parse explicit +08:00 offsets -> convert to UTC -> drop tz (UTC-naive)"
+  expected_samples_15s: 60
+  expected_samples_300s: 3
+  wide_chunk_rows: 10000
+  narrow_chunk_rows: 50000
+  validity_threshold: 0.5
+  coverage_definition: >-
+    Per 15-minute bin, mean over expected devices of min(native samples observed, expected
+    samples) / expected samples. Devices with no sample in the bin contribute 0. For job-trace
+    features coverage is 1.0 inside the recorded trace span (0 outside); the trace's own
+    completeness is not independently verifiable.
+  duplicate_policy: >-
+    Duplicate timestamps are counted in the audit but not silently removed from the mean;
+    coverage is capped at 1.0 so duplicates cannot inflate it.
+  frame: >-
+    Label grid (Seren cluster_it 15-minute slots). Feature bins absent from a source's
+    observed span stay masked/NaN on that grid rather than being zero-filled.
+
+outputs:
+  processed_dir: data/processed
+  power_parquet: data/processed/acmetrace_target_power.parquet
+  features_parquet: data/processed/acmetrace_target_features.parquet
+  metadata_json: data/processed/acmetrace_target_metadata.json
+  quality_json: data/processed/acmetrace_target_quality.json
+  results_dir: results/analysis/acmetrace
+
+readiness:
+  ready_for_15min_analysis: true
+  ready_for_training: false
+  reasons:
+    - "Power units are inferred as W from magnitude evidence only; unit_verified=false."
+    - "The site timezone is not documented; timezone_verified=false (explicit offsets are still parsed)."
+    - "The label is Seren cluster IT power (sum over reporting servers): not facility power, and not a complete-cluster total when coverage<1."
+    - "Job trace has no node identifiers; job features are cluster-level only."
