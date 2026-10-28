@@ -98,6 +98,9 @@ PowerForecast/
 | `data/synthetic.py` | ✅ 真实实现 | 31+ 日、F=0/多变量、两个异构无标签源、`synthetic_simulated` 标签 |
 | `data/splitting.py` | ✅ 真实实现 | 锚点日号、协议、训练可用性；`tests/test_protocols.py` |
 | `data/windows.py` | ✅ 真实实现 | 防泄漏批次；`tests/test_windows.py`、`tests/test_leakage.py` |
+| `data/acmetrace_power.py` | ✅ 真实实现（v2 分支） | AcmeTrace 完整性/功率层级/15 min 适配；`tests/test_acmetrace_power.py`；`--skip-hash` 模式把未核验哈希标为 unverified 而非 mismatch |
+| `data/acmetrace_ops.py` | ✅ 真实实现（v2 分支） | 运行指标/功率-指标配对/作业审计；`--metrics` 白名单支持轻量局部审计；`tests/test_acmetrace_ops.py` |
+| `data/acmetrace_target.py` | ✅ 真实实现（v2 分支） | Seren cluster-IT 目标域装配（标签 + 运行特征 + 作业活动，15 min，mask-first）；`tests/test_acmetrace_target.py` |
 | `models/baselines.py` | ✅ 真实实现 | 两个免拟合 CPU 基线；`tests/test_baselines.py` |
 | `evaluation/*` | ✅ 真实实现 | 指标 + 分层 + 落盘；`tests/test_baselines.py`、`tests/test_smoke.py` |
 | `training/lifecycle.py` | ✅ 真实实现 | 冻结/重载/哈希；`tests/test_lifecycle.py` |

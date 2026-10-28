@@ -56,6 +56,7 @@
 | M100 ExaData | 节点级功率，非设施级；频率/可用性待审计 | W→kW 换算并**显式命名节点级辅助任务**，仅用于节点级评估 |
 | NLR ESIF 五分项 | 分项计量边界/覆盖/单位/时区待核验；分项和 ≠ 独立设施总表 | 完成边界审计，明确 `component_sum` 语义与覆盖完整性 |
 | UCC 2023 / NLR Eagle | 尚未审计，不按名称猜测频率/功率级别 | 元数据审计；若预留 final-holdout，须显式保留禁用资格 |
+| AcmeTrace Seren | 无设施级总表功率；功率单位与时区未官方核验；Kalos 仅 GPU 级约 16 天 | v2 分支已作为 **cluster-IT 目标域**接入（`configs/datasets/acmetrace_target.yaml`）：只能产出 cluster-IT 级研究结论；若需设施 kW 仍需另找总表计量数据 |
 
 **当前结论**：本轮**没有任何真实来源**被判定可以产出正式设施 kW 结果；`configs/datasets/registry.yaml` 把它们全部登记为 `candidate` / `unverified` 并给出阻断原因。
 
@@ -77,3 +78,13 @@
 - **字段语义漂移**：同名但不同单位/统计的历史数据若被合并，会静默污染训练；
 - **数据体量与存储**：本地 `data/raw/` 与 `results/` 已有 10 GB 级历史资产，未来任何清理都必须走显式路径清单；
 - **可复现性**：随机源尚未引入深度模型；未来引入 GPU 训练后需固定更多随机性（cuDNN、分布式种子等）。
+
+## 6. v2 分支更新（2026-10-28：AcmeTrace 目标域数据层已接入）
+
+- `research/power-transfer-v2` 自 Stage 1+2 稳定基线 `a98d3df` 新建；完整 AcmeTrace 快照
+  （`E:/Data/AcmeTrace`，HF revision `a484f776…`）已接入为 **Seren cluster-IT 目标域**：
+  15 分钟标签 + NODE_*/GPU 运行指标 + 作业活动特征，见
+  [docs/ACMETRACE_TARGET_V2.md](ACMETRACE_TARGET_V2.md) 与 `configs/datasets/acmetrace_target.yaml`。
+- 因此第三/四/五阶段的“目标域缺少运行指标”这一前置缺口已部分解除（Seren 自 2023-07-01 起有节点指标），
+  但 AcmeTrace **没有设施级总表功率**、功率单位与时区仍未核验，只能支撑 cluster-IT 级研究结论。
+- 仍未做：无标签运行指标真实预训练、目标域功率映射、主辅融合、多尺度正式实验；这些仍按本文件 §2 的约束推进。
